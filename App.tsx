@@ -14,6 +14,7 @@ import { AboutPage } from './components/AboutPage';
 import { ContactPage } from './components/ContactPage';
 import { WhyChooseUsPage } from './components/WhyChooseUsPage';
 import { HelpCenterPage } from './components/HelpCenterPage';
+import { PrivacyPolicyPage } from './components/PrivacyPolicyPage';
 
 
 // Solutions
@@ -29,7 +30,7 @@ import { AssembliesPage } from './components/solutions/AssembliesPage';
 import { EventsPage } from './components/solutions/EventsPage';
 import { CompliancePage } from './components/solutions/CompliancePage';
 
-type PageView = 'home' | 'properties' | 'about' | 'contact' | 'why-us' | 'help-center' | 'communications' | 'access' | 'emergency' | 'documents' | 'requests' | 'voting' | 'common' | 'financial' | 'assemblies' | 'events' | 'compliance';
+type PageView = 'home' | 'properties' | 'about' | 'contact' | 'why-us' | 'help-center' | 'communications' | 'access' | 'emergency' | 'documents' | 'requests' | 'voting' | 'common' | 'financial' | 'assemblies' | 'events' | 'compliance' | 'privacy';
 
 function App() {
 
@@ -54,6 +55,8 @@ function App() {
       setCurrentView('why-us');
     } else if (target === 'help-center') {
       setCurrentView('help-center');
+    } else if (target === 'privacy') {
+      setCurrentView('privacy');
     } else if (target === 'solution') {
       switch (subTarget) {
         case 'Comunicaciones': setCurrentView('communications'); break;
@@ -84,7 +87,7 @@ function App() {
   const renderContent = () => {
     switch (currentView) {
       case 'about': return <AboutPage onOpenDemo={() => handleOpenDemo('general')} />;
-      case 'contact': return <ContactPage />;
+      case 'contact': return <ContactPage onNavigate={handleNavigate} />;
       case 'why-us': return <WhyChooseUsPage onOpenDemo={() => handleOpenDemo('general')} />;
       case 'help-center': return <HelpCenterPage onOpenDemo={() => handleOpenDemo('general')} />;
       case 'communications': return <CommunicationsPage onOpenDemo={() => handleOpenDemo('general')} />;
@@ -98,6 +101,7 @@ function App() {
       case 'assemblies': return <AssembliesPage onOpenDemo={() => handleOpenDemo('general')} />;
       case 'events': return <EventsPage onOpenDemo={() => handleOpenDemo('general')} />;
       case 'compliance': return <CompliancePage onOpenDemo={() => handleOpenDemo('general')} />;
+      case 'privacy': return <PrivacyPolicyPage onOpenDemo={() => handleOpenDemo('general')} />;
       case 'properties': return <PropertyTypesPage initialTab={initialPropertyTab} onOpenDemo={handleOpenDemo} />;
       case 'home':
       default:
@@ -109,7 +113,7 @@ function App() {
             <AuthoritySection />
             <PlanSection onOpenDemo={() => handleOpenDemo('general')} />
             <SummarySection onOpenDemo={() => handleOpenDemo('general')} />
-            <ContactFormSection />
+            <ContactFormSection onNavigate={handleNavigate} />
           </>
         );
     }
@@ -129,7 +133,7 @@ function App() {
 
         <Footer onNavigate={handleNavigate} />
 
-        <DemoModal isOpen={isDemoModalOpen} onClose={() => setIsDemoModalOpen(false)} demoType={demoType} />
+        <DemoModal isOpen={isDemoModalOpen} onClose={() => setIsDemoModalOpen(false)} demoType={demoType} onNavigate={handleNavigate} />
       </div>
     </div>
   );
