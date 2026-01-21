@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { Button } from '../Button';
 import { ImageCarousel } from '../ImageCarousel';
+import { HowItWorksSection } from '../HowItWorksSection';
 import {
   CalendarDays, Umbrella, Dumbbell, Wallet,
   X, Check, Quote, Search, CheckSquare, ClipboardCheck
@@ -41,10 +42,20 @@ export const CommonAreasPage: React.FC<CommonAreasPageProps> = ({ onOpenDemo }) 
         <div className="container mx-auto px-6 relative z-10">
           <div className="flex flex-col lg:flex-row items-center gap-16 lg:gap-20">
             <div className="lg:w-5/12 relative z-20">
-              <span className="inline-block py-1.5 px-4 rounded-full bg-purple-50 border border-purple-100 text-domo text-tiny font-bold tracking-widest uppercase mb-6">Módulo 07</span>
-              <h1 className="text-h2 md:text-h1 font-bold leading-tight mb-6 text-torre">Áreas <br /><span className="text-domo">comunes</span></h1>
+              <span className="block text-tiny font-bold tracking-widest uppercase text-gray-400 mb-4">
+                RESERVAS
+              </span>
+              <h1 className="text-h2 md:text-h1 font-bold leading-tight mb-6 text-torre">
+                "¿El salón está libre el sábado?<br />
+                <span className="text-domo">¿Quién lo reservó?"</span>
+              </h1>
               <div className="prose text-lead text-gray-500 mb-8 leading-relaxed">
-                <p>DomoNow transforma la reserva de áreas comunes en una <strong>experiencia clara y justa</strong>, donde todo está definido desde el inicio y la convivencia fluye sin discusiones innecesarias.</p>
+                <p className="mb-4">
+                  Estas preguntas ocasionan conflictos entre residentes y reservas sin control.
+                </p>
+                <p>
+                  <strong className="text-torre">DomoNow organiza las reservas</strong> con calendario en tiempo real, confirmaciones automáticas y restricciones por horarios, evitando malentendidos.
+                </p>
               </div>
               <div className="flex gap-4"><Button size="lg" onClick={onOpenDemo} className="shadow-xl shadow-domo/20">Conoce cómo funciona</Button></div>
             </div>
@@ -84,6 +95,25 @@ export const CommonAreasPage: React.FC<CommonAreasPageProps> = ({ onOpenDemo }) 
         </div>
       </section>
 
+      <HowItWorksSection
+        title="Conoce cómo funciona"
+        imageSrc="https://images.unsplash.com/photo-1576013551627-0cc20b96c2a7?auto=format&fit=crop&q=80&w=1200"
+        items={[
+          {
+            problem: "Cruces de horarios.",
+            solution: "Visibilidad de todas las áreas comunes disponibles"
+          },
+          {
+            problem: "Incumplimiento de horarios y normas de uso",
+            solution: "Horarios, cupos y reglas de uso por cada zona"
+          },
+          {
+            problem: "Falta de control sobre quién reserva y cuándo",
+            solution: "Trazabilidad de quién reservó, cuándo y bajo qué condiciones"
+          }
+        ]}
+      />
+
       {/* 2. PROBLEM VS SOLUTION */}
       <section className="py-24 bg-arquitectura relative z-20">
         <div className="container mx-auto px-6">
@@ -118,17 +148,6 @@ export const CommonAreasPage: React.FC<CommonAreasPageProps> = ({ onOpenDemo }) 
             </div>
           </div>
         </div>
-      </section>
-
-      {/* 2.5 CAROUSEL */}
-      <section className="py-20 bg-white border-t border-gray-100 overflow-hidden relative z-10">
-        <div className="container mx-auto px-6 mb-12 text-center">
-          <h3 className="text-h3 font-bold text-torre">Interfaz moderna e intuitiva</h3>
-          <p className="text-gray-500 mt-2 text-lead">Diseñada para que cualquier residente pueda usarla fácilmente.</p>
-        </div>
-        <div className="-mx-4 md:-mx-8"><ImageCarousel images={appScreens} heightClass="h-[550px] md:h-[600px]" /></div>
-        <div className="absolute inset-y-0 left-0 w-12 md:w-32 bg-gradient-to-r from-white to-transparent pointer-events-none z-20"></div>
-        <div className="absolute inset-y-0 right-0 w-12 md:w-32 bg-gradient-to-l from-white to-transparent pointer-events-none z-20"></div>
       </section>
 
       {/* 3. WORKFLOW */}

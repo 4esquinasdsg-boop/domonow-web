@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { Button } from '../Button';
 import { ImageCarousel } from '../ImageCarousel';
+import { HowItWorksSection } from '../HowItWorksSection';
 import {
   MessageCircle, ClipboardList, PenTool, Archive,
   X, Check, Quote, User, Clock, CheckCircle
@@ -41,10 +42,20 @@ export const RequestsPage: React.FC<RequestsPageProps> = ({ onOpenDemo }) => {
         <div className="container mx-auto px-6 relative z-10">
           <div className="flex flex-col lg:flex-row items-center gap-16 lg:gap-20">
             <div className="lg:w-5/12 relative z-20">
-              <span className="inline-block py-1.5 px-4 rounded-full bg-purple-50 border border-purple-100 text-domo text-tiny font-bold tracking-widest uppercase mb-6">Módulo 05</span>
-              <h1 className="text-h2 md:text-h1 font-bold leading-tight mb-6 text-torre"><span className="text-domo">Solicitudes</span></h1>
+              <span className="block text-tiny font-bold tracking-widest uppercase text-gray-400 mb-4">
+                SOLICITUDES
+              </span>
+              <h1 className="text-h2 md:text-h1 font-bold leading-tight mb-6 text-torre">
+                "Reportaron un daño hace 3 días.<br />
+                <span className="text-domo">¿Ya lo atendieron?"</span>
+              </h1>
               <div className="prose text-lead text-gray-500 mb-8 leading-relaxed">
-                <p>DomoNow le da estructura a la atención de solicitudes, <strong>reduciendo fricciones con los residentes y devolviendo control y visibilidad</strong> a la administración.</p>
+                <p className="mb-4">
+                  Reclamos perdidos y residentes molestos por la falta de respuesta.
+                </p>
+                <p>
+                  <strong className="text-torre">DomoNow organiza cada solicitud</strong> con responsable asignado, seguimiento paso a paso y cierre con evaluación, eliminando los vacíos de comunicación.
+                </p>
               </div>
               <div className="flex gap-4"><Button size="lg" onClick={onOpenDemo} className="shadow-xl shadow-domo/20">Conoce cómo funciona</Button></div>
             </div>
@@ -84,6 +95,26 @@ export const RequestsPage: React.FC<RequestsPageProps> = ({ onOpenDemo }) => {
         </div>
       </section>
 
+      {/* NEW: Conoce cómo funciona Section */}
+      <HowItWorksSection
+        title="Conoce cómo funciona"
+        imageSrc="/assets/Modulos/solicitudes/solicitudeshero.png"
+        items={[
+          {
+            problem: "No hay responsables claros.",
+            solution: "Centralizar todas las solicitudes en un solo canal."
+          },
+          {
+            problem: "Nadie sabe en qué estado va cada caso.",
+            solution: "Asignar responsables y tiempos de respuesta."
+          },
+          {
+            problem: "Los residentes sienten que \"nadie responde\".",
+            solution: "Dejar registro de toda la gestión realizada."
+          }
+        ]}
+      />
+
       {/* 2. PROBLEM VS SOLUTION */}
       <section className="py-24 bg-arquitectura relative z-20">
         <div className="container mx-auto px-6">
@@ -118,17 +149,6 @@ export const RequestsPage: React.FC<RequestsPageProps> = ({ onOpenDemo }) => {
             </div>
           </div>
         </div>
-      </section>
-
-      {/* 2.5 CAROUSEL */}
-      <section className="py-20 bg-white border-t border-gray-100 overflow-hidden relative z-10">
-        <div className="container mx-auto px-6 mb-12 text-center">
-          <h3 className="text-h3 font-bold text-torre">Interfaz moderna e intuitiva</h3>
-          <p className="text-gray-500 mt-2 text-lead">Diseñada para que cualquier residente pueda usarla fácilmente.</p>
-        </div>
-        <div className="-mx-4 md:-mx-8"><ImageCarousel images={appScreens} heightClass="h-[550px] md:h-[600px]" /></div>
-        <div className="absolute inset-y-0 left-0 w-12 md:w-32 bg-gradient-to-r from-white to-transparent pointer-events-none z-20"></div>
-        <div className="absolute inset-y-0 right-0 w-12 md:w-32 bg-gradient-to-l from-white to-transparent pointer-events-none z-20"></div>
       </section>
 
       {/* 3. WORKFLOW */}

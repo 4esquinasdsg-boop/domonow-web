@@ -7,12 +7,12 @@ export const AuthoritySection: React.FC = () => {
             <div className="container mx-auto px-6">
 
                 <div className="text-center mb-16">
-                    <p className="text-small font-bold text-gray-400 uppercase tracking-widest mb-4">[ Empatía y Competencia ]</p>
+                    <p className="text-small font-bold text-gray-400 uppercase tracking-widest mb-4">[ Sabemos lo que es estar en tus zapatos ]</p>
                     <h2 className="text-h2 md:text-h1 font-bold text-torre max-w-4xl mx-auto leading-tight">
-                        Entendemos sus desafíos y estamos aquí para ayudarlo.
+                        Resultados que hablan por sí solos
                     </h2>
                     <p className="mt-6 text-lead text-gray-500 max-w-2xl mx-auto">
-                        Con experiencia tanto en administración de propiedades como en tecnología, simplificamos sus tareas.
+                        Por eso creamos DomoNow: para quitarte carga, no para complicarte más.
                     </p>
                 </div>
 
@@ -24,7 +24,7 @@ export const AuthoritySection: React.FC = () => {
                         <div className="relative z-10 mb-8">
                             <h3 className="text-h3 font-bold mb-4 text-torre">Confianza</h3>
                             <p className="text-gray-500 text-body leading-relaxed">
-                                Nuestra plataforma simplifica la gestión mejorando sus indicadores clave mes a mes.
+                                Nuestra mejora tus números mes a mes.
                             </p>
                         </div>
 
@@ -37,7 +37,7 @@ export const AuthoritySection: React.FC = () => {
                                     Recaudo <span className="text-green-600">+18%</span>
                                 </div>
                                 <div className="bg-domo/5 text-domo px-3 py-1.5 rounded-full text-[10px] font-bold flex items-center gap-1 shadow-sm">
-                                    PQR <span className="text-domo">-24%</span>
+                                    PQR <span className="text-domo">-24% (sí, menos quejas)</span>
                                 </div>
                             </div>
 
@@ -67,66 +67,102 @@ export const AuthoritySection: React.FC = () => {
                             </div>
 
                             <div className="mt-4 text-center">
-                                <p className="text-h4 font-bold text-torre">Resultados Reales</p>
-                                <p className="text-tiny text-gray-400">Análisis de rendimiento mensual</p>
+                                <p className="text-h4 font-bold text-torre">Promedio de resultados reales</p>
+                                <p className="text-tiny text-gray-400">en comunidades que usan DomoNow</p>
                             </div>
                         </div>
                     </div>
 
-                    {/* Card 2: Scale (Dark Mode Area Chart) */}
-                    <div className="bg-torre p-8 rounded-[2.5rem] flex flex-col justify-between h-auto min-h-[500px] text-white relative overflow-hidden">
+                    {/* Card 2: Scale (Purple Card with Light Lilac Chart) */}
+                    <div className="bg-domo p-8 rounded-[2.5rem] flex flex-col justify-between h-auto min-h-[500px] text-white relative overflow-hidden">
                         <div className="relative z-10">
-                            <h3 className="text-h3 font-bold mb-4 text-horizonte">Más de 5.000 unidades</h3>
-                            <p className="text-gray-400 leading-relaxed text-body mb-8">
-                                Infraestructura robusta diseñada para escalar con su portafolio sin interrupciones.
+                            <h3 className="text-h3 font-bold mb-4 text-white">Crece tranquilo</h3>
+                            <p className="text-white/80 leading-relaxed text-body mb-8">
+                                Gestiona 10 unidades o 5.000. Una infraestructura sólida que no te deja botado cuando más la necesitas.
                             </p>
                         </div>
 
-                        {/* Dark Chart Container */}
-                        <div className="relative bg-white/5 rounded-[2rem] border border-white/10 p-6 flex-1 flex flex-col overflow-hidden backdrop-blur-sm">
+                        {/* Light Lilac Chart Container */}
+                        <div className="relative bg-purple-100 rounded-[2rem] border border-purple-200 p-6 flex-1 flex flex-col overflow-hidden">
 
                             {/* Header of Chart */}
                             <div className="flex justify-between items-start mb-6">
                                 <div>
-                                    <p className="text-tiny text-gray-400 font-medium uppercase tracking-wider">Total Gestionado</p>
+                                    <p className="text-tiny text-gray-600 font-medium uppercase tracking-wider">Total Gestionado</p>
                                     <div className="flex items-baseline gap-2">
-                                        <span className="text-3xl font-bold text-white">5,240</span>
-                                        <span className="text-tiny text-green-400 bg-green-400/10 px-2 py-0.5 rounded-full flex items-center gap-1">
+                                        <span className="text-3xl font-bold text-gray-900">+5.240</span>
+                                        <span className="text-tiny text-green-600 bg-green-100 px-2 py-0.5 rounded-full flex items-center gap-1">
                                             <ArrowUpRight size={10} /> +12%
                                         </span>
                                     </div>
                                 </div>
-                                <div className="w-8 h-8 rounded-full bg-horizonte/20 flex items-center justify-center text-horizonte animate-pulse">
-                                    <div className="w-2 h-2 bg-horizonte rounded-full shadow-[0_0_10px_#F7B500]"></div>
+                                <div className="w-8 h-8 rounded-full bg-domo/20 flex items-center justify-center">
+                                    <div className="w-2 h-2 bg-domo rounded-full shadow-[0_0_10px_#7C3AED]"></div>
                                 </div>
                             </div>
 
                             {/* SVG Area Chart */}
                             <div className="mt-auto relative h-32 w-full">
                                 {/* Grid Lines */}
-                                <div className="absolute inset-0 flex flex-col justify-between opacity-10 pointer-events-none">
-                                    <div className="border-t border-white w-full"></div>
-                                    <div className="border-t border-white w-full"></div>
-                                    <div className="border-t border-white w-full"></div>
+                                <div className="absolute inset-0 flex flex-col justify-between opacity-20 pointer-events-none">
+                                    <div className="border-t border-gray-400 w-full"></div>
+                                    <div className="border-t border-gray-400 w-full"></div>
+                                    <div className="border-t border-gray-400 w-full"></div>
                                 </div>
 
                                 {/* SVG Curve */}
-                                <svg viewBox="0 0 200 100" className="w-full h-full overflow-visible preserve-3d">
+                                <svg viewBox="0 0 200 100" className="w-full h-full" preserveAspectRatio="none">
                                     <defs>
-                                        <linearGradient id="chartGradient" x1="0" y1="0" x2="0" y2="1">
-                                            <stop offset="0%" stopColor="#F7B500" stopOpacity="0.3" />
-                                            <stop offset="100%" stopColor="#F7B500" stopOpacity="0" />
+                                        <linearGradient id="chartGradientPurple" x1="0" y1="0" x2="0" y2="1">
+                                            <stop offset="0%" stopColor="#7C3AED" stopOpacity="0.4" />
+                                            <stop offset="100%" stopColor="#7C3AED" stopOpacity="0" />
                                         </linearGradient>
                                     </defs>
-                                    {/* Area Fill */}
-                                    <path d="M0 100 L0 70 Q 50 80, 100 40 T 200 10 V 100 Z" fill="url(#chartGradient)" />
-                                    {/* Line Stroke */}
-                                    <path d="M0 70 Q 50 80, 100 40 T 200 10" fill="none" stroke="#F7B500" strokeWidth="3" strokeLinecap="round" className="drop-shadow-[0_0_8px_rgba(247,181,0,0.5)]" />
+                                    {/* Area Fill - starts at bottom left, ends at top right */}
+                                    <path d="M0 100 C 30 100, 50 80, 100 50 S 170 10, 200 0 V 100 Z" fill="url(#chartGradientPurple)" />
+                                    {/* Line Stroke with continuous grow animation */}
+                                    <path
+                                        d="M0 100 C 30 100, 50 80, 100 50 S 170 10, 200 0"
+                                        fill="none"
+                                        stroke="#7C3AED"
+                                        strokeWidth="3"
+                                        strokeLinecap="round"
+                                        className="drop-shadow-[0_0_8px_rgba(124,58,237,0.5)] chart-line-animation"
+                                    />
 
-                                    {/* Floating Point */}
-                                    <circle cx="200" cy="10" r="4" fill="#1A1A1A" stroke="#F7B500" strokeWidth="2" />
-                                    <circle cx="200" cy="10" r="8" fill="#F7B500" opacity="0.3" className="animate-ping" />
+                                    {/* End Point */}
+                                    <circle cx="200" cy="0" r="4" fill="#7C3AED" stroke="white" strokeWidth="2" className="chart-dot-animation" />
                                 </svg>
+                                <style>{`
+                                    .chart-line-animation {
+                                        stroke-dasharray: 300;
+                                        stroke-dashoffset: 300;
+                                        animation: drawLineLoop 3s ease-in-out infinite;
+                                    }
+                                    .chart-dot-animation {
+                                        opacity: 0;
+                                        animation: fadeInLoop 3s ease-in-out infinite;
+                                    }
+                                    @keyframes drawLineLoop {
+                                        0% {
+                                            stroke-dashoffset: 300;
+                                        }
+                                        50% {
+                                            stroke-dashoffset: 0;
+                                        }
+                                        100% {
+                                            stroke-dashoffset: 0;
+                                        }
+                                    }
+                                    @keyframes fadeInLoop {
+                                        0%, 40% {
+                                            opacity: 0;
+                                        }
+                                        50%, 100% {
+                                            opacity: 1;
+                                        }
+                                    }
+                                `}</style>
                             </div>
                         </div>
                     </div>
@@ -139,16 +175,13 @@ export const AuthoritySection: React.FC = () => {
                                 alt="Carlos López"
                                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                             />
-                            <div className="absolute top-4 right-4 bg-[#FAD9D9] text-[#A63A50] px-4 py-2 rounded-xl text-tiny font-bold shadow-sm">
-                                Testimonio
-                            </div>
                         </div>
 
                         <div className="flex flex-col flex-1 p-4 pt-6">
                             <div className="mb-4">
                                 <Quote className="text-domo w-8 h-8 mb-3 opacity-50 fill-current" />
                                 <p className="text-body text-gray-600 italic leading-relaxed">
-                                    "DomoNow ha transformado la forma en que gestionamos nuestras propiedades, haciendo todo más claro y organizado."
+                                    "DomoNow cambió por completo cómo administro. Ahora todo está claro, ordenado y bajo control. Ya no vivo apagando incendios."
                                 </p>
                             </div>
 

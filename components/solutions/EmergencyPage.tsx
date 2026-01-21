@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { Button } from '../Button';
 import { ImageCarousel } from '../ImageCarousel';
+import { HowItWorksSection } from '../HowItWorksSection';
 import {
     BellRing, Ambulance, ShieldAlert, Heart,
     X, Check, Quote, Smartphone, Radio, FileCheck
@@ -41,10 +42,20 @@ export const EmergencyPage: React.FC<EmergencyPageProps> = ({ onOpenDemo }) => {
                 <div className="container mx-auto px-6 relative z-10">
                     <div className="flex flex-col lg:flex-row items-center gap-16 lg:gap-20">
                         <div className="lg:w-5/12 relative z-20">
-                            <span className="inline-block py-1.5 px-4 rounded-full bg-purple-50 border border-purple-100 text-domo text-tiny font-bold tracking-widest uppercase mb-6">Módulo 03</span>
-                            <h1 className="text-h2 md:text-h1 font-bold leading-tight mb-6 text-torre">Alerta de <br /><span className="text-domo">Emergencia</span></h1>
+                            <span className="block text-tiny font-bold tracking-widest uppercase text-gray-400 mb-4">
+                                BOTÓN DE PÁNICO
+                            </span>
+                            <h1 className="text-h2 md:text-h1 font-bold leading-tight mb-6 text-torre">
+                                "Una emergencia.<br />
+                                <span className="text-domo">¿A quién llamo?"</span>
+                            </h1>
                             <div className="prose text-lead text-gray-500 mb-8 leading-relaxed">
-                                <p>Cuando la tranquilidad de tu comunidad no puede esperar, DomoNow <strong>centraliza las alertas y agiliza la respuesta</strong> ante emergencias, brindando mayor control, respaldo y calma para administradores y residentes.</p>
+                                <p className="mb-4">
+                                    Llamadas perdidas, mensajes que no llegan y generan confusión en momentos críticos.
+                                </p>
+                                <p>
+                                    <strong className="text-torre">DomoNow activa alertas inmediatas</strong> desde la app, notificando al instante a administración, seguridad y contactos de emergencia con trazabilidad completa.
+                                </p>
                             </div>
                             <div className="flex gap-4"><Button size="lg" onClick={onOpenDemo} className="shadow-xl shadow-domo/20">Conoce cómo funciona</Button></div>
                         </div>
@@ -121,6 +132,26 @@ export const EmergencyPage: React.FC<EmergencyPageProps> = ({ onOpenDemo }) => {
                 </div>
             </section>
 
+            {/* NEW: Conoce cómo funciona Section */}
+            <HowItWorksSection
+                title="Conoce cómo funciona"
+                imageSrc="/assets/Modulos/alertas/alertashero.png"
+                items={[
+                    {
+                        problem: "Las alertas dependen de mensajes informales.",
+                        solution: "Activar una alerta inmediata desde la app."
+                    },
+                    {
+                        problem: "No queda registro de lo ocurrido ni de cómo se atendió.",
+                        solution: "Notificar al instante a portería y administración."
+                    },
+                    {
+                        problem: "Sensación de inseguridad constante.",
+                        solution: "Registrar cada incidente con fecha, hora y respuesta."
+                    }
+                ]}
+            />
+
             {/* 2. PROBLEM VS SOLUTION */}
             <section className="py-24 bg-arquitectura relative z-20">
                 <div className="container mx-auto px-6">
@@ -177,17 +208,6 @@ export const EmergencyPage: React.FC<EmergencyPageProps> = ({ onOpenDemo }) => {
                         </div>
                     </div>
                 </div>
-            </section>
-
-            {/* 2.5 CAROUSEL */}
-            <section className="py-20 bg-white border-t border-gray-100 overflow-hidden relative z-10">
-                <div className="container mx-auto px-6 mb-12 text-center">
-                    <h3 className="text-h3 font-bold text-torre">Interfaz moderna e intuitiva</h3>
-                    <p className="text-gray-500 mt-2 text-lead">Diseñada para que cualquier residente pueda usarla fácilmente.</p>
-                </div>
-                <div className="-mx-4 md:-mx-8"><ImageCarousel images={appScreens} heightClass="h-[550px] md:h-[600px]" /></div>
-                <div className="absolute inset-y-0 left-0 w-12 md:w-32 bg-gradient-to-r from-white to-transparent pointer-events-none z-20"></div>
-                <div className="absolute inset-y-0 right-0 w-12 md:w-32 bg-gradient-to-l from-white to-transparent pointer-events-none z-20"></div>
             </section>
 
             {/* 3. WORKFLOW */}

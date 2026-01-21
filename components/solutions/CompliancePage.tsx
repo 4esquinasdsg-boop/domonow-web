@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { Button } from '../Button';
 import { ImageCarousel } from '../ImageCarousel';
+import { HowItWorksSection } from '../HowItWorksSection';
 import {
   ClipboardCheck, AlertTriangle, FileText, LayoutDashboard,
   X, Check, Quote, ListChecks, Bell, Archive
@@ -38,10 +39,20 @@ export const CompliancePage: React.FC<CompliancePageProps> = ({ onOpenDemo }) =>
         <div className="container mx-auto px-6 relative z-10">
           <div className="flex flex-col lg:flex-row items-center gap-16 lg:gap-20">
             <div className="lg:w-5/12 relative z-20">
-              <span className="inline-block py-1.5 px-4 rounded-full bg-purple-50 border border-purple-100 text-domo text-tiny font-bold tracking-widest uppercase mb-6">Módulo 11</span>
-              <h1 className="text-h2 md:text-h1 font-bold leading-tight mb-6 text-torre"><span className="text-domo">Compliance</span></h1>
+              <span className="block text-tiny font-bold tracking-widest uppercase text-gray-400 mb-4">
+                NORMATIVO
+              </span>
+              <h1 className="text-h2 md:text-h1 font-bold leading-tight mb-6 text-torre">
+                "¿Cumplimos con la ley?<br />
+                <span className="text-domo">¿Cuándo es la auditoría?"</span>
+              </h1>
               <div className="prose text-lead text-gray-500 mb-8 leading-relaxed">
-                <p>DomoNow ayuda a la administración a cumplir con sus obligaciones legales y operativas de <strong>forma ordenada, visible y controlada</strong>, reduciendo riesgos, reprocesos y desgaste innecesario.</p>
+                <p className="mb-4">
+                  Obligaciones legales y operativas que se manejan en archivos dispersos, aumentando el riesgo de sanciones y multas.
+                </p>
+                <p>
+                  <strong className="text-torre">DomoNow ayuda a la administración</strong> a cumplir con sus obligaciones legales y operativas de forma ordenada, con alertas proactivas, seguimiento de tareas y respaldo centralizado.
+                </p>
               </div>
               <div className="flex gap-4"><Button size="lg" onClick={onOpenDemo} className="shadow-xl shadow-domo/20">Conoce cómo funciona</Button></div>
             </div>
@@ -79,6 +90,25 @@ export const CompliancePage: React.FC<CompliancePageProps> = ({ onOpenDemo }) =>
         </div>
       </section>
 
+      <HowItWorksSection
+        title="Conoce cómo funciona"
+        imageSrc="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&q=80&w=1200"
+        items={[
+          {
+            problem: "Auditorías legales sin documentación en orden",
+            solution: "Mantener toda la documentación legal organizada y accesible"
+          },
+          {
+            problem: "Incumplimiento de normativas locales",
+            solution: "Alertas automáticas antes de vencimientos importantes"
+          },
+          {
+            problem: "Falta de seguimiento a tareas críticas",
+            solution: "Panel de cumplimiento y seguimiento continuo"
+          }
+        ]}
+      />
+
       {/* 2. PROBLEM VS SOLUTION */}
       <section className="py-24 bg-arquitectura relative z-20">
         <div className="container mx-auto px-6">
@@ -113,17 +143,6 @@ export const CompliancePage: React.FC<CompliancePageProps> = ({ onOpenDemo }) =>
             </div>
           </div>
         </div>
-      </section>
-
-      {/* 2.5 CAROUSEL */}
-      <section className="py-20 bg-white border-t border-gray-100 overflow-hidden relative z-10">
-        <div className="container mx-auto px-6 mb-12 text-center">
-          <h3 className="text-h3 font-bold text-torre">Interfaz moderna e intuitiva</h3>
-          <p className="text-gray-500 mt-2 text-lead">Diseñada para que cualquier residente pueda usarla fácilmente.</p>
-        </div>
-        <div className="-mx-4 md:-mx-8"><ImageCarousel images={appScreens} heightClass="h-[550px] md:h-[600px]" /></div>
-        <div className="absolute inset-y-0 left-0 w-12 md:w-32 bg-gradient-to-r from-white to-transparent pointer-events-none z-20"></div>
-        <div className="absolute inset-y-0 right-0 w-12 md:w-32 bg-gradient-to-l from-white to-transparent pointer-events-none z-20"></div>
       </section>
 
       {/* 3. WORKFLOW */}

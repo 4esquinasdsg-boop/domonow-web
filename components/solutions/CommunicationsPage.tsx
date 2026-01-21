@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { Button } from '../Button';
 import { ImageCarousel } from '../ImageCarousel';
+import { HowItWorksSection } from '../HowItWorksSection';
 import {
     Megaphone, Bell, CheckCircle2, XCircle,
     MessageSquare, Smartphone, ArrowRight,
@@ -70,19 +71,19 @@ export const CommunicationsPage: React.FC<CommunicationsPageProps> = ({ onOpenDe
 
                         {/* Left: Text Content */}
                         <div className="lg:w-5/12 relative z-20">
-                            <span className="inline-block py-1.5 px-4 rounded-full bg-purple-50 border border-purple-100 text-domo text-tiny font-bold tracking-widest uppercase mb-6">
-                                Módulo 01
+                            <span className="block text-tiny font-bold tracking-widest uppercase text-gray-400 mb-4">
+                                COMUNICACIONES
                             </span>
                             <h1 className="text-h2 md:text-h1 font-bold leading-tight mb-6 text-torre">
-                                Muro de <br />
-                                <span className="text-domo">comunicaciones.</span>
+                                "El mismo aviso por WhatsApp,<br />
+                                <span className="text-domo">y nadie se enteró."</span>
                             </h1>
                             <div className="prose text-lead text-gray-500 mb-8 leading-relaxed">
                                 <p className="mb-4">
-                                    DomoNow facilita una <strong className="text-torre">comunicación clara</strong> entre la administración y la comunidad.
+                                    ¿Mensajes perdidos, residentes desinformados y malentendidos constantes, <strong className="text-torre">te identificas?</strong>
                                 </p>
                                 <p>
-                                    Menos confusión, menos mensajes dispersos y <strong className="text-torre">más tranquilidad</strong> para todos.
+                                    <strong className="text-torre">DomoNow centraliza</strong> toda la comunicación oficial en un solo canal, garantizando que cada aviso llegue, se lea y quede registrado.
                                 </p>
                             </div>
                             <div className="flex gap-4">
@@ -169,6 +170,25 @@ export const CommunicationsPage: React.FC<CommunicationsPageProps> = ({ onOpenDe
                     </div>
                 </div>
             </section>
+
+            <HowItWorksSection
+                title="Conoce cómo funciona"
+                imageSrc="/assets/Modulos/comunicaciones/comunicacioneshero.png"
+                items={[
+                    {
+                        problem: "Avisos que se pierden en chats o carteleras.",
+                        solution: "Comunicados oficiales de la administración."
+                    },
+                    {
+                        problem: "Mensajes repetidos, llamadas constantes y malentendidos.",
+                        solution: "Avisos urgentes y novedades del conjunto."
+                    },
+                    {
+                        problem: "Residentes desinformados sobre la gestión.",
+                        solution: "Mensajes visibles para residentes, y operativos."
+                    }
+                ]}
+            />
 
             {/* 2. PROBLEM VS SOLUTION */}
             <section className="py-24 bg-arquitectura relative z-20">
@@ -282,22 +302,6 @@ export const CommunicationsPage: React.FC<CommunicationsPageProps> = ({ onOpenDe
                 </div>
             </section>
 
-            {/* 2.5 APP SCREENSHOTS CAROUSEL */}
-            <section className="py-20 bg-white border-t border-gray-100 overflow-hidden relative z-10">
-                <div className="container mx-auto px-6 mb-12 text-center">
-                    <h3 className="text-h3 font-bold text-torre">Interfaz moderna e intuitiva</h3>
-                    <p className="text-gray-500 mt-2 text-lead">Diseñada para que cualquier residente pueda usarla fácilmente.</p>
-                </div>
-                <div className="-mx-4 md:-mx-8">
-                    <ImageCarousel
-                        images={appScreens}
-                        heightClass="h-[550px] md:h-[600px]"
-                    />
-                </div>
-                <div className="absolute inset-y-0 left-0 w-12 md:w-32 bg-gradient-to-r from-white to-transparent pointer-events-none z-20"></div>
-                <div className="absolute inset-y-0 right-0 w-12 md:w-32 bg-gradient-to-l from-white to-transparent pointer-events-none z-20"></div>
-            </section>
-
             {/* 3. STEP BY STEP PROCESS */}
             <section className="py-24 bg-arquitectura relative z-10">
                 <div className="container mx-auto px-6">
@@ -318,7 +322,7 @@ export const CommunicationsPage: React.FC<CommunicationsPageProps> = ({ onOpenDe
                             </div>
                             <h3 className="text-h4 font-bold text-torre mb-3">Informas una sola vez</h3>
                             <p className="text-body text-gray-500 leading-relaxed">
-                                La administración publica el comunicado desde la app, con un mensaje claro y oficial.
+                                La administración pública el comunicado desde la app, con un mensaje claro y oficial para la comunidad.
                             </p>
                         </div>
                         <div className="bg-white p-8 rounded-[2rem] shadow-sm border border-gray-100 hover:shadow-xl transition-all duration-300 group h-full flex flex-col">
@@ -330,7 +334,7 @@ export const CommunicationsPage: React.FC<CommunicationsPageProps> = ({ onOpenDe
                             </div>
                             <h3 className="text-h4 font-bold text-torre mb-3">Todos se enteran</h3>
                             <p className="text-body text-gray-500 leading-relaxed">
-                                Los residentes reciben una notificación inmediata y saben dónde consultar la información.
+                                Los residentes reciben una notificación y saben exactamente dónde consultar la información, sin buscar en chats ni correos.
                             </p>
                         </div>
                         <div className="bg-white p-8 rounded-[2rem] shadow-sm border border-gray-100 hover:shadow-xl transition-all duration-300 group h-full flex flex-col">
@@ -342,7 +346,7 @@ export const CommunicationsPage: React.FC<CommunicationsPageProps> = ({ onOpenDe
                             </div>
                             <h3 className="text-h4 font-bold text-torre mb-3">Todo queda respaldado</h3>
                             <p className="text-body text-gray-500 leading-relaxed">
-                                El comunicado permanece visible, ordenado y disponible, reduciendo reclamos futuros.
+                                El comunicado permanece visible, ordenado y disponible, reduciendo reclamos y confusiones futuras.
                             </p>
                         </div>
                     </div>

@@ -10,10 +10,10 @@ export const Hero: React.FC<HeroProps> = ({ onOpenDemo }) => {
   return (
     <section className="relative pt-32 pb-20 bg-arquitectura overflow-hidden min-h-[90vh] flex items-center">
       <div className="container mx-auto px-6">
-        <div className="flex flex-col-reverse lg:flex-row items-center gap-16 lg:pl-32">
+        <div className="flex flex-col-reverse xl:flex-row items-center gap-12 xl:gap-16">
 
           {/* Left: Visual Composition */}
-          <div className="lg:w-1/2 relative w-full max-w-lg lg:max-w-none mx-auto">
+          <div className="xl:w-1/2 relative w-full max-w-lg xl:max-w-none mx-auto">
             <div className="relative z-10">
               {/* Main "Phone" or Dashboard Card */}
               <div className="bg-torre rounded-[2.5rem] p-6 text-white shadow-2xl transform -rotate-2 hover:rotate-0 transition-transform duration-500 border border-gray-700">
@@ -75,17 +75,16 @@ export const Hero: React.FC<HeroProps> = ({ onOpenDemo }) => {
           </div>
 
           {/* Right: Typography */}
-          <div className="lg:w-1/2 text-center lg:text-left">
-            <h1 className="text-h2 lg:text-display font-bold text-torre mb-8 tracking-tight">
-              Transforme la <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-domo to-horizonte">gestión de su propiedad</span> hoy.
+          <div className="xl:w-1/2 text-center xl:text-left px-4 overflow-hidden">
+            <h1 className="text-[2rem] sm:text-h3 md:text-h2 lg:text-display font-bold text-torre mb-8 tracking-tight leading-tight break-words">
+              ¿Administras tu<br />copropiedad con<br /><span className="text-transparent bg-clip-text bg-gradient-to-r from-domo to-horizonte">mil herramientas</span>?
             </h1>
 
-            <p className="text-lead text-gray-500 mb-10 max-w-lg mx-auto lg:mx-0 leading-relaxed">
-              ¿Está listo para simplificar y mejorar sus operaciones? DomoNow centraliza todo lo que necesita en una plataforma moderna.
+            <p className="text-lead text-gray-500 mb-10 max-w-lg mx-auto xl:mx-0 leading-relaxed text-center xl:text-left">
+              DomoNow es la app integral que centraliza comunicación con residentes, control de solicitudes, gestión financiera y más.
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center xl:justify-start">
               <Button size="lg" className="rounded-full px-10 py-4 shadow-xl" onClick={onOpenDemo}>
                 Solicite demostración
               </Button>

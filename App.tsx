@@ -6,6 +6,7 @@ import { SolutionSection } from './components/SolutionSection';
 import { AuthoritySection } from './components/AuthoritySection';
 import { PlanSection } from './components/PlanSection';
 import { SummarySection } from './components/SummarySection';
+import { SpiderSection } from './components/SpiderSection';
 import { Footer } from './components/Footer';
 import { PropertyTypesPage } from './components/PropertyTypesPage';
 import { ContactFormSection } from './components/ContactFormSection';
@@ -29,8 +30,9 @@ import { FinancialPage } from './components/solutions/FinancialPage';
 import { AssembliesPage } from './components/solutions/AssembliesPage';
 import { EventsPage } from './components/solutions/EventsPage';
 import { CompliancePage } from './components/solutions/CompliancePage';
+import { SuperAdminPage } from './components/solutions/SuperAdminPage';
 
-type PageView = 'home' | 'properties' | 'about' | 'contact' | 'why-us' | 'help-center' | 'communications' | 'access' | 'emergency' | 'documents' | 'requests' | 'voting' | 'common' | 'financial' | 'assemblies' | 'events' | 'compliance' | 'privacy';
+type PageView = 'home' | 'properties' | 'about' | 'contact' | 'why-us' | 'help-center' | 'communications' | 'access' | 'emergency' | 'documents' | 'requests' | 'voting' | 'common' | 'financial' | 'assemblies' | 'events' | 'compliance' | 'superadmin' | 'privacy';
 
 function App() {
 
@@ -59,17 +61,18 @@ function App() {
       setCurrentView('privacy');
     } else if (target === 'solution') {
       switch (subTarget) {
+        case 'Super Administrador': setCurrentView('superadmin'); break;
         case 'Comunicaciones': setCurrentView('communications'); break;
-        case 'Seguridad y control de accesos': setCurrentView('access'); break;
-        case 'Alertas de emergencia': setCurrentView('emergency'); break;
-        case 'Gestión documental': setCurrentView('documents'); break;
+        case 'Portería': setCurrentView('access'); break;
+        case 'Botón de pánico': setCurrentView('emergency'); break;
+        case 'Documental': setCurrentView('documents'); break;
         case 'Solicitudes': setCurrentView('requests'); break;
         case 'Votaciones y encuestas': setCurrentView('voting'); break;
-        case 'Áreas comunes': setCurrentView('common'); break;
+        case 'Reservas': setCurrentView('common'); break;
         case 'Gestión financiera': setCurrentView('financial'); break;
         case 'Asambleas': setCurrentView('assemblies'); break;
         case 'Eventos': setCurrentView('events'); break;
-        case 'Compliance': setCurrentView('compliance'); break;
+        case 'Normativo': setCurrentView('compliance'); break;
         default: setCurrentView('home');
       }
     } else if (target === 'home') {
@@ -101,6 +104,7 @@ function App() {
       case 'assemblies': return <AssembliesPage onOpenDemo={() => handleOpenDemo('general')} />;
       case 'events': return <EventsPage onOpenDemo={() => handleOpenDemo('general')} />;
       case 'compliance': return <CompliancePage onOpenDemo={() => handleOpenDemo('general')} />;
+      case 'superadmin': return <SuperAdminPage onOpenDemo={() => handleOpenDemo('general')} />;
       case 'privacy': return <PrivacyPolicyPage onOpenDemo={() => handleOpenDemo('general')} />;
       case 'properties': return <PropertyTypesPage initialTab={initialPropertyTab} onOpenDemo={handleOpenDemo} />;
       case 'home':
@@ -108,6 +112,7 @@ function App() {
         return (
           <>
             <Hero onOpenDemo={() => handleOpenDemo('general')} />
+            <SpiderSection />
             <ProblemSection onOpenDemo={() => handleOpenDemo('general')} />
             <SolutionSection onOpenDemo={() => handleOpenDemo('general')} />
             <AuthoritySection />

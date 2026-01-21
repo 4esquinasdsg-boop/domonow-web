@@ -16,17 +16,18 @@ const navigation = [
     href: '#solution',
     target: 'solution' as const,
     submenu: [
+      { name: 'Super Administrador', enabled: true },
       { name: 'Comunicaciones', enabled: true },
-      { name: 'Seguridad y control de accesos', enabled: true },
-      { name: 'Alertas de emergencia', enabled: true },
-      { name: 'Áreas comunes', enabled: true },
+      { name: 'Portería', enabled: true },
+      { name: 'Botón de pánico', enabled: true },
+      { name: 'Reservas', enabled: true },
       { name: 'Solicitudes', enabled: true },
-      { name: 'Gestión documental', enabled: false },
-      { name: 'Votaciones y encuestas', enabled: false },
-      { name: 'Gestión financiera', enabled: false },
-      { name: 'Asambleas', enabled: false },
-      { name: 'Eventos', enabled: false },
-      { name: 'Compliance', enabled: false }
+      { name: 'Documental', enabled: true },
+      { name: 'Votaciones y encuestas', enabled: true },
+      { name: 'Gestión financiera', enabled: true },
+      { name: 'Asambleas', enabled: true },
+      { name: 'Eventos', enabled: true },
+      { name: 'Normativo', enabled: true }
     ]
   },
   {
@@ -146,10 +147,30 @@ export const Header: React.FC<HeaderProps> = ({ onNavigate, onOpenDemo }) => {
                     <div className="absolute -top-6 left-0 right-0 h-6 bg-transparent"></div>
 
                     {item.target === 'solution' ? (
-                      <div className="bg-white rounded-2xl shadow-xl border border-gray-100 p-4 w-[500px] grid grid-cols-2 gap-x-6">
-                        {/* Enabled Items Column */}
+                      <div className="bg-white rounded-2xl shadow-xl border border-gray-100 p-4 w-[520px] grid grid-cols-2 gap-x-6">
+                        {/* Left Column - First 6 items */}
                         <div className="flex flex-col">
-                          {item.submenu.filter((sub: any) => sub.enabled !== false).map((subItem: any) => (
+                          {item.submenu.slice(0, 6).map((subItem: any, index: number) => {
+                            const itemName = typeof subItem === 'string' ? subItem : subItem.name;
+                            const isSuperAdmin = itemName === 'Super Administrador';
+                            return (
+                              <a
+                                key={itemName}
+                                href="#"
+                                onClick={(e) => handleNavClick(e, item, itemName)}
+                                className={`block px-4 py-2.5 text-small rounded-lg transition-colors ${isSuperAdmin
+                                  ? 'text-gray-600 font-bold hover:text-domo hover:bg-arquitectura'
+                                  : 'text-gray-600 hover:text-domo hover:bg-arquitectura'
+                                  }`}
+                              >
+                                {itemName}
+                              </a>
+                            );
+                          })}
+                        </div>
+                        {/* Right Column - Remaining items */}
+                        <div className="flex flex-col border-l border-gray-100 pl-4">
+                          {item.submenu.slice(6).map((subItem: any) => (
                             <a
                               key={typeof subItem === 'string' ? subItem : subItem.name}
                               href="#"
@@ -158,18 +179,6 @@ export const Header: React.FC<HeaderProps> = ({ onNavigate, onOpenDemo }) => {
                             >
                               {typeof subItem === 'string' ? subItem : subItem.name}
                             </a>
-                          ))}
-                        </div>
-                        {/* Disabled Items Column with Próximamente */}
-                        <div className="flex flex-col border-l border-gray-100 pl-4">
-                          <span className="text-domo font-bold text-tiny uppercase tracking-widest mb-2 px-4">Próximamente</span>
-                          {item.submenu.filter((sub: any) => sub.enabled === false).map((subItem: any) => (
-                            <span
-                              key={typeof subItem === 'string' ? subItem : subItem.name}
-                              className="block px-4 py-2.5 text-small text-gray-300 cursor-not-allowed"
-                            >
-                              {typeof subItem === 'string' ? subItem : subItem.name}
-                            </span>
                           ))}
                         </div>
                       </div>
@@ -244,27 +253,24 @@ export const Header: React.FC<HeaderProps> = ({ onNavigate, onOpenDemo }) => {
 
                       {item.target === 'solution' ? (
                         <>
-                          {/* Enabled Items */}
-                          {item.submenu.filter((sub: any) => sub.enabled !== false).map((subItem: any) => (
-                            <a
-                              key={typeof subItem === 'string' ? subItem : subItem.name}
-                              href="#"
-                              className="text-gray-500 hover:text-domo py-2 block text-body active:text-domo"
-                              onClick={(e) => handleNavClick(e, item, typeof subItem === 'string' ? subItem : subItem.name)}
-                            >
-                              {typeof subItem === 'string' ? subItem : subItem.name}
-                            </a>
-                          ))}
-                          {/* Próximamente Section */}
-                          <span className="text-domo font-bold text-tiny uppercase tracking-widest mt-4 mb-1 block">Próximamente</span>
-                          {item.submenu.filter((sub: any) => sub.enabled === false).map((subItem: any) => (
-                            <span
-                              key={typeof subItem === 'string' ? subItem : subItem.name}
-                              className="text-gray-300 py-2 block text-body cursor-not-allowed"
-                            >
-                              {typeof subItem === 'string' ? subItem : subItem.name}
-                            </span>
-                          ))}
+                          {/* All Solution Items */}
+                          {item.submenu.map((subItem: any) => {
+                            const itemName = typeof subItem === 'string' ? subItem : subItem.name;
+                            const isSuperAdmin = itemName === 'Super Administrador';
+                            return (
+                              <a
+                                key={itemName}
+                                href="#"
+                                className={`py-2 block text-body active:text-domo ${isSuperAdmin
+                                    ? 'text-gray-500 font-bold hover:text-domo'
+                                    : 'text-gray-500 hover:text-domo'
+                                  }`}
+                                onClick={(e) => handleNavClick(e, item, itemName)}
+                              >
+                                {itemName}
+                              </a>
+                            );
+                          })}
                         </>
                       ) : (
                         item.submenu.map((subItem: any) => (

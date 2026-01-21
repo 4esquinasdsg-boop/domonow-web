@@ -22,29 +22,26 @@ export const SolutionSection: React.FC<SolutionSectionProps> = ({ onOpenDemo }) 
                         {/* Text Content */}
                         <div className="lg:w-1/2 z-20">
                             <h2 className="text-h2 md:text-h1 font-bold mb-8 leading-[1.1]">
-                                Consiga una gestión de propiedades <br />
-                                <span className="text-horizonte italic font-serif">fluida.</span>
+                                La administración que siempre quisiste<br />
+                                <span className="text-horizonte italic font-serif">sin caos y sin estrés.</span>
                             </h2>
-                            <p className="text-lead text-white/80 mb-8 leading-relaxed max-w-xl">
-                                Transforme sus operaciones con nuestra solución todo en uno adaptada a sus necesidades.
-                            </p>
 
                             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-10">
                                 <div className="bg-white/10 backdrop-blur px-4 py-3 rounded-2xl text-small font-medium flex items-start gap-3">
                                     <MessageCircle className="shrink-0 mt-1" size={18} />
-                                    <span>Comunicación centralizada para residentes e interacción eficiente.</span>
+                                    <span>Olvídate de WhatsApp, Excel, correos y llamadas dispersas.</span>
                                 </div>
                                 <div className="bg-white/10 backdrop-blur px-4 py-3 rounded-2xl text-small font-medium flex items-start gap-3">
                                     <CheckCircle className="shrink-0 mt-1" size={18} />
-                                    <span>Recordatorios de pago automáticos que reducen papeleo y estrés.</span>
+                                    <span>Reduce tu morosidad hasta 40% sin perseguir a nadie.</span>
                                 </div>
                                 <div className="bg-white/10 backdrop-blur px-4 py-3 rounded-2xl text-small font-medium flex items-start gap-3">
                                     <FileText className="shrink-0 mt-1" size={18} />
-                                    <span>Seguimiento exhaustivo de solicitudes de servicio.</span>
+                                    <span>Desde el reporte hasta el cierre, todo queda registrado.</span>
                                 </div>
                                 <div className="bg-white/10 backdrop-blur px-4 py-3 rounded-2xl text-small font-medium flex items-start gap-3">
                                     <Monitor className="shrink-0 mt-1" size={18} />
-                                    <span>Plataforma fácil de usar para administradores.</span>
+                                    <span>Si usas WhatsApp, ya sabes usar DomoNow.</span>
                                 </div>
                             </div>
 
@@ -53,7 +50,7 @@ export const SolutionSection: React.FC<SolutionSectionProps> = ({ onOpenDemo }) 
                                 onClick={onOpenDemo}
                                 className="!bg-white !text-domo hover:!bg-gray-100 border-0 px-8 py-3 shadow-lg font-bold"
                             >
-                                Solicite su demostración
+                                Solicita demostración
                             </Button>
                         </div>
 

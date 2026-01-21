@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { Button } from '../Button';
 import { ImageCarousel } from '../ImageCarousel';
+import { HowItWorksSection } from '../HowItWorksSection';
 import {
   PartyPopper, CalendarCheck, Users, Megaphone,
   X, Check, Quote, Send, ListChecks
@@ -38,10 +39,20 @@ export const EventsPage: React.FC<EventsPageProps> = ({ onOpenDemo }) => {
         <div className="container mx-auto px-6 relative z-10">
           <div className="flex flex-col lg:flex-row items-center gap-16 lg:gap-20">
             <div className="lg:w-5/12 relative z-20">
-              <span className="inline-block py-1.5 px-4 rounded-full bg-purple-50 border border-purple-100 text-domo text-tiny font-bold tracking-widest uppercase mb-6">Módulo 10</span>
-              <h1 className="text-h2 md:text-h1 font-bold leading-tight mb-6 text-torre"><span className="text-domo">Eventos</span></h1>
+              <span className="block text-tiny font-bold tracking-widest uppercase text-gray-400 mb-4">
+                EVENTOS
+              </span>
+              <h1 className="text-h2 md:text-h1 font-bold leading-tight mb-6 text-torre">
+                "¿Quién viene al taller?<br />
+                <span className="text-domo">¿Quedan cupos?"</span>
+              </h1>
               <div className="prose text-lead text-gray-500 mb-8 leading-relaxed">
-                <p>DomoNow te permite <strong>planear, comunicar y gestionar eventos</strong> desde un solo lugar, con control real y participación clara.</p>
+                <p className="mb-4">
+                  Eventos que nadie conoce, poca participación y desorden en el registro.
+                </p>
+                <p>
+                  <strong className="text-torre">DomoNow te permite planear</strong>, comunicar y gestionar eventos desde un solo lugar, con inscripciones directas, recordatorios automáticos y control de asistencia real.
+                </p>
               </div>
               <div className="flex gap-4"><Button size="lg" onClick={onOpenDemo} className="shadow-xl shadow-domo/20">Conoce cómo funciona</Button></div>
             </div>
@@ -77,6 +88,22 @@ export const EventsPage: React.FC<EventsPageProps> = ({ onOpenDemo }) => {
         </div>
       </section>
 
+      {/* NEW: Conoce cómo funciona Section */}
+      <HowItWorksSection
+        title="Conoce cómo funciona"
+        imageSrc="https://images.unsplash.com/photo-1505373877841-8d25f7d46678?auto=format&fit=crop&q=80&w=1200"
+        items={[
+          {
+            problem: "Nadie se entera de los eventos a tiempo.",
+            solution: "Publicar eventos con inscripciones automáticas."
+          },
+          {
+            problem: "Baja participación comunitaria.",
+            solution: "Enviar recordatorios y notificaciones personalizadas."
+          }
+        ]}
+      />
+
       {/* 2. PROBLEM VS SOLUTION */}
       <section className="py-24 bg-arquitectura relative z-20">
         <div className="container mx-auto px-6">
@@ -111,17 +138,6 @@ export const EventsPage: React.FC<EventsPageProps> = ({ onOpenDemo }) => {
             </div>
           </div>
         </div>
-      </section>
-
-      {/* 2.5 CAROUSEL */}
-      <section className="py-20 bg-white border-t border-gray-100 overflow-hidden relative z-10">
-        <div className="container mx-auto px-6 mb-12 text-center">
-          <h3 className="text-h3 font-bold text-torre">Interfaz moderna e intuitiva</h3>
-          <p className="text-gray-500 mt-2 text-lead">Diseñada para que cualquier residente pueda usarla fácilmente.</p>
-        </div>
-        <div className="-mx-4 md:-mx-8"><ImageCarousel images={appScreens} heightClass="h-[550px] md:h-[600px]" /></div>
-        <div className="absolute inset-y-0 left-0 w-12 md:w-32 bg-gradient-to-r from-white to-transparent pointer-events-none z-20"></div>
-        <div className="absolute inset-y-0 right-0 w-12 md:w-32 bg-gradient-to-l from-white to-transparent pointer-events-none z-20"></div>
       </section>
 
       {/* 3. WORKFLOW */}

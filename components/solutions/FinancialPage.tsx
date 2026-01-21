@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { Button } from '../Button';
 import { ImageCarousel } from '../ImageCarousel';
+import { HowItWorksSection } from '../HowItWorksSection';
 import {
   TrendingUp, FileBarChart, PieChart, Bell,
   X, Check, Quote, Database, Eye, Share2, ClipboardList
@@ -38,10 +39,20 @@ export const FinancialPage: React.FC<FinancialPageProps> = ({ onOpenDemo }) => {
         <div className="container mx-auto px-6 relative z-10">
           <div className="flex flex-col lg:flex-row items-center gap-16 lg:gap-20">
             <div className="lg:w-5/12 relative z-20">
-              <span className="inline-block py-1.5 px-4 rounded-full bg-purple-50 border border-purple-100 text-domo text-tiny font-bold tracking-widest uppercase mb-6">Módulo 08</span>
-              <h1 className="text-h2 md:text-h1 font-bold leading-tight mb-6 text-torre">Gestión <br /><span className="text-domo">financiera</span></h1>
+              <span className="block text-tiny font-bold tracking-widest uppercase text-gray-400 mb-4">
+                GESTIÓN FINANCIERA
+              </span>
+              <h1 className="text-h2 md:text-h1 font-bold leading-tight mb-6 text-torre">
+                "¿Cuánto se debe? ¿En qué se gastó?<br />
+                <span className="text-domo">¿Por qué no lo sabía?"</span>
+              </h1>
               <div className="prose text-lead text-gray-500 mb-8 leading-relaxed">
-                <p>Con DomoNow, la gestión financiera deja de ser una carga operativa y se convierte en un <strong>proceso transparente, organizado y fácil de explicar a todos</strong>.</p>
+                <p className="mb-4">
+                  Los residentes desconfían y la administración se desgasta explicando reportes financieros complejos o manuales.
+                </p>
+                <p>
+                  <strong className="text-torre">DomoNow facilita la gestión financiera</strong> convirtiendo los reportes en información clara, organizada y fácil de entender, mejorando la transparencia y la confianza en la propiedad.
+                </p>
               </div>
               <div className="flex gap-4"><Button size="lg" onClick={onOpenDemo} className="shadow-xl shadow-domo/20">Conoce cómo funciona</Button></div>
             </div>
@@ -79,6 +90,25 @@ export const FinancialPage: React.FC<FinancialPageProps> = ({ onOpenDemo }) => {
         </div>
       </section>
 
+      <HowItWorksSection
+        title="Conoce cómo funciona"
+        imageSrc="https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?auto=format&fit=crop&q=80&w=1200"
+        items={[
+          {
+            problem: "Cobros manuales y descontrol de pagos.",
+            solution: "Automatizar el recaudo de cuotas y pagos recurrentes."
+          },
+          {
+            problem: "Desconfianza por falta de transparencia.",
+            solution: "Ofrecer transparencia total con reportes en tiempo real."
+          },
+          {
+            problem: "Falta de claridad en vencimientos",
+            solution: "Notificaciones de vencimientos y pagos pendientes"
+          }
+        ]}
+      />
+
       {/* 2. PROBLEM VS SOLUTION */}
       <section className="py-24 bg-arquitectura relative z-20">
         <div className="container mx-auto px-6">
@@ -113,17 +143,6 @@ export const FinancialPage: React.FC<FinancialPageProps> = ({ onOpenDemo }) => {
             </div>
           </div>
         </div>
-      </section>
-
-      {/* 2.5 CAROUSEL */}
-      <section className="py-20 bg-white border-t border-gray-100 overflow-hidden relative z-10">
-        <div className="container mx-auto px-6 mb-12 text-center">
-          <h3 className="text-h3 font-bold text-torre">Interfaz moderna e intuitiva</h3>
-          <p className="text-gray-500 mt-2 text-lead">Diseñada para que cualquier residente pueda usarla fácilmente.</p>
-        </div>
-        <div className="-mx-4 md:-mx-8"><ImageCarousel images={appScreens} heightClass="h-[550px] md:h-[600px]" /></div>
-        <div className="absolute inset-y-0 left-0 w-12 md:w-32 bg-gradient-to-r from-white to-transparent pointer-events-none z-20"></div>
-        <div className="absolute inset-y-0 right-0 w-12 md:w-32 bg-gradient-to-l from-white to-transparent pointer-events-none z-20"></div>
       </section>
 
       {/* 3. WORKFLOW */}
@@ -180,7 +199,7 @@ export const FinancialPage: React.FC<FinancialPageProps> = ({ onOpenDemo }) => {
         <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-white/40 rounded-full blur-3xl -translate-y-1/2 translate-x-1/3 pointer-events-none"></div>
         <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-white/40 rounded-full blur-3xl translate-y-1/3 -translate-x-1/3 pointer-events-none"></div>
         <div className="container mx-auto max-w-3xl relative z-10">
-          <h2 className="text-h2 font-bold mb-8 leading-tight text-torre">Convierte tus asambleas en procesos claros, válidos y sin discusiones.</h2>
+          <h2 className="text-h2 font-bold mb-8 leading-tight text-torre">Convierte la gestión financiera en un proceso claro, transparente y confiable con DomoNow.</h2>
           <div className="flex flex-col sm:flex-row gap-4 justify-center"><Button size="lg" className="bg-domo text-white hover:bg-torre hover:text-white transition-colors px-12 text-lg shadow-xl shadow-domo/20" onClick={onOpenDemo}>Quiero agendar una Demo</Button></div>
         </div>
       </section>
