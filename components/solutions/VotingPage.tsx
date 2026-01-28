@@ -43,15 +43,15 @@ export const VotingPage: React.FC<VotingPageProps> = ({ onOpenDemo }) => {
                 VOTACIONES Y ENCUESTAS
               </span>
               <h1 className="text-h2 md:text-h1 font-bold leading-tight mb-6 text-torre">
-                "¿Quién está a favor?<br />
-                <span className="text-domo">¿Tenemos quórum?"</span>
+                "Nadie vota,<br />
+                <span className="text-domo">las decisiones no avanzan"</span>
               </h1>
               <div className="prose text-lead text-gray-500 mb-8 leading-relaxed">
-                <p className="mb-4">
-                  Tomar decisiones en comunidad genera dudas, baja asistencia y conflictos sobre la validez de los resultados.
+                <p className="mb-4 text-torre font-bold">
+                  Procesos largos y decisiones cuestionadas.
                 </p>
                 <p>
-                  <strong className="text-torre">DomoNow transforma las votaciones</strong> y encuestas en un proceso ordenado, transparente y fácil de gestionar, con resultados en tiempo real y respaldo digital.
+                  <strong className="text-torre">DomoNow digitaliza votaciones.</strong> Resultados en tiempo real, decisiones claras.
                 </p>
               </div>
               <div className="flex gap-4"><Button size="lg" onClick={onOpenDemo} className="shadow-xl shadow-domo/20">Conoce cómo funciona</Button></div>
@@ -124,8 +124,8 @@ export const VotingPage: React.FC<VotingPageProps> = ({ onOpenDemo }) => {
             <div className="bg-white p-8 md:p-10 rounded-[2.5rem] shadow-xl shadow-gray-200/50 border border-gray-100 group hover:border-red-100 transition-colors duration-300 flex flex-col h-full">
               <div className="flex items-center gap-3 mb-8"><div className="w-8 h-8 rounded-full bg-red-50 flex items-center justify-center text-red-400"><X size={16} strokeWidth={3} /></div><span className="font-bold text-gray-400 uppercase tracking-widest text-[10px] md:text-tiny">Lo que pasa hoy</span></div>
               <div className="space-y-8 flex-grow">
-                {[{ title: "Dudas sobre la validez de las votaciones", desc: "" }, { title: "Conflictos porque “no me avisaron” o “no quedó registrado”", desc: "" }].map((item, i) => (
-                  <div key={i} className="flex gap-5 items-start"><div className="w-12 h-12 bg-gray-50 rounded-2xl flex items-center justify-center text-gray-400 shrink-0 group-hover:bg-red-50 group-hover:text-red-400 transition-colors"><X size={20} /></div><div><h4 className="font-bold text-torre text-body mb-1">{item.title}</h4></div></div>
+                {[{ title: "Procesos Lentos", desc: "Las decisiones toman semanas" }, { title: "Transparencia Limitada", desc: "Los propietarios no tienen visibilidad" }, { title: "Comunicación Ineficiente", desc: "Avisos y recordatorios manuales" }].map((item, i) => (
+                  <div key={i} className="flex gap-5 items-start"><div className="w-12 h-12 bg-gray-50 rounded-2xl flex items-center justify-center text-gray-400 shrink-0 group-hover:bg-red-50 group-hover:text-red-400 transition-colors"><X size={20} /></div><div><h4 className="font-bold text-torre text-body mb-1">{item.title}</h4><p className="text-small text-gray-500 leading-relaxed">{item.desc}</p></div></div>
                 ))}
               </div>
             </div>
@@ -134,8 +134,8 @@ export const VotingPage: React.FC<VotingPageProps> = ({ onOpenDemo }) => {
             <div className="bg-[#F9F5FF] p-8 md:p-10 rounded-[2.5rem] shadow-xl shadow-domo/5 border border-purple-100 group hover:border-domo/30 transition-colors duration-300 flex flex-col h-full">
               <div className="flex items-center gap-3 mb-8"><div className="w-8 h-8 rounded-full bg-domo/10 flex items-center justify-center text-domo"><Check size={16} strokeWidth={3} /></div><span className="font-bold text-domo uppercase tracking-widest text-[10px] md:text-tiny">Con DomoNow obtienes</span></div>
               <div className="space-y-8 flex-grow">
-                {[{ title: "Realizar votaciones con control de quórum", desc: "" }, { title: "Enviar recordatorios automáticos", desc: "" }, { title: "Resultados en tiempo real", desc: "" }, { title: "Generar actas automáticas", desc: "DomoNow transforma las votaciones y encuestas en un proceso ordenado, transparente y fácil de gestionar." }].map((item, i) => (
-                  <div key={i} className="flex gap-5 items-start"><div className="w-12 h-12 bg-white rounded-2xl flex items-center justify-center text-domo shrink-0 shadow-sm group-hover:bg-domo group-hover:text-white transition-colors"><Check size={20} /></div><div><h4 className="font-bold text-torre text-body mb-1">{item.title}</h4>{item.desc && <p className="text-small text-gray-500 leading-relaxed">{item.desc}</p>}</div></div>
+                {[{ title: "Decisiones Ágiles", desc: "Votaciones resueltas en días" }, { title: "Transparencia Total", desc: "Cada propietario ve el estado de participación" }, { title: "Comunicación Centralizada", desc: "Sistema automático de seguimiento. DomoNow transforma las votaciones y encuestas en un proceso ordenado, transparente y fácil de gestionar." }].map((item, i) => (
+                  <div key={i} className="flex gap-5 items-start"><div className="w-12 h-12 bg-white rounded-2xl flex items-center justify-center text-domo shrink-0 shadow-sm group-hover:bg-domo group-hover:text-white transition-colors"><Check size={20} /></div><div><h4 className="font-bold text-torre text-body mb-1">{item.title}</h4><p className="text-small text-gray-500 leading-relaxed">{item.desc}</p></div></div>
                 ))}
               </div>
             </div>
@@ -154,7 +154,7 @@ export const VotingPage: React.FC<VotingPageProps> = ({ onOpenDemo }) => {
             <div className="bg-white p-8 rounded-[2rem] shadow-sm border border-gray-100 hover:shadow-xl transition-all duration-300 group h-full flex flex-col">
               <div className="flex justify-between items-start mb-8"><div className="w-12 h-12 bg-gray-50 rounded-full flex items-center justify-center text-torre group-hover:bg-domo group-hover:text-white transition-colors"><Settings size={20} /></div><span className="text-[10px] font-bold text-gray-400 uppercase tracking-widest mt-3">PASO 1</span></div>
               <h3 className="text-h4 font-bold text-torre mb-3">Creas la votación o encuesta</h3>
-              <p className="text-body text-gray-500 leading-relaxed">Defines el tema, el tipo de votación, el quórum y a quién va dirigido.</p>
+              <p className="text-body text-gray-500 leading-relaxed">Defines el tema, el tipo de votación, el quórum y a quién va dirigida.</p>
             </div>
             <div className="bg-white p-8 rounded-[2rem] shadow-sm border border-gray-100 hover:shadow-xl transition-all duration-300 group h-full flex flex-col">
               <div className="flex justify-between items-start mb-8"><div className="w-12 h-12 bg-gray-50 rounded-full flex items-center justify-center text-torre group-hover:bg-horizonte group-hover:text-torre transition-colors"><Send size={20} /></div><span className="text-[10px] font-bold text-gray-400 uppercase tracking-widest mt-3">PASO 2</span></div>

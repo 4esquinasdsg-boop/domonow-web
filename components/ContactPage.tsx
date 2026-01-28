@@ -3,11 +3,7 @@ import { ContactForm } from './ContactForm';
 import { Phone, Mail } from 'lucide-react';
 import { ImageCarousel } from './ImageCarousel';
 
-interface ContactPageProps {
-  onNavigate?: (target: string) => void;
-}
-
-export const ContactPage: React.FC<ContactPageProps> = ({ onNavigate }) => {
+export const ContactPage: React.FC = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -100,7 +96,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onNavigate }) => {
             {/* Right Side: Form */}
             <div className="lg:w-7/12 w-full">
               <div className="bg-white rounded-[3rem] p-8 md:p-12 shadow-[0_30px_60px_rgba(130,10,209,0.1)] border border-purple-50 relative overflow-hidden">
-                <ContactForm onNavigate={onNavigate} />
+                <ContactForm />
               </div>
             </div>
 

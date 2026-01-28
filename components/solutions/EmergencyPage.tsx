@@ -46,15 +46,15 @@ export const EmergencyPage: React.FC<EmergencyPageProps> = ({ onOpenDemo }) => {
                                 BOTÓN DE PÁNICO
                             </span>
                             <h1 className="text-h2 md:text-h1 font-bold leading-tight mb-6 text-torre">
-                                "Una emergencia.<br />
-                                <span className="text-domo">¿A quién llamo?"</span>
+                                "Una emergencia y no sabes<br />
+                                <span className="text-domo">a quién llamar"</span>
                             </h1>
                             <div className="prose text-lead text-gray-500 mb-8 leading-relaxed">
-                                <p className="mb-4">
-                                    Llamadas perdidas, mensajes que no llegan y generan confusión en momentos críticos.
+                                <p className="mb-4 text-torre font-bold">
+                                    Llamadas perdidas que generan confusión en momentos críticos.
                                 </p>
                                 <p>
-                                    <strong className="text-torre">DomoNow activa alertas inmediatas</strong> desde la app, notificando al instante a administración, seguridad y contactos de emergencia con trazabilidad completa.
+                                    <strong className="text-torre">DomoNow activa alertas inmediatas.</strong> Notifica al instante a quien debe actuar.
                                 </p>
                             </div>
                             <div className="flex gap-4"><Button size="lg" onClick={onOpenDemo} className="shadow-xl shadow-domo/20">Conoce cómo funciona</Button></div>
@@ -135,19 +135,22 @@ export const EmergencyPage: React.FC<EmergencyPageProps> = ({ onOpenDemo }) => {
             {/* NEW: Conoce cómo funciona Section */}
             <HowItWorksSection
                 title="Conoce cómo funciona"
+                subtitle="Cómo funciona"
+                leftLabel="Software tradicional:"
+                rightLabel="Con DomoNow:"
                 imageSrc="/assets/Modulos/alertas/alertashero.png"
                 items={[
                     {
-                        problem: "Las alertas dependen de mensajes informales.",
-                        solution: "Activar una alerta inmediata desde la app."
+                        problem: "Módulo separado o inexistente",
+                        solution: "Botón de pánico directo en la app"
                     },
                     {
-                        problem: "No queda registro de lo ocurrido ni de cómo se atendió.",
-                        solution: "Notificar al instante a portería y administración."
+                        problem: "Directorio de teléfonos SOS",
+                        solution: "Notificación push inmediata a usuarios"
                     },
                     {
-                        problem: "Sensación de inseguridad constante.",
-                        solution: "Registrar cada incidente con fecha, hora y respuesta."
+                        problem: "Registro manual de incidentes",
+                        solution: "Historial automático de atención"
                     }
                 ]}
             />
@@ -175,13 +178,13 @@ export const EmergencyPage: React.FC<EmergencyPageProps> = ({ onOpenDemo }) => {
                             </div>
                             <div className="space-y-8 flex-grow">
                                 {[
-                                    { title: "Las alertas dependen de mensajes informales", desc: "" },
-                                    { title: "No queda registro de lo ocurrido ni de cómo se atendió", desc: "" },
-                                    { title: "Sensación de inseguridad constante", desc: "" }
+                                    { title: "Tiempo Perdido Crítico", desc: "Llamadas que no responden, cadenas de WhatsApp que nadie ve" },
+                                    { title: "Coordinación Caótica", desc: "No sabes quién fue alertado, quién respondió o qué se hizo" },
+                                    { title: "Sin Evidencia", desc: "Cuando pasa una emergencia, no hay registro de cómo se atendió" }
                                 ].map((item, i) => (
                                     <div key={i} className="flex gap-5 items-start">
                                         <div className="w-12 h-12 bg-gray-50 rounded-2xl flex items-center justify-center text-gray-400 shrink-0 group-hover:bg-red-50 group-hover:text-red-400 transition-colors"><X size={20} /></div>
-                                        <div><h4 className="font-bold text-torre text-body mb-1">{item.title}</h4></div>
+                                        <div><h4 className="font-bold text-torre text-body mb-1">{item.title}</h4><p className="text-small text-gray-500 leading-relaxed">{item.desc}</p></div>
                                     </div>
                                 ))}
                             </div>
@@ -195,13 +198,13 @@ export const EmergencyPage: React.FC<EmergencyPageProps> = ({ onOpenDemo }) => {
                             </div>
                             <div className="space-y-8 flex-grow">
                                 {[
-                                    { title: "Activar una alerta inmediata desde la app", desc: "" },
-                                    { title: "Notificar al instante a portería y administración", desc: "" },
-                                    { title: "Registrar cada incidente con fecha, hora y respuesta", desc: "Menos improvisación. Más control desde el primer día." }
+                                    { title: "Activación Centralizada", desc: "Todos los responsables notificados simultáneamente" },
+                                    { title: "Trazabilidad Completa", desc: "Registro automático de quién alertó y cómo se resolvió" },
+                                    { title: "Mejora Continua", desc: "Analiza tiempos de respuesta y patrones para reforzar protocolos. Menos improvisación. Más control desde el primer día." }
                                 ].map((item, i) => (
                                     <div key={i} className="flex gap-5 items-start">
                                         <div className="w-12 h-12 bg-white rounded-2xl flex items-center justify-center text-domo shrink-0 shadow-sm group-hover:bg-domo group-hover:text-white transition-colors"><Check size={20} /></div>
-                                        <div><h4 className="font-bold text-torre text-body mb-1">{item.title}</h4>{item.desc && <p className="text-small text-gray-500 leading-relaxed">{item.desc}</p>}</div>
+                                        <div><h4 className="font-bold text-torre text-body mb-1">{item.title}</h4><p className="text-small text-gray-500 leading-relaxed">{item.desc}</p></div>
                                     </div>
                                 ))}
                             </div>

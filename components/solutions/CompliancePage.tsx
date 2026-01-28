@@ -43,15 +43,15 @@ export const CompliancePage: React.FC<CompliancePageProps> = ({ onOpenDemo }) =>
                 NORMATIVO
               </span>
               <h1 className="text-h2 md:text-h1 font-bold leading-tight mb-6 text-torre">
-                "¿Cumplimos con la ley?<br />
-                <span className="text-domo">¿Cuándo es la auditoría?"</span>
+                "¿Cuándo vence esa<br />
+                <span className="text-domo">obligación legal?"</span>
               </h1>
               <div className="prose text-lead text-gray-500 mb-8 leading-relaxed">
-                <p className="mb-4">
-                  Obligaciones legales y operativas que se manejan en archivos dispersos, aumentando el riesgo de sanciones y multas.
+                <p className="mb-4 text-torre font-bold">
+                  El seguimiento manual puede llegar a generar riesgo de incumplimientos.
                 </p>
                 <p>
-                  <strong className="text-torre">DomoNow ayuda a la administración</strong> a cumplir con sus obligaciones legales y operativas de forma ordenada, con alertas proactivas, seguimiento de tareas y respaldo centralizado.
+                  <strong className="text-torre">DomoNow centraliza vencimientos.</strong> Alertas automáticas, sin sorpresas.
                 </p>
               </div>
               <div className="flex gap-4"><Button size="lg" onClick={onOpenDemo} className="shadow-xl shadow-domo/20">Conoce cómo funciona</Button></div>
@@ -126,8 +126,8 @@ export const CompliancePage: React.FC<CompliancePageProps> = ({ onOpenDemo }) =>
             <div className="bg-white p-8 md:p-10 rounded-[2.5rem] shadow-xl shadow-gray-200/50 border border-gray-100 group hover:border-red-100 transition-colors duration-300 flex flex-col h-full">
               <div className="flex items-center gap-3 mb-8"><div className="w-8 h-8 rounded-full bg-red-50 flex items-center justify-center text-red-400"><X size={16} strokeWidth={3} /></div><span className="font-bold text-gray-400 uppercase tracking-widest text-[10px] md:text-tiny">Lo que pasa hoy</span></div>
               <div className="space-y-8 flex-grow">
-                {[{ title: "Falta de control en auditorías", desc: "" }, { title: "Seguimiento manual de obligaciones", desc: "" }, { title: "Falta de alertas y prevención", desc: "" }].map((item, i) => (
-                  <div key={i} className="flex gap-5 items-start"><div className="w-12 h-12 bg-gray-50 rounded-2xl flex items-center justify-center text-gray-400 shrink-0 group-hover:bg-red-50 group-hover:text-red-400 transition-colors"><X size={20} /></div><div><h4 className="font-bold text-torre text-body mb-1">{item.title}</h4></div></div>
+                {[{ title: "Cumplimiento reactivo", desc: "Actúas cuando ya pasó la fecha límite" }, { title: "Obligaciones dispersas", desc: "Calendarios en papel, correos perdidos" }, { title: "Riesgo legal", desc: "Sin visibilidad clara de qué vence" }].map((item, i) => (
+                  <div key={i} className="flex gap-5 items-start"><div className="w-12 h-12 bg-gray-50 rounded-2xl flex items-center justify-center text-gray-400 shrink-0 group-hover:bg-red-50 group-hover:text-red-400 transition-colors"><X size={20} /></div><div><h4 className="font-bold text-torre text-body mb-1">{item.title}</h4><p className="text-small text-gray-500 leading-relaxed">{item.desc}</p></div></div>
                 ))}
               </div>
             </div>
@@ -136,8 +136,8 @@ export const CompliancePage: React.FC<CompliancePageProps> = ({ onOpenDemo }) =>
             <div className="bg-[#F9F5FF] p-8 md:p-10 rounded-[2.5rem] shadow-xl shadow-domo/5 border border-purple-100 group hover:border-domo/30 transition-colors duration-300 flex flex-col h-full">
               <div className="flex items-center gap-3 mb-8"><div className="w-8 h-8 rounded-full bg-domo/10 flex items-center justify-center text-domo"><Check size={16} strokeWidth={3} /></div><span className="font-bold text-domo uppercase tracking-widest text-[10px] md:text-tiny">Con DomoNow obtienes</span></div>
               <div className="space-y-8 flex-grow">
-                {[{ title: "Seguimiento de auditorías", desc: "" }, { title: "Informes automáticos por propiedad", desc: "" }, { title: "Alertas de vencimiento de obligaciones legales", desc: "" }, { title: "Panel de cumplimiento", desc: "DomoNow convierte el cumplimiento en un proceso continuo, organizado y fácil de seguir." }].map((item, i) => (
-                  <div key={i} className="flex gap-5 items-start"><div className="w-12 h-12 bg-white rounded-2xl flex items-center justify-center text-domo shrink-0 shadow-sm group-hover:bg-domo group-hover:text-white transition-colors"><Check size={20} /></div><div><h4 className="font-bold text-torre text-body mb-1">{item.title}</h4>{item.desc && <p className="text-small text-gray-500 leading-relaxed">{item.desc}</p>}</div></div>
+                {[{ title: "Cumplimiento preventivo", desc: "Estado de todas tus obligaciones" }, { title: "Control unificado", desc: "Todo en un solo lugar con responsables asignados" }, { title: "Tranquilidad operativa", desc: "Alertas que te avisan para actuar sin estrés. DomoNow convierte el cumplimiento en un proceso continuo, organizado y fácil de seguir." }].map((item, i) => (
+                  <div key={i} className="flex gap-5 items-start"><div className="w-12 h-12 bg-white rounded-2xl flex items-center justify-center text-domo shrink-0 shadow-sm group-hover:bg-domo group-hover:text-white transition-colors"><Check size={20} /></div><div><h4 className="font-bold text-torre text-body mb-1">{item.title}</h4><p className="text-small text-gray-500 leading-relaxed">{item.desc}</p></div></div>
                 ))}
               </div>
             </div>

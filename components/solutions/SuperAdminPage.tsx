@@ -41,15 +41,14 @@ export const SuperAdminPage: React.FC<SuperAdminPageProps> = ({ onOpenDemo }) =>
                                 SÚPER ADMINISTRADOR
                             </span>
                             <h1 className="text-h2 md:text-h1 font-bold leading-tight mb-6 text-torre">
-                                Administrar una comunidad<br />
-                                <span className="text-domo">no es solo gestión</span>
+                                "47 mensajes con la misma pregunta"
                             </h1>
                             <div className="prose text-lead text-gray-500 mb-8 leading-relaxed">
-                                <p className="mb-4">
-                                    Lo difícil es sostener todo al mismo tiempo: <strong className="text-torre">5 a 50 propiedades</strong>. Todas con la necesidad de tener visibilidad total sin perder el control.
+                                <p className="mb-4 text-torre font-bold">
+                                    ¿Cuándo terminaste el día tranquilo?
                                 </p>
-                                <p>
-                                    <strong className="text-torre">DomoNow unifica la gestión</strong> de múltiples propiedades en un solo panel, con control de accesos, indicadores financieros y procesos estandarizados.
+                                <p className="mb-4">
+                                    Imagina terminar el día con todo bajo control. <strong className="text-torre">DomoNow te da control total.</strong> Todo en un panel, sin estrés.
                                 </p>
                             </div>
                             <div className="flex gap-4">
@@ -122,20 +121,23 @@ export const SuperAdminPage: React.FC<SuperAdminPageProps> = ({ onOpenDemo }) =>
 
             <HowItWorksSection
                 variant="superadmin"
-                imageSrc="https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&q=80&w=1200"
-                subtitle="DomoNow unifica la gestión de múltiples propiedades en un solo panel, con control de accesos, indicadores financieros y procesos estandarizados."
+                imageSrc="/assets/SOLUCIONES/SUPERADMIN/SUPERADMIN (3).jpg"
+                title="DomoNow unifica la gestión de múltiples propiedades en un solo panel, con control de accesos, indicadores financieros y procesos estandarizados"
+                subtitle="Cómo funciona"
+                leftLabel="Software tradicional:"
+                rightLabel="Con DomoNow:"
                 items={[
                     {
-                        problem: "Cada propiedad tiene su propio sistema, Excel o carpetas.",
-                        solution: "Panel único multi-copropiedad."
+                        problem: "Módulo separado o inexistente",
+                        solution: "Super Administrador incluido"
                     },
                     {
-                        problem: "Procesos diferentes por copropiedad",
-                        solution: "Flujos de trabajo claros y reglas unificadas por propiedad."
+                        problem: "Datos dispersos por propiedad",
+                        solution: "Dashboard consolidado"
                     },
                     {
-                        problem: "Riesgos de cumplimiento legal",
-                        solution: "Alertas automáticas y control de cumplimiento."
+                        problem: "Reportes sin consolidar",
+                        solution: "Indicadores de recaudo"
                     }
                 ]}
             />
@@ -155,13 +157,13 @@ export const SuperAdminPage: React.FC<SuperAdminPageProps> = ({ onOpenDemo }) =>
                         </div>
 
                         <h2 className="text-h2 font-bold text-torre mb-8 leading-tight">
-                            El reto de administrar múltiples propiedades.
+                            Cuando todo depende de ti, necesitas una plataforma que piense contigo
                         </h2>
 
                         <div className="relative inline-block">
                             <Quote className="absolute -top-4 -left-8 text-gray-200 w-10 h-10 transform -scale-x-100 z-0 opacity-50" />
                             <p className="relative z-10 text-h4 text-gray-500 leading-relaxed font-medium">
-                                "Cuando gestionas varias propiedades, la información se dispersa, los procesos se duplican y la supervisión se vuelve un dolor constante."
+                                "Cada conjunto funciona por separado, la información financiera está dispersa y aún consolidas información en Excel."
                             </p>
                         </div>
                     </div>
@@ -179,9 +181,9 @@ export const SuperAdminPage: React.FC<SuperAdminPageProps> = ({ onOpenDemo }) =>
 
                             <div className="space-y-8 flex-grow">
                                 {[
-                                    { title: "Múltiples sistemas desconectados para cada propiedad", desc: "" },
-                                    { title: "Sin visibilidad consolidada del estado de las comunidades", desc: "" },
-                                    { title: "Duplicación de esfuerzos en tareas administrativas", desc: "" }
+                                    { title: "Propiedades Aisladas", desc: "Cada conjunto funciona por separado" },
+                                    { title: "Datos Fragmentados", desc: "Información financiera dispersa" },
+                                    { title: "Reportes Manuales", desc: "Aún consolidas información en Excel" }
                                 ].map((item, i) => (
                                     <div key={i} className="flex gap-5 items-start">
                                         <div className="w-12 h-12 bg-gray-50 rounded-2xl flex items-center justify-center text-gray-400 shrink-0 group-hover:bg-red-50 group-hover:text-red-400 transition-colors">
@@ -189,6 +191,7 @@ export const SuperAdminPage: React.FC<SuperAdminPageProps> = ({ onOpenDemo }) =>
                                         </div>
                                         <div>
                                             <h4 className="font-bold text-torre text-body mb-1">{item.title}</h4>
+                                            <p className="text-small text-gray-500 leading-relaxed">{item.desc}</p>
                                         </div>
                                     </div>
                                 ))}
@@ -206,10 +209,9 @@ export const SuperAdminPage: React.FC<SuperAdminPageProps> = ({ onOpenDemo }) =>
 
                             <div className="space-y-8 flex-grow">
                                 {[
-                                    { title: "Panel unificado para todas tus propiedades", desc: "" },
-                                    { title: "Reportes consolidados y comparativos", desc: "" },
-                                    { title: "Gestión centralizada de usuarios y permisos", desc: "" },
-                                    { title: "Visibilidad total del estado operativo", desc: "Una sola plataforma, todas tus propiedades, control absoluto." }
+                                    { title: "Visión 360°", desc: "Dashboard de tus propiedades simultáneamente" },
+                                    { title: "Comparativas Instantáneas", desc: "Puedes ver que necesita realmente tu atención" },
+                                    { title: "Automatización inteligente", desc: "Alertas automáticas y control de cumplimiento" }
                                 ].map((item, i) => (
                                     <div key={i} className="flex gap-5 items-start">
                                         <div className="w-12 h-12 bg-white rounded-2xl flex items-center justify-center text-domo shrink-0 shadow-sm group-hover:bg-domo group-hover:text-white transition-colors">
@@ -217,7 +219,7 @@ export const SuperAdminPage: React.FC<SuperAdminPageProps> = ({ onOpenDemo }) =>
                                         </div>
                                         <div>
                                             <h4 className="font-bold text-torre text-body mb-1">{item.title}</h4>
-                                            {item.desc && <p className="text-small text-gray-500 leading-relaxed">{item.desc}</p>}
+                                            <p className="text-small text-gray-500 leading-relaxed">{item.desc}</p>
                                         </div>
                                     </div>
                                 ))}

@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Button } from './Button';
 import { Check, Lock, Loader2, CheckCircle, AlertCircle } from 'lucide-react';
 
-// ⚠️ URL de Google Apps Script configurada
+// URL de Google Apps Script configurada
 const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxend8ZuPHgFlINohK5THedjxakf1FgYhdGA-F03kALgOdHggZUJX_N0l7JBgJ8GaDJPA/exec';
 
 interface FormData {
@@ -17,11 +18,8 @@ interface FormData {
 
 type SubmitStatus = 'idle' | 'submitting' | 'success' | 'error';
 
-interface ContactFormProps {
-    onNavigate?: (target: string) => void;
-}
-
-export const ContactForm: React.FC<ContactFormProps> = ({ onNavigate }) => {
+export const ContactForm: React.FC = () => {
+    const navigate = useNavigate();
     const [formData, setFormData] = useState<FormData>({
         nombre: '',
         apellidos: '',
@@ -239,7 +237,7 @@ export const ContactForm: React.FC<ContactFormProps> = ({ onNavigate }) => {
                             <Check size={12} className="absolute inset-0 m-auto text-white opacity-0 peer-checked:opacity-100 transition-opacity" />
                         </div>
                         <span className="text-small text-gray-500 leading-snug group-hover/check:text-gray-700 transition-colors group/tooltip relative cursor-help">
-                            Acepto la <button type="button" onClick={(e) => { e.preventDefault(); e.stopPropagation(); onNavigate?.('privacy'); }} className="text-domo font-bold hover:underline">Política de Privacidad</button> y el tratamiento de mis datos personales.
+                            Acepto la <button type="button" onClick={(e) => { e.preventDefault(); e.stopPropagation(); navigate('/privacidad'); }} className="text-domo font-bold hover:underline">Política de Privacidad</button> y el tratamiento de mis datos personales.
                             <span className="relative ml-1 inline-block">
                                 <span className="text-domo font-bold text-lg leading-none">*</span>
                                 <span className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-max px-2.5 py-1 bg-gray-800 text-white text-[10px] font-medium rounded-md shadow-lg opacity-0 group-hover/tooltip:opacity-100 transition-all duration-200 pointer-events-none select-none z-20 translate-y-1 group-hover/tooltip:translate-y-0">

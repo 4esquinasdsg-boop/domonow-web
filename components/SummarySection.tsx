@@ -42,9 +42,9 @@ export const SummarySection: React.FC<SummarySectionProps> = ({ onOpenDemo }) =>
                         <div className="flex gap-6 items-start p-4 rounded-2xl hover:bg-arquitectura transition-colors">
                             <span className="text-small text-gray-400 font-medium">01</span>
                             <div>
-                                <h3 className="text-h4 font-bold text-torre mb-2">Menos tiempo disperso</h3>
+                                <h3 className="text-h4 font-bold text-torre mb-2">Menos tiempo buscando</h3>
                                 <p className="text-body text-gray-500">
-                                    Menos tiempo buscando información dispersa, todo centralizado en un solo lugar.
+                                    Menos tiempo buscando información dispersa.
                                 </p>
                             </div>
                         </div>
@@ -53,9 +53,9 @@ export const SummarySection: React.FC<SummarySectionProps> = ({ onOpenDemo }) =>
                         <div className="flex gap-6 items-start p-4 rounded-2xl hover:bg-arquitectura transition-colors">
                             <span className="text-small text-gray-400 font-medium">02</span>
                             <div>
-                                <h3 className="text-h4 font-bold text-torre mb-2">Claridad total</h3>
+                                <h3 className="text-h4 font-bold text-torre mb-2">Más claridad</h3>
                                 <p className="text-body text-gray-500">
-                                    Más claridad en cada decisión que tomas con datos en tiempo real.
+                                    Más claridad en cada decisión que tomas.
                                 </p>
                             </div>
                         </div>
@@ -66,7 +66,7 @@ export const SummarySection: React.FC<SummarySectionProps> = ({ onOpenDemo }) =>
                             <div>
                                 <h3 className="text-h4 font-bold text-torre mb-2">Cero sorpresas</h3>
                                 <p className="text-body text-gray-500">
-                                    Cero sorpresas de última hora, gestión proactiva y transparente.
+                                    Cero sorpresas de última hora.
                                 </p>
                             </div>
                         </div>

@@ -1,55 +1,54 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X, ChevronDown, ChevronUp } from 'lucide-react';
+import { Link, useLocation } from 'react-router-dom';
 import { Button } from './Button';
 
-type NavigationTarget = 'home' | 'properties' | 'solution' | 'about' | 'contact' | 'why-us' | 'help-center';
-
 interface HeaderProps {
-  onNavigate: (target: string, subTarget?: string) => void;
   onOpenDemo: () => void;
 }
 
 const navigation = [
-  { name: 'Inicio', href: '#', target: 'home' as const },
+  { name: 'Inicio', href: '/', target: 'home' },
   {
     name: 'Soluciones',
-    href: '#solution',
-    target: 'solution' as const,
+    href: '/#soluciones',
+    target: 'solution',
     submenu: [
-      { name: 'Super Administrador', enabled: true },
-      { name: 'Comunicaciones', enabled: true },
-      { name: 'Portería', enabled: true },
-      { name: 'Botón de pánico', enabled: true },
-      { name: 'Reservas', enabled: true },
-      { name: 'Solicitudes', enabled: true },
-      { name: 'Documental', enabled: true },
-      { name: 'Votaciones y encuestas', enabled: true },
-      { name: 'Gestión financiera', enabled: true },
-      { name: 'Asambleas', enabled: true },
-      { name: 'Eventos', enabled: true },
-      { name: 'Normativo', enabled: true }
+      { name: 'Super Administrador', path: '/super-administrador' },
+      { name: 'Comunicaciones', path: '/comunicaciones' },
+      { name: 'Portería', path: '/porteria' },
+      { name: 'Botón de pánico', path: '/panico' },
+      { name: 'Reservas', path: '/reservas' },
+      { name: 'Solicitudes', path: '/solicitudes' },
+      { name: 'Documental', path: '/documental' },
+      { name: 'Votaciones y encuestas', path: '/votaciones' },
+      { name: 'Gestión financiera', path: '/gestion-financiera' },
+      { name: 'Asambleas', path: '/asambleas' },
+      { name: 'Eventos', path: '/eventos' },
+      { name: 'Normativo', path: '/normativo' }
     ]
   },
   {
     name: 'Tipos de propiedad',
-    href: '#',
-    target: 'properties' as const,
+    href: '/propiedades',
+    target: 'properties',
     submenu: [
-      'Residencial',
-      'Comercial',
-      'Mixta'
+      { name: 'Residencial', path: '/propiedades#residencial' },
+      { name: 'Comercial', path: '/propiedades#comercial' },
+      { name: 'Mixta', path: '/propiedades#mixta' }
     ]
   },
-  { name: '¿Por qué elegirnos?', href: '#', target: 'why-us' as const },
-  { name: 'Centro de ayuda', href: '#', target: 'help-center' as const },
-  { name: 'Nosotros', href: '#about', target: 'about' as const },
-  { name: 'Contacto', href: '#', target: 'contact' as const },
+  { name: '¿Por qué elegirnos?', href: '/por-que-elegirnos', target: 'why-us' },
+  { name: 'Centro de ayuda', href: '/centro-de-ayuda', target: 'help-center' },
+  { name: 'Nosotros', href: '/nosotros', target: 'about' },
+  { name: 'Contacto', href: '/contacto', target: 'contact' },
 ];
 
-export const Header: React.FC<HeaderProps> = ({ onNavigate, onOpenDemo }) => {
+export const Header: React.FC<HeaderProps> = ({ onOpenDemo }) => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [mobileSubmenuOpen, setMobileSubmenuOpen] = useState<string | null>(null);
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -59,7 +58,12 @@ export const Header: React.FC<HeaderProps> = ({ onNavigate, onOpenDemo }) => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Close mobile menu on resize to desktop to avoid UI glitches
+  // Close mobile menu on route change or resize
+  useEffect(() => {
+    setMobileMenuOpen(false);
+    window.scrollTo(0, 0);
+  }, [location.pathname]);
+
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth >= 1280) {
@@ -78,36 +82,16 @@ export const Header: React.FC<HeaderProps> = ({ onNavigate, onOpenDemo }) => {
     }
   };
 
-  const handleNavClick = (e: React.MouseEvent, item: any, subItem?: string) => {
-    e.preventDefault();
-
-    // Logic for items with submenu (Parent click)
-    if (item.submenu && !subItem) {
-      if (item.target === 'solution') {
-        onNavigate('home');
-        setTimeout(() => {
-          const element = document.getElementById('solution');
-          if (element) element.scrollIntoView({ behavior: 'smooth' });
-        }, 100);
-      } else if (item.target === 'properties') {
-        onNavigate('properties');
-        setMobileMenuOpen(false);
-        window.scrollTo(0, 0);
+  const handleAnchorClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    if (href.startsWith('/#')) {
+      const id = href.split('#')[1];
+      if (location.pathname === '/') {
+        e.preventDefault();
+        const element = document.getElementById(id);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
       }
-      return;
-    }
-
-    if (item.target) {
-      onNavigate(item.target, subItem);
-      setMobileMenuOpen(false);
-      window.scrollTo(0, 0);
-    } else if (item.href.startsWith('#')) {
-      onNavigate('home');
-      setMobileMenuOpen(false);
-      setTimeout(() => {
-        const element = document.querySelector(item.href);
-        if (element) element.scrollIntoView({ behavior: 'smooth' });
-      }, 100);
     }
   };
 
@@ -120,26 +104,26 @@ export const Header: React.FC<HeaderProps> = ({ onNavigate, onOpenDemo }) => {
         <div className="flex items-center justify-between relative">
 
           {/* Logo */}
-          <a href="#" onClick={(e) => handleNavClick(e, { target: 'home', href: '#' })} className="flex items-center gap-2 relative z-[101] group h-14">
+          <Link to="/" className="flex items-center gap-2 relative z-[101] group h-14">
             <img
               src="/assets/Logo/LogoPiramide.png"
               alt="DomoNow Logo"
               className="h-full w-auto object-contain"
             />
-          </a>
+          </Link>
 
           {/* Desktop Nav */}
           <nav className="hidden xl:flex items-center gap-6">
             {navigation.map((item) => (
               <div key={item.name} className="relative group px-1">
-                <a
-                  href={item.href}
-                  onClick={(e) => handleNavClick(e, item)}
+                <Link
+                  to={item.href}
+                  onClick={(e) => handleAnchorClick(e, item.href)}
                   className="flex items-center gap-1 text-small font-medium text-torre hover:text-domo transition-colors py-4 cursor-pointer"
                 >
                   {item.name}
                   {item.submenu && <ChevronDown size={14} className="group-hover:rotate-180 transition-transform duration-200" />}
-                </a>
+                </Link>
 
                 {/* Desktop Dropdown */}
                 {item.submenu && (
@@ -150,49 +134,45 @@ export const Header: React.FC<HeaderProps> = ({ onNavigate, onOpenDemo }) => {
                       <div className="bg-white rounded-2xl shadow-xl border border-gray-100 p-4 w-[520px] grid grid-cols-2 gap-x-6">
                         {/* Left Column - First 6 items */}
                         <div className="flex flex-col">
-                          {item.submenu.slice(0, 6).map((subItem: any, index: number) => {
-                            const itemName = typeof subItem === 'string' ? subItem : subItem.name;
-                            const isSuperAdmin = itemName === 'Super Administrador';
+                          {item.submenu.slice(0, 6).map((subItem: any) => {
+                            const isSuperAdmin = subItem.name === 'Super Administrador';
                             return (
-                              <a
-                                key={itemName}
-                                href="#"
-                                onClick={(e) => handleNavClick(e, item, itemName)}
+                              <Link
+                                key={subItem.name}
+                                to={subItem.path}
                                 className={`block px-4 py-2.5 text-small rounded-lg transition-colors ${isSuperAdmin
                                   ? 'text-gray-600 font-bold hover:text-domo hover:bg-arquitectura'
                                   : 'text-gray-600 hover:text-domo hover:bg-arquitectura'
                                   }`}
                               >
-                                {itemName}
-                              </a>
+                                {subItem.name}
+                              </Link>
                             );
                           })}
                         </div>
                         {/* Right Column - Remaining items */}
                         <div className="flex flex-col border-l border-gray-100 pl-4">
                           {item.submenu.slice(6).map((subItem: any) => (
-                            <a
-                              key={typeof subItem === 'string' ? subItem : subItem.name}
-                              href="#"
-                              onClick={(e) => handleNavClick(e, item, typeof subItem === 'string' ? subItem : subItem.name)}
+                            <Link
+                              key={subItem.name}
+                              to={subItem.path}
                               className="block px-4 py-2.5 text-small text-gray-600 hover:text-domo hover:bg-arquitectura rounded-lg transition-colors"
                             >
-                              {typeof subItem === 'string' ? subItem : subItem.name}
-                            </a>
+                              {subItem.name}
+                            </Link>
                           ))}
                         </div>
                       </div>
                     ) : (
                       <div className={`bg-white rounded-2xl shadow-xl border border-gray-100 p-4 ${item.submenu.length > 5 ? 'w-[500px] grid grid-cols-2 gap-x-4' : 'w-56 flex flex-col'}`}>
                         {item.submenu.map((subItem: any) => (
-                          <a
-                            key={typeof subItem === 'string' ? subItem : subItem.name}
-                            href="#"
-                            onClick={(e) => handleNavClick(e, item, typeof subItem === 'string' ? subItem : subItem.name)}
+                          <Link
+                            key={subItem.name}
+                            to={subItem.path}
                             className="block px-4 py-2.5 text-small text-gray-600 hover:text-domo hover:bg-arquitectura rounded-lg transition-colors"
                           >
-                            {typeof subItem === 'string' ? subItem : subItem.name}
-                          </a>
+                            {subItem.name}
+                          </Link>
                         ))}
                       </div>
                     )}
@@ -240,61 +220,32 @@ export const Header: React.FC<HeaderProps> = ({ onNavigate, onOpenDemo }) => {
                   </button>
                   <div className={`overflow-hidden transition-all duration-300 ease-in-out ${mobileSubmenuOpen === item.name ? 'max-h-[800px] opacity-100 mb-6' : 'max-h-0 opacity-0'}`}>
                     <div className="flex flex-col gap-3 pl-4 border-l-2 border-domo/20 ml-2">
-                      {/* NEW: Allow clicking parent item in mobile menu as first option if it's a navigational item */}
-                      {(item.target === 'properties' || item.target === 'solution') && (
-                        <a
-                          href="#"
-                          className="text-domo font-bold py-2 block text-body active:text-domo"
-                          onClick={(e) => handleNavClick(e, item)}
-                        >
-                          Ver Todo en {item.name}
-                        </a>
-                      )}
-
-                      {item.target === 'solution' ? (
-                        <>
-                          {/* All Solution Items */}
-                          {item.submenu.map((subItem: any) => {
-                            const itemName = typeof subItem === 'string' ? subItem : subItem.name;
-                            const isSuperAdmin = itemName === 'Super Administrador';
-                            return (
-                              <a
-                                key={itemName}
-                                href="#"
-                                className={`py-2 block text-body active:text-domo ${isSuperAdmin
-                                    ? 'text-gray-500 font-bold hover:text-domo'
-                                    : 'text-gray-500 hover:text-domo'
-                                  }`}
-                                onClick={(e) => handleNavClick(e, item, itemName)}
-                              >
-                                {itemName}
-                              </a>
-                            );
-                          })}
-                        </>
-                      ) : (
-                        item.submenu.map((subItem: any) => (
-                          <a
-                            key={typeof subItem === 'string' ? subItem : subItem.name}
-                            href="#"
-                            className="text-gray-500 hover:text-domo py-2 block text-body active:text-domo"
-                            onClick={(e) => handleNavClick(e, item, typeof subItem === 'string' ? subItem : subItem.name)}
+                      {item.submenu.map((subItem: any) => {
+                        const isSuperAdmin = subItem.name === 'Super Administrador';
+                        return (
+                          <Link
+                            key={subItem.name}
+                            to={subItem.path}
+                            className={`py-2 block text-body active:text-domo ${isSuperAdmin
+                              ? 'text-gray-500 font-bold hover:text-domo'
+                              : 'text-gray-500 hover:text-domo'
+                              }`}
                           >
-                            {typeof subItem === 'string' ? subItem : subItem.name}
-                          </a>
-                        ))
-                      )}
+                            {subItem.name}
+                          </Link>
+                        );
+                      })}
                     </div>
                   </div>
                 </div>
               ) : (
-                <a
-                  href={item.href}
-                  onClick={(e) => handleNavClick(e, item)}
+                <Link
+                  to={item.href}
+                  onClick={(e) => handleAnchorClick(e, item.href)}
                   className="block py-4 text-lead font-medium text-torre hover:text-domo active:text-domo"
                 >
                   {item.name}
-                </a>
+                </Link>
               )}
             </div>
           ))}

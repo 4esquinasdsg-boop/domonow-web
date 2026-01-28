@@ -46,15 +46,14 @@ export const CommonAreasPage: React.FC<CommonAreasPageProps> = ({ onOpenDemo }) 
                 RESERVAS
               </span>
               <h1 className="text-h2 md:text-h1 font-bold leading-tight mb-6 text-torre">
-                "¿El salón está libre el sábado?<br />
-                <span className="text-domo">¿Quién lo reservó?"</span>
+                "¿Está libre el salón social el sábado?"
               </h1>
               <div className="prose text-lead text-gray-500 mb-8 leading-relaxed">
-                <p className="mb-4">
-                  Estas preguntas ocasionan conflictos entre residentes y reservas sin control.
+                <p className="mb-4 text-torre font-bold">
+                  Estas preguntas ocasionan conflictos entre residentes.
                 </p>
                 <p>
-                  <strong className="text-torre">DomoNow organiza las reservas</strong> con calendario en tiempo real, confirmaciones automáticas y restricciones por horarios, evitando malentendidos.
+                  <strong className="text-torre">DomoNow organiza reservas en tiempo real.</strong> Sin conflictos, sin malentendidos.
                 </p>
               </div>
               <div className="flex gap-4"><Button size="lg" onClick={onOpenDemo} className="shadow-xl shadow-domo/20">Conoce cómo funciona</Button></div>
@@ -97,19 +96,22 @@ export const CommonAreasPage: React.FC<CommonAreasPageProps> = ({ onOpenDemo }) 
 
       <HowItWorksSection
         title="Conoce cómo funciona"
+        subtitle="Cómo funciona"
+        leftLabel="Software tradicional:"
+        rightLabel="Con DomoNow:"
         imageSrc="https://images.unsplash.com/photo-1576013551627-0cc20b96c2a7?auto=format&fit=crop&q=80&w=1200"
         items={[
           {
-            problem: "Cruces de horarios.",
-            solution: "Visibilidad de todas las áreas comunes disponibles"
+            problem: "Calendario básico de disponibilidad",
+            solution: "Disponibilidad en tiempo real"
           },
           {
-            problem: "Incumplimiento de horarios y normas de uso",
-            solution: "Horarios, cupos y reglas de uso por cada zona"
+            problem: "Aprobación manual por administrador",
+            solution: "Confirmación automática"
           },
           {
-            problem: "Falta de control sobre quién reserva y cuándo",
-            solution: "Trazabilidad de quién reservó, cuándo y bajo qué condiciones"
+            problem: "Sin restricciones configurables",
+            solution: "Gestión de pagos integrada"
           }
         ]}
       />
@@ -131,8 +133,8 @@ export const CommonAreasPage: React.FC<CommonAreasPageProps> = ({ onOpenDemo }) 
             <div className="bg-white p-8 md:p-10 rounded-[2.5rem] shadow-xl shadow-gray-200/50 border border-gray-100 group hover:border-red-100 transition-colors duration-300 flex flex-col h-full">
               <div className="flex items-center gap-3 mb-8"><div className="w-8 h-8 rounded-full bg-red-50 flex items-center justify-center text-red-400"><X size={16} strokeWidth={3} /></div><span className="font-bold text-gray-400 uppercase tracking-widest text-[10px] md:text-tiny">Lo que pasa hoy</span></div>
               <div className="space-y-8 flex-grow">
-                {[{ title: "Cruces de horarios", desc: "" }, { title: "Incumplimiento de horarios y normas de uso", desc: "" }, { title: "Falta de control sobre quién reserva y cuándo", desc: "" }].map((item, i) => (
-                  <div key={i} className="flex gap-5 items-start"><div className="w-12 h-12 bg-gray-50 rounded-2xl flex items-center justify-center text-gray-400 shrink-0 group-hover:bg-red-50 group-hover:text-red-400 transition-colors"><X size={20} /></div><div><h4 className="font-bold text-torre text-body mb-1">{item.title}</h4></div></div>
+                {[{ title: "Conflictos Constantes", desc: "Dobles reservas y reclamos entre residentes" }, { title: "Control Inexistente", desc: "No sabes quién usa las zonas comunes" }, { title: "Gestión Reactiva", desc: "Te enteras de los problemas cuando ya ocurrieron" }].map((item, i) => (
+                  <div key={i} className="flex gap-5 items-start"><div className="w-12 h-12 bg-gray-50 rounded-2xl flex items-center justify-center text-gray-400 shrink-0 group-hover:bg-red-50 group-hover:text-red-400 transition-colors"><X size={20} /></div><div><h4 className="font-bold text-torre text-body mb-1">{item.title}</h4><p className="text-small text-gray-500 leading-relaxed">{item.desc}</p></div></div>
                 ))}
               </div>
             </div>
@@ -141,8 +143,8 @@ export const CommonAreasPage: React.FC<CommonAreasPageProps> = ({ onOpenDemo }) 
             <div className="bg-[#F9F5FF] p-8 md:p-10 rounded-[2.5rem] shadow-xl shadow-domo/5 border border-purple-100 group hover:border-domo/30 transition-colors duration-300 flex flex-col h-full">
               <div className="flex items-center gap-3 mb-8"><div className="w-8 h-8 rounded-full bg-domo/10 flex items-center justify-center text-domo"><Check size={16} strokeWidth={3} /></div><span className="font-bold text-domo uppercase tracking-widest text-[10px] md:text-tiny">Con DomoNow obtienes</span></div>
               <div className="space-y-8 flex-grow">
-                {[{ title: "Visibilidad de todas las áreas comunes disponibles", desc: "" }, { title: "Horarios, cupos y reglas de uso por cada zona", desc: "" }, { title: "Trazabilidad de quién reservó, cuándo y bajo qué condiciones", desc: "Áreas comunes con correcto uso, reglas claras y una comunidad más tranquila." }].map((item, i) => (
-                  <div key={i} className="flex gap-5 items-start"><div className="w-12 h-12 bg-white rounded-2xl flex items-center justify-center text-domo shrink-0 shadow-sm group-hover:bg-domo group-hover:text-white transition-colors"><Check size={20} /></div><div><h4 className="font-bold text-torre text-body mb-1">{item.title}</h4>{item.desc && <p className="text-small text-gray-500 leading-relaxed">{item.desc}</p>}</div></div>
+                {[{ title: "Calendario Unificado", desc: "Visibilidad total de todas las reservas" }, { title: "Métricas de Uso", desc: "Identifica patrones y espacios más solicitados" }, { title: "Prevención Automática", desc: "Reglas configurables que evitan conflictos. Áreas comunes con correcto uso, reglas claras y una comunidad más tranquila." }].map((item, i) => (
+                  <div key={i} className="flex gap-5 items-start"><div className="w-12 h-12 bg-white rounded-2xl flex items-center justify-center text-domo shrink-0 shadow-sm group-hover:bg-domo group-hover:text-white transition-colors"><Check size={20} /></div><div><h4 className="font-bold text-torre text-body mb-1">{item.title}</h4><p className="text-small text-gray-500 leading-relaxed">{item.desc}</p></div></div>
                 ))}
               </div>
             </div>

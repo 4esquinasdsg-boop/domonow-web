@@ -3,7 +3,7 @@ import { Button } from '../Button';
 import { ImageCarousel } from '../ImageCarousel';
 import { HowItWorksSection } from '../HowItWorksSection';
 import {
-  TrendingUp, FileBarChart, PieChart, Bell,
+  TrendingUp, FileBarChart, PieChart, Bell, Shield,
   X, Check, Quote, Database, Eye, Share2, ClipboardList
 } from 'lucide-react';
 
@@ -23,10 +23,10 @@ export const FinancialPage: React.FC<FinancialPageProps> = ({ onOpenDemo }) => {
   ];
 
   const useCases = [
-    { category: "Urgentes", description: "Decisiones urgentes que no pueden esperar semanas", icon: <Bell size={20} />, image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&q=80&w=800" },
-    { category: "Votaciones", description: "Votaciones que antes se hacían por WhatsApp o papel", icon: <ClipboardList size={20} />, image: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&q=80&w=800" },
-    { category: "Quórum", description: "Reclamaciones por quórum o falta de información", icon: <PieChart size={20} />, image: "https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&q=80&w=800" },
-    { category: "Actas", description: "Actas que antes tomaban días en elaborarse", icon: <FileBarChart size={20} />, image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&q=80&w=800" }
+    { category: "Confianza", description: "Desconfianza por falta de información clara sobre gastos", icon: <Shield size={20} />, image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&q=80&w=800" },
+    { category: "Claridad", description: "Residentes que no saben cuánto deben ni cuándo vence", icon: <Eye size={20} />, image: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&q=80&w=800" },
+    { category: "Agilidad", description: "Reportes contables que toman días en generarse", icon: <FileBarChart size={20} />, image: "https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&q=80&w=800" },
+    { category: "Recaudo", description: "Morosidad sin seguimiento ni alertas oportunas", icon: <TrendingUp size={20} />, image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&q=80&w=800" }
   ];
 
   return (
@@ -43,15 +43,15 @@ export const FinancialPage: React.FC<FinancialPageProps> = ({ onOpenDemo }) => {
                 GESTIÓN FINANCIERA
               </span>
               <h1 className="text-h2 md:text-h1 font-bold leading-tight mb-6 text-torre">
-                "¿Cuánto se debe? ¿En qué se gastó?<br />
-                <span className="text-domo">¿Por qué no lo sabía?"</span>
+                "¿Quién debe?<br />
+                <span className="text-domo">¿En qué se gastó?"</span>
               </h1>
               <div className="prose text-lead text-gray-500 mb-8 leading-relaxed">
-                <p className="mb-4">
-                  Los residentes desconfían y la administración se desgasta explicando reportes financieros complejos o manuales.
+                <p className="mb-4 text-torre font-bold">
+                  ¿Excel desactualizado e información que no cuadra?
                 </p>
                 <p>
-                  <strong className="text-torre">DomoNow facilita la gestión financiera</strong> convirtiendo los reportes en información clara, organizada y fácil de entender, mejorando la transparencia y la confianza en la propiedad.
+                  <strong className="text-torre">DomoNow centraliza finanzas en tiempo real.</strong> Transparencia total, siempre disponible.
                 </p>
               </div>
               <div className="flex gap-4"><Button size="lg" onClick={onOpenDemo} className="shadow-xl shadow-domo/20">Conoce cómo funciona</Button></div>
@@ -126,8 +126,8 @@ export const FinancialPage: React.FC<FinancialPageProps> = ({ onOpenDemo }) => {
             <div className="bg-white p-8 md:p-10 rounded-[2.5rem] shadow-xl shadow-gray-200/50 border border-gray-100 group hover:border-red-100 transition-colors duration-300 flex flex-col h-full">
               <div className="flex items-center gap-3 mb-8"><div className="w-8 h-8 rounded-full bg-red-50 flex items-center justify-center text-red-400"><X size={16} strokeWidth={3} /></div><span className="font-bold text-gray-400 uppercase tracking-widest text-[10px] md:text-tiny">Lo que pasa hoy</span></div>
               <div className="space-y-8 flex-grow">
-                {[{ title: "Falta de claridad sobre ingresos y gastos", desc: "" }, { title: "Dependencia de procesos manuales", desc: "" }, { title: "Falta de transparencia ante residentes y consejo", desc: "" }].map((item, i) => (
-                  <div key={i} className="flex gap-5 items-start"><div className="w-12 h-12 bg-gray-50 rounded-2xl flex items-center justify-center text-gray-400 shrink-0 group-hover:bg-red-50 group-hover:text-red-400 transition-colors"><X size={20} /></div><div><h4 className="font-bold text-torre text-body mb-1">{item.title}</h4></div></div>
+                {[{ title: "Información Dispersa", desc: "Estados de cuenta en Excel" }, { title: "Falta de Visibilidad", desc: "No sabes quién debe, cuánto" }, { title: "Desconfianza Recurrente", desc: "Residentes dudan de los números" }].map((item, i) => (
+                  <div key={i} className="flex gap-5 items-start"><div className="w-12 h-12 bg-gray-50 rounded-2xl flex items-center justify-center text-gray-400 shrink-0 group-hover:bg-red-50 group-hover:text-red-400 transition-colors"><X size={20} /></div><div><h4 className="font-bold text-torre text-body mb-1">{item.title}</h4><p className="text-small text-gray-500 leading-relaxed">{item.desc}</p></div></div>
                 ))}
               </div>
             </div>
@@ -136,8 +136,8 @@ export const FinancialPage: React.FC<FinancialPageProps> = ({ onOpenDemo }) => {
             <div className="bg-[#F9F5FF] p-8 md:p-10 rounded-[2.5rem] shadow-xl shadow-domo/5 border border-purple-100 group hover:border-domo/30 transition-colors duration-300 flex flex-col h-full">
               <div className="flex items-center gap-3 mb-8"><div className="w-8 h-8 rounded-full bg-domo/10 flex items-center justify-center text-domo"><Check size={16} strokeWidth={3} /></div><span className="font-bold text-domo uppercase tracking-widest text-[10px] md:text-tiny">Con DomoNow obtienes</span></div>
               <div className="space-y-8 flex-grow">
-                {[{ title: "Seguimiento de ingresos y gastos", desc: "" }, { title: "Reporte de morosidad", desc: "" }, { title: "Generación de informes financieros", desc: "" }, { title: "Notificaciones de vencimientos y pagos pendientes", desc: "La gestión financiera deja de ser un foco de tensión y se convierte en un respaldo para la administración." }].map((item, i) => (
-                  <div key={i} className="flex gap-5 items-start"><div className="w-12 h-12 bg-white rounded-2xl flex items-center justify-center text-domo shrink-0 shadow-sm group-hover:bg-domo group-hover:text-white transition-colors"><Check size={20} /></div><div><h4 className="font-bold text-torre text-body mb-1">{item.title}</h4>{item.desc && <p className="text-small text-gray-500 leading-relaxed">{item.desc}</p>}</div></div>
+                {[{ title: "Panel Financiero Centralizado", desc: "Información contable en un solo lugar" }, { title: "Transparencia Total", desc: "Estados de cuenta por residente" }, { title: "Control Proactivo", desc: "Alertas automáticas de vencimientos. La gestión financiera deja de ser un foco de tensión y se convierte en un respaldo para la administración." }].map((item, i) => (
+                  <div key={i} className="flex gap-5 items-start"><div className="w-12 h-12 bg-white rounded-2xl flex items-center justify-center text-domo shrink-0 shadow-sm group-hover:bg-domo group-hover:text-white transition-colors"><Check size={20} /></div><div><h4 className="font-bold text-torre text-body mb-1">{item.title}</h4><p className="text-small text-gray-500 leading-relaxed">{item.desc}</p></div></div>
                 ))}
               </div>
             </div>

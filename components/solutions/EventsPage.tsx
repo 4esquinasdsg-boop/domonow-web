@@ -43,15 +43,15 @@ export const EventsPage: React.FC<EventsPageProps> = ({ onOpenDemo }) => {
                 EVENTOS
               </span>
               <h1 className="text-h2 md:text-h1 font-bold leading-tight mb-6 text-torre">
-                "¿Quién viene al taller?<br />
-                <span className="text-domo">¿Quedan cupos?"</span>
+                "No asistió nadie<br />
+                <span className="text-domo">a la actividad"</span>
               </h1>
               <div className="prose text-lead text-gray-500 mb-8 leading-relaxed">
-                <p className="mb-4">
-                  Eventos que nadie conoce, poca participación y desorden en el registro.
+                <p className="mb-4 text-torre font-bold">
+                  La baja participación ocasionan comunidades desconectadas.
                 </p>
                 <p>
-                  <strong className="text-torre">DomoNow te permite planear</strong>, comunicar y gestionar eventos desde un solo lugar, con inscripciones directas, recordatorios automáticos y control de asistencia real.
+                  <strong className="text-torre">DomoNow facilita eventos.</strong> Inscripciones y recordatorios automáticos.
                 </p>
               </div>
               <div className="flex gap-4"><Button size="lg" onClick={onOpenDemo} className="shadow-xl shadow-domo/20">Conoce cómo funciona</Button></div>
@@ -121,8 +121,8 @@ export const EventsPage: React.FC<EventsPageProps> = ({ onOpenDemo }) => {
             <div className="bg-white p-8 md:p-10 rounded-[2.5rem] shadow-xl shadow-gray-200/50 border border-gray-100 group hover:border-red-100 transition-colors duration-300 flex flex-col h-full">
               <div className="flex items-center gap-3 mb-8"><div className="w-8 h-8 rounded-full bg-red-50 flex items-center justify-center text-red-400"><X size={16} strokeWidth={3} /></div><span className="font-bold text-gray-400 uppercase tracking-widest text-[10px] md:text-tiny">Lo que pasa hoy</span></div>
               <div className="space-y-8 flex-grow">
-                {[{ title: "Poco interés y baja participación de los residentes", desc: "" }, { title: "Invitaciones que no llegan o se pierden", desc: "" }, { title: "Listas de asistencia improvisadas", desc: "" }].map((item, i) => (
-                  <div key={i} className="flex gap-5 items-start"><div className="w-12 h-12 bg-gray-50 rounded-2xl flex items-center justify-center text-gray-400 shrink-0 group-hover:bg-red-50 group-hover:text-red-400 transition-colors"><X size={20} /></div><div><h4 className="font-bold text-torre text-body mb-1">{item.title}</h4></div></div>
+                {[{ title: "Eventos Invisibles", desc: "Los residentes se enteran tarde o no se enteran" }, { title: "Gestión Reactiva", desc: "Atiendes problemas de asistencia" }, { title: "Comunicación Dispersa", desc: "Whatsapp, correos, llamadas... información por todas partes" }].map((item, i) => (
+                  <div key={i} className="flex gap-5 items-start"><div className="w-12 h-12 bg-gray-50 rounded-2xl flex items-center justify-center text-gray-400 shrink-0 group-hover:bg-red-50 group-hover:text-red-400 transition-colors"><X size={20} /></div><div><h4 className="font-bold text-torre text-body mb-1">{item.title}</h4><p className="text-small text-gray-500 leading-relaxed">{item.desc}</p></div></div>
                 ))}
               </div>
             </div>
@@ -131,8 +131,8 @@ export const EventsPage: React.FC<EventsPageProps> = ({ onOpenDemo }) => {
             <div className="bg-[#F9F5FF] p-8 md:p-10 rounded-[2.5rem] shadow-xl shadow-domo/5 border border-purple-100 group hover:border-domo/30 transition-colors duration-300 flex flex-col h-full">
               <div className="flex items-center gap-3 mb-8"><div className="w-8 h-8 rounded-full bg-domo/10 flex items-center justify-center text-domo"><Check size={16} strokeWidth={3} /></div><span className="font-bold text-domo uppercase tracking-widest text-[10px] md:text-tiny">Con DomoNow obtienes</span></div>
               <div className="space-y-8 flex-grow">
-                {[{ title: "Crear eventos en segundos", desc: "" }, { title: "Inscripción directa desde la app", desc: "" }, { title: "Enviar invitaciones y recordatorios automáticos", desc: "" }, { title: "Registrar asistencia de forma digital", desc: "" }, { title: "Programar campañas internas", desc: "" }].map((item, i) => (
-                  <div key={i} className="flex gap-5 items-start"><div className="w-12 h-12 bg-white rounded-2xl flex items-center justify-center text-domo shrink-0 shadow-sm group-hover:bg-domo group-hover:text-white transition-colors"><Check size={20} /></div><div><h4 className="font-bold text-torre text-body mb-1">{item.title}</h4>{item.desc && <p className="text-small text-gray-500 leading-relaxed">{item.desc}</p>}</div></div>
+                {[{ title: "Comunidad Activa", desc: "Calendario centralizado visible para todos" }, { title: "Participación Real", desc: "Métricas en tiempo real de asistencia" }, { title: "Comunicación Eficiente", desc: "Notificaciones automáticas. Con DomoNow puedes crear eventos, gestionar inscripciones y llevar un registro real, sin depender de mensajes sueltos o planillas." }].map((item, i) => (
+                  <div key={i} className="flex gap-5 items-start"><div className="w-12 h-12 bg-white rounded-2xl flex items-center justify-center text-domo shrink-0 shadow-sm group-hover:bg-domo group-hover:text-white transition-colors"><Check size={20} /></div><div><h4 className="font-bold text-torre text-body mb-1">{item.title}</h4><p className="text-small text-gray-500 leading-relaxed">{item.desc}</p></div></div>
                 ))}
               </div>
             </div>

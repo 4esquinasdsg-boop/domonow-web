@@ -75,15 +75,14 @@ export const CommunicationsPage: React.FC<CommunicationsPageProps> = ({ onOpenDe
                                 COMUNICACIONES
                             </span>
                             <h1 className="text-h2 md:text-h1 font-bold leading-tight mb-6 text-torre">
-                                "El mismo aviso por WhatsApp,<br />
-                                <span className="text-domo">y nadie se enteró."</span>
+                                "El mismo aviso, nadie se enteró."
                             </h1>
                             <div className="prose text-lead text-gray-500 mb-8 leading-relaxed">
-                                <p className="mb-4">
-                                    ¿Mensajes perdidos, residentes desinformados y malentendidos constantes, <strong className="text-torre">te identificas?</strong>
+                                <p className="mb-4 text-torre font-bold">
+                                    Mensajes perdidos, residentes desinformados, malentendidos constantes.
                                 </p>
                                 <p>
-                                    <strong className="text-torre">DomoNow centraliza</strong> toda la comunicación oficial en un solo canal, garantizando que cada aviso llegue, se lea y quede registrado.
+                                    <strong className="text-torre">DomoNow centraliza todo</strong> en un canal oficial. Cada aviso llega y queda registrado.
                                 </p>
                             </div>
                             <div className="flex gap-4">
@@ -173,19 +172,22 @@ export const CommunicationsPage: React.FC<CommunicationsPageProps> = ({ onOpenDe
 
             <HowItWorksSection
                 title="Conoce cómo funciona"
+                subtitle="Cómo funciona"
+                leftLabel="Software tradicional:"
+                rightLabel="Con DomoNow:"
                 imageSrc="/assets/Modulos/comunicaciones/comunicacioneshero.png"
                 items={[
                     {
-                        problem: "Avisos que se pierden en chats o carteleras.",
-                        solution: "Comunicados oficiales de la administración."
+                        problem: "Se continúa usando WhatsApp",
+                        solution: "Muro de comunicaciones"
                     },
                     {
-                        problem: "Mensajes repetidos, llamadas constantes y malentendidos.",
-                        solution: "Avisos urgentes y novedades del conjunto."
+                        problem: "Avisos básicos sin segmentación",
+                        solution: "Segmentación por torres o grupos"
                     },
                     {
-                        problem: "Residentes desinformados sobre la gestión.",
-                        solution: "Mensajes visibles para residentes, y operativos."
+                        problem: "Un archivo adjunto máximo",
+                        solution: "Múltiples archivos (fotos, videos, PDFs)"
                     }
                 ]}
             />
@@ -234,7 +236,7 @@ export const CommunicationsPage: React.FC<CommunicationsPageProps> = ({ onOpenDe
                                     </div>
                                     <div>
                                         <h4 className="font-bold text-torre text-body mb-1">Avisos que se pierden</h4>
-                                        <p className="text-small text-gray-500 leading-relaxed">Información perdida en chats de WhatsApp o carteleras físicas que nadie lee.</p>
+                                        <p className="text-small text-gray-500 leading-relaxed">Información perdida en chats o carteleras físicas que nadie lee</p>
                                     </div>
                                 </div>
                                 <div className="flex gap-5 items-start">
@@ -243,7 +245,7 @@ export const CommunicationsPage: React.FC<CommunicationsPageProps> = ({ onOpenDe
                                     </div>
                                     <div>
                                         <h4 className="font-bold text-torre text-body mb-1">Ruido Operativo</h4>
-                                        <p className="text-small text-gray-500 leading-relaxed">Mensajes repetidos, llamadas constantes y malentendidos frecuentes.</p>
+                                        <p className="text-small text-gray-500 leading-relaxed">Mensajes repetidos, llamadas constantes y malentendidos frecuentes</p>
                                     </div>
                                 </div>
                                 <div className="flex gap-5 items-start">
@@ -252,7 +254,7 @@ export const CommunicationsPage: React.FC<CommunicationsPageProps> = ({ onOpenDe
                                     </div>
                                     <div>
                                         <h4 className="font-bold text-torre text-body mb-1">Sin Trazabilidad</h4>
-                                        <p className="text-small text-gray-500 leading-relaxed">Imposible saber quién leyó el mensaje o encontrar comunicados antiguos.</p>
+                                        <p className="text-small text-gray-500 leading-relaxed">Imposible saber quién leyó el mensaje o encontrar comunicados antiguos</p>
                                     </div>
                                 </div>
                             </div>
@@ -274,7 +276,7 @@ export const CommunicationsPage: React.FC<CommunicationsPageProps> = ({ onOpenDe
                                     </div>
                                     <div>
                                         <h4 className="font-bold text-torre text-body mb-1">Comunicados Oficiales</h4>
-                                        <p className="text-small text-gray-500 leading-relaxed">Envía información certificada que llega directo a la App del residente.</p>
+                                        <p className="text-small text-gray-500 leading-relaxed">Envía información certificada que llega directo a la App del residente</p>
                                     </div>
                                 </div>
                                 <div className="flex gap-5 items-start">
@@ -283,7 +285,7 @@ export const CommunicationsPage: React.FC<CommunicationsPageProps> = ({ onOpenDe
                                     </div>
                                     <div>
                                         <h4 className="font-bold text-torre text-body mb-1">Alertas Inmediatas</h4>
-                                        <p className="text-small text-gray-500 leading-relaxed">Notificaciones push para emergencias o novedades críticas al instante.</p>
+                                        <p className="text-small text-gray-500 leading-relaxed">Notificaciones push para emergencias o novedades críticas al instante</p>
                                     </div>
                                 </div>
                                 <div className="flex gap-5 items-start">
@@ -292,13 +294,13 @@ export const CommunicationsPage: React.FC<CommunicationsPageProps> = ({ onOpenDe
                                     </div>
                                     <div>
                                         <h4 className="font-bold text-torre text-body mb-1">Visibilidad Total</h4>
-                                        <p className="text-small text-gray-500 leading-relaxed">Historial claro y accesible en todo momento para residentes y juntas.</p>
+                                        <p className="text-small text-gray-500 leading-relaxed">Historial claro y accesible en todo momento para residentes y juntas</p>
                                     </div>
                                 </div>
                             </div>
                         </div>
-
                     </div>
+
                 </div>
             </section>
 

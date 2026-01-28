@@ -77,11 +77,11 @@ export const Hero: React.FC<HeroProps> = ({ onOpenDemo }) => {
           {/* Right: Typography */}
           <div className="xl:w-1/2 text-center xl:text-left px-4 overflow-hidden">
             <h1 className="text-[2rem] sm:text-h3 md:text-h2 lg:text-display font-bold text-torre mb-8 tracking-tight leading-tight break-words">
-              ¿Administras tu<br />copropiedad con<br /><span className="text-transparent bg-clip-text bg-gradient-to-r from-domo to-horizonte">mil herramientas</span>?
+              ¿Cansado de vivir<br /><span className="text-transparent bg-clip-text bg-gradient-to-r from-domo to-horizonte">apagando incendios</span>?
             </h1>
 
             <p className="text-lead text-gray-500 mb-10 max-w-lg mx-auto xl:mx-0 leading-relaxed text-center xl:text-left">
-              DomoNow es la app integral que centraliza comunicación con residentes, control de solicitudes, gestión financiera y más.
+              Administrar tus propiedades no debería ser tan complicado. DomoNow centraliza todo en una app integral, simple, segura y para toda tu comunidad.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center xl:justify-start">

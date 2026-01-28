@@ -1,11 +1,7 @@
 import React from 'react';
 import { ContactForm } from './ContactForm';
 
-interface ContactFormSectionProps {
-  onNavigate?: (target: string) => void;
-}
-
-export const ContactFormSection: React.FC<ContactFormSectionProps> = ({ onNavigate }) => {
+export const ContactFormSection: React.FC = () => {
   return (
     <section id="contact" className="relative py-24 bg-[#F9F5FF] overflow-hidden">
 
@@ -33,7 +29,7 @@ export const ContactFormSection: React.FC<ContactFormSectionProps> = ({ onNaviga
           {/* Right Side: The Clean Form (Wrapper Card) */}
           <div className="lg:w-7/12 w-full">
             <div className="bg-white rounded-[2.5rem] p-8 md:p-12 shadow-[0_20px_50px_rgba(0,0,0,0.05)] border border-purple-50 relative overflow-hidden">
-              <ContactForm onNavigate={onNavigate} />
+              <ContactForm />
             </div>
           </div>
 

@@ -47,11 +47,10 @@ export const AccessControlPage: React.FC<AccessControlPageProps> = ({ onOpenDemo
                     <div className="flex flex-col lg:flex-row items-center gap-16 lg:gap-20">
                         <div className="lg:w-5/12 relative z-20">
                             <span className="block text-tiny font-bold tracking-widest uppercase text-gray-400 mb-4">
-                                CONTROL DE ACCESOS
+                                PORTERÍA
                             </span>
                             <h1 className="text-h2 md:text-h1 font-bold leading-tight mb-6 text-torre">
-                                "¿Quién entró? ¿A qué hora?<br />
-                                <span className="text-domo">¿A cuál apartamento?"</span>
+                                "¿Quién entró? ¿A qué hora?"
                             </h1>
                             <div className="prose text-lead text-gray-500 mb-8 leading-relaxed">
                                 <p className="mb-4">
@@ -111,19 +110,22 @@ export const AccessControlPage: React.FC<AccessControlPageProps> = ({ onOpenDemo
             {/* NEW: Conoce cómo funciona Section */}
             <HowItWorksSection
                 title="Conoce cómo funciona"
+                subtitle="Cómo funciona"
+                leftLabel="Software tradicional:"
+                rightLabel="Con DomoNow:"
                 imageSrc="/assets/Modulos/accesos/accesoshero.png"
                 items={[
                     {
-                        problem: "Ingresos sin registro claro.",
-                        solution: "Registrar visitantes con datos básicos desde la app."
+                        problem: "Formulario básico de registro",
+                        solution: "Códigos QR de ingreso"
                     },
                     {
-                        problem: "Conflictos entre residentes, portería y administración.",
-                        solution: "Generar pases digitales."
+                        problem: "Registro de ingresos en Excel",
+                        solution: "Validación instantánea"
                     },
                     {
-                        problem: "Dependencia total del personal de turno.",
-                        solution: "Consultar reportes de accesos por fecha y residente."
+                        problem: "Consulta manual por el portero",
+                        solution: "Registro automático"
                     }
                 ]}
             />
@@ -155,9 +157,9 @@ export const AccessControlPage: React.FC<AccessControlPageProps> = ({ onOpenDemo
                             </div>
                             <div className="space-y-8 flex-grow">
                                 {[
-                                    { title: "Ingresos sin registro claro", desc: "" },
-                                    { title: "Conflictos entre residentes, portería y administración", desc: "" },
-                                    { title: "Dependencia total del personal de turno", desc: "" }
+                                    { title: "Registros Ilegibles", desc: "Cuadernos con información imposible de consultar" },
+                                    { title: "Búsqueda Manual", desc: "Revisar papel por papel para encontrar un ingreso" },
+                                    { title: "Sin Trazabilidad", desc: "No hay forma de verificar quién entró" }
                                 ].map((item, i) => (
                                     <div key={i} className="flex gap-5 items-start">
                                         <div className="w-12 h-12 bg-gray-50 rounded-2xl flex items-center justify-center text-gray-400 shrink-0 group-hover:bg-red-50 group-hover:text-red-400 transition-colors">
@@ -165,6 +167,7 @@ export const AccessControlPage: React.FC<AccessControlPageProps> = ({ onOpenDemo
                                         </div>
                                         <div>
                                             <h4 className="font-bold text-torre text-body mb-1">{item.title}</h4>
+                                            <p className="text-small text-gray-500 leading-relaxed">{item.desc}</p>
                                         </div>
                                     </div>
                                 ))}
@@ -179,9 +182,9 @@ export const AccessControlPage: React.FC<AccessControlPageProps> = ({ onOpenDemo
                             </div>
                             <div className="space-y-8 flex-grow">
                                 {[
-                                    { title: "Registrar visitantes con datos básicos desde la app", desc: "" },
-                                    { title: "Generar pases digitales", desc: "" },
-                                    { title: "Consultar reportes de accesos por fecha y residente", desc: "Todo queda registrado, validado y disponible cuando se necesita." }
+                                    { title: "Historial Completo", desc: "Base de datos consultable de todos los ingresos" },
+                                    { title: "Filtros Inteligentes", desc: "Encuentra cualquier registro por fechas o residente" },
+                                    { title: "Respaldo Automático", desc: "Evidencia documentada que protege tu gestión. Todo queda registrado, validado y disponible cuando se necesita." }
                                 ].map((item, i) => (
                                     <div key={i} className="flex gap-5 items-start">
                                         <div className="w-12 h-12 bg-white rounded-2xl flex items-center justify-center text-domo shrink-0 shadow-sm group-hover:bg-domo group-hover:text-white transition-colors">
@@ -189,7 +192,7 @@ export const AccessControlPage: React.FC<AccessControlPageProps> = ({ onOpenDemo
                                         </div>
                                         <div>
                                             <h4 className="font-bold text-torre text-body mb-1">{item.title}</h4>
-                                            {item.desc && <p className="text-small text-gray-500 leading-relaxed">{item.desc}</p>}
+                                            <p className="text-small text-gray-500 leading-relaxed">{item.desc}</p>
                                         </div>
                                     </div>
                                 ))}

@@ -11,17 +11,19 @@ import {
 } from 'lucide-react';
 
 interface PropertyTypesPageProps {
-    initialTab?: string;
     onOpenDemo: (type?: string) => void;
 }
 
-export const PropertyTypesPage: React.FC<PropertyTypesPageProps> = ({ initialTab, onOpenDemo }) => {
+import { useLocation } from 'react-router-dom';
 
-    // Scroll handling
+export const PropertyTypesPage: React.FC<PropertyTypesPageProps> = ({ onOpenDemo }) => {
+    const location = useLocation();
+
+    // Scroll handling for hashes
     useEffect(() => {
-        if (initialTab) {
-            const sectionId = initialTab.toLowerCase();
-            const element = document.getElementById(sectionId);
+        if (location.hash) {
+            const id = location.hash.slice(1);
+            const element = document.getElementById(id);
             if (element) {
                 setTimeout(() => {
                     element.scrollIntoView({ behavior: 'smooth' });
@@ -30,7 +32,7 @@ export const PropertyTypesPage: React.FC<PropertyTypesPageProps> = ({ initialTab
         } else {
             window.scrollTo(0, 0);
         }
-    }, [initialTab]);
+    }, [location]);
 
     // Images Collections
     const residencialImages = [

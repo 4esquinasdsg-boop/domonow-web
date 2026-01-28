@@ -6,10 +6,9 @@ interface DemoModalProps {
   isOpen: boolean;
   onClose: () => void;
   demoType?: string;
-  onNavigate?: (target: string) => void;
 }
 
-export const DemoModal: React.FC<DemoModalProps> = ({ isOpen, onClose, demoType = 'general', onNavigate }) => {
+export const DemoModal: React.FC<DemoModalProps> = ({ isOpen, onClose, demoType = 'general' }) => {
   // Prevent body scroll when modal is open
   useEffect(() => {
     if (isOpen) {
@@ -44,12 +43,6 @@ export const DemoModal: React.FC<DemoModalProps> = ({ isOpen, onClose, demoType 
       text: "Descubre cómo DomoNow centraliza la seguridad, las finanzas y la convivencia en una sola plataforma intuitiva.",
       image: "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=800"
     }
-  };
-
-  // Handler that closes modal and then navigates
-  const handleNavigateFromModal = (target: string) => {
-    onClose(); // Close the modal first
-    onNavigate?.(target); // Then navigate
   };
 
   const content = contentMap[demoType] || contentMap['general'];
@@ -102,7 +95,7 @@ export const DemoModal: React.FC<DemoModalProps> = ({ isOpen, onClose, demoType 
         {/* Right Column: Form */}
         <div className="w-full lg:w-7/12 overflow-y-auto max-h-[90vh]">
           <div className="p-8 md:p-12 lg:p-16">
-            <ContactForm onNavigate={handleNavigateFromModal} />
+            <ContactForm />
           </div>
         </div>
 

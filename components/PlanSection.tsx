@@ -7,16 +7,16 @@ interface PlanSectionProps {
 
 const steps = [
   {
-    title: "Agenda tu demo sin compromiso",
-    desc: "Te mostramos cómo funciona DomoNow en TU contexto: Tus dolores de cabeza y tus prioridades."
+    title: "Agenda tu demo",
+    desc: "Te mostramos cómo funciona la app en TU contexto: Tus dolores de cabeza y tus prioridades."
   },
   {
-    title: "Prueba piloto con cero riesgos",
+    title: "Prueba piloto sin riesgos",
     desc: "Implementamos DomoNow en una de tus propiedades durante 30 días. Sin letra pequeña."
   },
   {
-    title: "Activa y empieza a ver resultados",
-    desc: "Configuramos todo por ti: usuarios, permisos, módulos. Tú solo te enfocas en administrar mejor."
+    title: "Activa y ve resultados reales",
+    desc: "Configuramos por ti: usuarios, permisos, módulos. Tú solo te enfocas en administrar mejor."
   }
 ];
 

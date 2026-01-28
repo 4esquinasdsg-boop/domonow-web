@@ -11,7 +11,7 @@ const problems = [
   { title: "\"Reporté eso hace semanas y sigue igual\"", desc: "El daño sigue ahí y nadie sabe que lo gestionaste." },
   { title: "\"¿En qué están gastando nuestra plata?\"", desc: "No hay forma simple de mostrar transparencia." },
   { title: "Llamadas a cualquier hora", desc: "Tu número personal es el buzón de quejas 24/7." },
-  { title: "\"Comunicaste claro, pero hay conflicto\"", desc: "Alguien no vio el mensaje y lo malinterpretó." },
+  { title: "\"Comunicaste claro, pero hay conflicto\"", desc: "Alguien no vio el mensaje y lo malinterpretó" },
   { title: "\"Dos familias reservaron lo mismo\"", desc: "Misma fecha, mismo salón. El cuaderno no funciona." },
   { title: "\"A mí nunca me dicen nada aquí\"", desc: "Envías 3 avisos y siempre alguien \"no se enteró\"." }
 ];

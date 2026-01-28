@@ -50,11 +50,11 @@ export const RequestsPage: React.FC<RequestsPageProps> = ({ onOpenDemo }) => {
                 <span className="text-domo">¿Ya lo atendieron?"</span>
               </h1>
               <div className="prose text-lead text-gray-500 mb-8 leading-relaxed">
-                <p className="mb-4">
-                  Reclamos perdidos y residentes molestos por la falta de respuesta.
+                <p className="mb-4 text-torre font-bold">
+                  Residentes molestos por la falta de respuesta.
                 </p>
                 <p>
-                  <strong className="text-torre">DomoNow organiza cada solicitud</strong> con responsable asignado, seguimiento paso a paso y cierre con evaluación, eliminando los vacíos de comunicación.
+                  <strong className="text-torre">DomoNow organiza cada solicitud.</strong> Con responsable y seguimiento paso a paso.
                 </p>
               </div>
               <div className="flex gap-4"><Button size="lg" onClick={onOpenDemo} className="shadow-xl shadow-domo/20">Conoce cómo funciona</Button></div>
@@ -132,8 +132,8 @@ export const RequestsPage: React.FC<RequestsPageProps> = ({ onOpenDemo }) => {
             <div className="bg-white p-8 md:p-10 rounded-[2.5rem] shadow-xl shadow-gray-200/50 border border-gray-100 group hover:border-red-100 transition-colors duration-300 flex flex-col h-full">
               <div className="flex items-center gap-3 mb-8"><div className="w-8 h-8 rounded-full bg-red-50 flex items-center justify-center text-red-400"><X size={16} strokeWidth={3} /></div><span className="font-bold text-gray-400 uppercase tracking-widest text-[10px] md:text-tiny">Lo que pasa hoy</span></div>
               <div className="space-y-8 flex-grow">
-                {[{ title: "No hay responsables claros", desc: "" }, { title: "Nadie sabe en qué estado va cada caso", desc: "" }, { title: "Los residentes sienten que “nadie responde”", desc: "" }].map((item, i) => (
-                  <div key={i} className="flex gap-5 items-start"><div className="w-12 h-12 bg-gray-50 rounded-2xl flex items-center justify-center text-gray-400 shrink-0 group-hover:bg-red-50 group-hover:text-red-400 transition-colors"><X size={20} /></div><div><h4 className="font-bold text-torre text-body mb-1">{item.title}</h4></div></div>
+                {[{ title: "Solicitudes Perdidas", desc: "Mensajes que se olvidan y residentes frustrados" }, { title: "Responsabilidad Difusa", desc: "Nadie sabe quién debe resolver qué ni en cuánto tiempo" }, { title: "Percepción Negativa", desc: "Aunque trabajes, los residentes sienten que nada se resuelve" }].map((item, i) => (
+                  <div key={i} className="flex gap-5 items-start"><div className="w-12 h-12 bg-gray-50 rounded-2xl flex items-center justify-center text-gray-400 shrink-0 group-hover:bg-red-50 group-hover:text-red-400 transition-colors"><X size={20} /></div><div><h4 className="font-bold text-torre text-body mb-1">{item.title}</h4><p className="text-small text-gray-500 leading-relaxed">{item.desc}</p></div></div>
                 ))}
               </div>
             </div>
@@ -142,8 +142,8 @@ export const RequestsPage: React.FC<RequestsPageProps> = ({ onOpenDemo }) => {
             <div className="bg-[#F9F5FF] p-8 md:p-10 rounded-[2.5rem] shadow-xl shadow-domo/5 border border-purple-100 group hover:border-domo/30 transition-colors duration-300 flex flex-col h-full">
               <div className="flex items-center gap-3 mb-8"><div className="w-8 h-8 rounded-full bg-domo/10 flex items-center justify-center text-domo"><Check size={16} strokeWidth={3} /></div><span className="font-bold text-domo uppercase tracking-widest text-[10px] md:text-tiny">Con DomoNow obtienes</span></div>
               <div className="space-y-8 flex-grow">
-                {[{ title: "Centralizar todas las solicitudes en un solo canal", desc: "" }, { title: "Asignar responsables y tiempos de respuesta", desc: "" }, { title: "Dejar registro de toda la gestión realizada", desc: "Todo queda documentado. Nada se pierde. Todo se responde." }].map((item, i) => (
-                  <div key={i} className="flex gap-5 items-start"><div className="w-12 h-12 bg-white rounded-2xl flex items-center justify-center text-domo shrink-0 shadow-sm group-hover:bg-domo group-hover:text-white transition-colors"><Check size={20} /></div><div><h4 className="font-bold text-torre text-body mb-1">{item.title}</h4>{item.desc && <p className="text-small text-gray-500 leading-relaxed">{item.desc}</p>}</div></div>
+                {[{ title: "Bandeja Centralizada", desc: "Todas las solicitudes organizadas por tipo en un solo lugar" }, { title: "Rendición de Cuentas Clara", desc: "Cada solicitud tiene responsable y seguimiento visible" }, { title: "Gestión Demostrable", desc: "Métricas de atención que prueban tu eficiencia ante la comunidad. Todo queda documentado. Nada se pierde. Todo se responde." }].map((item, i) => (
+                  <div key={i} className="flex gap-5 items-start"><div className="w-12 h-12 bg-white rounded-2xl flex items-center justify-center text-domo shrink-0 shadow-sm group-hover:bg-domo group-hover:text-white transition-colors"><Check size={20} /></div><div><h4 className="font-bold text-torre text-body mb-1">{item.title}</h4><p className="text-small text-gray-500 leading-relaxed">{item.desc}</p></div></div>
                 ))}
               </div>
             </div>
