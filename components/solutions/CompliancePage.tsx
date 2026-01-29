@@ -23,10 +23,10 @@ export const CompliancePage: React.FC<CompliancePageProps> = ({ onOpenDemo }) =>
   ];
 
   const useCases = [
-    { category: "Auditorías", description: "Preparación de auditorías sin correr a última hora", icon: <ClipboardCheck size={20} />, image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&q=80&w=800" },
-    { category: "Revisiones", description: "Revisiones periódicas con criterios claros y repetibles", icon: <ListChecks size={20} />, image: "https://images.unsplash.com/photo-1581094794329-cd1096a7a2e8?auto=format&fit=crop&q=80&w=800" },
-    { category: "Informes", description: "Informes listos para juntas, consejos o entes reguladores", icon: <FileText size={20} />, image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=800" },
-    { category: "Control", description: "Control de tareas críticas", icon: <LayoutDashboard size={20} />, image: "https://images.unsplash.com/photo-1507925921958-8a62f3d1a50d?auto=format&fit=crop&q=80&w=800" }
+    { category: "Auditorías", description: "Preparación de auditorías sin correr a última hora", icon: <ClipboardCheck size={20} />, image: "/assets/Modulos/NORMATIVO/CASO DE USO 1.png" },
+    { category: "Revisiones", description: "Revisiones periódicas con criterios claros y repetibles", icon: <ListChecks size={20} />, image: "/assets/Modulos/NORMATIVO/CASO DE USO 2.png" },
+    { category: "Informes", description: "Informes listos para juntas, consejos o entes reguladores", icon: <FileText size={20} />, image: "/assets/Modulos/NORMATIVO/CASO DE USO 3.png" },
+    { category: "Control", description: "Control de tareas críticas", icon: <LayoutDashboard size={20} />, image: "/assets/Modulos/NORMATIVO/CASO DE USO 4.png" }
   ];
 
   return (
@@ -63,7 +63,7 @@ export const CompliancePage: React.FC<CompliancePageProps> = ({ onOpenDemo }) =>
                 <div className="relative z-0 ml-8 md:ml-24 transform rotate-1 hover:rotate-0 transition-all duration-700">
                   <div className="rounded-[2.5rem] overflow-hidden shadow-2xl bg-white">
                     <img
-                      src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&q=80&w=1200"
+                      src="/assets/Modulos/NORMATIVO/HEADER.png"
                       alt="Vista del módulo de cumplimiento"
                       className="w-full h-auto object-cover opacity-90 hover:opacity-100 transition-opacity"
                     />
@@ -92,7 +92,7 @@ export const CompliancePage: React.FC<CompliancePageProps> = ({ onOpenDemo }) =>
 
       <HowItWorksSection
         title="Conoce cómo funciona"
-        imageSrc="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&q=80&w=1200"
+        imageSrc="/assets/Modulos/NORMATIVO/CÓMO FUNCIONA.png"
         items={[
           {
             problem: "Auditorías legales sin documentación en orden",
@@ -180,7 +180,7 @@ export const CompliancePage: React.FC<CompliancePageProps> = ({ onOpenDemo }) =>
             {useCases.map((item, index) => (
               <div key={index} className="relative h-[500px] rounded-[2rem] overflow-hidden group shadow-lg hover:shadow-2xl transition-all duration-500">
                 <div className="absolute inset-0 w-full h-full">
-                  <img src={item.image} alt={item.category} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                  <img src={item.image} alt={item.category} loading="lazy" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
                   <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-black/30"></div>
                 </div>
                 <div className="absolute top-6 left-6 z-10"><h3 className="text-h4 font-bold text-white drop-shadow-md tracking-tight">{item.category}</h3></div>

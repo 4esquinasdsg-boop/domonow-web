@@ -19,7 +19,7 @@ import { HelpCenterPage } from './components/HelpCenterPage';
 import { PrivacyPolicyPage } from './components/PrivacyPolicyPage';
 
 
-// Solutions
+// Soluciones bro
 import { CommunicationsPage } from './components/solutions/CommunicationsPage';
 import { AccessControlPage } from './components/solutions/AccessControlPage';
 import { EmergencyPage } from './components/solutions/EmergencyPage';

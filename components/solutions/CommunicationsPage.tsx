@@ -366,6 +366,7 @@ export const CommunicationsPage: React.FC<CommunicationsPageProps> = ({ onOpenDe
                                     <img
                                         src={item.image}
                                         alt={item.category}
+                                        loading="lazy"
                                         className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                                     />
                                     <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-black/30"></div>

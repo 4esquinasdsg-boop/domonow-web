@@ -34,9 +34,125 @@ const centerNodes: SpiderNode[] = [
     { id: 'votaciones', title: 'VOTACIONES', subtitle: 'Satisfacción de servicio', icon: <Vote size={20} />, side: 'center', row: 4 },
 ];
 
+// Image Viewer Component with drag-to-pan and zoom
+const ImageViewer: React.FC<{ src: string; onClose: () => void }> = ({ src, onClose }) => {
+    const [scale, setScale] = useState(1);
+    const [position, setPosition] = useState({ x: 0, y: 0 });
+    const [isDragging, setIsDragging] = useState(false);
+    const [dragStart, setDragStart] = useState({ x: 0, y: 0 });
+
+    const handleMouseDown = (e: React.MouseEvent) => {
+        setIsDragging(true);
+        setDragStart({ x: e.clientX - position.x, y: e.clientY - position.y });
+    };
+
+    const handleMouseMove = (e: React.MouseEvent) => {
+        if (!isDragging) return;
+        setPosition({
+            x: e.clientX - dragStart.x,
+            y: e.clientY - dragStart.y
+        });
+    };
+
+    const handleMouseUp = () => {
+        setIsDragging(false);
+    };
+
+    const zoomIn = () => setScale(prev => Math.min(prev + 0.25, 3));
+    const zoomOut = () => setScale(prev => Math.max(prev - 0.25, 0.5));
+    const resetView = () => { setScale(1); setPosition({ x: 0, y: 0 }); };
+
+    return (
+        <div
+            style={{
+                position: 'fixed',
+                inset: 0,
+                zIndex: 9999,
+                backgroundColor: '#f5f5f5'
+            }}
+        >
+            {/* Controls */}
+            <div style={{
+                position: 'fixed',
+                top: '20px',
+                right: '20px',
+                zIndex: 10001,
+                display: 'flex',
+                gap: '10px'
+            }}>
+                <button onClick={zoomOut} style={{
+                    width: '45px', height: '45px', borderRadius: '50%',
+                    backgroundColor: '#820ad1', color: 'white', border: 'none',
+                    fontSize: '24px', cursor: 'pointer', boxShadow: '0 4px 15px rgba(0,0,0,0.2)'
+                }}>−</button>
+                <button onClick={zoomIn} style={{
+                    width: '45px', height: '45px', borderRadius: '50%',
+                    backgroundColor: '#820ad1', color: 'white', border: 'none',
+                    fontSize: '24px', cursor: 'pointer', boxShadow: '0 4px 15px rgba(0,0,0,0.2)'
+                }}>+</button>
+                <button onClick={resetView} style={{
+                    width: '45px', height: '45px', borderRadius: '50%',
+                    backgroundColor: '#666', color: 'white', border: 'none',
+                    fontSize: '16px', cursor: 'pointer', boxShadow: '0 4px 15px rgba(0,0,0,0.2)'
+                }}>↺</button>
+                <button onClick={onClose} style={{
+                    width: '45px', height: '45px', borderRadius: '50%',
+                    backgroundColor: '#333', color: 'white', border: 'none',
+                    fontSize: '20px', cursor: 'pointer', boxShadow: '0 4px 15px rgba(0,0,0,0.2)'
+                }}>✕</button>
+            </div>
+
+            {/* Zoom indicator */}
+            <div style={{
+                position: 'fixed',
+                bottom: '20px',
+                left: '20px',
+                zIndex: 10001,
+                backgroundColor: 'rgba(0,0,0,0.7)',
+                color: 'white',
+                padding: '8px 16px',
+                borderRadius: '20px',
+                fontSize: '14px'
+            }}>
+                Zoom: {Math.round(scale * 100)}%
+            </div>
+
+            {/* Image Container */}
+            <div
+                style={{
+                    width: '100%',
+                    height: '100%',
+                    overflow: 'hidden',
+                    cursor: isDragging ? 'grabbing' : 'grab',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center'
+                }}
+                onMouseDown={handleMouseDown}
+                onMouseMove={handleMouseMove}
+                onMouseUp={handleMouseUp}
+                onMouseLeave={handleMouseUp}
+            >
+                <img
+                    src={src}
+                    alt="Diagrama de módulos DomoNow"
+                    draggable={false}
+                    style={{
+                        transform: `translate(${position.x}px, ${position.y}px) scale(${scale})`,
+                        transition: isDragging ? 'none' : 'transform 0.2s ease',
+                        maxWidth: 'none',
+                        userSelect: 'none'
+                    }}
+                />
+            </div>
+        </div>
+    );
+};
+
 export const SpiderSection: React.FC = () => {
     const [activeNode, setActiveNode] = useState<string | null>(null);
     const [isVisible, setIsVisible] = useState(false);
+    const [isZoomed, setIsZoomed] = useState(false);
 
     useEffect(() => {
         const observer = new IntersectionObserver(
@@ -89,22 +205,24 @@ export const SpiderSection: React.FC = () => {
         <section id="spider-section" className="py-20 md:py-32 px-4 md:px-6 bg-white overflow-hidden">
             <div className="container mx-auto max-w-7xl">
 
-                {/* Section Title */}
-                <div className={`text-center mb-12 md:mb-16 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-10'}`}>
-                    <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-torre leading-tight">
-                        Cuando todo depende de ti,<br />
-                        <span className="text-domo">necesitas una plataforma que piense contigo.</span>
-                    </h2>
-                </div>
 
                 {/* Spider Image - Main Content */}
                 <div className={`w-full flex justify-center transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
                     <img
-                        src="/assets/ARANA/ARANA.PNG"
+                        src="/assets/arana.png"
                         alt="Diagrama de módulos DomoNow"
-                        className="w-full max-w-6xl h-auto"
+                        className="w-full max-w-[1400px] h-auto cursor-zoom-in hover:opacity-90 transition-opacity"
+                        onClick={() => setIsZoomed(true)}
                     />
                 </div>
+
+                {/* Zoom Modal - Portal to body */}
+                {isZoomed && (
+                    <ImageViewer
+                        src="/assets/arana.png"
+                        onClose={() => setIsZoomed(false)}
+                    />
+                )}
 
                 {/* ============================================
                     INTERACTIVE SPIDER DIAGRAM - COMMENTED OUT

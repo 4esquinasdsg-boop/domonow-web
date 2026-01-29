@@ -23,10 +23,10 @@ export const VotingPage: React.FC<VotingPageProps> = ({ onOpenDemo }) => {
   ];
 
   const useCases = [
-    { category: "Presupuestos", description: "Aprobación de presupuestos y gastos extraordinarios", icon: <PieChart size={20} />, image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&q=80&w=800" },
-    { category: "Reglamentos", description: "Cambios en reglamentos o normas internas", icon: <Settings size={20} />, image: "https://images.unsplash.com/photo-1507537297725-24a1c029d3ca?auto=format&fit=crop&q=80&w=800" },
-    { category: "Encuestas", description: "Encuestas rápidas para decisiones operativas", icon: <CheckSquare size={20} />, image: "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&q=80&w=800" },
-    { category: "Elecciones", description: "Elección de junta, comités o proveedores", icon: <Users size={20} />, image: "https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&q=80&w=800" }
+    { category: "Presupuestos", description: "Aprobación de presupuestos y gastos extraordinarios", icon: <PieChart size={20} />, image: "/assets/Modulos/VOTACIONES/CASO DE USO 1.png" },
+    { category: "Reglamentos", description: "Cambios en reglamentos o normas internas", icon: <Settings size={20} />, image: "/assets/Modulos/VOTACIONES/CASO DE USO 2.png" },
+    { category: "Encuestas", description: "Encuestas rápidas para decisiones operativas", icon: <CheckSquare size={20} />, image: "/assets/Modulos/VOTACIONES/CASO DE USO 3.png" },
+    { category: "Elecciones", description: "Elección de junta, comités o proveedores", icon: <Users size={20} />, image: "/assets/Modulos/VOTACIONES/CASO DE USO 4.png" }
   ];
 
   return (
@@ -63,7 +63,7 @@ export const VotingPage: React.FC<VotingPageProps> = ({ onOpenDemo }) => {
                 <div className="relative z-0 ml-8 md:ml-24 transform rotate-1 hover:rotate-0 transition-all duration-700">
                   <div className="rounded-2xl overflow-hidden shadow-2xl bg-white">
                     <img
-                      src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=1200"
+                      src="/assets/Modulos/VOTACIONES/HEADER.png"
                       alt="Vista del módulo de votaciones"
                       className="w-full h-auto object-cover opacity-90 hover:opacity-100 transition-opacity"
                     />
@@ -90,7 +90,7 @@ export const VotingPage: React.FC<VotingPageProps> = ({ onOpenDemo }) => {
 
       <HowItWorksSection
         title="Conoce cómo funciona"
-        imageSrc="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=1200"
+        imageSrc="/assets/Modulos/VOTACIONES/CÓMO FUNCIONA.png"
         items={[
           {
             problem: "Dudas sobre la validez de las votaciones",
@@ -178,7 +178,7 @@ export const VotingPage: React.FC<VotingPageProps> = ({ onOpenDemo }) => {
             {useCases.map((item, index) => (
               <div key={index} className="relative h-[500px] rounded-[2rem] overflow-hidden group shadow-lg hover:shadow-2xl transition-all duration-500">
                 <div className="absolute inset-0 w-full h-full">
-                  <img src={item.image} alt={item.category} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                  <img src={item.image} alt={item.category} loading="lazy" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
                   <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-black/30"></div>
                 </div>
                 <div className="absolute top-6 left-6 z-10"><h3 className="text-h4 font-bold text-white drop-shadow-md tracking-tight">{item.category}</h3></div>

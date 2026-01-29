@@ -23,10 +23,10 @@ export const DocumentsPage: React.FC<DocumentsPageProps> = ({ onOpenDemo }) => {
   ];
 
   const useCases = [
-    { category: "Reglamento", description: "Residentes consultan el reglamento", icon: <FileText size={20} />, image: "https://images.unsplash.com/photo-1550966871-3ed3c622bc13?auto=format&fit=crop&q=80&w=800" },
-    { category: "Actas", description: "Junta directiva revisa actas y documentos en segundos", icon: <Search size={20} />, image: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&q=80&w=800" },
-    { category: "Bienvenida", description: "Nuevos residentes acceden a la información clave desde el primer día", icon: <UserCheck size={20} />, image: "https://images.unsplash.com/photo-1560520653-9e0e4c89eb11?auto=format&fit=crop&q=80&w=800" },
-    { category: "Consultas", description: "Administración responde consultas sin buscar archivos uno por uno", icon: <Folder size={20} />, image: "https://images.unsplash.com/photo-1512314889357-e157c22f938d?auto=format&fit=crop&q=80&w=800" }
+    { category: "Reglamento", description: "Residentes consultan el reglamento", icon: <FileText size={20} />, image: "/assets/Modulos/DOCUMENTAL/CASO DE USO 1.png" },
+    { category: "Actas", description: "Junta directiva revisa actas y documentos en segundos", icon: <Search size={20} />, image: "/assets/Modulos/DOCUMENTAL/CASO DE USO 2.png" },
+    { category: "Bienvenida", description: "Nuevos residentes acceden a la información clave desde el primer día", icon: <UserCheck size={20} />, image: "/assets/Modulos/DOCUMENTAL/CASO DE USO 3.png" },
+    { category: "Consultas", description: "Administración responde consultas sin buscar archivos uno por uno", icon: <Folder size={20} />, image: "/assets/Modulos/DOCUMENTAL/CASO DE USO 4.png" }
   ];
 
   return (
@@ -63,7 +63,7 @@ export const DocumentsPage: React.FC<DocumentsPageProps> = ({ onOpenDemo }) => {
                 <div className="relative z-0 ml-8 md:ml-24 transform rotate-1 hover:rotate-0 transition-all duration-700">
                   <div className="rounded-2xl overflow-hidden shadow-2xl bg-white">
                     <img
-                      src="https://images.unsplash.com/photo-1531403009284-440f080d1e12?auto=format&fit=crop&q=80&w=1200"
+                      src="/assets/Modulos/DOCUMENTAL/HEADER.png"
                       alt="Vista del módulo de documentos"
                       className="w-full h-auto object-cover opacity-90 hover:opacity-100 transition-opacity"
                     />
@@ -92,7 +92,7 @@ export const DocumentsPage: React.FC<DocumentsPageProps> = ({ onOpenDemo }) => {
 
       <HowItWorksSection
         title="Conoce cómo funciona"
-        imageSrc="https://images.unsplash.com/photo-1531403009284-440f080d1e12?auto=format&fit=crop&q=80&w=1200"
+        imageSrc="/assets/Modulos/DOCUMENTAL/CÓMO FUNCIONA.png"
         items={[
           {
             problem: "Reglamentos que nadie encuentra",
@@ -180,7 +180,7 @@ export const DocumentsPage: React.FC<DocumentsPageProps> = ({ onOpenDemo }) => {
             {useCases.map((item, index) => (
               <div key={index} className="relative h-[500px] rounded-[2rem] overflow-hidden group shadow-lg hover:shadow-2xl transition-all duration-500">
                 <div className="absolute inset-0 w-full h-full">
-                  <img src={item.image} alt={item.category} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                  <img src={item.image} alt={item.category} loading="lazy" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
                   <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-black/30"></div>
                 </div>
                 <div className="absolute top-6 left-6 z-10"><h3 className="text-h4 font-bold text-white drop-shadow-md tracking-tight">{item.category}</h3></div>

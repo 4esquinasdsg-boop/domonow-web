@@ -23,10 +23,10 @@ export const AssembliesPage: React.FC<AssembliesPageProps> = ({ onOpenDemo }) =>
   ];
 
   const useCases = [
-    { category: "Urgentes", description: "Decisiones urgentes que no pueden esperar semanas", icon: <Clock size={20} />, image: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&q=80&w=800" },
-    { category: "Votaciones", description: "Votaciones que antes se hacían por WhatsApp o papel", icon: <Vote size={20} />, image: "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&q=80&w=800" },
-    { category: "Reclamos", description: "Reclamaciones por quórum o falta de información", icon: <X size={20} />, image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=800" },
-    { category: "Actas", description: "Actas que antes tomaban días en elaborarse", icon: <FileCheck size={20} />, image: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&q=80&w=800" }
+    { category: "Urgentes", description: "Decisiones urgentes que no pueden esperar semanas", icon: <Clock size={20} />, image: "/assets/Modulos/ASAMBLEAS/CASO DE USO 1.png" },
+    { category: "Votaciones", description: "Votaciones que antes se hacían por WhatsApp o papel", icon: <Vote size={20} />, image: "/assets/Modulos/ASAMBLEAS/CASO DE USO 2.png" },
+    { category: "Reclamos", description: "Reclamaciones por quórum o falta de información", icon: <X size={20} />, image: "/assets/Modulos/ASAMBLEAS/CASO DE USO 3.png" },
+    { category: "Actas", description: "Actas que antes tomaban días en elaborarse", icon: <FileCheck size={20} />, image: "/assets/Modulos/ASAMBLEAS/CASO DE USO 4.png" }
   ];
 
   return (
@@ -63,7 +63,7 @@ export const AssembliesPage: React.FC<AssembliesPageProps> = ({ onOpenDemo }) =>
                 <div className="relative z-0 ml-8 md:ml-24 transform rotate-1 hover:rotate-0 transition-all duration-700">
                   <div className="rounded-[2.5rem] overflow-hidden shadow-2xl bg-white">
                     <img
-                      src="https://images.unsplash.com/photo-1531403009284-440f080d1e12?auto=format&fit=crop&q=80&w=1200"
+                      src="/assets/Modulos/ASAMBLEAS/HERO.png"
                       alt="Vista del módulo de asambleas"
                       className="w-full h-auto object-cover opacity-90 hover:opacity-100 transition-opacity"
                     />
@@ -91,7 +91,7 @@ export const AssembliesPage: React.FC<AssembliesPageProps> = ({ onOpenDemo }) =>
       {/* NEW: Conoce cómo funciona Section */}
       <HowItWorksSection
         title="Conoce cómo funciona"
-        imageSrc="https://images.unsplash.com/photo-1531403009284-440f080d1e12?auto=format&fit=crop&q=80&w=1200"
+        imageSrc="/assets/Modulos/ASAMBLEAS/CÓMO FUNCIONA.png"
         items={[
           {
             problem: "Falta de quórum presencial.",
@@ -176,7 +176,7 @@ export const AssembliesPage: React.FC<AssembliesPageProps> = ({ onOpenDemo }) =>
             {useCases.map((item, index) => (
               <div key={index} className="relative h-[500px] rounded-[2rem] overflow-hidden group shadow-lg hover:shadow-2xl transition-all duration-500">
                 <div className="absolute inset-0 w-full h-full">
-                  <img src={item.image} alt={item.category} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                  <img src={item.image} alt={item.category} loading="lazy" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
                   <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-black/30"></div>
                 </div>
                 <div className="absolute top-6 left-6 z-10"><h3 className="text-h4 font-bold text-white drop-shadow-md tracking-tight">{item.category}</h3></div>

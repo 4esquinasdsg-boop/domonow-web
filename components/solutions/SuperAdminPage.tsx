@@ -17,10 +17,10 @@ export const SuperAdminPage: React.FC<SuperAdminPageProps> = ({ onOpenDemo }) =>
     }, []);
 
     const useCases = [
-        { category: "Visibilidad total", description: "Revisar el estado de todas las propiedades a primera hora", icon: <Building2 size={20} />, image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=800" },
-        { category: "Cumplimiento legal", description: "Recibir alerta de un vencimiento legal próximo", icon: <Users size={20} />, image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&q=80&w=800" },
-        { category: "Comunicación masiva", description: "Aplicar el mismo comunicado en 5 edificios a la vez", icon: <BarChart3 size={20} />, image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=800" },
-        { category: "Comparativa financiera", description: "Comparar la morosidad entre todas las propiedades", icon: <Settings size={20} />, image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800" }
+        { category: "Visibilidad total", description: "Revisar el estado de todas las propiedades a primera hora", icon: <Building2 size={20} />, image: "/assets/Modulos/SUPER ADMIN/CÓMO FUNCIONA.png" },
+        { category: "Cumplimiento legal", description: "Recibir alerta de un vencimiento legal próximo", icon: <Users size={20} />, image: "/assets/Modulos/SUPER ADMIN/CASO DE USO 2.png" },
+        { category: "Comunicación masiva", description: "Aplicar el mismo comunicado en 5 edificios a la vez", icon: <BarChart3 size={20} />, image: "/assets/Modulos/SUPER ADMIN/CASO DE USO 3.png" },
+        { category: "Comparativa financiera", description: "Comparar la morosidad entre todas las propiedades", icon: <Settings size={20} />, image: "/assets/Modulos/SUPER ADMIN/CASO DE USO 4.png" }
     ];
 
     return (
@@ -66,7 +66,7 @@ export const SuperAdminPage: React.FC<SuperAdminPageProps> = ({ onOpenDemo }) =>
                                 <div className="relative z-0 ml-8 md:ml-24 transform rotate-1 hover:rotate-0 transition-all duration-700">
                                     <div className="rounded-2xl overflow-hidden shadow-2xl bg-white aspect-video">
                                         <img
-                                            src="https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&q=80&w=1200"
+                                            src="/assets/Modulos/SUPER ADMIN/hero_superadmin.png"
                                             alt="Panel de Super Administrador"
                                             className="w-full h-full object-cover opacity-90 hover:opacity-100 transition-opacity"
                                         />
@@ -121,8 +121,8 @@ export const SuperAdminPage: React.FC<SuperAdminPageProps> = ({ onOpenDemo }) =>
 
             <HowItWorksSection
                 variant="superadmin"
-                imageSrc="/assets/SOLUCIONES/SUPERADMIN/SUPERADMIN (3).jpg"
-                title="DomoNow unifica la gestión de múltiples propiedades en un solo panel, con control de accesos, indicadores financieros y procesos estandarizados"
+                imageSrc="/assets/Modulos/SUPER ADMIN/CASO DE USO 1.png"
+                title="Conoce cómo funciona"
                 subtitle="Cómo funciona"
                 leftLabel="Software tradicional:"
                 rightLabel="Con DomoNow:"
@@ -292,6 +292,7 @@ export const SuperAdminPage: React.FC<SuperAdminPageProps> = ({ onOpenDemo }) =>
                                     <img
                                         src={item.image}
                                         alt={item.category}
+                                        loading="lazy"
                                         className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                                     />
                                     <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-black/30"></div>

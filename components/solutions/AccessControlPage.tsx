@@ -246,7 +246,7 @@ export const AccessControlPage: React.FC<AccessControlPageProps> = ({ onOpenDemo
                         {useCases.map((item, index) => (
                             <div key={index} className="relative h-[500px] rounded-[2rem] overflow-hidden group shadow-lg hover:shadow-2xl transition-all duration-500">
                                 <div className="absolute inset-0 w-full h-full">
-                                    <img src={item.image} alt={item.category} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                                    <img src={item.image} alt={item.category} loading="lazy" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
                                     <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-black/30"></div>
                                 </div>
                                 <div className="absolute top-6 left-6 z-10">

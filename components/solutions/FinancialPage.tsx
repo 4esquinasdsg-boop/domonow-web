@@ -23,10 +23,10 @@ export const FinancialPage: React.FC<FinancialPageProps> = ({ onOpenDemo }) => {
   ];
 
   const useCases = [
-    { category: "Confianza", description: "Desconfianza por falta de información clara sobre gastos", icon: <Shield size={20} />, image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&q=80&w=800" },
-    { category: "Claridad", description: "Residentes que no saben cuánto deben ni cuándo vence", icon: <Eye size={20} />, image: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&q=80&w=800" },
-    { category: "Agilidad", description: "Reportes contables que toman días en generarse", icon: <FileBarChart size={20} />, image: "https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&q=80&w=800" },
-    { category: "Recaudo", description: "Morosidad sin seguimiento ni alertas oportunas", icon: <TrendingUp size={20} />, image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&q=80&w=800" }
+    { category: "Confianza", description: "Desconfianza por falta de información clara sobre gastos", icon: <Shield size={20} />, image: "/assets/Modulos/FINANCIERO/CASO DE USO 1.png" },
+    { category: "Claridad", description: "Residentes que no saben cuánto deben ni cuándo vence", icon: <Eye size={20} />, image: "/assets/Modulos/FINANCIERO/CASO DE USO 2.png" },
+    { category: "Agilidad", description: "Reportes contables que toman días en generarse", icon: <FileBarChart size={20} />, image: "/assets/Modulos/FINANCIERO/CASO DE USO 3.png" },
+    { category: "Recaudo", description: "Morosidad sin seguimiento ni alertas oportunas", icon: <TrendingUp size={20} />, image: "/assets/Modulos/FINANCIERO/CASO DE USO 4.png" }
   ];
 
   return (
@@ -63,7 +63,7 @@ export const FinancialPage: React.FC<FinancialPageProps> = ({ onOpenDemo }) => {
                 <div className="relative z-0 ml-8 md:ml-24 transform rotate-1 hover:rotate-0 transition-all duration-700">
                   <div className="rounded-2xl overflow-hidden shadow-2xl bg-white">
                     <img
-                      src="https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?auto=format&fit=crop&q=80&w=1200"
+                      src="/assets/Modulos/FINANCIERO/HEADER.png"
                       alt="Vista del módulo financiero"
                       className="w-full h-auto object-cover opacity-90 hover:opacity-100 transition-opacity"
                     />
@@ -92,7 +92,7 @@ export const FinancialPage: React.FC<FinancialPageProps> = ({ onOpenDemo }) => {
 
       <HowItWorksSection
         title="Conoce cómo funciona"
-        imageSrc="https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?auto=format&fit=crop&q=80&w=1200"
+        imageSrc="/assets/Modulos/FINANCIERO/CÓMO FUNCIONA.png"
         items={[
           {
             problem: "Cobros manuales y descontrol de pagos.",
@@ -180,7 +180,7 @@ export const FinancialPage: React.FC<FinancialPageProps> = ({ onOpenDemo }) => {
             {useCases.map((item, index) => (
               <div key={index} className="relative h-[500px] rounded-[2rem] overflow-hidden group shadow-lg hover:shadow-2xl transition-all duration-500">
                 <div className="absolute inset-0 w-full h-full">
-                  <img src={item.image} alt={item.category} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                  <img src={item.image} alt={item.category} loading="lazy" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
                   <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-black/30"></div>
                 </div>
                 <div className="absolute top-6 left-6 z-10"><h3 className="text-h4 font-bold text-white drop-shadow-md tracking-tight">{item.category}</h3></div>

@@ -24,7 +24,7 @@ export const ProblemSection: React.FC<ProblemSectionProps> = ({ onOpenDemo }) =>
         {/* Intro Text Block */}
         <div className="max-w-4xl mx-auto text-center mb-20">
           <h2 className="text-h3 md:text-h2 font-medium text-torre leading-snug">
-            Trabajas más de 60 horas, pero los residentes siguen <span className="inline-block border-2 border-domo rounded-full px-4 py-1 mx-1 italic font-serif bg-white">inconformes</span>.
+            Trabajas más de 60 horas, pero los residentes siguen <span className="inline-block border-2 border-domo rounded-full px-4 py-1 mx-1 italic font-serif bg-white">inconformes</span>
             <span className="text-gray-400 block mt-4 text-h3">Top 8 frustraciones que te alejan de tu comunidad</span>
           </h2>
           <div className="mt-8">

@@ -1,6 +1,5 @@
 import React from 'react';
 import { Button } from './Button';
-import { ArrowUpRight, ShieldCheck, Users, TrendingUp, Bell } from 'lucide-react';
 
 interface HeroProps {
   onOpenDemo: () => void;
@@ -10,63 +9,48 @@ export const Hero: React.FC<HeroProps> = ({ onOpenDemo }) => {
   return (
     <section className="relative pt-32 pb-20 bg-arquitectura overflow-hidden min-h-[90vh] flex items-center">
       <div className="container mx-auto px-6">
-        <div className="flex flex-col-reverse xl:flex-row items-center gap-12 xl:gap-16">
+        <div className="flex flex-col xl:flex-row items-center gap-12 xl:gap-16">
 
-          {/* Left: Visual Composition */}
-          <div className="xl:w-1/2 relative w-full max-w-lg xl:max-w-none mx-auto">
+          {/* Left on Desktop: Video (hidden on mobile, shown on xl) */}
+          <div className="hidden xl:block xl:w-1/2 relative w-full max-w-lg xl:max-w-none mx-auto">
             <div className="relative z-10">
-              {/* Main "Phone" or Dashboard Card */}
-              <div className="bg-torre rounded-[2.5rem] p-6 text-white shadow-2xl transform -rotate-2 hover:rotate-0 transition-transform duration-500 border border-gray-700">
-                <div className="flex justify-between items-center mb-8">
-                  <div className="flex items-center gap-2">
-                    <div className="w-8 h-8 bg-domo rounded-full flex items-center justify-center text-small font-bold">D</div>
-                    <span className="font-bold text-small">DomoNow App</span>
-                  </div>
-                  <Bell className="w-5 h-5 text-gray-400" />
-                </div>
-                <div className="space-y-4">
-                  <div className="bg-white/10 p-4 rounded-2xl backdrop-blur-sm">
-                    <p className="text-tiny text-gray-400 mb-1">Recaudo Total</p>
-                    <div className="flex justify-between items-end">
-                      <span className="text-h3 font-bold">$12.5M</span>
-                      <div className="bg-horizonte text-torre text-tiny font-bold px-2 py-1 rounded-full flex items-center gap-1">
-                        <TrendingUp size={12} /> +15%
-                      </div>
-                    </div>
-                  </div>
-                  <div className="grid grid-cols-2 gap-4">
-                    <div className="bg-domo p-4 rounded-2xl">
-                      <Users className="w-6 h-6 mb-2 text-white/80" />
-                      <div className="text-h4 font-bold">142</div>
-                      <div className="text-tiny text-white/60">Unidades</div>
-                    </div>
-                    <div className="bg-white p-4 rounded-2xl text-torre">
-                      <ShieldCheck className="w-6 h-6 mb-2 text-domo" />
-                      <div className="text-h4 font-bold">99%</div>
-                      <div className="text-tiny text-gray-500">Seguridad</div>
-                    </div>
-                  </div>
-                </div>
+              {/* Hero Video */}
+              <div className="rounded-2xl overflow-hidden shadow-lg">
+                <video
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  className="w-full h-auto"
+                >
+                  <source src="/assets/Inicio/Hero_Video.mp4" type="video/mp4" />
+                  Tu navegador no soporta videos HTML5.
+                </video>
               </div>
 
-              {/* Floating Element 1 (Top Left) */}
-              <div className="absolute -top-12 -left-8 bg-white p-4 rounded-3xl shadow-lg animate-[bounce_4s_infinite]">
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 bg-horizonte/20 rounded-full flex items-center justify-center text-horizonte">
-                    <ArrowUpRight size={20} />
-                  </div>
-                  <div>
-                    <p className="text-tiny text-gray-500 font-bold uppercase">Eficiencia</p>
-                    <p className="font-bold text-body text-torre">Optimizado</p>
+              {/* Floating Animation - Bottom Left (Mini Dashboard) */}
+              <div className="absolute -bottom-6 -left-6 w-[200px] bg-torre rounded-2xl p-4 text-white shadow-2xl border border-gray-700 z-20 animate-[bounce_6s_infinite]">
+                <div className="flex items-center gap-2 mb-3">
+                  <div className="w-6 h-6 bg-domo rounded-full flex items-center justify-center text-xs font-bold">D</div>
+                  <span className="font-bold text-xs">DomoNow</span>
+                </div>
+                <div className="bg-white/10 p-3 rounded-xl mb-2">
+                  <p className="text-[10px] text-gray-400 mb-1">Recaudo Total</p>
+                  <div className="flex justify-between items-end">
+                    <span className="text-lg font-bold">$12.5M</span>
+                    <span className="bg-horizonte text-torre text-[9px] font-bold px-1.5 py-0.5 rounded-full">+15%</span>
                   </div>
                 </div>
-              </div>
-
-              {/* Floating Element 2 (Bottom Right) */}
-              <div className="absolute -bottom-8 -right-4 bg-domo p-5 rounded-3xl shadow-xl animate-[bounce_5s_infinite] delay-700 max-w-[200px]">
-                <p className="text-white text-small font-medium leading-snug">
-                  "¡El pago de la administración fue exitoso!"
-                </p>
+                <div className="grid grid-cols-2 gap-2">
+                  <div className="bg-domo p-2 rounded-xl text-center">
+                    <div className="text-sm font-bold">142</div>
+                    <div className="text-[9px] text-white/60">Unidades</div>
+                  </div>
+                  <div className="bg-white p-2 rounded-xl text-torre text-center">
+                    <div className="text-sm font-bold">99%</div>
+                    <div className="text-[9px] text-gray-500">Seguridad</div>
+                  </div>
+                </div>
               </div>
             </div>
 
@@ -74,12 +58,47 @@ export const Hero: React.FC<HeroProps> = ({ onOpenDemo }) => {
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-white rounded-full blur-3xl -z-10 opacity-60"></div>
           </div>
 
-          {/* Right: Typography */}
+          {/* Right: Typography + Mobile Video */}
           <div className="xl:w-1/2 text-center xl:text-left px-4 overflow-hidden">
-            <h1 className="text-[2rem] sm:text-h3 md:text-h2 lg:text-display font-bold text-torre mb-8 tracking-tight leading-tight break-words">
-              ¿Cansado de vivir<br /><span className="text-transparent bg-clip-text bg-gradient-to-r from-domo to-horizonte">apagando incendios</span>?
+            {/* Title */}
+            <h1 className="text-[2rem] sm:text-h3 md:text-h2 lg:text-display font-bold text-torre mb-8 tracking-tight leading-tight">
+              ¿Cansado de vivir<br /><span className="text-transparent bg-clip-text bg-gradient-to-r from-domo to-horizonte whitespace-nowrap">apagando incendios</span>?
             </h1>
 
+            {/* Mobile Video - Only visible on mobile */}
+            <div className="xl:hidden relative w-full max-w-md mx-auto mb-8">
+              <div className="relative z-10">
+                <div className="rounded-2xl overflow-hidden shadow-lg">
+                  <video
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    className="w-full h-auto"
+                  >
+                    <source src="/assets/Inicio/Hero_Video.mp4" type="video/mp4" />
+                    Tu navegador no soporta videos HTML5.
+                  </video>
+                </div>
+
+                {/* Floating Animation - Mobile */}
+                <div className="absolute -bottom-4 -left-2 w-[150px] bg-torre rounded-xl p-3 text-white shadow-xl border border-gray-700 z-20 animate-[bounce_6s_infinite]">
+                  <div className="flex items-center gap-2 mb-2">
+                    <div className="w-5 h-5 bg-domo rounded-full flex items-center justify-center text-[10px] font-bold">D</div>
+                    <span className="font-bold text-[10px]">DomoNow</span>
+                  </div>
+                  <div className="bg-white/10 p-2 rounded-lg mb-1">
+                    <p className="text-[8px] text-gray-400 mb-0.5">Recaudo Total</p>
+                    <div className="flex justify-between items-end">
+                      <span className="text-sm font-bold">$12.5M</span>
+                      <span className="bg-horizonte text-torre text-[7px] font-bold px-1 py-0.5 rounded-full">+15%</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Paragraph */}
             <p className="text-lead text-gray-500 mb-10 max-w-lg mx-auto xl:mx-0 leading-relaxed text-center xl:text-left">
               Administrar tus propiedades no debería ser tan complicado. DomoNow centraliza todo en una app integral, simple, segura y para toda tu comunidad.
             </p>
