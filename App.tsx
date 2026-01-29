@@ -17,6 +17,7 @@ import { ContactPage } from './components/ContactPage';
 import { WhyChooseUsPage } from './components/WhyChooseUsPage';
 import { HelpCenterPage } from './components/HelpCenterPage';
 import { PrivacyPolicyPage } from './components/PrivacyPolicyPage';
+import { BackToTop } from './components/BackToTop';
 
 
 // Soluciones bro
@@ -96,6 +97,8 @@ function App() {
           onClose={() => setIsDemoModalOpen(false)}
           demoType={demoType}
         />
+
+        <BackToTop />
       </div>
     </BrowserRouter>
   );

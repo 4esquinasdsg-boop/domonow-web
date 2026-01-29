@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Mail, Instagram, Facebook, MessageCircle } from 'lucide-react';
+import { Mail, Instagram, Facebook, MessageCircle, Linkedin, Youtube } from 'lucide-react';
 
 export const Footer: React.FC = () => {
     return (
@@ -22,11 +22,17 @@ export const Footer: React.FC = () => {
                             <a href="https://wa.me/573015310367" target="_blank" rel="noopener noreferrer">
                                 <MessageCircle className="w-5 h-5 text-torre cursor-pointer hover:text-domo transition-colors" />
                             </a>
-                            <a href="https://www.instagram.com/domonow_oficial" target="_blank" rel="noopener noreferrer">
+                            <a href="https://www.instagram.com/domonow_co?igsh=MThkcTViMWtlNmJpYg%3D%3D" target="_blank" rel="noopener noreferrer">
                                 <Instagram className="w-5 h-5 text-torre cursor-pointer hover:text-domo transition-colors" />
                             </a>
-                            <a href="https://www.facebook.com/people/DomoNow/61570948971057/" target="_blank" rel="noopener noreferrer">
+                            <a href="https://www.facebook.com/profile.php?id=61570948971057" target="_blank" rel="noopener noreferrer">
                                 <Facebook className="w-5 h-5 text-torre cursor-pointer hover:text-domo transition-colors" />
+                            </a>
+                            <a href="https://www.linkedin.com/in/domonow-co-122a453a5" target="_blank" rel="noopener noreferrer">
+                                <Linkedin className="w-5 h-5 text-torre cursor-pointer hover:text-domo transition-colors" />
+                            </a>
+                            <a href="https://www.youtube.com/channel/UC4vw1PqmOfxSuiq1kdDD-zQ" target="_blank" rel="noopener noreferrer">
+                                <Youtube className="w-5 h-5 text-torre cursor-pointer hover:text-domo transition-colors" />
                             </a>
                         </div>
                     </div>

@@ -8,7 +8,13 @@ interface HeroProps {
 export const Hero: React.FC<HeroProps> = ({ onOpenDemo }) => {
   return (
     <section className="relative pt-32 pb-20 bg-arquitectura overflow-hidden min-h-[90vh] flex items-center">
-      <div className="container mx-auto px-6">
+      {/* Animated Background Gradients - Purple/Violet circles on sides */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute top-1/4 -left-48 w-[500px] h-[500px] bg-purple-400/10 rounded-full blur-3xl animate-[pulse_8s_ease-in-out_infinite]"></div>
+        <div className="absolute bottom-1/4 -right-48 w-[500px] h-[500px] bg-violet-500/10 rounded-full blur-3xl animate-[pulse_10s_ease-in-out_infinite_2s]"></div>
+      </div>
+
+      <div className="container mx-auto px-6 relative z-10">
         <div className="flex flex-col xl:flex-row items-center gap-12 xl:gap-16">
 
           {/* Left on Desktop: Video (hidden on mobile, shown on xl) */}
@@ -59,10 +65,10 @@ export const Hero: React.FC<HeroProps> = ({ onOpenDemo }) => {
           </div>
 
           {/* Right: Typography + Mobile Video */}
-          <div className="xl:w-1/2 text-center xl:text-left px-4 overflow-hidden">
-            {/* Title */}
-            <h1 className="text-[2rem] sm:text-h3 md:text-h2 lg:text-display font-bold text-torre mb-8 tracking-tight leading-tight">
-              ¿Cansado de vivir<br /><span className="text-transparent bg-clip-text bg-gradient-to-r from-domo to-horizonte whitespace-nowrap">apagando incendios</span>?
+          <div className="xl:w-[55%] text-center xl:text-left xl:pr-4">
+            {/* Title - Max 3 lines, bigger font */}
+            <h1 className="text-[1.75rem] sm:text-h3 md:text-h2 lg:text-[3.5rem] font-bold text-torre mb-8 tracking-tight leading-[1.1]">
+              ¿Tu administración vive entre <span className="text-transparent bg-clip-text bg-gradient-to-r from-domo to-horizonte">Excel, WhatsApp</span> y el <span className="text-transparent bg-clip-text bg-gradient-to-r from-horizonte to-domo">caos</span>?
             </h1>
 
             {/* Mobile Video - Only visible on mobile */}

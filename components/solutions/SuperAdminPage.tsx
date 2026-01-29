@@ -327,7 +327,7 @@ export const SuperAdminPage: React.FC<SuperAdminPageProps> = ({ onOpenDemo }) =>
                         Conoce cómo DomoNow transforma la gestión multi-propiedad.
                     </h2>
                     <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                        <Button size="lg" className="bg-white text-domo hover:bg-gray-100 transition-colors px-12 text-lg shadow-xl" onClick={onOpenDemo}>
+                        <Button size="lg" className="bg-white !text-domo hover:bg-gray-100 transition-colors px-12 text-lg shadow-xl" onClick={onOpenDemo}>
                             Quiero agendar una Demo
                         </Button>
                     </div>
