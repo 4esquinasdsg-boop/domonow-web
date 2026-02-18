@@ -159,6 +159,6 @@ export const HowItWorksSection: React.FC<HowItWorksSectionProps> = ({
                     }
                 `}</style>
             </div>
-        </section>
+        </section >
     );
 };

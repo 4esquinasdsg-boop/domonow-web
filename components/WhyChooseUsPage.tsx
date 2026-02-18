@@ -81,7 +81,7 @@ export const WhyChooseUsPage: React.FC<WhyChooseUsPageProps> = ({ onOpenDemo }) 
 
     const rolesData = [
         {
-            role: "Arrendatarios",
+            role: "Comunidad",
             subtitle: "Experiencia sin fricción",
             image: "/assets/PorqueE/arrendatarios_compressed.png",
             items: [
@@ -132,11 +132,11 @@ export const WhyChooseUsPage: React.FC<WhyChooseUsPageProps> = ({ onOpenDemo }) 
                                 Conectamos comunidades, <span className="text-domo">simplificamos tu administración.</span>
                             </h1>
                             <p className="text-lead text-gray-500 mb-10 leading-relaxed max-w-5xl mx-auto">
-                                En DomoNow centralizamos la operación, la comunicación y la información en una sola plataforma para brindar tranquilidad a la administración y a quienes viven o trabajan en la copropiedad.
+                                En <span className="domonow-gradient">DomoNow</span> centralizamos la operación, la comunicación y la información en una sola plataforma para brindar tranquilidad a la administración y a quienes viven o trabajan en la copropiedad.
                             </p>
                             <div className="flex flex-col sm:flex-row gap-4 justify-center">
                                 <Button size="lg" onClick={onOpenDemo} className="shadow-xl shadow-domo/20 px-10">
-                                    Habla con un asesor DomoNow
+                                    Habla con un asesor
                                 </Button>
                             </div>
                         </div>
@@ -150,7 +150,7 @@ export const WhyChooseUsPage: React.FC<WhyChooseUsPageProps> = ({ onOpenDemo }) 
                 <div className="container mx-auto px-6">
                     <div className="text-center mb-16 max-w-3xl mx-auto">
                         <h2 className="text-h2 font-bold text-torre leading-tight">
-                            ¿Por qué DomoNow según tu tipo de propiedad?
+                            ¿Por qué <span className="domonow-gradient">DomoNow</span> según tu tipo de propiedad?
                         </h2>
                     </div>
 
@@ -195,7 +195,7 @@ export const WhyChooseUsPage: React.FC<WhyChooseUsPageProps> = ({ onOpenDemo }) 
                 <div className="container mx-auto px-6">
                     <div className="text-center py-20 max-w-3xl mx-auto">
                         <h2 className="text-h2 font-bold text-torre leading-tight">
-                            ¿Cómo ayuda DomoNow a cada rol?
+                            ¿Cómo ayuda <span className="domonow-gradient">DomoNow</span> a cada rol?
                         </h2>
                         <p className="text-lead text-gray-500 mt-4">
                             Una plataforma diseñada para mejorar la experiencia de todos.
@@ -291,7 +291,7 @@ export const WhyChooseUsPage: React.FC<WhyChooseUsPageProps> = ({ onOpenDemo }) 
                                     Cada día, más administradores y comunidades están dejando atrás el desorden, los mensajes sueltos y la gestión manual.
                                 </p>
                                 <p>
-                                    Con <span className="text-domo font-bold">DomoNow</span>, la administración recupera el control y la comunidad recupera la tranquilidad.
+                                    Con <span className="domonow-gradient">DomoNow</span>, la administración recupera el control y la comunidad recupera la tranquilidad.
                                 </p>
                             </div>
 
@@ -356,7 +356,7 @@ export const WhyChooseUsPage: React.FC<WhyChooseUsPageProps> = ({ onOpenDemo }) 
                         {/* Text Left */}
                         <div className="lg:w-5/12 pt-8">
                             <h2 className="text-h2 font-bold text-torre leading-tight mb-6">
-                                Descubre cómo DomoNow se adapta a tu copropiedad
+                                Descubre cómo <span className="domonow-gradient">DomoNow</span> se adapta a tu copropiedad
                             </h2>
                             <div className="text-lead text-gray-500 leading-relaxed mb-8 space-y-4">
                                 <p>

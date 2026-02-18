@@ -22,7 +22,7 @@ export const SolutionSection: React.FC<SolutionSectionProps> = ({ onOpenDemo }) 
                         {/* Text Content */}
                         <div className="lg:w-1/2 z-20">
                             <h2 className="text-h2 md:text-h1 font-bold mb-8 leading-[1.1]">
-                                La administración que siempre quisiste<br />
+                                Con <span className="text-white font-bold">DomoNow</span> la administración que soñaste<br />
                                 <span className="text-horizonte italic font-serif">sin caos y sin estrés.</span>
                             </h2>
 
@@ -41,7 +41,7 @@ export const SolutionSection: React.FC<SolutionSectionProps> = ({ onOpenDemo }) 
                                 </div>
                                 <div className="bg-white/10 backdrop-blur px-4 py-3 rounded-2xl text-small font-medium flex items-start gap-3">
                                     <Monitor className="shrink-0 mt-1" size={18} />
-                                    <span>Si usas WhatsApp, ya sabes usar DomoNow.</span>
+                                    <span>Si usas WhatsApp, ya sabes usar <span className="text-white font-bold">DomoNow</span>.</span>
                                 </div>
                             </div>
 

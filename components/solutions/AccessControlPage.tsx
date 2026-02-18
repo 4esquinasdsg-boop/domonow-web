@@ -46,18 +46,20 @@ export const AccessControlPage: React.FC<AccessControlPageProps> = ({ onOpenDemo
                 <div className="container mx-auto px-6 relative z-10">
                     <div className="flex flex-col lg:flex-row items-center gap-16 lg:gap-20">
                         <div className="lg:w-5/12 relative z-20">
-                            <span className="block text-tiny font-bold tracking-widest uppercase text-gray-400 mb-4">
-                                PORTERÍA
-                            </span>
+                            <div className="flex items-center gap-3 mb-0">
+                                <span className="w-9 h-9 bg-domo rounded-full flex items-center justify-center text-white text-sm font-bold shrink-0">1</span>
+                                <span className="text-base font-bold tracking-widest uppercase text-domo">PORTERÍA</span>
+                            </div>
+                            <p className="text-small text-gray-400 italic mb-4 ml-12">Control de cada ingreso en tiempo real</p>
                             <h1 className="text-h2 md:text-h1 font-bold leading-tight mb-6 text-torre">
                                 "¿Quién entró? ¿A qué hora?"
                             </h1>
                             <div className="prose text-lead text-gray-500 mb-8 leading-relaxed">
-                                <p className="mb-4">
-                                    Los visitantes quedan sin registro, se sobrecargan los porteros y los residentes reclaman constantemente por su seguridad.
+                                <p className="mb-4 text-torre font-bold">
+                                    Visitantes sin registro, porteros saturados, residentes reclamando.
                                 </p>
                                 <p>
-                                    <strong className="text-torre">DomoNow convierte la portería</strong> en un proceso ordenado y sin discusiones, incluso en comunidades con alta rotación de visitantes.
+                                    <strong className="text-torre"><span className="domonow-gradient">DomoNow</span> organiza la portería.</strong> Todo registrado, sin discusiones.
                                 </p>
                             </div>
                             <div className="flex gap-4">
@@ -84,19 +86,58 @@ export const AccessControlPage: React.FC<AccessControlPageProps> = ({ onOpenDemo
                                 {/* FRONT LAYER: Phone Animation */}
                                 <div className="absolute bottom-[-10%] left-0 md:-left-4 z-10 w-[240px] md:w-[300px]">
                                     <div className="bg-white p-4 rounded-[2.5rem] shadow-[0_30px_80px_rgba(130,10,209,0.25)] border border-gray-100 transform -rotate-2 hover:rotate-0 transition-all duration-500">
-                                        <div className="bg-gray-50 rounded-t-[2rem] p-6 border-b border-gray-100">
-                                            <div className="flex items-center justify-between mb-4">
-                                                <div className="w-8 h-8 bg-domo rounded-lg"></div>
-                                                <div className="w-24 h-3 bg-gray-200 rounded-full"></div>
-                                            </div>
-                                            <div className="h-4 w-2/3 bg-gray-200 rounded-full"></div>
-                                        </div>
-                                        <div className="p-6 space-y-6">
-                                            <div className="bg-green-50 p-4 rounded-xl border border-green-100 text-center">
-                                                <div className="w-16 h-16 bg-white rounded-lg mx-auto mb-3 flex items-center justify-center">
-                                                    <ShieldCheck className="text-domo" size={32} />
+                                        <div className="p-4 space-y-4">
+                                            {/* Access Pass with QR */}
+                                            <div className="bg-white rounded-xl border border-domo/20 overflow-hidden shadow-sm">
+                                                {/* Pass header */}
+                                                <div className="bg-domo px-3 py-1.5 flex items-center justify-between">
+                                                    <span className="text-white font-bold text-[9px] tracking-widest uppercase">Pase de Acceso</span>
+                                                    <div className="w-3 h-3 rounded-full bg-green-400 animate-pulse"></div>
                                                 </div>
-                                                <div className="h-2 w-1/2 bg-gray-200 rounded-full mx-auto"></div>
+                                                {/* Pass body */}
+                                                <div className="p-3 flex gap-3 items-center">
+                                                    {/* QR Code SVG */}
+                                                    <svg width="52" height="52" viewBox="0 0 52 52" className="flex-shrink-0">
+                                                        {/* Top-left finder */}
+                                                        <rect x="2" y="2" width="16" height="16" rx="2" fill="none" stroke="#820ad1" strokeWidth="2" />
+                                                        <rect x="6" y="6" width="8" height="8" rx="1" fill="#820ad1" />
+                                                        {/* Top-right finder */}
+                                                        <rect x="34" y="2" width="16" height="16" rx="2" fill="none" stroke="#820ad1" strokeWidth="2" />
+                                                        <rect x="38" y="6" width="8" height="8" rx="1" fill="#820ad1" />
+                                                        {/* Bottom-left finder */}
+                                                        <rect x="2" y="34" width="16" height="16" rx="2" fill="none" stroke="#820ad1" strokeWidth="2" />
+                                                        <rect x="6" y="38" width="8" height="8" rx="1" fill="#820ad1" />
+                                                        {/* Data dots */}
+                                                        <rect x="22" y="2" width="4" height="4" rx="0.5" fill="#820ad1" />
+                                                        <rect x="28" y="2" width="4" height="4" rx="0.5" fill="#820ad1" />
+                                                        <rect x="22" y="8" width="4" height="4" rx="0.5" fill="#820ad1" />
+                                                        <rect x="22" y="22" width="4" height="4" rx="0.5" fill="#820ad1" />
+                                                        <rect x="28" y="22" width="4" height="4" rx="0.5" fill="#820ad1" />
+                                                        <rect x="34" y="22" width="4" height="4" rx="0.5" fill="#820ad1" />
+                                                        <rect x="40" y="22" width="4" height="4" rx="0.5" fill="#820ad1" />
+                                                        <rect x="46" y="22" width="4" height="4" rx="0.5" fill="#820ad1" />
+                                                        <rect x="22" y="28" width="4" height="4" rx="0.5" fill="#820ad1" />
+                                                        <rect x="34" y="28" width="4" height="4" rx="0.5" fill="#820ad1" />
+                                                        <rect x="22" y="34" width="4" height="4" rx="0.5" fill="#820ad1" />
+                                                        <rect x="28" y="34" width="4" height="4" rx="0.5" fill="#820ad1" />
+                                                        <rect x="22" y="40" width="4" height="4" rx="0.5" fill="#820ad1" />
+                                                        <rect x="34" y="40" width="4" height="4" rx="0.5" fill="#820ad1" />
+                                                        <rect x="40" y="40" width="4" height="4" rx="0.5" fill="#820ad1" />
+                                                        <rect x="46" y="34" width="4" height="4" rx="0.5" fill="#820ad1" />
+                                                        <rect x="46" y="46" width="4" height="4" rx="0.5" fill="#820ad1" />
+                                                        <rect x="28" y="46" width="4" height="4" rx="0.5" fill="#820ad1" />
+                                                    </svg>
+                                                    {/* Visitor info */}
+                                                    <div className="flex-1 min-w-0">
+                                                        <p className="text-[8px] text-gray-400 uppercase tracking-wide">Visitante</p>
+                                                        <p className="text-[10px] font-bold text-torre truncate">Carlos Méndez</p>
+                                                        <p className="text-[8px] text-gray-400 mt-1">Apto 304 · Hoy 10:00</p>
+                                                        <div className="mt-1.5 inline-flex items-center gap-1 bg-green-50 border border-green-200 rounded-full px-1.5 py-0.5">
+                                                            <div className="w-1.5 h-1.5 rounded-full bg-green-500"></div>
+                                                            <span className="text-[7px] font-bold text-green-700 uppercase tracking-wide">Autorizado</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -107,7 +148,31 @@ export const AccessControlPage: React.FC<AccessControlPageProps> = ({ onOpenDemo
                 </div>
             </section>
 
-            {/* NEW: Conoce cómo funciona Section */}
+            {/* 4. USE CASES */}
+            <section className="py-24 bg-[#F9F5FF]">
+                <div className="container mx-auto px-6">
+                    <h2 className="text-h2 font-bold text-center mb-16 text-torre">Casos de uso</h2>
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                        {useCases.map((item, index) => (
+                            <div key={index} className="relative h-[500px] rounded-[2rem] overflow-hidden group shadow-lg hover:shadow-2xl transition-all duration-500">
+                                <div className="absolute inset-0 w-full h-full">
+                                    <img src={item.image} alt={item.category} loading="lazy" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                                    <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-black/30"></div>
+                                </div>
+                                <div className="absolute top-6 left-6 z-10">
+                                    <h3 className="text-h4 font-bold text-white drop-shadow-md tracking-tight">{item.category}</h3>
+                                </div>
+                                <div className="absolute bottom-4 left-4 right-4 bg-white/80 backdrop-blur-md p-6 rounded-[2rem] shadow-xl flex flex-col gap-4 h-40 border border-white/50">
+                                    <div className="w-12 h-12 bg-purple-50 rounded-full flex items-center justify-center text-domo shrink-0">{item.icon}</div>
+                                    <div><p className="text-small font-medium text-torre leading-snug">{item.description}</p></div>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            </section>
+
+
             <HowItWorksSection
                 title="Conoce cómo funciona"
                 subtitle="Cómo funciona"
@@ -157,7 +222,7 @@ export const AccessControlPage: React.FC<AccessControlPageProps> = ({ onOpenDemo
                             </div>
                             <div className="space-y-8 flex-grow">
                                 {[
-                                    { title: "Registros Ilegibles", desc: "Cuadernos con información imposible de consultar" },
+                                    { title: "Registros no legibles", desc: "Cuadernos con información imposible de consultar" },
                                     { title: "Búsqueda Manual", desc: "Revisar papel por papel para encontrar un ingreso" },
                                     { title: "Sin Trazabilidad", desc: "No hay forma de verificar quién entró" }
                                 ].map((item, i) => (
@@ -178,13 +243,13 @@ export const AccessControlPage: React.FC<AccessControlPageProps> = ({ onOpenDemo
                         <div className="bg-[#F9F5FF] p-8 md:p-10 rounded-[2.5rem] shadow-xl shadow-domo/5 border border-purple-100 group hover:border-domo/30 transition-colors duration-300 flex flex-col h-full">
                             <div className="flex items-center gap-3 mb-8">
                                 <div className="w-8 h-8 rounded-full bg-domo/10 flex items-center justify-center text-domo"><Check size={16} strokeWidth={3} /></div>
-                                <span className="font-bold text-domo uppercase tracking-widest text-[10px] md:text-tiny">Con DomoNow obtienes</span>
+                                <span className="font-bold text-domo uppercase tracking-widest text-[10px] md:text-tiny">Con <span className="domonow-gradient">DomoNow</span> obtienes</span>
                             </div>
                             <div className="space-y-8 flex-grow">
                                 {[
                                     { title: "Historial Completo", desc: "Base de datos consultable de todos los ingresos" },
                                     { title: "Filtros Inteligentes", desc: "Encuentra cualquier registro por fechas o residente" },
-                                    { title: "Respaldo Automático", desc: "Evidencia documentada que protege tu gestión. Todo queda registrado, validado y disponible cuando se necesita." }
+                                    { title: "Respaldo Automático", desc: "Evidencia documentada que protege tu gestión" }
                                 ].map((item, i) => (
                                     <div key={i} className="flex gap-5 items-start">
                                         <div className="w-12 h-12 bg-white rounded-2xl flex items-center justify-center text-domo shrink-0 shadow-sm group-hover:bg-domo group-hover:text-white transition-colors">
@@ -210,26 +275,23 @@ export const AccessControlPage: React.FC<AccessControlPageProps> = ({ onOpenDemo
                         <h2 className="text-h2 font-bold text-torre">Tu comunidad, paso a paso</h2>
                     </div>
                     <div className="grid md:grid-cols-3 gap-6">
-                        <div className="bg-white p-8 rounded-[2rem] shadow-sm border border-gray-100 hover:shadow-xl transition-all duration-300 group h-full flex flex-col">
-                            <div className="flex justify-between items-start mb-8">
-                                <div className="w-12 h-12 bg-gray-50 rounded-full flex items-center justify-center text-torre group-hover:bg-domo group-hover:text-white transition-colors"><Smartphone size={20} /></div>
-                                <span className="text-[10px] font-bold text-gray-400 uppercase tracking-widest mt-3">PASO 1</span>
+                        <div className="bg-white p-8 rounded-[2rem] shadow-sm border border-transparent hover:border-domo hover:shadow-xl transition-all duration-300 group h-full flex flex-col items-center text-center">
+                            <div className="flex justify-center mb-8">
+                                <div className="w-10 h-10 bg-gray-100 group-hover:bg-domo rounded-full flex items-center justify-center text-torre group-hover:text-white text-small font-bold transition-colors duration-300">1</div>
                             </div>
                             <h3 className="text-h4 font-bold text-torre mb-3">El residente registra al visitante</h3>
                             <p className="text-body text-gray-500 leading-relaxed">Desde la app, el residente crea el pase de acceso en segundos, indicando quién ingresa y cuándo.</p>
                         </div>
-                        <div className="bg-white p-8 rounded-[2rem] shadow-sm border border-gray-100 hover:shadow-xl transition-all duration-300 group h-full flex flex-col">
-                            <div className="flex justify-between items-start mb-8">
-                                <div className="w-12 h-12 bg-gray-50 rounded-full flex items-center justify-center text-torre group-hover:bg-horizonte group-hover:text-torre transition-colors"><UserCheck size={20} /></div>
-                                <span className="text-[10px] font-bold text-gray-400 uppercase tracking-widest mt-3">PASO 2</span>
+                        <div className="bg-white p-8 rounded-[2rem] shadow-sm border border-transparent hover:border-domo hover:shadow-xl transition-all duration-300 group h-full flex flex-col items-center text-center">
+                            <div className="flex justify-center mb-8">
+                                <div className="w-10 h-10 bg-gray-100 group-hover:bg-domo rounded-full flex items-center justify-center text-torre group-hover:text-white text-small font-bold transition-colors duration-300">2</div>
                             </div>
                             <h3 className="text-h4 font-bold text-torre mb-3">El acceso se valida sin llamadas</h3>
                             <p className="text-body text-gray-500 leading-relaxed">En portería se valida el pase digital o código QR, sin depender de llamadas ni confirmaciones informales.</p>
                         </div>
-                        <div className="bg-white p-8 rounded-[2rem] shadow-sm border border-gray-100 hover:shadow-xl transition-all duration-300 group h-full flex flex-col">
-                            <div className="flex justify-between items-start mb-8">
-                                <div className="w-12 h-12 bg-gray-50 rounded-full flex items-center justify-center text-torre group-hover:bg-domo group-hover:text-white transition-colors"><ShieldCheck size={20} /></div>
-                                <span className="text-[10px] font-bold text-gray-400 uppercase tracking-widest mt-3">PASO 3</span>
+                        <div className="bg-white p-8 rounded-[2rem] shadow-sm border border-transparent hover:border-domo hover:shadow-xl transition-all duration-300 group h-full flex flex-col items-center text-center">
+                            <div className="flex justify-center mb-8">
+                                <div className="w-10 h-10 bg-gray-100 group-hover:bg-domo rounded-full flex items-center justify-center text-torre group-hover:text-white text-small font-bold transition-colors duration-300">3</div>
                             </div>
                             <h3 className="text-h4 font-bold text-torre mb-3">Todo queda respaldado</h3>
                             <p className="text-body text-gray-500 leading-relaxed">Cada ingreso queda guardado en la app, con fecha, hora y responsable.</p>
@@ -237,38 +299,13 @@ export const AccessControlPage: React.FC<AccessControlPageProps> = ({ onOpenDemo
                     </div>
                 </div>
             </section>
-
-            {/* 4. USE CASES */}
-            <section className="py-24 bg-[#F9F5FF]">
-                <div className="container mx-auto px-6">
-                    <h2 className="text-h2 font-bold text-center mb-16 text-torre">Casos de uso</h2>
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                        {useCases.map((item, index) => (
-                            <div key={index} className="relative h-[500px] rounded-[2rem] overflow-hidden group shadow-lg hover:shadow-2xl transition-all duration-500">
-                                <div className="absolute inset-0 w-full h-full">
-                                    <img src={item.image} alt={item.category} loading="lazy" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
-                                    <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-black/30"></div>
-                                </div>
-                                <div className="absolute top-6 left-6 z-10">
-                                    <h3 className="text-h4 font-bold text-white drop-shadow-md tracking-tight">{item.category}</h3>
-                                </div>
-                                <div className="absolute bottom-4 left-4 right-4 bg-white/80 backdrop-blur-md p-6 rounded-[2rem] shadow-xl flex flex-col gap-4 h-40 border border-white/50">
-                                    <div className="w-12 h-12 bg-purple-50 rounded-full flex items-center justify-center text-domo shrink-0">{item.icon}</div>
-                                    <div><p className="text-small font-medium text-torre leading-snug">{item.description}</p></div>
-                                </div>
-                            </div>
-                        ))}
-                    </div>
-                </div>
-            </section>
-
             {/* 5. CTA */}
-            <section className="py-24 bg-[#E9D5FF] text-torre text-center px-6 relative overflow-hidden">
+            <section className="py-24 bg-gradient-to-br from-white to-purple-100 text-torre text-center px-6 relative overflow-hidden">
                 <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-white/40 rounded-full blur-3xl -translate-y-1/2 translate-x-1/3 pointer-events-none"></div>
                 <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-white/40 rounded-full blur-3xl translate-y-1/3 -translate-x-1/3 pointer-events-none"></div>
-                <div className="container mx-auto max-w-3xl relative z-10">
-                    <h2 className="text-h2 font-bold mb-8 leading-tight text-torre">
-                        Con DomoNow, cada ingreso tiene respaldo, cada decisión queda clara y la seguridad deja de ser un dolor operativo.
+                <div className="container mx-auto max-w-5xl relative z-10">
+                    <h2 className="text-h3 font-bold mb-8 leading-tight text-torre">
+                        Con <span className="domonow-gradient">DomoNow</span>, cada ingreso tiene respaldo, cada decisión queda clara y la seguridad deja de ser un dolor operativo.
                     </h2>
                     <div className="flex flex-col sm:flex-row gap-4 justify-center">
                         <Button size="lg" className="bg-domo text-white hover:bg-torre hover:text-white transition-colors px-12 text-lg shadow-xl shadow-domo/20" onClick={onOpenDemo}>

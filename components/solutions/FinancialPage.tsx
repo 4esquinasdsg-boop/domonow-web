@@ -26,7 +26,7 @@ export const FinancialPage: React.FC<FinancialPageProps> = ({ onOpenDemo }) => {
     { category: "Confianza", description: "Desconfianza por falta de información clara sobre gastos", icon: <Shield size={20} />, image: "/assets/Modulos/FINANCIERO/CASO DE USO 1.png" },
     { category: "Claridad", description: "Residentes que no saben cuánto deben ni cuándo vence", icon: <Eye size={20} />, image: "/assets/Modulos/FINANCIERO/CASO DE USO 2.png" },
     { category: "Agilidad", description: "Reportes contables que toman días en generarse", icon: <FileBarChart size={20} />, image: "/assets/Modulos/FINANCIERO/CASO DE USO 3.png" },
-    { category: "Recaudo", description: "Morosidad sin seguimiento ni alertas oportunas", icon: <TrendingUp size={20} />, image: "/assets/Modulos/FINANCIERO/CASO DE USO 4.png" }
+    { category: "Recaudo", description: "Facilidad de pago desde cualquier sitio", icon: <TrendingUp size={20} />, image: "/assets/Modulos/FINANCIERO/CASO DE USO 4.png" }
   ];
 
   return (
@@ -39,9 +39,11 @@ export const FinancialPage: React.FC<FinancialPageProps> = ({ onOpenDemo }) => {
         <div className="container mx-auto px-6 relative z-10">
           <div className="flex flex-col lg:flex-row items-center gap-16 lg:gap-20">
             <div className="lg:w-5/12 relative z-20">
-              <span className="block text-tiny font-bold tracking-widest uppercase text-gray-400 mb-4">
-                GESTIÓN FINANCIERA
-              </span>
+              <div className="flex items-center gap-3 mb-0">
+                <span className="w-9 h-9 bg-domo rounded-full flex items-center justify-center text-white text-sm font-bold shrink-0">12</span>
+                <span className="text-base font-bold tracking-widest uppercase text-domo">FINANCIERA</span>
+              </div>
+              <p className="text-small text-gray-400 italic mb-4 ml-12">Finanzas claras, confiables y disponibles</p>
               <h1 className="text-h2 md:text-h1 font-bold leading-tight mb-6 text-torre">
                 "¿Quién debe?<br />
                 <span className="text-domo">¿En qué se gastó?"</span>
@@ -51,7 +53,7 @@ export const FinancialPage: React.FC<FinancialPageProps> = ({ onOpenDemo }) => {
                   ¿Excel desactualizado e información que no cuadra?
                 </p>
                 <p>
-                  <strong className="text-torre">DomoNow centraliza finanzas en tiempo real.</strong> Transparencia total, siempre disponible.
+                  <strong className="text-torre"><span className="domonow-gradient">DomoNow</span> centraliza finanzas en tiempo real.</strong> Transparencia total, siempre disponible.
                 </p>
               </div>
               <div className="flex gap-4"><Button size="lg" onClick={onOpenDemo} className="shadow-xl shadow-domo/20">Conoce cómo funciona</Button></div>
@@ -90,21 +92,44 @@ export const FinancialPage: React.FC<FinancialPageProps> = ({ onOpenDemo }) => {
         </div>
       </section>
 
+
+      {/* 4. USE CASES */}
+      <section className="py-24 bg-[#F9F5FF]">
+        <div className="container mx-auto px-6">
+          <h2 className="text-h2 font-bold text-center mb-16 text-torre">Casos de uso</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {useCases.map((item, index) => (
+              <div key={index} className="relative h-[500px] rounded-[2rem] overflow-hidden group shadow-lg hover:shadow-2xl transition-all duration-500">
+                <div className="absolute inset-0 w-full h-full">
+                  <img src={item.image} alt={item.category} loading="lazy" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                  <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-black/30"></div>
+                </div>
+                <div className="absolute top-6 left-6 z-10"><h3 className="text-h4 font-bold text-white drop-shadow-md tracking-tight">{item.category}</h3></div>
+                <div className="absolute bottom-4 left-4 right-4 bg-white/80 backdrop-blur-md p-6 rounded-[2rem] shadow-xl flex flex-col gap-4 h-40 border border-white/50">
+                  <div className="w-12 h-12 bg-purple-50 rounded-full flex items-center justify-center text-domo shrink-0">{item.icon}</div>
+                  <div><p className="text-small font-medium text-torre leading-snug">{item.description}</p></div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <HowItWorksSection
         title="Conoce cómo funciona"
         imageSrc="/assets/Modulos/FINANCIERO/CÓMO FUNCIONA.png"
         items={[
           {
-            problem: "Cobros manuales y descontrol de pagos.",
-            solution: "Automatizar el recaudo de cuotas y pagos recurrentes."
+            problem: "Módulo separado o inexistente",
+            solution: "Seguimiento detallado de gastos"
           },
           {
-            problem: "Desconfianza por falta de transparencia.",
-            solution: "Ofrecer transparencia total con reportes en tiempo real."
+            problem: "Pagos externos (link a banco)",
+            solution: "Pagos en línea integrados"
           },
           {
-            problem: "Falta de claridad en vencimientos",
-            solution: "Notificaciones de vencimientos y pagos pendientes"
+            problem: "Sin alertas de morosidad",
+            solution: "Alertas automáticas de mora"
           }
         ]}
       />
@@ -134,9 +159,9 @@ export const FinancialPage: React.FC<FinancialPageProps> = ({ onOpenDemo }) => {
 
             {/* Solution */}
             <div className="bg-[#F9F5FF] p-8 md:p-10 rounded-[2.5rem] shadow-xl shadow-domo/5 border border-purple-100 group hover:border-domo/30 transition-colors duration-300 flex flex-col h-full">
-              <div className="flex items-center gap-3 mb-8"><div className="w-8 h-8 rounded-full bg-domo/10 flex items-center justify-center text-domo"><Check size={16} strokeWidth={3} /></div><span className="font-bold text-domo uppercase tracking-widest text-[10px] md:text-tiny">Con DomoNow obtienes</span></div>
+              <div className="flex items-center gap-3 mb-8"><div className="w-8 h-8 rounded-full bg-domo/10 flex items-center justify-center text-domo"><Check size={16} strokeWidth={3} /></div><span className="font-bold text-domo uppercase tracking-widest text-[10px] md:text-tiny">Con <span className="domonow-gradient">DomoNow</span> obtienes</span></div>
               <div className="space-y-8 flex-grow">
-                {[{ title: "Panel Financiero Centralizado", desc: "Información contable en un solo lugar" }, { title: "Transparencia Total", desc: "Estados de cuenta por residente" }, { title: "Control Proactivo", desc: "Alertas automáticas de vencimientos. La gestión financiera deja de ser un foco de tensión y se convierte en un respaldo para la administración." }].map((item, i) => (
+                {[{ title: "Panel Financiero Centralizado", desc: "Información contable en un solo lugar" }, { title: "Transparencia Total", desc: "Estados de cuenta por residente" }, { title: "Control Proactivo", desc: "Alertas automáticas de vencimientos" }].map((item, i) => (
                   <div key={i} className="flex gap-5 items-start"><div className="w-12 h-12 bg-white rounded-2xl flex items-center justify-center text-domo shrink-0 shadow-sm group-hover:bg-domo group-hover:text-white transition-colors"><Check size={20} /></div><div><h4 className="font-bold text-torre text-body mb-1">{item.title}</h4><p className="text-small text-gray-500 leading-relaxed">{item.desc}</p></div></div>
                 ))}
               </div>
@@ -153,18 +178,24 @@ export const FinancialPage: React.FC<FinancialPageProps> = ({ onOpenDemo }) => {
             <h2 className="text-h2 font-bold text-torre">Tu comunidad, paso a paso</h2>
           </div>
           <div className="grid md:grid-cols-3 gap-6">
-            <div className="bg-white p-8 rounded-[2rem] shadow-sm border border-gray-100 hover:shadow-xl transition-all duration-300 group h-full flex flex-col">
-              <div className="flex justify-between items-start mb-8"><div className="w-12 h-12 bg-gray-50 rounded-full flex items-center justify-center text-torre group-hover:bg-domo group-hover:text-white transition-colors"><Database size={20} /></div><span className="text-[10px] font-bold text-gray-400 uppercase tracking-widest mt-3">PASO 1</span></div>
+            <div className="bg-white p-8 rounded-[2rem] shadow-sm border border-transparent hover:border-domo hover:shadow-xl transition-all duration-300 group h-full flex flex-col items-center text-center">
+              <div className="flex justify-center mb-8">
+                <div className="w-10 h-10 bg-gray-100 group-hover:bg-domo rounded-full flex items-center justify-center text-torre group-hover:text-white text-small font-bold transition-colors duration-300">1</div>
+              </div>
               <h3 className="text-h4 font-bold text-torre mb-3">Registra y organiza la información</h3>
               <p className="text-body text-gray-500 leading-relaxed">La administración carga ingresos, gastos y movimientos financieros desde la plataforma, manteniendo todo ordenado y centralizado.</p>
             </div>
-            <div className="bg-white p-8 rounded-[2rem] shadow-sm border border-gray-100 hover:shadow-xl transition-all duration-300 group h-full flex flex-col">
-              <div className="flex justify-between items-start mb-8"><div className="w-12 h-12 bg-gray-50 rounded-full flex items-center justify-center text-torre group-hover:bg-horizonte group-hover:text-torre transition-colors"><Eye size={20} /></div><span className="text-[10px] font-bold text-gray-400 uppercase tracking-widest mt-3">PASO 2</span></div>
+            <div className="bg-white p-8 rounded-[2rem] shadow-sm border border-transparent hover:border-domo hover:shadow-xl transition-all duration-300 group h-full flex flex-col items-center text-center">
+              <div className="flex justify-center mb-8">
+                <div className="w-10 h-10 bg-gray-100 group-hover:bg-domo rounded-full flex items-center justify-center text-torre group-hover:text-white text-small font-bold transition-colors duration-300">2</div>
+              </div>
               <h3 className="text-h4 font-bold text-torre mb-3">Visualiza y controla</h3>
               <p className="text-body text-gray-500 leading-relaxed">Los reportes financieros se generan de forma clara y pueden consultarse por periodo, propiedad o unidad, sin cruces ni confusiones.</p>
             </div>
-            <div className="bg-white p-8 rounded-[2rem] shadow-sm border border-gray-100 hover:shadow-xl transition-all duration-300 group h-full flex flex-col">
-              <div className="flex justify-between items-start mb-8"><div className="w-12 h-12 bg-gray-50 rounded-full flex items-center justify-center text-torre group-hover:bg-domo group-hover:text-white transition-colors"><Share2 size={20} /></div><span className="text-[10px] font-bold text-gray-400 uppercase tracking-widest mt-3">PASO 3</span></div>
+            <div className="bg-white p-8 rounded-[2rem] shadow-sm border border-transparent hover:border-domo hover:shadow-xl transition-all duration-300 group h-full flex flex-col items-center text-center">
+              <div className="flex justify-center mb-8">
+                <div className="w-10 h-10 bg-gray-100 group-hover:bg-domo rounded-full flex items-center justify-center text-torre group-hover:text-white text-small font-bold transition-colors duration-300">3</div>
+              </div>
               <h3 className="text-h4 font-bold text-torre mb-3">Comparte con transparencia</h3>
               <p className="text-body text-gray-500 leading-relaxed">Los residentes acceden a su información financiera desde la app, entendiendo fácilmente su estado de cuenta y los movimientos de la comunidad.</p>
             </div>
@@ -172,34 +203,12 @@ export const FinancialPage: React.FC<FinancialPageProps> = ({ onOpenDemo }) => {
         </div>
       </section>
 
-      {/* 4. USE CASES */}
-      <section className="py-24 bg-[#F9F5FF]">
-        <div className="container mx-auto px-6">
-          <h2 className="text-h2 font-bold text-center mb-16 text-torre">Casos de uso</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {useCases.map((item, index) => (
-              <div key={index} className="relative h-[500px] rounded-[2rem] overflow-hidden group shadow-lg hover:shadow-2xl transition-all duration-500">
-                <div className="absolute inset-0 w-full h-full">
-                  <img src={item.image} alt={item.category} loading="lazy" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
-                  <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-black/30"></div>
-                </div>
-                <div className="absolute top-6 left-6 z-10"><h3 className="text-h4 font-bold text-white drop-shadow-md tracking-tight">{item.category}</h3></div>
-                <div className="absolute bottom-4 left-4 right-4 bg-white/80 backdrop-blur-md p-6 rounded-[2rem] shadow-xl flex flex-col gap-4 h-40 border border-white/50">
-                  <div className="w-12 h-12 bg-purple-50 rounded-full flex items-center justify-center text-domo shrink-0">{item.icon}</div>
-                  <div><p className="text-small font-medium text-torre leading-snug">{item.description}</p></div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* 5. CTA */}
-      <section className="py-24 bg-[#E9D5FF] text-torre text-center px-6 relative overflow-hidden">
+      <section className="py-24 bg-gradient-to-br from-white to-purple-100 text-torre text-center px-6 relative overflow-hidden">
         <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-white/40 rounded-full blur-3xl -translate-y-1/2 translate-x-1/3 pointer-events-none"></div>
         <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-white/40 rounded-full blur-3xl translate-y-1/3 -translate-x-1/3 pointer-events-none"></div>
-        <div className="container mx-auto max-w-3xl relative z-10">
-          <h2 className="text-h2 font-bold mb-8 leading-tight text-torre">Convierte la gestión financiera en un proceso claro, transparente y confiable con DomoNow.</h2>
+        <div className="container mx-auto max-w-5xl relative z-10">
+          <h2 className="text-h3 font-bold mb-8 leading-tight text-torre">Convierte tus finanzas en procesos transparentes, claros y sin desconfianza.</h2>
           <div className="flex flex-col sm:flex-row gap-4 justify-center"><Button size="lg" className="bg-domo text-white hover:bg-torre hover:text-white transition-colors px-12 text-lg shadow-xl shadow-domo/20" onClick={onOpenDemo}>Quiero agendar una Demo</Button></div>
         </div>
       </section>

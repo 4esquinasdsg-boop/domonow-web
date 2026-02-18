@@ -66,10 +66,10 @@ export const PrivacyPolicyPage: React.FC<PrivacyPolicyPageProps> = ({ onOpenDemo
             {/* Intro */}
             <SectionCard icon={FileText} title="Información General">
               <p>
-                <strong>OFIMA S.A.S</strong> como sociedad comercial en cumplimiento La Ley 1377 de 2013, Ley 1581 de 2012 y Decreto 886 de 2014, y normas concordantes, modificatorias y aclaratorias; y en orden a nuestra política de tratamiento de datos personales, nos permitimos emitir el presente aviso de privacidad informándole que los datos personales que usted nos suministre por medio de nuestros diversos canales de ingreso, serán tratados mediante el uso de medidas de seguridad técnicas y físicas que impiden de manera razonable el acceso de terceros no autorizados.
+                <strong>OFIMA SAS</strong> como sociedad comercial en cumplimiento La Ley 1377 de 2013, Ley 1581 de 2012 y Decreto 886 de 2014, y normas concordantes, modificatorias y aclaratorias; y en orden a nuestra política de tratamiento de datos personales, nos permitimos emitir el presente aviso de privacidad informándole que los datos personales que usted nos suministre por medio de nuestros diversos canales de ingreso, serán tratados mediante el uso de medidas de seguridad técnicas y físicas que impiden de manera razonable el acceso de terceros no autorizados.
               </p>
               <p>
-                El responsable del tratamiento de sus datos personales es <strong>OFIMA S.A.S</strong>, sociedad identificada con Nit. Número <strong>800.132.302</strong>, con domicilio en la ciudad de Medellín (Antioquia), teléfono <strong>(604) 6045557</strong>, así mismo, el delegado para la Protección de Datos podrá ser contactado al correo electrónico <a href="mailto:habeasdata@ofima.com" className="text-domo font-bold hover:underline">habeasdata@ofima.com</a>.
+                El responsable del tratamiento de sus datos personales es <strong>OFIMA SAS</strong>, sociedad identificada con Nit. Número <strong>800.132.302</strong>, con domicilio en la ciudad de Medellín (Antioquia), teléfono <strong>(604) 6045557</strong>, así mismo, el delegado para la Protección de Datos podrá ser contactado al correo electrónico <a href="mailto:habeasdata@ofima.com" className="text-domo font-bold hover:underline">habeasdata@ofima.com</a>.
               </p>
             </SectionCard>
 
@@ -116,7 +116,7 @@ export const PrivacyPolicyPage: React.FC<PrivacyPolicyPageProps> = ({ onOpenDemo
             {/* Finalidades */}
             <SectionCard icon={Users} title="Finalidades">
               <p>
-                OFIMA S.A.S. tratará los datos personales para el desarrollo de su objeto social y la debida prestación del servicio o del producto adquirido, la adecuada información sobre sus proyectos, contratos y operaciones comerciales y la difusión mediante mensajes comerciales o publicitarios de sus proyectos.
+                OFIMA SAS tratará los datos personales para el desarrollo de su objeto social y la debida prestación del servicio o del producto adquirido, la adecuada información sobre sus proyectos, contratos y operaciones comerciales y la difusión mediante mensajes comerciales o publicitarios de sus proyectos.
               </p>
 
               <div className="space-y-4 mt-6">
@@ -137,7 +137,7 @@ export const PrivacyPolicyPage: React.FC<PrivacyPolicyPageProps> = ({ onOpenDemo
                   <p className="text-sm mt-1">Conocer, gestionar, almacenar, procesar y actualizar toda la información suministrada para cumplir con obligaciones contractuales, comerciales, legales y tributarias.</p>
                 </div>
                 <div className="border-l-4 border-domo pl-4">
-                  <h4 className="font-bold text-torre">Base de datos DomoNow</h4>
+                  <h4 className="font-bold text-torre">Base de datos <span className="domonow-gradient">DomoNow</span></h4>
                   <p className="text-sm mt-1">Ofrecer servicios especializados y ajustados a las necesidades de los clientes, seguimiento de procesos internos, y creación de perfiles especializados.</p>
                 </div>
                 <div className="border-l-4 border-domo pl-4">
@@ -160,8 +160,8 @@ export const PrivacyPolicyPage: React.FC<PrivacyPolicyPageProps> = ({ onOpenDemo
               <ul className="space-y-3 mt-4">
                 {[
                   "Derecho a conocer, actualizar y rectificar sus datos personales.",
-                  "Solicitar a OFIMA S.A.S. previa solicitud, la prueba de la autorización otorgada.",
-                  "Ser informado por OFIMA S.A.S respecto del uso y el fin que se les ha procurado a sus datos personales.",
+                  "Solicitar a OFIMA SAS previa solicitud, la prueba de la autorización otorgada.",
+                  "Ser informado por OFIMA SAS respecto del uso y el fin que se les ha procurado a sus datos personales.",
                   "Presentar ante la Superintendencia de Industria y Comercio las correspondientes quejas.",
                   "Revocar la autorización expresa al tratamiento de datos.",
                   "Solicitar la supresión de datos personales cuando considere que con nuestro tratamiento no se respeten los principios, derechos y garantías constitucionales y legales.",
@@ -180,7 +180,7 @@ export const PrivacyPolicyPage: React.FC<PrivacyPolicyPageProps> = ({ onOpenDemo
               <div className="space-y-4">
                 <div className="bg-blue-50 rounded-xl p-4">
                   <h4 className="font-bold text-torre mb-2">Consultas</h4>
-                  <p className="text-sm">Los Titulares pueden solicitar la consulta de su información. Ofima deberá brindar respuesta en un plazo máximo de <strong>diez (10) días hábiles</strong>.</p>
+                  <p className="text-sm">Los Titulares pueden solicitar la consulta de su información. Ofima SAS deberá brindar respuesta en un plazo máximo de <strong>diez (10) días hábiles</strong>.</p>
                 </div>
                 <div className="bg-blue-50 rounded-xl p-4">
                   <h4 className="font-bold text-torre mb-2">Reclamos</h4>

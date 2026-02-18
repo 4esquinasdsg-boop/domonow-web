@@ -16,7 +16,7 @@ export const SummarySection: React.FC<SummarySectionProps> = ({ onOpenDemo }) =>
                         Administrar no debería ser sinónimo de <span className="text-domo">estrés</span>
                     </h2>
                     <p className="text-lead text-gray-500">
-                        DomoNow centraliza lo importante para que dejes de reaccionar y empieces a planear
+                        <span className="domonow-gradient">DomoNow</span> centraliza lo importante para que dejes de reaccionar y empieces a planear
                     </p>
                 </div>
 
@@ -39,8 +39,8 @@ export const SummarySection: React.FC<SummarySectionProps> = ({ onOpenDemo }) =>
                     <div className="flex flex-col gap-6">
 
                         {/* Item 01 */}
-                        <div className="flex gap-6 items-start p-4 rounded-2xl hover:bg-arquitectura transition-colors">
-                            <span className="text-small text-gray-400 font-medium">01</span>
+                        <div className="flex gap-6 items-start p-4 rounded-2xl hover:bg-arquitectura transition-colors group/item">
+                            <span className="w-10 h-10 min-w-[2.5rem] rounded-full bg-arquitectura flex items-center justify-center text-small font-bold text-gray-500 group-hover/item:bg-domo group-hover/item:text-white transition-colors">1</span>
                             <div>
                                 <h3 className="text-h4 font-bold text-torre mb-2">Menos tiempo buscando</h3>
                                 <p className="text-body text-gray-500">
@@ -50,8 +50,8 @@ export const SummarySection: React.FC<SummarySectionProps> = ({ onOpenDemo }) =>
                         </div>
 
                         {/* Item 02 */}
-                        <div className="flex gap-6 items-start p-4 rounded-2xl hover:bg-arquitectura transition-colors">
-                            <span className="text-small text-gray-400 font-medium">02</span>
+                        <div className="flex gap-6 items-start p-4 rounded-2xl hover:bg-arquitectura transition-colors group/item">
+                            <span className="w-10 h-10 min-w-[2.5rem] rounded-full bg-arquitectura flex items-center justify-center text-small font-bold text-gray-500 group-hover/item:bg-domo group-hover/item:text-white transition-colors">2</span>
                             <div>
                                 <h3 className="text-h4 font-bold text-torre mb-2">Más claridad</h3>
                                 <p className="text-body text-gray-500">
@@ -61,8 +61,8 @@ export const SummarySection: React.FC<SummarySectionProps> = ({ onOpenDemo }) =>
                         </div>
 
                         {/* Item 03 */}
-                        <div className="flex gap-6 items-start p-4 rounded-2xl hover:bg-arquitectura transition-colors">
-                            <span className="text-small text-gray-400 font-medium">03</span>
+                        <div className="flex gap-6 items-start p-4 rounded-2xl hover:bg-arquitectura transition-colors group/item">
+                            <span className="w-10 h-10 min-w-[2.5rem] rounded-full bg-arquitectura flex items-center justify-center text-small font-bold text-gray-500 group-hover/item:bg-domo group-hover/item:text-white transition-colors">3</span>
                             <div>
                                 <h3 className="text-h4 font-bold text-torre mb-2">Cero sorpresas</h3>
                                 <p className="text-body text-gray-500">

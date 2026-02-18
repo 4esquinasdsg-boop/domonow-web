@@ -5,14 +5,14 @@ interface PlanSectionProps {
   onOpenDemo: () => void;
 }
 
-const steps = [
+const steps: { title: string; desc: React.ReactNode }[] = [
   {
     title: "Agenda tu demo",
     desc: "Te mostramos cómo funciona la app en TU contexto: Tus dolores de cabeza y tus prioridades."
   },
   {
     title: "Prueba piloto sin riesgos",
-    desc: "Implementamos DomoNow en una de tus propiedades durante 30 días. Sin letra pequeña."
+    desc: <>Implementamos <span className="domonow-gradient">DomoNow</span> en una de tus propiedades durante 30 días. Sin letra pequeña.</>
   },
   {
     title: "Activa y ve resultados reales",

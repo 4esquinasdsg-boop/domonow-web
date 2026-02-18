@@ -92,6 +92,104 @@
         transform: translateX(-50%);
       }
     }
+
+    .domonow-gradient {
+      background: linear-gradient(to right, #820ad1, #c850c0, #e67e22, #f5af19);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      font-weight: 700;
+    }
+
+    @keyframes marquee {
+      0% {
+        transform: translateX(0);
+      }
+
+      100% {
+        transform: translateX(-50%);
+      }
+    }
+
+    .animate-marquee {
+      animation: marquee 30s linear infinite;
+    }
+
+    @keyframes floatBlob1 {
+      0% {
+        transform: translate(0px, 0px) scale(1);
+      }
+
+      25% {
+        transform: translate(30px, -25px) scale(1.08);
+      }
+
+      50% {
+        transform: translate(-20px, 15px) scale(0.95);
+      }
+
+      75% {
+        transform: translate(15px, 30px) scale(1.05);
+      }
+
+      100% {
+        transform: translate(0px, 0px) scale(1);
+      }
+    }
+
+    @keyframes floatBlob2 {
+      0% {
+        transform: translate(0px, 0px) scale(1);
+      }
+
+      30% {
+        transform: translate(-25px, 20px) scale(1.06);
+      }
+
+      60% {
+        transform: translate(20px, -30px) scale(0.93);
+      }
+
+      100% {
+        transform: translate(0px, 0px) scale(1);
+      }
+    }
+
+    @keyframes floatBlob3 {
+      0% {
+        transform: translate(0px, 0px) scale(1);
+      }
+
+      40% {
+        transform: translate(20px, -20px) scale(1.1);
+      }
+
+      70% {
+        transform: translate(-15px, 25px) scale(0.92);
+      }
+
+      100% {
+        transform: translate(0px, 0px) scale(1);
+      }
+    }
+
+    @keyframes floatBlob4 {
+      0% {
+        transform: translate(0px, 0px) scale(1);
+      }
+
+      35% {
+        transform: translate(-30px, -15px) scale(1.07);
+      }
+
+      65% {
+        transform: translate(25px, 20px) scale(0.96);
+      }
+
+      100% {
+        transform: translate(0px, 0px) scale(1);
+      }
+    }
   </style>
   <script type="importmap">
 {

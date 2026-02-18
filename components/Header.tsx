@@ -15,17 +15,18 @@ const navigation = [
     target: 'solution',
     submenu: [
       { name: 'Super Administrador', path: '/super-administrador' },
-      { name: 'Comunicaciones', path: '/comunicaciones' },
-      { name: 'Portería', path: '/porteria' },
-      { name: 'Botón de pánico', path: '/panico' },
-      { name: 'Reservas', path: '/reservas' },
-      { name: 'Solicitudes', path: '/solicitudes' },
-      { name: 'Documental', path: '/documental' },
-      { name: 'Votaciones y encuestas', path: '/votaciones' },
-      { name: 'Gestión financiera', path: '/gestion-financiera' },
-      { name: 'Asambleas', path: '/asambleas' },
-      { name: 'Eventos', path: '/eventos' },
-      { name: 'Normativo', path: '/normativo' }
+      { name: '1. Portería', path: '/porteria' },
+      { name: '2. Botón de pánico', path: '/panico' },
+      { name: '3. Comunicaciones', path: '/comunicaciones' },
+      { name: '4. PQRS', path: '/solicitudes' },
+      { name: '5. Reservas', path: '/reservas' },
+      { name: '6. Eventos', path: '/eventos' },
+      { name: '7. Votaciones', path: '/votaciones' },
+      { name: '8. Encuestas', path: '/encuestas' },
+      { name: '9. Asambleas', path: '/asambleas' },
+      { name: '10. Normativo', path: '/normativo' },
+      { name: '11. Documental', path: '/documental' },
+      { name: '12. Financiera', path: '/gestion-financiera' }
     ]
   },
   {
@@ -97,10 +98,9 @@ export const Header: React.FC<HeaderProps> = ({ onOpenDemo }) => {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-[100] transition-all duration-300 bg-white ${scrolled ? 'py-3 shadow-sm' : 'py-5'
-        }`}
+      className={`fixed top-0 left-0 right-0 z-[100] transition-all duration-300 bg-white ${scrolled ? 'bg-white/90 backdrop-blur-md border-b border-gray-100 shadow-sm' : ''}`}
     >
-      <div className="container mx-auto px-6">
+      <div className={`container mx-auto px-6 transition-all duration-300 ${scrolled ? 'py-3' : 'py-5'} relative z-20`}>
         <div className="flex items-center justify-between relative">
 
           {/* Logo */}
@@ -113,13 +113,13 @@ export const Header: React.FC<HeaderProps> = ({ onOpenDemo }) => {
           </Link>
 
           {/* Desktop Nav */}
-          <nav className="hidden xl:flex items-center gap-6">
+          <nav className="hidden xl:flex items-center xl:gap-4 2xl:gap-6">
             {navigation.map((item) => (
               <div key={item.name} className="relative group px-1">
                 <Link
                   to={item.href}
                   onClick={(e) => handleAnchorClick(e, item.href)}
-                  className="flex items-center gap-1 text-small font-medium text-torre hover:text-domo transition-colors py-4 cursor-pointer"
+                  className="flex items-center gap-1 xl:text-tiny 2xl:text-small font-medium text-torre hover:text-domo transition-colors py-4 cursor-pointer"
                 >
                   {item.name}
                   {item.submenu && <ChevronDown size={14} className="group-hover:rotate-180 transition-transform duration-200" />}
@@ -254,6 +254,17 @@ export const Header: React.FC<HeaderProps> = ({ onOpenDemo }) => {
               Solicite Demo
             </Button>
           </div>
+        </div>
+      </div>
+      {/* Ticker Bar - Integrated below menu */}
+      <div className="bg-gray-100 text-torre py-2 overflow-hidden whitespace-nowrap relative z-10">
+        <div className="animate-marquee inline-flex gap-16">
+          {[...Array(10)].map((_, i) => (
+            <span key={i} className="inline-flex items-center gap-2 text-xs md:text-tiny font-semibold tracking-wide">
+              Solución <span className="domonow-gradient">integral</span> para la administración de <span className="domonow-gradient">comunidades</span>
+              <span className="text-domo mx-4">✦</span>
+            </span>
+          ))}
         </div>
       </div>
     </header>

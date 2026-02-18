@@ -22,10 +22,10 @@ export const DemoModal: React.FC<DemoModalProps> = ({ isOpen, onClose, demoType 
   }, [isOpen]);
 
   // Content Configuration based on demoType
-  const contentMap: Record<string, { title: string; text: string; image: string }> = {
+  const contentMap: Record<string, { title: string; text: React.ReactNode; image: string }> = {
     'comercial': {
       title: "¿Listo para gestionar tus propiedades comerciales con más control y eficiencia?",
-      text: "Centraliza la operación, mejora la experiencia de arrendatarios y mantén trazabilidad total en accesos, solicitudes y novedades con DomoNow.",
+      text: <>Centraliza la operación, mejora la experiencia de arrendatarios y mantén trazabilidad total en accesos, solicitudes y novedades con <span className="domonow-gradient">DomoNow</span>.</>,
       image: "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=800"
     },
     'mixta': {
@@ -35,12 +35,12 @@ export const DemoModal: React.FC<DemoModalProps> = ({ isOpen, onClose, demoType 
     },
     'residencial': {
       title: "¿Listo para llevar la administración de tu propiedad residencial al siguiente nivel?",
-      text: "Descubre cómo DomoNow te ayuda a reducir conflictos operativos y a mejorar la experiencia de residentes y administración.",
+      text: <>Descubre cómo <span className="domonow-gradient">DomoNow</span> te ayuda a reducir conflictos operativos y a mejorar la experiencia de residentes y administración.</>,
       image: "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?auto=format&fit=crop&q=80&w=800"
     },
     'general': {
       title: "Toma el control de tu comunidad.",
-      text: "Descubre cómo DomoNow centraliza la seguridad, las finanzas y la convivencia en una sola plataforma intuitiva.",
+      text: <>Descubre cómo <span className="domonow-gradient">DomoNow</span> centraliza la seguridad, las finanzas y la convivencia en una sola plataforma intuitiva.</>,
       image: "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=800"
     }
   };

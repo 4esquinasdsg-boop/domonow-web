@@ -27,6 +27,7 @@ import { EmergencyPage } from './components/solutions/EmergencyPage';
 import { DocumentsPage } from './components/solutions/DocumentsPage';
 import { RequestsPage } from './components/solutions/RequestsPage';
 import { VotingPage } from './components/solutions/VotingPage';
+import { SurveysPage } from './components/solutions/SurveysPage';
 import { CommonAreasPage } from './components/solutions/CommonAreasPage';
 import { FinancialPage } from './components/solutions/FinancialPage';
 import { AssembliesPage } from './components/solutions/AssembliesPage';
@@ -78,6 +79,7 @@ function App() {
             <Route path="/documental" element={<DocumentsPage onOpenDemo={() => handleOpenDemo('general')} />} />
             <Route path="/solicitudes" element={<RequestsPage onOpenDemo={() => handleOpenDemo('general')} />} />
             <Route path="/votaciones" element={<VotingPage onOpenDemo={() => handleOpenDemo('general')} />} />
+            <Route path="/encuestas" element={<SurveysPage onOpenDemo={() => handleOpenDemo('general')} />} />
             <Route path="/reservas" element={<CommonAreasPage onOpenDemo={() => handleOpenDemo('general')} />} />
             <Route path="/gestion-financiera" element={<FinancialPage onOpenDemo={() => handleOpenDemo('general')} />} />
             <Route path="/asambleas" element={<AssembliesPage onOpenDemo={() => handleOpenDemo('general')} />} />

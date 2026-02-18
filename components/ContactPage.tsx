@@ -52,7 +52,7 @@ export const ContactPage: React.FC = () => {
 
               <div className="text-lead text-gray-500 leading-relaxed space-y-6 mb-12">
                 <p>
-                  En DomoNow estamos listos para ayudarte a simplificar la gestión de tu comunidad y ordenar los procesos clave de la administración.
+                  En <span className="domonow-gradient">DomoNow</span> estamos listos para ayudarte a simplificar la gestión de tu comunidad y ordenar los procesos clave de la administración.
                 </p>
                 <p className="text-body">
                   Nuestro equipo te acompaña para entender tus necesidades, resolver dudas y mostrarte cómo la tecnología puede mejorar la convivencia, la transparencia y la toma de decisiones en tu propiedad horizontal.
@@ -84,8 +84,8 @@ export const ContactPage: React.FC = () => {
                   <div>
                     <p className="font-bold text-torre text-h3 mb-1">Correo</p>
                     <p className="text-small text-gray-400 mb-2 uppercase tracking-wide font-bold text-[11px]">Orientación y Comercial</p>
-                    <a href="mailto:soporte@domonow.com" className="text-h4 font-bold text-domo hover:text-purple-800 transition-colors break-all">
-                      soporte@domonow.com
+                    <a href="mailto:soporte@DomoNow.com" className="text-h4 font-bold text-domo hover:text-purple-800 transition-colors break-all">
+                      soporte@<span className="domonow-gradient">DomoNow</span>.com
                     </a>
                   </div>
                 </div>

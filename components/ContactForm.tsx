@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Button } from './Button';
-import { Check, Lock, Loader2, CheckCircle, AlertCircle } from 'lucide-react';
+import { Check, Lock, Loader2, CheckCircle, AlertCircle, ChevronDown } from 'lucide-react';
 
 // URL de Google Apps Script configurada
 const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxend8ZuPHgFlINohK5THedjxakf1FgYhdGA-F03kALgOdHggZUJX_N0l7JBgJ8GaDJPA/exec';
@@ -32,6 +32,7 @@ export const ContactForm: React.FC = () => {
 
     const [submitStatus, setSubmitStatus] = useState<SubmitStatus>('idle');
     const [errorMessage, setErrorMessage] = useState<string>('');
+    const [countryCode, setCountryCode] = useState<string>('+57');
 
     const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         const { name, value, type } = e.target;
@@ -73,7 +74,7 @@ export const ContactForm: React.FC = () => {
                     nombre: formData.nombre,
                     apellidos: formData.apellidos,
                     email: formData.email,
-                    telefono: formData.telefono,
+                    telefono: `${countryCode} ${formData.telefono}`,
                     mensaje: formData.mensaje,
                     fecha: new Date().toISOString(),
                 }),
@@ -194,12 +195,22 @@ export const ContactForm: React.FC = () => {
                     />
                 </div>
 
-                {/* Phone +57 */}
+                {/* Phone with country selector */}
                 <div className="space-y-2">
                     <RequiredLabel text="Celular" />
                     <div className="relative flex">
-                        <div className="bg-gray-50 border-2 border-transparent border-r-gray-200 rounded-l-xl py-3 px-4 text-gray-500 font-bold flex items-center gap-2">
-                            <span className="text-lg">🇨🇴</span> +57
+                        <div className="relative">
+                            <select
+                                value={countryCode}
+                                onChange={(e) => setCountryCode(e.target.value)}
+                                className="appearance-none bg-gray-50 border-2 border-transparent border-r-gray-200 rounded-l-xl py-3 pl-4 pr-10 text-gray-500 font-bold cursor-pointer hover:bg-gray-100 focus:bg-white focus:border-domo focus:ring-4 focus:ring-domo/10 transition-all outline-none h-full"
+                            >
+                                <option value="+57">🇨🇴 +57</option>
+                                <option value="+1">🇺🇸 +1</option>
+                                <option value="+58">🇻🇪 +58</option>
+                                <option value="+52">🇲🇽 +52</option>
+                            </select>
+                            <ChevronDown size={14} className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 pointer-events-none" />
                         </div>
                         <input
                             required

@@ -29,7 +29,7 @@ export const RequestsPage: React.FC<RequestsPageProps> = ({ onOpenDemo }) => {
     { category: "Daños", description: "Reporte de daños en zonas comunes", icon: <PenTool size={20} />, image: "/assets/Modulos/solicitudes/CASOSDEUSO/SOLICITUDES (1)_compressed.png" },
     { category: "Mantenimiento", description: "Solicitudes de mantenimiento interno", icon: <ClipboardList size={20} />, image: "/assets/Modulos/solicitudes/CASOSDEUSO/SOLICITUDES (2)_compressed.png" },
     { category: "PQRS", description: "Quejas o reclamos formales (PQRS)", icon: <MessageCircle size={20} />, image: "/assets/Modulos/solicitudes/CASOSDEUSO/SOLICITUDES (3)_compressed.png" },
-    { category: "Perdidos", description: "Solicitudes que antes se “perdían” en mensajes", icon: <Archive size={20} />, image: "/assets/Modulos/solicitudes/CASOSDEUSO/SOLICITUDES (4)_compressed.png" }
+    { category: "Novedades", description: "Solicitudes que antes se “perdían” en mensajes", icon: <Archive size={20} />, image: "/assets/Modulos/solicitudes/CASOSDEUSO/SOLICITUDES (4)_compressed.png" }
   ];
 
   return (
@@ -42,19 +42,21 @@ export const RequestsPage: React.FC<RequestsPageProps> = ({ onOpenDemo }) => {
         <div className="container mx-auto px-6 relative z-10">
           <div className="flex flex-col lg:flex-row items-center gap-16 lg:gap-20">
             <div className="lg:w-5/12 relative z-20">
-              <span className="block text-tiny font-bold tracking-widest uppercase text-gray-400 mb-4">
-                SOLICITUDES
-              </span>
+              <div className="flex items-center gap-3 mb-0">
+                <span className="w-9 h-9 bg-domo rounded-full flex items-center justify-center text-white text-sm font-bold shrink-0">4</span>
+                <span className="text-base font-bold tracking-widest uppercase text-domo">PQRS</span>
+              </div>
+              <p className="text-small text-gray-400 italic mb-4 ml-12">Cada solicitud con seguimiento claro</p>
               <h1 className="text-h2 md:text-h1 font-bold leading-tight mb-6 text-torre">
-                "Reportaron un daño hace 3 días.<br />
-                <span className="text-domo">¿Ya lo atendieron?"</span>
+                "Reportaron un daño<br />
+                <span className="text-domo">hace 3 días"</span>
               </h1>
               <div className="prose text-lead text-gray-500 mb-8 leading-relaxed">
                 <p className="mb-4 text-torre font-bold">
                   Residentes molestos por la falta de respuesta.
                 </p>
                 <p>
-                  <strong className="text-torre">DomoNow organiza cada solicitud.</strong> Con responsable y seguimiento paso a paso.
+                  <strong className="text-torre"><span className="domonow-gradient">DomoNow</span> organiza cada solicitud.</strong> Con responsable y seguimiento paso a paso.
                 </p>
               </div>
               <div className="flex gap-4"><Button size="lg" onClick={onOpenDemo} className="shadow-xl shadow-domo/20">Conoce cómo funciona</Button></div>
@@ -94,23 +96,43 @@ export const RequestsPage: React.FC<RequestsPageProps> = ({ onOpenDemo }) => {
           </div>
         </div>
       </section>
+      {/* 4. USE CASES */}
+      <section className="py-24 bg-[#F9F5FF]">
+        <div className="container mx-auto px-6">
+          <h2 className="text-h2 font-bold text-center mb-16 text-torre">Casos de uso</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {useCases.map((item, index) => (
+              <div key={index} className="relative h-[500px] rounded-[2rem] overflow-hidden group shadow-lg hover:shadow-2xl transition-all duration-500">
+                <div className="absolute inset-0 w-full h-full">
+                  <img src={item.image} alt={item.category} loading="lazy" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                  <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-black/30"></div>
+                </div>
+                <div className="absolute top-6 left-6 z-10"><h3 className="text-h4 font-bold text-white drop-shadow-md tracking-tight">{item.category}</h3></div>
+                <div className="absolute bottom-4 left-4 right-4 bg-white/80 backdrop-blur-md p-6 rounded-[2rem] shadow-xl flex flex-col gap-4 h-40 border border-white/50">
+                  <div className="w-12 h-12 bg-purple-50 rounded-full flex items-center justify-center text-domo shrink-0">{item.icon}</div>
+                  <div><p className="text-small font-medium text-torre leading-snug">{item.description}</p></div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
-      {/* NEW: Conoce cómo funciona Section */}
       <HowItWorksSection
         title="Conoce cómo funciona"
         imageSrc="/assets/Modulos/solicitudes/solicitudes_como_funciona.png"
         items={[
           {
-            problem: "No hay responsables claros.",
-            solution: "Centralizar todas las solicitudes en un solo canal."
+            problem: "Formulario básico de PQRS",
+            solution: "Asignación de responsables"
           },
           {
-            problem: "Nadie sabe en qué estado va cada caso.",
-            solution: "Asignar responsables y tiempos de respuesta."
+            problem: "Cambio manual de estado",
+            solution: "Chat interno dentro de cada solicitud"
           },
           {
-            problem: "Los residentes sienten que \"nadie responde\".",
-            solution: "Dejar registro de toda la gestión realizada."
+            problem: "No hay medición de tiempos",
+            solution: "Medición de tiempos de respuesta"
           }
         ]}
       />
@@ -140,9 +162,9 @@ export const RequestsPage: React.FC<RequestsPageProps> = ({ onOpenDemo }) => {
 
             {/* Solution */}
             <div className="bg-[#F9F5FF] p-8 md:p-10 rounded-[2.5rem] shadow-xl shadow-domo/5 border border-purple-100 group hover:border-domo/30 transition-colors duration-300 flex flex-col h-full">
-              <div className="flex items-center gap-3 mb-8"><div className="w-8 h-8 rounded-full bg-domo/10 flex items-center justify-center text-domo"><Check size={16} strokeWidth={3} /></div><span className="font-bold text-domo uppercase tracking-widest text-[10px] md:text-tiny">Con DomoNow obtienes</span></div>
+              <div className="flex items-center gap-3 mb-8"><div className="w-8 h-8 rounded-full bg-domo/10 flex items-center justify-center text-domo"><Check size={16} strokeWidth={3} /></div><span className="font-bold text-domo uppercase tracking-widest text-[10px] md:text-tiny">Con <span className="domonow-gradient">DomoNow</span> obtienes</span></div>
               <div className="space-y-8 flex-grow">
-                {[{ title: "Bandeja Centralizada", desc: "Todas las solicitudes organizadas por tipo en un solo lugar" }, { title: "Rendición de Cuentas Clara", desc: "Cada solicitud tiene responsable y seguimiento visible" }, { title: "Gestión Demostrable", desc: "Métricas de atención que prueban tu eficiencia ante la comunidad. Todo queda documentado. Nada se pierde. Todo se responde." }].map((item, i) => (
+                {[{ title: "Bandeja Centralizada", desc: "Todas las solicitudes organizadas por tipo en un solo lugar" }, { title: "Rendición de Cuentas Clara", desc: "Cada solicitud tiene responsable y seguimiento visible" }, { title: "Gestión Demostrable", desc: "Métricas de atención que prueban tu eficiencia ante la comunidad" }].map((item, i) => (
                   <div key={i} className="flex gap-5 items-start"><div className="w-12 h-12 bg-white rounded-2xl flex items-center justify-center text-domo shrink-0 shadow-sm group-hover:bg-domo group-hover:text-white transition-colors"><Check size={20} /></div><div><h4 className="font-bold text-torre text-body mb-1">{item.title}</h4><p className="text-small text-gray-500 leading-relaxed">{item.desc}</p></div></div>
                 ))}
               </div>
@@ -159,18 +181,24 @@ export const RequestsPage: React.FC<RequestsPageProps> = ({ onOpenDemo }) => {
             <h2 className="text-h2 font-bold text-torre">Tu comunidad, paso a paso</h2>
           </div>
           <div className="grid md:grid-cols-3 gap-6">
-            <div className="bg-white p-8 rounded-[2rem] shadow-sm border border-gray-100 hover:shadow-xl transition-all duration-300 group h-full flex flex-col">
-              <div className="flex justify-between items-start mb-8"><div className="w-12 h-12 bg-gray-50 rounded-full flex items-center justify-center text-torre group-hover:bg-domo group-hover:text-white transition-colors"><User size={20} /></div><span className="text-[10px] font-bold text-gray-400 uppercase tracking-widest mt-3">PASO 1</span></div>
+            <div className="bg-white p-8 rounded-[2rem] shadow-sm border border-transparent hover:border-domo hover:shadow-xl transition-all duration-300 group h-full flex flex-col items-center text-center">
+              <div className="flex justify-center mb-8">
+                <div className="w-10 h-10 bg-gray-100 group-hover:bg-domo rounded-full flex items-center justify-center text-torre group-hover:text-white text-small font-bold transition-colors duration-300">1</div>
+              </div>
               <h3 className="text-h4 font-bold text-torre mb-3">El residente registra la solicitud</h3>
-              <p className="text-body text-gray-500 leading-relaxed">Desde la app, elige el tipo de solicitud, agrega detalles y adjunta fotos si es necesario.</p>
+              <p className="text-body text-gray-500 leading-relaxed">Desde la app, elige el tipo de solicitud, agrega detalles y fotos o videos si es necesario.</p>
             </div>
-            <div className="bg-white p-8 rounded-[2rem] shadow-sm border border-gray-100 hover:shadow-xl transition-all duration-300 group h-full flex flex-col">
-              <div className="flex justify-between items-start mb-8"><div className="w-12 h-12 bg-gray-50 rounded-full flex items-center justify-center text-torre group-hover:bg-horizonte group-hover:text-torre transition-colors"><Clock size={20} /></div><span className="text-[10px] font-bold text-gray-400 uppercase tracking-widest mt-3">PASO 2</span></div>
+            <div className="bg-white p-8 rounded-[2rem] shadow-sm border border-transparent hover:border-domo hover:shadow-xl transition-all duration-300 group h-full flex flex-col items-center text-center">
+              <div className="flex justify-center mb-8">
+                <div className="w-10 h-10 bg-gray-100 group-hover:bg-domo rounded-full flex items-center justify-center text-torre group-hover:text-white text-small font-bold transition-colors duration-300">2</div>
+              </div>
               <h3 className="text-h4 font-bold text-torre mb-3">La administración gestiona y da seguimiento</h3>
               <p className="text-body text-gray-500 leading-relaxed">La solicitud se asigna, se atiende y se actualiza su estado en una línea de tiempo clara.</p>
             </div>
-            <div className="bg-white p-8 rounded-[2rem] shadow-sm border border-gray-100 hover:shadow-xl transition-all duration-300 group h-full flex flex-col">
-              <div className="flex justify-between items-start mb-8"><div className="w-12 h-12 bg-gray-50 rounded-full flex items-center justify-center text-torre group-hover:bg-domo group-hover:text-white transition-colors"><CheckCircle size={20} /></div><span className="text-[10px] font-bold text-gray-400 uppercase tracking-widest mt-3">PASO 3</span></div>
+            <div className="bg-white p-8 rounded-[2rem] shadow-sm border border-transparent hover:border-domo hover:shadow-xl transition-all duration-300 group h-full flex flex-col items-center text-center">
+              <div className="flex justify-center mb-8">
+                <div className="w-10 h-10 bg-gray-100 group-hover:bg-domo rounded-full flex items-center justify-center text-torre group-hover:text-white text-small font-bold transition-colors duration-300">3</div>
+              </div>
               <h3 className="text-h4 font-bold text-torre mb-3">Cierre con trazabilidad</h3>
               <p className="text-body text-gray-500 leading-relaxed">El caso se cierra con registro completo y opción de evaluación del servicio.</p>
             </div>
@@ -178,34 +206,12 @@ export const RequestsPage: React.FC<RequestsPageProps> = ({ onOpenDemo }) => {
         </div>
       </section>
 
-      {/* 4. USE CASES */}
-      <section className="py-24 bg-[#F9F5FF]">
-        <div className="container mx-auto px-6">
-          <h2 className="text-h2 font-bold text-center mb-16 text-torre">Casos de uso</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {useCases.map((item, index) => (
-              <div key={index} className="relative h-[500px] rounded-[2rem] overflow-hidden group shadow-lg hover:shadow-2xl transition-all duration-500">
-                <div className="absolute inset-0 w-full h-full">
-                  <img src={item.image} alt={item.category} loading="lazy" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
-                  <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-black/30"></div>
-                </div>
-                <div className="absolute top-6 left-6 z-10"><h3 className="text-h4 font-bold text-white drop-shadow-md tracking-tight">{item.category}</h3></div>
-                <div className="absolute bottom-4 left-4 right-4 bg-white/80 backdrop-blur-md p-6 rounded-[2rem] shadow-xl flex flex-col gap-4 h-40 border border-white/50">
-                  <div className="w-12 h-12 bg-purple-50 rounded-full flex items-center justify-center text-domo shrink-0">{item.icon}</div>
-                  <div><p className="text-small font-medium text-torre leading-snug">{item.description}</p></div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* 5. CTA */}
-      <section className="py-24 bg-[#E9D5FF] text-torre text-center px-6 relative overflow-hidden">
+      <section className="py-24 bg-gradient-to-br from-white to-purple-100 text-torre text-center px-6 relative overflow-hidden">
         <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-white/40 rounded-full blur-3xl -translate-y-1/2 translate-x-1/3 pointer-events-none"></div>
         <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-white/40 rounded-full blur-3xl translate-y-1/3 -translate-x-1/3 pointer-events-none"></div>
-        <div className="container mx-auto max-w-3xl relative z-10">
-          <h2 className="text-h2 font-bold mb-8 leading-tight text-torre">Empieza a gestionar solicitudes con claridad y respaldo.</h2>
+        <div className="container mx-auto max-w-5xl relative z-10">
+          <h2 className="text-h3 font-bold mb-8 leading-tight text-torre">Empieza a gestionar solicitudes con claridad y respaldo.</h2>
           <div className="flex flex-col sm:flex-row gap-4 justify-center"><Button size="lg" className="bg-domo text-white hover:bg-torre hover:text-white transition-colors px-12 text-lg shadow-xl shadow-domo/20" onClick={onOpenDemo}>Quiero agendar una Demo</Button></div>
         </div>
       </section>

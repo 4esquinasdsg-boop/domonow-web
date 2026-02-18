@@ -12,7 +12,7 @@ export const AuthoritySection: React.FC = () => {
                         Resultados que hablan por sí solos
                     </h2>
                     <p className="mt-6 text-lead text-gray-500 max-w-2xl mx-auto">
-                        Por eso creamos DomoNow: para quitarte carga, no para complicarte más.
+                        Por eso creamos <span className="domonow-gradient">DomoNow</span>: para quitarte carga, no para complicarte más.
                     </p>
                 </div>
 
@@ -68,7 +68,7 @@ export const AuthoritySection: React.FC = () => {
 
                             <div className="mt-4 text-center">
                                 <p className="text-h4 font-bold text-torre">Promedio de resultados reales</p>
-                                <p className="text-tiny text-gray-400">en comunidades que usan DomoNow</p>
+                                <p className="text-tiny text-gray-400">en comunidades que usan <span className="domonow-gradient">DomoNow</span></p>
                             </div>
                         </div>
                     </div>
@@ -78,7 +78,7 @@ export const AuthoritySection: React.FC = () => {
                         <div className="relative z-10">
                             <h3 className="text-h3 font-bold mb-4 text-white">Crece tranquilo</h3>
                             <p className="text-white/80 leading-relaxed text-body mb-8">
-                                Gestiona 10 unidades o 5.000. Una infraestructura sólida que no te deja botado cuando más la necesitas.
+                                Gestiona 2 unidades o 200. Una infraestructura sólida que no te deja botado cuando más la necesitas.
                             </p>
                         </div>
 
@@ -181,7 +181,7 @@ export const AuthoritySection: React.FC = () => {
                             <div className="mb-4">
                                 <Quote className="text-domo w-8 h-8 mb-3 opacity-50 fill-current" />
                                 <p className="text-body text-gray-600 italic leading-relaxed">
-                                    "DomoNow cambió por completo cómo administro. Ahora todo está claro, ordenado y bajo control. Ya no vivo apagando incendios."
+                                    "<span className="domonow-gradient">DomoNow</span> cambió por completo cómo administro. Ahora todo está claro, ordenado y bajo control. Ya no vivo apagando incendios."
                                 </p>
                             </div>
 

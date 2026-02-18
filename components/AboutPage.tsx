@@ -86,12 +86,12 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onOpenDemo }) => {
                             </h1>
                             <div className="prose text-lead text-gray-500 mb-8 leading-relaxed space-y-6">
                                 <p>
-                                    DomoNow nace de una necesidad concreta: cambiar una gestión fragmentada y manual por una experiencia <strong>organizada, transparente y eficiente</strong>.
+                                    <span className="domonow-gradient">DomoNow</span> nace de una necesidad concreta: cambiar una gestión fragmentada y manual por una experiencia <strong>organizada, transparente y eficiente</strong>.
                                 </p>
                                 <p className="flex items-start gap-3 text-body bg-white/50 p-4 rounded-2xl border border-gray-100">
                                     <ShieldCheck className="text-domo shrink-0 mt-1" size={24} />
                                     <span>
-                                        Respaldados por <strong>Ofima</strong>, con más de <strong className="text-domo">25 años</strong> desarrollando soluciones tecnológicas para necesidades reales.
+                                        Respaldados por <strong>Ofima SAS</strong>, con más de <strong className="text-domo">35 años</strong> desarrollando soluciones tecnológicas para necesidades reales.
                                     </span>
                                 </p>
                             </div>
@@ -123,7 +123,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onOpenDemo }) => {
                                     </div>
                                     <div>
                                         <p className="text-h3 font-bold text-torre leading-none flex">
-                                            +<AnimatedCounter end={25} duration={2000} />
+                                            +<AnimatedCounter end={35} duration={2000} />
                                         </p>
                                         <p className="text-tiny font-bold text-gray-400 uppercase">Años de experiencia</p>
                                     </div>
@@ -133,7 +133,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onOpenDemo }) => {
                                 <div className="absolute -top-4 -right-4 bg-domo text-white p-4 rounded-2xl shadow-lg shadow-domo/30 transform -rotate-3 hover:rotate-0 transition-transform">
                                     <div className="flex items-center gap-2">
                                         <CheckCircle size={18} />
-                                        <span className="font-bold text-small">Respaldado por Ofima</span>
+                                        <span className="font-bold text-small">Respaldado por Ofima SAS</span>
                                     </div>
                                 </div>
                             </div>
@@ -200,7 +200,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onOpenDemo }) => {
                                 <div className="absolute bottom-6 left-6 right-6 pointer-events-none">
                                     <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/90 backdrop-blur-md border border-white/50 shadow-lg">
                                         <span className="w-2 h-2 rounded-full bg-domo animate-pulse"></span>
-                                        <span className="text-xs font-bold uppercase tracking-wider text-torre">Cultura DomoNow</span>
+                                        <span className="text-xs font-bold uppercase tracking-wider text-torre">Cultura <span className="domonow-gradient">DomoNow</span></span>
                                     </div>
                                 </div>
                             </div>
@@ -362,7 +362,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onOpenDemo }) => {
                                 Comprometidos con <br />tu copropiedad.
                             </h2>
                             <p className="text-body text-gray-500 mb-8 leading-relaxed">
-                                En DomoNow acompañamos a nuestros clientes desde la implementación hasta el uso cotidiano, entendiendo que cada comunidad tiene dinámicas, reglas y necesidades diferentes. Nuestro enfoque es ser un aliado tecnológico confiable, que aporta orden, visibilidad y control sin complejizar la operación.
+                                En <span className="domonow-gradient">DomoNow</span> acompañamos a nuestros clientes desde la implementación hasta el uso cotidiano, entendiendo que cada comunidad tiene dinámicas, reglas y necesidades diferentes. Nuestro enfoque es ser un aliado tecnológico confiable, que aporta orden, visibilidad y control sin complejizar la operación.
                             </p>
                             <Button size="lg" onClick={onOpenDemo} className="bg-domo text-white hover:bg-purple-900 shadow-xl shadow-domo/20 px-8 py-4 rounded-full font-bold text-body">
                                 Hablemos de tu comunidad

@@ -176,7 +176,7 @@ export const HelpCenterPage: React.FC<HelpCenterPageProps> = ({ onOpenDemo }) =>
               Centro de Ayuda
             </h1>
             <p className="text-lead text-gray-500">
-              Resuelve tus dudas rápidamente y aprovecha al máximo las funcionalidades de DomoNow.
+              Resuelve tus dudas rápidamente y aprovecha al máximo las funcionalidades de <span className="domonow-gradient">DomoNow</span>.
             </p>
           </div>
 

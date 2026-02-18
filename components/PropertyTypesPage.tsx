@@ -174,7 +174,7 @@ export const PropertyTypesPage: React.FC<PropertyTypesPageProps> = ({ onOpenDemo
                     Tipos de Propiedades
                 </h1>
                 <p className="text-lead text-gray-500 max-w-2xl mx-auto">
-                    DomoNow no es una talla única. Hemos diseñado experiencias específicas para la naturaleza única de cada comunidad.
+                    <span className="domonow-gradient">DomoNow</span> no es una talla única. Hemos diseñado experiencias específicas para la naturaleza única de cada comunidad.
                 </p>
 
                 {/* Quick Jump Links */}
@@ -234,7 +234,7 @@ export const PropertyTypesPage: React.FC<PropertyTypesPageProps> = ({ onOpenDemo
                         </div>
                         <div className="p-10 lg:p-12 bg-purple-50/30">
                             <h3 className="text-tiny font-bold text-domo mb-8 uppercase tracking-widest flex items-center gap-2">
-                                <TrendingUp size={16} /> Solución DomoNow
+                                <TrendingUp size={16} /> Solución <span className="domonow-gradient">DomoNow</span>
                             </h3>
                             <div className="grid sm:grid-cols-2 gap-y-6 gap-x-6">
                                 {[
@@ -270,7 +270,7 @@ export const PropertyTypesPage: React.FC<PropertyTypesPageProps> = ({ onOpenDemo
                     {/* Header */}
                     <div className="text-center mb-16 max-w-4xl mx-auto">
                         <h2 className="text-h2 font-bold text-torre leading-tight mb-4">
-                            <span className="text-domo">DomoNow:</span> Diseñado para los desafíos únicos de comunidades residenciales
+                            <span className="text-domo"><span className="domonow-gradient">DomoNow</span>:</span> Diseñado para los desafíos únicos de comunidades residenciales
                         </h2>
                         <p className="text-lead text-gray-500">
                             Herramientas especializadas para mejorar la convivencia, la seguridad y la valorización de su propiedad.
@@ -399,7 +399,7 @@ export const PropertyTypesPage: React.FC<PropertyTypesPageProps> = ({ onOpenDemo
                         </div>
                         <div className="p-10 lg:p-12 bg-purple-50/30">
                             <h3 className="text-tiny font-bold text-domo mb-8 uppercase tracking-widest flex items-center gap-2">
-                                <TrendingUp size={16} /> Optimización DomoNow
+                                <TrendingUp size={16} /> Optimización <span className="domonow-gradient">DomoNow</span>
                             </h3>
                             <div className="grid sm:grid-cols-2 gap-y-6 gap-x-6">
                                 {[
@@ -435,7 +435,7 @@ export const PropertyTypesPage: React.FC<PropertyTypesPageProps> = ({ onOpenDemo
                     {/* Header */}
                     <div className="text-center mb-16 max-w-4xl mx-auto">
                         <h2 className="text-h2 font-bold text-torre leading-tight mb-4">
-                            <span className="text-domo">DomoNow:</span> Diseñado para los desafíos únicos de comunidades comerciales
+                            <span className="text-domo"><span className="domonow-gradient">DomoNow</span>:</span> Diseñado para los desafíos únicos de comunidades comerciales
                         </h2>
                         <p className="text-lead text-gray-500">
                             Herramientas especializadas para la gestión de proveedores, múltiples arrendatarios y operación de alto tráfico.
@@ -537,7 +537,7 @@ export const PropertyTypesPage: React.FC<PropertyTypesPageProps> = ({ onOpenDemo
                         </div>
                         <div className="lg:w-2/3 w-full flex flex-col justify-center">
                             <p className="text-body text-gray-600 leading-relaxed border-l-2 border-domo pl-6 mb-8">
-                                Gestionar una propiedad mixta implica equilibrar dinámicas muy distintas en un mismo espacio. DomoNow centraliza la operación para que lo residencial y lo comercial convivan con reglas claras.
+                                Gestionar una propiedad mixta implica equilibrar dinámicas muy distintas en un mismo espacio. <span className="domonow-gradient">DomoNow</span> centraliza la operación para que lo residencial y lo comercial convivan con reglas claras.
                             </p>
                             <ImageCarousel images={mixtaImages} heightClass="h-48 md:h-56" />
                         </div>
@@ -564,7 +564,7 @@ export const PropertyTypesPage: React.FC<PropertyTypesPageProps> = ({ onOpenDemo
                         </div>
                         <div className="p-10 lg:p-12 bg-purple-50/30">
                             <h3 className="text-tiny font-bold text-domo mb-8 uppercase tracking-widest flex items-center gap-2">
-                                <TrendingUp size={16} /> Equilibrio DomoNow
+                                <TrendingUp size={16} /> Equilibrio <span className="domonow-gradient">DomoNow</span>
                             </h3>
                             <div className="grid sm:grid-cols-2 gap-y-6 gap-x-6">
                                 {[
@@ -600,7 +600,7 @@ export const PropertyTypesPage: React.FC<PropertyTypesPageProps> = ({ onOpenDemo
                     {/* Header */}
                     <div className="text-center mb-16 max-w-4xl mx-auto">
                         <h2 className="text-h2 font-bold text-torre leading-tight mb-4">
-                            <span className="text-domo">DomoNow:</span> Diseñado para los desafíos únicos de comunidades mixtas
+                            <span className="text-domo"><span className="domonow-gradient">DomoNow</span>:</span> Diseñado para los desafíos únicos de comunidades mixtas
                         </h2>
                         <p className="text-lead text-gray-500">
                             Comprendemos que la convivencia entre zonas residenciales y comerciales requiere reglas claras y herramientas precisas.

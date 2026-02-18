@@ -22,7 +22,7 @@ export const ContactFormSection: React.FC = () => {
               <span className="text-domo">tu comunidad.</span>
             </h2>
             <p className="text-lead text-gray-500 leading-relaxed">
-              Descubre cómo DomoNow centraliza la seguridad, las finanzas y la convivencia en una sola plataforma intuitiva.
+              Descubre cómo <span className="domonow-gradient">DomoNow</span> centraliza la seguridad, las finanzas y la convivencia en una sola plataforma intuitiva.
             </p>
           </div>
 
