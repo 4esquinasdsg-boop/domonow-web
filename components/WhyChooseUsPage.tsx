@@ -83,7 +83,7 @@ export const WhyChooseUsPage: React.FC<WhyChooseUsPageProps> = ({ onOpenDemo }) 
         {
             role: "Comunidad",
             subtitle: "Experiencia sin fricción",
-            image: "/assets/PorqueE/arrendatarios_compressed.png",
+            image: "/assets/why-choose-us/arrendatarios_compressed.png",
             items: [
                 "Información clara y oficial en un solo lugar",
                 "Solicitudes con seguimiento real",
@@ -94,7 +94,7 @@ export const WhyChooseUsPage: React.FC<WhyChooseUsPageProps> = ({ onOpenDemo }) 
         {
             role: "Administrador",
             subtitle: "Control total y paz mental",
-            image: "/assets/PorqueE/administradores_compressed.png",
+            image: "/assets/why-choose-us/administradores_compressed.png",
             items: [
                 "Operación centralizada y trazable",
                 "Menos reprocesos, menos discusiones",
@@ -105,7 +105,7 @@ export const WhyChooseUsPage: React.FC<WhyChooseUsPageProps> = ({ onOpenDemo }) 
         {
             role: "Operarios",
             subtitle: "Eficiencia en campo",
-            image: "/assets/PorqueE/operarios_compressed.png",
+            image: "/assets/why-choose-us/operarios_compressed.png",
             items: [
                 "Procesos claros y fáciles de ejecutar",
                 "Registro de accesos y novedades sin papel",
@@ -306,7 +306,7 @@ export const WhyChooseUsPage: React.FC<WhyChooseUsPageProps> = ({ onOpenDemo }) 
                         <div className="w-full lg:w-1/2 relative">
                             <div className="relative rounded-[2.5rem] overflow-hidden shadow-2xl">
                                 <img
-                                    src="/assets/PorqueE/unete_compressed.png"
+                                    src="/assets/why-choose-us/unete_compressed.png"
                                     alt="Gestión administrativa eficiente"
                                     className="w-full h-auto object-cover"
                                 />

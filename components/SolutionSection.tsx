@@ -63,7 +63,7 @@ export const SolutionSection: React.FC<SolutionSectionProps> = ({ onOpenDemo }) 
                                 {/* 1. Base Layer: The Tall Image - Expanded to w-full to fill left space */}
                                 <div className="relative z-0 w-full">
                                     <img
-                                        src="/assets/Inicio/gestionfluida_compressed.png"
+                                        src="/assets/home/gestionfluida_compressed.png"
                                         alt="Gestión eficiente en oficina"
                                         className="rounded-[2.5rem] shadow-2xl border-4 border-white/5 w-full h-[550px] object-cover"
                                     />

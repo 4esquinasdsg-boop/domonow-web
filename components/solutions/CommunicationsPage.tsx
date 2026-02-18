@@ -21,12 +21,12 @@ export const CommunicationsPage: React.FC<CommunicationsPageProps> = ({ onOpenDe
 
     // Mockup Images representing Mobile UI (9:16 Aspect Ratio)
     const appScreens = [
-        "/assets/Modulos/comunicaciones/carruselinterfaz/comunicaciones (1).jpg",
-        "/assets/Modulos/comunicaciones/carruselinterfaz/comunicaciones (2).jpg",
-        "/assets/Modulos/comunicaciones/carruselinterfaz/comunicaciones (3).jpg",
-        "/assets/Modulos/comunicaciones/carruselinterfaz/comunicaciones (4).jpg",
-        "/assets/Modulos/comunicaciones/carruselinterfaz/comunicaciones (5).jpg",
-        "/assets/Modulos/comunicaciones/carruselinterfaz/comunicaciones (6).jpg",
+        "/assets/modules/comunicaciones/carruselinterfaz/comunicaciones (1).jpg",
+        "/assets/modules/comunicaciones/carruselinterfaz/comunicaciones (2).jpg",
+        "/assets/modules/comunicaciones/carruselinterfaz/comunicaciones (3).jpg",
+        "/assets/modules/comunicaciones/carruselinterfaz/comunicaciones (4).jpg",
+        "/assets/modules/comunicaciones/carruselinterfaz/comunicaciones (5).jpg",
+        "/assets/modules/comunicaciones/carruselinterfaz/comunicaciones (6).jpg",
     ];
 
     // Use Cases Data for the new card design
@@ -35,25 +35,25 @@ export const CommunicationsPage: React.FC<CommunicationsPageProps> = ({ onOpenDe
             category: "Mantenimiento",
             description: "Avisos de mantenimiento o cortes de servicio",
             icon: <AlertTriangle size={20} />,
-            image: "/assets/Modulos/comunicaciones/casos de uso/comunicaciones_avisos_compressed.jpg" // Worker/Maintenance
+            image: "/assets/modules/comunicaciones/casos de uso/comunicaciones_avisos_compressed.jpg" // Worker/Maintenance
         },
         {
             category: "Reglamentos",
             description: "Cambios en normas internas o reglamentos",
             icon: <FileText size={20} />,
-            image: "/assets/Modulos/comunicaciones/casos de uso/comunicaciones_decisiones_compressed.jpg" // Signing/Documents
+            image: "/assets/modules/comunicaciones/casos de uso/comunicaciones_decisiones_compressed.jpg" // Signing/Documents
         },
         {
             category: "Asambleas",
             description: "Comunicaciones de asambleas y decisiones administrativas",
             icon: <Users size={20} />,
-            image: "/assets/Modulos/comunicaciones/casos de uso/comunicaciones_eventos_compressed.jpg" // People meeting
+            image: "/assets/modules/comunicaciones/casos de uso/comunicaciones_eventos_compressed.jpg" // People meeting
         },
         {
             category: "Novedades",
             description: "Novedades importantes del conjunto",
             icon: <Bell size={20} />,
-            image: "/assets/Modulos/comunicaciones/casos de uso/comunicaciones_creaciones_compressed.png" // Friends/Community
+            image: "/assets/modules/comunicaciones/casos de uso/comunicaciones_creaciones_compressed.png" // Friends/Community
         }
     ];
 
@@ -102,7 +102,7 @@ export const CommunicationsPage: React.FC<CommunicationsPageProps> = ({ onOpenDe
                                 <div className="relative z-0 ml-8 md:ml-24 transform rotate-1 hover:rotate-0 transition-all duration-700">
                                     <div className="rounded-2xl overflow-hidden shadow-2xl bg-white aspect-video">
                                         <img
-                                            src="/assets/Modulos/comunicaciones/comunicacioneshero.png"
+                                            src="/assets/modules/comunicaciones/comunicacioneshero.png"
                                             alt="Dashboard Comunicaciones"
                                             className="w-full h-full object-cover opacity-90 hover:opacity-100 transition-opacity"
                                         />
@@ -215,7 +215,7 @@ export const CommunicationsPage: React.FC<CommunicationsPageProps> = ({ onOpenDe
                 subtitle="Cómo funciona"
                 leftLabel="Software tradicional:"
                 rightLabel="Con DomoNow:"
-                imageSrc="/assets/Modulos/comunicaciones/comunicacioneshero.png"
+                imageSrc="/assets/modules/comunicaciones/comunicacioneshero.png"
                 items={[
                     {
                         problem: "Se continúa usando WhatsApp",

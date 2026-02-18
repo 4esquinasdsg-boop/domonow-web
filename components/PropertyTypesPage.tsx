@@ -36,27 +36,27 @@ export const PropertyTypesPage: React.FC<PropertyTypesPageProps> = ({ onOpenDemo
 
     // Images Collections
     const residencialImages = [
-        "/assets/TIPOSDEPROPIEDAD/RESIDENCIAL/RESIDENCIAL1_compressed.png",
-        "/assets/TIPOSDEPROPIEDAD/RESIDENCIAL/RESIDENCIAL2_compressed.png",
-        "/assets/TIPOSDEPROPIEDAD/RESIDENCIAL/RESIDENCIAL3_compressed.png",
-        "/assets/TIPOSDEPROPIEDAD/RESIDENCIAL/RESIDENCIAL4_compressed.png",
-        "/assets/TIPOSDEPROPIEDAD/RESIDENCIAL/RESIDENCIAL5_compressed.png"
+        "/assets/property-types/residential/RESIDENCIAL1_compressed.png",
+        "/assets/property-types/residential/RESIDENCIAL2_compressed.png",
+        "/assets/property-types/residential/RESIDENCIAL3_compressed.png",
+        "/assets/property-types/residential/RESIDENCIAL4_compressed.png",
+        "/assets/property-types/residential/RESIDENCIAL5_compressed.png"
     ];
 
     const comercialImages = [
-        "/assets/TIPOSDEPROPIEDAD/COMERCIAL/COMERCIAL1_compressed.png",
-        "/assets/TIPOSDEPROPIEDAD/COMERCIAL/COMERCIAL2_compressed.png",
-        "/assets/TIPOSDEPROPIEDAD/COMERCIAL/COMERCIAL3_compressed.png",
-        "/assets/TIPOSDEPROPIEDAD/COMERCIAL/COMERCIAL4_compressed.png",
-        "/assets/TIPOSDEPROPIEDAD/COMERCIAL/COMERCIAL5_compressed.png"
+        "/assets/property-types/commercial/COMERCIAL1_compressed.png",
+        "/assets/property-types/commercial/COMERCIAL2_compressed.png",
+        "/assets/property-types/commercial/COMERCIAL3_compressed.png",
+        "/assets/property-types/commercial/COMERCIAL4_compressed.png",
+        "/assets/property-types/commercial/COMERCIAL5_compressed.png"
     ];
 
     const mixtaImages = [
-        "/assets/TIPOSDEPROPIEDAD/MIXTA/MIXTA1_compressed.png",
-        "/assets/TIPOSDEPROPIEDAD/MIXTA/MIXTA2_compressed.png",
-        "/assets/TIPOSDEPROPIEDAD/MIXTA/MIXTA3_compressed.png",
-        "/assets/TIPOSDEPROPIEDAD/MIXTA/MIXTA4_compressed.jpg",
-        "/assets/TIPOSDEPROPIEDAD/MIXTA/MIXTA5_compressed.jpg"
+        "/assets/property-types/mixed/MIXTA1_compressed.png",
+        "/assets/property-types/mixed/MIXTA2_compressed.png",
+        "/assets/property-types/mixed/MIXTA3_compressed.png",
+        "/assets/property-types/mixed/MIXTA4_compressed.jpg",
+        "/assets/property-types/mixed/MIXTA5_compressed.jpg"
     ];
 
     // ================= DATA FOR RESIDENTIAL DEEP DIVE =================
@@ -316,12 +316,12 @@ export const PropertyTypesPage: React.FC<PropertyTypesPageProps> = ({ onOpenDemo
                         <div className="lg:w-1/2 w-full">
                             <div className="grid grid-cols-2 gap-4 md:gap-6">
                                 <img
-                                    src="/assets/TIPOSDEPROPIEDAD/optimización/optimizacion (6).jpg"
+                                    src="/assets/property-types/optimization/optimizacion (6).jpg"
                                     className="w-full h-[400px] md:h-[520px] object-cover rounded-[2.5rem] shadow-2xl hover:scale-[1.02] transition-transform duration-500"
                                     alt="Hogar y Familia"
                                 />
                                 <img
-                                    src="/assets/TIPOSDEPROPIEDAD/optimización/optimizacion (2).jpg"
+                                    src="/assets/property-types/optimization/optimizacion (2).jpg"
                                     className="w-full h-[400px] md:h-[520px] object-cover rounded-[2.5rem] shadow-2xl hover:scale-[1.02] transition-transform duration-500 mt-8 md:mt-12"
                                     alt="App Móvil"
                                 />
@@ -481,12 +481,12 @@ export const PropertyTypesPage: React.FC<PropertyTypesPageProps> = ({ onOpenDemo
                         <div className="lg:w-1/2 w-full">
                             <div className="grid grid-cols-2 gap-4 md:gap-6">
                                 <img
-                                    src="/assets/TIPOSDEPROPIEDAD/optimización/optimizacion (5).jpg"
+                                    src="/assets/property-types/optimization/optimizacion (5).jpg"
                                     className="w-full h-[400px] md:h-[520px] object-cover rounded-[2.5rem] shadow-2xl hover:scale-[1.02] transition-transform duration-500"
                                     alt="Oficina Corporativa"
                                 />
                                 <img
-                                    src="/assets/TIPOSDEPROPIEDAD/optimización/optimizacion (1).jpg"
+                                    src="/assets/property-types/optimization/optimizacion (1).jpg"
                                     className="w-full h-[400px] md:h-[520px] object-cover rounded-[2.5rem] shadow-2xl hover:scale-[1.02] transition-transform duration-500 mt-8 md:mt-12"
                                     alt="Reunión de Negocios"
                                 />
@@ -646,12 +646,12 @@ export const PropertyTypesPage: React.FC<PropertyTypesPageProps> = ({ onOpenDemo
                         <div className="lg:w-1/2 w-full">
                             <div className="grid grid-cols-2 gap-4 md:gap-6">
                                 <img
-                                    src="/assets/TIPOSDEPROPIEDAD/optimización/optimizacion (4).jpg"
+                                    src="/assets/property-types/optimization/optimizacion (4).jpg"
                                     className="w-full h-[400px] md:h-[520px] object-cover rounded-[2.5rem] shadow-2xl hover:scale-[1.02] transition-transform duration-500"
                                     alt="Comercio y Vivienda"
                                 />
                                 <img
-                                    src="/assets/TIPOSDEPROPIEDAD/optimización/optimizacion (3).jpg"
+                                    src="/assets/property-types/optimization/optimizacion (3).jpg"
                                     className="w-full h-[400px] md:h-[520px] object-cover rounded-[2.5rem] shadow-2xl hover:scale-[1.02] transition-transform duration-500 mt-8 md:mt-12"
                                     alt="Espacios Compartidos"
                                 />

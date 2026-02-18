@@ -15,21 +15,21 @@ export const RequestsPage: React.FC<RequestsPageProps> = ({ onOpenDemo }) => {
   useEffect(() => { window.scrollTo(0, 0); }, []);
 
   const appScreens = [
-    "/assets/Modulos/solicitudes/carrusel_interfaz/solicitudes (1).jpg",
-    "/assets/Modulos/solicitudes/carrusel_interfaz/solicitudes (2).jpg",
-    "/assets/Modulos/solicitudes/carrusel_interfaz/solicitudes (3).jpg",
-    "/assets/Modulos/solicitudes/carrusel_interfaz/solicitudes (4).jpg",
-    "/assets/Modulos/solicitudes/carrusel_interfaz/solicitudes (5).jpg",
-    "/assets/Modulos/solicitudes/carrusel_interfaz/solicitudes (6).jpg",
-    "/assets/Modulos/solicitudes/carrusel_interfaz/solicitudes (7).jpg",
-    "/assets/Modulos/solicitudes/carrusel_interfaz/solicitudes (8).jpg",
+    "/assets/modules/solicitudes/carrusel_interfaz/solicitudes (1).jpg",
+    "/assets/modules/solicitudes/carrusel_interfaz/solicitudes (2).jpg",
+    "/assets/modules/solicitudes/carrusel_interfaz/solicitudes (3).jpg",
+    "/assets/modules/solicitudes/carrusel_interfaz/solicitudes (4).jpg",
+    "/assets/modules/solicitudes/carrusel_interfaz/solicitudes (5).jpg",
+    "/assets/modules/solicitudes/carrusel_interfaz/solicitudes (6).jpg",
+    "/assets/modules/solicitudes/carrusel_interfaz/solicitudes (7).jpg",
+    "/assets/modules/solicitudes/carrusel_interfaz/solicitudes (8).jpg",
   ];
 
   const useCases = [
-    { category: "Daños", description: "Reporte de daños en zonas comunes", icon: <PenTool size={20} />, image: "/assets/Modulos/solicitudes/CASOSDEUSO/SOLICITUDES (1)_compressed.png" },
-    { category: "Mantenimiento", description: "Solicitudes de mantenimiento interno", icon: <ClipboardList size={20} />, image: "/assets/Modulos/solicitudes/CASOSDEUSO/SOLICITUDES (2)_compressed.png" },
-    { category: "PQRS", description: "Quejas o reclamos formales (PQRS)", icon: <MessageCircle size={20} />, image: "/assets/Modulos/solicitudes/CASOSDEUSO/SOLICITUDES (3)_compressed.png" },
-    { category: "Novedades", description: "Solicitudes que antes se “perdían” en mensajes", icon: <Archive size={20} />, image: "/assets/Modulos/solicitudes/CASOSDEUSO/SOLICITUDES (4)_compressed.png" }
+    { category: "Daños", description: "Reporte de daños en zonas comunes", icon: <PenTool size={20} />, image: "/assets/modules/solicitudes/CASOSDEUSO/SOLICITUDES (1)_compressed.png" },
+    { category: "Mantenimiento", description: "Solicitudes de mantenimiento interno", icon: <ClipboardList size={20} />, image: "/assets/modules/solicitudes/CASOSDEUSO/SOLICITUDES (2)_compressed.png" },
+    { category: "PQRS", description: "Quejas o reclamos formales (PQRS)", icon: <MessageCircle size={20} />, image: "/assets/modules/solicitudes/CASOSDEUSO/SOLICITUDES (3)_compressed.png" },
+    { category: "Novedades", description: "Solicitudes que antes se “perdían” en mensajes", icon: <Archive size={20} />, image: "/assets/modules/solicitudes/CASOSDEUSO/SOLICITUDES (4)_compressed.png" }
   ];
 
   return (
@@ -68,7 +68,7 @@ export const RequestsPage: React.FC<RequestsPageProps> = ({ onOpenDemo }) => {
                 <div className="relative z-0 ml-8 md:ml-24 transform rotate-1 hover:rotate-0 transition-all duration-700">
                   <div className="rounded-2xl overflow-hidden shadow-2xl bg-white aspect-video">
                     <img
-                      src="/assets/Modulos/solicitudes/solicitudeshero.png"
+                      src="/assets/modules/solicitudes/solicitudeshero.png"
                       alt="Vista del módulo de solicitudes"
                       className="w-full h-full object-cover opacity-90 hover:opacity-100 transition-opacity"
                     />
@@ -120,7 +120,7 @@ export const RequestsPage: React.FC<RequestsPageProps> = ({ onOpenDemo }) => {
 
       <HowItWorksSection
         title="Conoce cómo funciona"
-        imageSrc="/assets/Modulos/solicitudes/solicitudes_como_funciona.png"
+        imageSrc="/assets/modules/solicitudes/solicitudes_como_funciona.png"
         items={[
           {
             problem: "Formulario básico de PQRS",

@@ -50,7 +50,7 @@ export const HowItWorksSection: React.FC<HowItWorksSectionProps> = ({
                                     {/* Logo Header */}
                                     <div className="flex items-center gap-3 mb-8">
                                         <img
-                                            src="/assets/Logo/LogoPiramide.png"
+                                            src="/assets/logo/LogoPiramide.png"
                                             alt="DomoNow"
                                             className="h-10 w-auto"
                                         />

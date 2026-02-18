@@ -108,7 +108,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onOpenDemo }) => {
                                 {/* Main Image - Border removed as requested */}
                                 <div className="relative rounded-[2.5rem] overflow-hidden shadow-2xl transform rotate-2 hover:rotate-0 transition-all duration-700 h-[500px]">
                                     <img
-                                        src="/assets/Nosotros/nosotroshero_compressed.png"
+                                        src="/assets/about/nosotroshero_compressed.png"
                                         alt="Teamwork"
                                         className="w-full h-full object-cover"
                                     />
@@ -158,7 +158,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onOpenDemo }) => {
                                     {/* Image 1: Community/People */}
                                     <div className="relative rounded-[2rem] overflow-hidden shadow-lg group">
                                         <img
-                                            src="/assets/Nosotros/esencia1_compressed.png"
+                                            src="/assets/about/esencia1_compressed.png"
                                             alt="Comunidad"
                                             className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                                         />
@@ -168,7 +168,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onOpenDemo }) => {
                                     {/* Image 2: Architecture/Building */}
                                     <div className="relative rounded-[2rem] overflow-hidden shadow-lg group">
                                         <img
-                                            src="/assets/Nosotros/esencia2_compressed.png"
+                                            src="/assets/about/esencia2_compressed.png"
                                             alt="Infraestructura"
                                             className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                                         />
@@ -178,7 +178,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onOpenDemo }) => {
                                     {/* Image 3: Technology/Connection */}
                                     <div className="relative rounded-[2rem] overflow-hidden shadow-lg group">
                                         <img
-                                            src="/assets/Nosotros/esencia3_compressed.png"
+                                            src="/assets/about/esencia3_compressed.png"
                                             alt="Tecnología"
                                             className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                                         />
@@ -188,7 +188,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onOpenDemo }) => {
                                     {/* Image 4: Trust/Handshake */}
                                     <div className="relative rounded-[2rem] overflow-hidden shadow-lg group">
                                         <img
-                                            src="/assets/Nosotros/esencia4_compressed.png"
+                                            src="/assets/about/esencia4_compressed.png"
                                             alt="Confianza"
                                             className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                                         />
@@ -375,7 +375,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onOpenDemo }) => {
                             <div className="absolute -inset-4 bg-gradient-to-r from-domo to-horizonte opacity-10 blur-2xl rounded-[3rem]"></div>
 
                             <img
-                                src="/assets/Nosotros/Comprometidos_compressed.png"
+                                src="/assets/about/Comprometidos_compressed.png"
                                 alt="Compromiso"
                                 className="relative rounded-[2.5rem] w-full h-[500px] object-cover shadow-2xl border-4 border-white transform hover:scale-[1.02] transition-transform duration-500"
                             />

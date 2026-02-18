@@ -26,11 +26,11 @@ export const SummarySection: React.FC<SummarySectionProps> = ({ onOpenDemo }) =>
                     {/* Left Column: Dashboard Image - Free, no box */}
                     <div className="relative">
                         <img
-                            src="/assets/Inicio/dashboard_preview.png"
+                            src="/assets/home/dashboard_preview.png"
                             alt="DomoNow Dashboard"
                             className="w-full rounded-2xl shadow-2xl hover:scale-[1.02] transition-transform duration-500"
                             onError={(e) => {
-                                e.currentTarget.src = "/assets/Inicio/unidad_compressed.png";
+                                e.currentTarget.src = "/assets/home/unidad_compressed.png";
                             }}
                         />
                     </div>

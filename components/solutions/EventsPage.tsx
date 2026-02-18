@@ -23,10 +23,10 @@ export const EventsPage: React.FC<EventsPageProps> = ({ onOpenDemo }) => {
   ];
 
   const useCases = [
-    { category: "Integración", description: "Actividades de integración para residentes", icon: <Users size={20} />, image: "/assets/Modulos/EVENTOS/CASO DE USO 1.png" },
-    { category: "Convivencia", description: "Campañas de convivencia", icon: <Megaphone size={20} />, image: "/assets/Modulos/EVENTOS/CASO DE USO 2.png" },
-    { category: "Cupos", description: "Eventos con cupo limitado (talleres, charlas, clases)", icon: <ListChecks size={20} />, image: "/assets/Modulos/EVENTOS/CASO DE USO 3.png" },
-    { category: "Organización", description: "Actividades organizadas por la administración", icon: <CalendarCheck size={20} />, image: "/assets/Modulos/EVENTOS/CASO DE USO 4.png" }
+    { category: "Integración", description: "Actividades de integración para residentes", icon: <Users size={20} />, image: "/assets/modules/EVENTOS/CASO DE USO 1.png" },
+    { category: "Convivencia", description: "Campañas de convivencia", icon: <Megaphone size={20} />, image: "/assets/modules/EVENTOS/CASO DE USO 2.png" },
+    { category: "Cupos", description: "Eventos con cupo limitado (talleres, charlas, clases)", icon: <ListChecks size={20} />, image: "/assets/modules/EVENTOS/CASO DE USO 3.png" },
+    { category: "Organización", description: "Actividades organizadas por la administración", icon: <CalendarCheck size={20} />, image: "/assets/modules/EVENTOS/CASO DE USO 4.png" }
   ];
 
   return (
@@ -65,7 +65,7 @@ export const EventsPage: React.FC<EventsPageProps> = ({ onOpenDemo }) => {
                 <div className="relative z-0 ml-8 md:ml-24 transform rotate-1 hover:rotate-0 transition-all duration-700">
                   <div className="rounded-[2.5rem] overflow-hidden shadow-2xl bg-white">
                     <img
-                      src="/assets/Modulos/EVENTOS/HEADER.png"
+                      src="/assets/modules/EVENTOS/HEADER.png"
                       alt="Vista del módulo de eventos"
                       className="w-full h-auto object-cover opacity-90 hover:opacity-100 transition-opacity"
                     />
@@ -114,7 +114,7 @@ export const EventsPage: React.FC<EventsPageProps> = ({ onOpenDemo }) => {
 
       <HowItWorksSection
         title="Conoce cómo funciona"
-        imageSrc="/assets/Modulos/EVENTOS/CÓMO FUNCIONA.png"
+        imageSrc="/assets/modules/EVENTOS/CÓMO FUNCIONA.png"
         items={[
           {
             problem: "Módulo separado o inexistente",

@@ -14,10 +14,10 @@ export const SurveysPage: React.FC<SurveysPageProps> = ({ onOpenDemo }) => {
     useEffect(() => { window.scrollTo(0, 0); }, []);
 
     const useCases = [
-        { category: "Horarios", description: "Sondeos sobre horarios de zonas comunes", icon: <ClipboardList size={20} />, image: "/assets/Modulos/ENCUESTAS/caso_de_uso_1.png" },
-        { category: "Servicios", description: "Opinión sobre servicios actuales", icon: <MessageCircle size={20} />, image: "/assets/Modulos/ENCUESTAS/caso_de_uso_2.png" },
-        { category: "Eventos", description: "Preferencias de eventos o actividades", icon: <Users size={20} />, image: "/assets/Modulos/ENCUESTAS/caso_de_uso_3.png" },
-        { category: "Consultas", description: "Consultas informales antes de tomar decisiones", icon: <ListChecks size={20} />, image: "/assets/Modulos/ENCUESTAS/caso_de_uso_4.png" }
+        { category: "Horarios", description: "Sondeos sobre horarios de zonas comunes", icon: <ClipboardList size={20} />, image: "/assets/modules/ENCUESTAS/caso_de_uso_1.png" },
+        { category: "Servicios", description: "Opinión sobre servicios actuales", icon: <MessageCircle size={20} />, image: "/assets/modules/ENCUESTAS/caso_de_uso_2.png" },
+        { category: "Eventos", description: "Preferencias de eventos o actividades", icon: <Users size={20} />, image: "/assets/modules/ENCUESTAS/caso_de_uso_3.png" },
+        { category: "Consultas", description: "Consultas informales antes de tomar decisiones", icon: <ListChecks size={20} />, image: "/assets/modules/ENCUESTAS/caso_de_uso_4.png" }
     ];
 
     return (
@@ -56,7 +56,7 @@ export const SurveysPage: React.FC<SurveysPageProps> = ({ onOpenDemo }) => {
                                 <div className="relative z-0 ml-8 md:ml-24 transform rotate-1 hover:rotate-0 transition-all duration-700">
                                     <div className="rounded-2xl overflow-hidden shadow-2xl bg-white">
                                         <img
-                                            src="/assets/Modulos/ENCUESTAS/hero.png"
+                                            src="/assets/modules/ENCUESTAS/hero.png"
                                             alt="Vista del módulo de encuestas"
                                             className="w-full h-auto object-cover opacity-90 hover:opacity-100 transition-opacity"
                                         />
@@ -106,7 +106,7 @@ export const SurveysPage: React.FC<SurveysPageProps> = ({ onOpenDemo }) => {
 
             <HowItWorksSection
                 title="Conoce cómo funciona"
-                imageSrc="/assets/Modulos/ENCUESTAS/como_funciona.png"
+                imageSrc="/assets/modules/ENCUESTAS/como_funciona.png"
                 items={[
                     {
                         problem: "Módulo inexistente o muy básico",

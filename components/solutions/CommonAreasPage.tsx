@@ -15,21 +15,21 @@ export const CommonAreasPage: React.FC<CommonAreasPageProps> = ({ onOpenDemo }) 
   useEffect(() => { window.scrollTo(0, 0); }, []);
 
   const appScreens = [
-    "/assets/Modulos/areascomunes/carruselinterfaz/comunes (1).jpg",
-    "/assets/Modulos/areascomunes/carruselinterfaz/comunes (2).jpg",
-    "/assets/Modulos/areascomunes/carruselinterfaz/comunes (3).jpg",
-    "/assets/Modulos/areascomunes/carruselinterfaz/comunes (4).jpg",
-    "/assets/Modulos/areascomunes/carruselinterfaz/comunes (5).jpg",
-    "/assets/Modulos/areascomunes/carruselinterfaz/comunes (6).jpg",
-    "/assets/Modulos/areascomunes/carruselinterfaz/comunes (7).jpg",
-    "/assets/Modulos/areascomunes/carruselinterfaz/comunes (8).jpg",
+    "/assets/modules/areascomunes/carruselinterfaz/comunes (1).jpg",
+    "/assets/modules/areascomunes/carruselinterfaz/comunes (2).jpg",
+    "/assets/modules/areascomunes/carruselinterfaz/comunes (3).jpg",
+    "/assets/modules/areascomunes/carruselinterfaz/comunes (4).jpg",
+    "/assets/modules/areascomunes/carruselinterfaz/comunes (5).jpg",
+    "/assets/modules/areascomunes/carruselinterfaz/comunes (6).jpg",
+    "/assets/modules/areascomunes/carruselinterfaz/comunes (7).jpg",
+    "/assets/modules/areascomunes/carruselinterfaz/comunes (8).jpg",
   ];
 
   const useCases = [
-    { category: "Salón", description: "Reservas de salón social", icon: <CalendarDays size={20} />, image: "/assets/Modulos/areascomunes/casosdeuso/salonsocial_areas_compressed.png" },
-    { category: "Húmedas", description: "Uso de zonas húmedas con control de aforo", icon: <Umbrella size={20} />, image: "/assets/Modulos/areascomunes/casosdeuso/piscina_areas_compressed.png" },
-    { category: "Gimnasio", description: "Uso del gimnasio y zonas comunes por franjas horarias", icon: <Dumbbell size={20} />, image: "/assets/Modulos/areascomunes/casosdeuso/gimnasio_areas_compressed.png" },
-    { category: "Costo", description: "Espacios con costo, donde la reserva solo se confirma al validar el pago", icon: <Wallet size={20} />, image: "/assets/Modulos/areascomunes/casosdeuso/costo_areas_compressed.png" }
+    { category: "Salón", description: "Reservas de salón social", icon: <CalendarDays size={20} />, image: "/assets/modules/areascomunes/casosdeuso/salonsocial_areas_compressed.png" },
+    { category: "Húmedas", description: "Uso de zonas húmedas con control de aforo", icon: <Umbrella size={20} />, image: "/assets/modules/areascomunes/casosdeuso/piscina_areas_compressed.png" },
+    { category: "Gimnasio", description: "Uso del gimnasio y zonas comunes por franjas horarias", icon: <Dumbbell size={20} />, image: "/assets/modules/areascomunes/casosdeuso/gimnasio_areas_compressed.png" },
+    { category: "Costo", description: "Espacios con costo, donde la reserva solo se confirma al validar el pago", icon: <Wallet size={20} />, image: "/assets/modules/areascomunes/casosdeuso/costo_areas_compressed.png" }
   ];
 
   return (
@@ -67,7 +67,7 @@ export const CommonAreasPage: React.FC<CommonAreasPageProps> = ({ onOpenDemo }) 
                 <div className="relative z-0 ml-8 md:ml-24 transform rotate-1 hover:rotate-0 transition-all duration-700">
                   <div className="rounded-2xl overflow-hidden shadow-2xl bg-white aspect-video">
                     <img
-                      src="https://images.unsplash.com/photo-1576013551627-0cc20b96c2a7?auto=format&fit=crop&q=80&w=1200"
+                      src="/assets/modules/areascomunes/HERO.png"
                       alt="Vista del módulo de áreas comunes"
                       className="w-full h-full object-cover opacity-90 hover:opacity-100 transition-opacity"
                     />
@@ -124,7 +124,7 @@ export const CommonAreasPage: React.FC<CommonAreasPageProps> = ({ onOpenDemo }) 
         subtitle="Cómo funciona"
         leftLabel="Software tradicional:"
         rightLabel="Con DomoNow:"
-        imageSrc="https://images.unsplash.com/photo-1576013551627-0cc20b96c2a7?auto=format&fit=crop&q=80&w=1200"
+        imageSrc="/assets/modules/areascomunes/COMO_FUNCIONA.jpeg"
         items={[
           {
             problem: "Calendario básico de disponibilidad",

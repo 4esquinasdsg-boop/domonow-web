@@ -19,20 +19,20 @@ export const AccessControlPage: React.FC<AccessControlPageProps> = ({ onOpenDemo
     }, []);
 
     const appScreens = [
-        "/assets/Modulos/accesos/carruselinterfaz/ACCESOS (1).jpg",
-        "/assets/Modulos/accesos/carruselinterfaz/ACCESOS (2).jpg",
-        "/assets/Modulos/accesos/carruselinterfaz/ACCESOS (3).jpg",
-        "/assets/Modulos/accesos/carruselinterfaz/ACCESOS (4).jpg",
-        "/assets/Modulos/accesos/carruselinterfaz/ACCESOS (5).jpg",
-        "/assets/Modulos/accesos/carruselinterfaz/ACCESOS (6).jpg",
-        "/assets/Modulos/accesos/carruselinterfaz/ACCESOS (7).jpg",
+        "/assets/modules/accesos/carruselinterfaz/ACCESOS (1).jpg",
+        "/assets/modules/accesos/carruselinterfaz/ACCESOS (2).jpg",
+        "/assets/modules/accesos/carruselinterfaz/ACCESOS (3).jpg",
+        "/assets/modules/accesos/carruselinterfaz/ACCESOS (4).jpg",
+        "/assets/modules/accesos/carruselinterfaz/ACCESOS (5).jpg",
+        "/assets/modules/accesos/carruselinterfaz/ACCESOS (6).jpg",
+        "/assets/modules/accesos/carruselinterfaz/ACCESOS (7).jpg",
     ];
 
     const useCases = [
-        { category: "Visitas", description: "Visitas ocasionales", icon: <Users size={20} />, image: "/assets/Modulos/accesos/casosdeuso/accesos_cuso (1)_compressed.png" },
-        { category: "Servicios", description: "Proveedores y técnicos", icon: <Truck size={20} />, image: "/assets/Modulos/accesos/casosdeuso/accesos_cuso (1)_compressed.jpg" },
-        { category: "Programados", description: "Ingresos programados o recurrentes", icon: <Calendar size={20} />, image: "/assets/Modulos/accesos/casosdeuso/accesos_cuso (2)_compressed.jpg" },
-        { category: "Personal", description: "Personal doméstico", icon: <Home size={20} />, image: "/assets/Modulos/accesos/casosdeuso/accesos_cuso (3)_compressed.jpg" }
+        { category: "Visitas", description: "Visitas ocasionales", icon: <Users size={20} />, image: "/assets/modules/accesos/casosdeuso/accesos_cuso (1)_compressed.png" },
+        { category: "Servicios", description: "Proveedores y técnicos", icon: <Truck size={20} />, image: "/assets/modules/accesos/casosdeuso/accesos_cuso (1)_compressed.jpg" },
+        { category: "Programados", description: "Ingresos programados o recurrentes", icon: <Calendar size={20} />, image: "/assets/modules/accesos/casosdeuso/accesos_cuso (2)_compressed.jpg" },
+        { category: "Personal", description: "Personal doméstico", icon: <Home size={20} />, image: "/assets/modules/accesos/casosdeuso/accesos_cuso (3)_compressed.jpg" }
     ];
 
     return (
@@ -75,7 +75,7 @@ export const AccessControlPage: React.FC<AccessControlPageProps> = ({ onOpenDemo
                                 <div className="relative z-0 ml-8 md:ml-24 transform rotate-1 hover:rotate-0 transition-all duration-700">
                                     <div className="rounded-2xl overflow-hidden shadow-2xl bg-white aspect-video">
                                         <img
-                                            src="/assets/Modulos/accesos/accesoshero.png"
+                                            src="/assets/modules/accesos/accesoshero.png"
                                             alt="Vista del módulo de control de accesos"
                                             className="w-full h-full object-cover opacity-90 hover:opacity-100 transition-opacity"
                                         />
@@ -178,7 +178,7 @@ export const AccessControlPage: React.FC<AccessControlPageProps> = ({ onOpenDemo
                 subtitle="Cómo funciona"
                 leftLabel="Software tradicional:"
                 rightLabel="Con DomoNow:"
-                imageSrc="/assets/Modulos/accesos/accesoshero.png"
+                imageSrc="/assets/modules/accesos/accesoshero.png"
                 items={[
                     {
                         problem: "Formulario básico de registro",

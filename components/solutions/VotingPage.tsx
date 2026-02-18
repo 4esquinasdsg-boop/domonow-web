@@ -23,10 +23,10 @@ export const VotingPage: React.FC<VotingPageProps> = ({ onOpenDemo }) => {
   ];
 
   const useCases = [
-    { category: "Presupuestos", description: "Aprobación de presupuestos", icon: <PieChart size={20} />, image: "/assets/Modulos/VOTACIONES/caso_de_uso_1.png" },
-    { category: "Reglamentos", description: "Cambios en reglamentos o normas internas", icon: <Settings size={20} />, image: "/assets/Modulos/VOTACIONES/caso_de_uso_2.png" },
-    { category: "Obras", description: "Aprobar una obra grande o gasto extraordinario", icon: <CheckSquare size={20} />, image: "/assets/Modulos/VOTACIONES/caso_de_uso_3.png" },
-    { category: "Elecciones", description: "Elección de junta, comités o proveedores", icon: <Users size={20} />, image: "/assets/Modulos/VOTACIONES/caso_de_uso_4.png" }
+    { category: "Presupuestos", description: "Aprobación de presupuestos", icon: <PieChart size={20} />, image: "/assets/modules/VOTACIONES/caso_de_uso_1.png" },
+    { category: "Reglamentos", description: "Cambios en reglamentos o normas internas", icon: <Settings size={20} />, image: "/assets/modules/VOTACIONES/caso_de_uso_2.png" },
+    { category: "Obras", description: "Aprobar una obra grande o gasto extraordinario", icon: <CheckSquare size={20} />, image: "/assets/modules/VOTACIONES/caso_de_uso_3.png" },
+    { category: "Elecciones", description: "Elección de junta, comités o proveedores", icon: <Users size={20} />, image: "/assets/modules/VOTACIONES/caso_de_uso_4.png" }
   ];
 
   return (
@@ -65,7 +65,7 @@ export const VotingPage: React.FC<VotingPageProps> = ({ onOpenDemo }) => {
                 <div className="relative z-0 ml-8 md:ml-24 transform rotate-1 hover:rotate-0 transition-all duration-700">
                   <div className="rounded-2xl overflow-hidden shadow-2xl bg-white">
                     <img
-                      src="/assets/Modulos/VOTACIONES/header.png"
+                      src="/assets/modules/VOTACIONES/header.png"
                       alt="Vista del módulo de votaciones"
                       className="w-full h-auto object-cover opacity-90 hover:opacity-100 transition-opacity"
                     />
@@ -115,7 +115,7 @@ export const VotingPage: React.FC<VotingPageProps> = ({ onOpenDemo }) => {
 
       <HowItWorksSection
         title="Conoce cómo funciona"
-        imageSrc="/assets/Modulos/VOTACIONES/como_funciona.png"
+        imageSrc="/assets/modules/VOTACIONES/como_funciona.png"
         items={[
           {
             problem: "Módulo inexistente o muy básico",

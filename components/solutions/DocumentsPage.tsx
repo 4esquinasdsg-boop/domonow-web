@@ -23,10 +23,10 @@ export const DocumentsPage: React.FC<DocumentsPageProps> = ({ onOpenDemo }) => {
   ];
 
   const useCases = [
-    { category: "Reglamento", description: "Residentes consultan el reglamento", icon: <FileText size={20} />, image: "/assets/Modulos/DOCUMENTAL/CASO DE USO 1.png" },
-    { category: "Actas", description: "Junta directiva revisa actas y documentos en segundos", icon: <Search size={20} />, image: "/assets/Modulos/DOCUMENTAL/CASO DE USO 2.png" },
-    { category: "Bienvenida", description: "Nuevos residentes acceden a la información clave desde el primer día", icon: <UserCheck size={20} />, image: "/assets/Modulos/DOCUMENTAL/CASO DE USO 3.png" },
-    { category: "Consultas", description: "Administración responde consultas sin buscar archivos uno por uno", icon: <Folder size={20} />, image: "/assets/Modulos/DOCUMENTAL/CASO DE USO 4.png" }
+    { category: "Reglamento", description: "Residentes consultan el reglamento", icon: <FileText size={20} />, image: "/assets/modules/DOCUMENTAL/CASO DE USO 1.png" },
+    { category: "Actas", description: "Junta directiva revisa actas y documentos en segundos", icon: <Search size={20} />, image: "/assets/modules/DOCUMENTAL/CASO DE USO 2.png" },
+    { category: "Bienvenida", description: "Nuevos residentes acceden a la información clave desde el primer día", icon: <UserCheck size={20} />, image: "/assets/modules/DOCUMENTAL/CASO DE USO 3.png" },
+    { category: "Consultas", description: "Administración responde consultas sin buscar archivos uno por uno", icon: <Folder size={20} />, image: "/assets/modules/DOCUMENTAL/CASO DE USO 4.png" }
   ];
 
   return (
@@ -65,7 +65,7 @@ export const DocumentsPage: React.FC<DocumentsPageProps> = ({ onOpenDemo }) => {
                 <div className="relative z-0 ml-8 md:ml-24 transform rotate-1 hover:rotate-0 transition-all duration-700">
                   <div className="rounded-2xl overflow-hidden shadow-2xl bg-white">
                     <img
-                      src="/assets/Modulos/DOCUMENTAL/HEADER.png"
+                      src="/assets/modules/DOCUMENTAL/HEADER.png"
                       alt="Vista del módulo de documentos"
                       className="w-full h-auto object-cover opacity-90 hover:opacity-100 transition-opacity"
                     />
@@ -116,7 +116,7 @@ export const DocumentsPage: React.FC<DocumentsPageProps> = ({ onOpenDemo }) => {
 
       <HowItWorksSection
         title="Conoce cómo funciona"
-        imageSrc="/assets/Modulos/DOCUMENTAL/CÓMO FUNCIONA.png"
+        imageSrc="/assets/modules/DOCUMENTAL/CÓMO FUNCIONA.png"
         items={[
           {
             problem: "Carpetas básicas sin estructura",

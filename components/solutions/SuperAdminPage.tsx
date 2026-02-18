@@ -17,10 +17,10 @@ export const SuperAdminPage: React.FC<SuperAdminPageProps> = ({ onOpenDemo }) =>
     }, []);
 
     const useCases = [
-        { category: "Visibilidad total", description: "Revisar el estado de todas las propiedades a primera hora", icon: <Building2 size={20} />, image: "/assets/Modulos/SUPER ADMIN/CÓMO FUNCIONA.png" },
-        { category: "Cumplimiento legal", description: "Recibir alerta de un vencimiento legal próximo", icon: <Users size={20} />, image: "/assets/Modulos/SUPER ADMIN/CASO DE USO 2.png" },
-        { category: "Comunicación masiva", description: "Aplicar el mismo comunicado en 5 edificios a la vez", icon: <BarChart3 size={20} />, image: "/assets/Modulos/SUPER ADMIN/CASO DE USO 3.png" },
-        { category: "Coordinación", description: "Coordinar proveedores de mantenimiento", icon: <Settings size={20} />, image: "/assets/Modulos/SUPER ADMIN/CASO DE USO 4.png" }
+        { category: "Visibilidad total", description: "Revisar el estado de todas las propiedades a primera hora", icon: <Building2 size={20} />, image: "/assets/modules/SUPER ADMIN/CÓMO FUNCIONA.png" },
+        { category: "Cumplimiento legal", description: "Recibir alerta de un vencimiento legal próximo", icon: <Users size={20} />, image: "/assets/modules/SUPER ADMIN/CASO DE USO 2.png" },
+        { category: "Comunicación masiva", description: "Aplicar el mismo comunicado en 5 edificios a la vez", icon: <BarChart3 size={20} />, image: "/assets/modules/SUPER ADMIN/CASO DE USO 3.png" },
+        { category: "Coordinación", description: "Coordinar proveedores de mantenimiento", icon: <Settings size={20} />, image: "/assets/modules/SUPER ADMIN/CASO DE USO 4.png" }
     ];
 
     return (
@@ -68,7 +68,7 @@ export const SuperAdminPage: React.FC<SuperAdminPageProps> = ({ onOpenDemo }) =>
                                 <div className="relative z-0 ml-8 md:ml-24 transform rotate-1 hover:rotate-0 transition-all duration-700">
                                     <div className="rounded-2xl overflow-hidden shadow-2xl bg-white aspect-video">
                                         <img
-                                            src="/assets/Modulos/SUPER ADMIN/hero_superadmin.png"
+                                            src="/assets/modules/SUPER ADMIN/hero_superadmin.png"
                                             alt="Panel de Super Administrador"
                                             className="w-full h-full object-cover opacity-90 hover:opacity-100 transition-opacity"
                                         />
@@ -161,7 +161,7 @@ export const SuperAdminPage: React.FC<SuperAdminPageProps> = ({ onOpenDemo }) =>
 
             <HowItWorksSection
                 variant="superadmin"
-                imageSrc="/assets/Modulos/SUPER ADMIN/CASO DE USO 1.png"
+                imageSrc="/assets/modules/SUPER ADMIN/CASO DE USO 1.png"
                 title="Conoce cómo funciona"
                 subtitle="Cómo funciona"
                 leftLabel="Software tradicional:"

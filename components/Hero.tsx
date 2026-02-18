@@ -69,7 +69,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenDemo }) => {
                   playsInline
                   className="w-full h-auto"
                 >
-                  <source src="/assets/Inicio/Hero_Video.mp4" type="video/mp4" />
+                  <source src="/assets/home/Hero_Video.mp4" type="video/mp4" />
                   Tu navegador no soporta videos HTML5.
                 </video>
               </div>

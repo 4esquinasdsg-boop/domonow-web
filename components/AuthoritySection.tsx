@@ -171,7 +171,7 @@ export const AuthoritySection: React.FC = () => {
                     <div className="bg-white p-4 rounded-[2.5rem] shadow-xl border border-gray-100 flex flex-col h-auto min-h-[500px] relative group overflow-hidden">
                         <div className="relative h-[260px] w-full rounded-[2rem] overflow-hidden shrink-0">
                             <img
-                                src="/assets/Inicio/carlos_lopez_compressed.png"
+                                src="/assets/home/carlos_lopez_compressed.png"
                                 alt="Carlos López"
                                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                             />

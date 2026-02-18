@@ -23,10 +23,10 @@ export const FinancialPage: React.FC<FinancialPageProps> = ({ onOpenDemo }) => {
   ];
 
   const useCases = [
-    { category: "Confianza", description: "Desconfianza por falta de información clara sobre gastos", icon: <Shield size={20} />, image: "/assets/Modulos/FINANCIERO/CASO DE USO 1.png" },
-    { category: "Claridad", description: "Residentes que no saben cuánto deben ni cuándo vence", icon: <Eye size={20} />, image: "/assets/Modulos/FINANCIERO/CASO DE USO 2.png" },
-    { category: "Agilidad", description: "Reportes contables que toman días en generarse", icon: <FileBarChart size={20} />, image: "/assets/Modulos/FINANCIERO/CASO DE USO 3.png" },
-    { category: "Recaudo", description: "Facilidad de pago desde cualquier sitio", icon: <TrendingUp size={20} />, image: "/assets/Modulos/FINANCIERO/CASO DE USO 4.png" }
+    { category: "Confianza", description: "Desconfianza por falta de información clara sobre gastos", icon: <Shield size={20} />, image: "/assets/modules/FINANCIERO/CASO DE USO 1.png" },
+    { category: "Claridad", description: "Residentes que no saben cuánto deben ni cuándo vence", icon: <Eye size={20} />, image: "/assets/modules/FINANCIERO/CASO DE USO 2.png" },
+    { category: "Agilidad", description: "Reportes contables que toman días en generarse", icon: <FileBarChart size={20} />, image: "/assets/modules/FINANCIERO/CASO DE USO 3.png" },
+    { category: "Recaudo", description: "Facilidad de pago desde cualquier sitio", icon: <TrendingUp size={20} />, image: "/assets/modules/FINANCIERO/CASO DE USO 4.png" }
   ];
 
   return (
@@ -65,7 +65,7 @@ export const FinancialPage: React.FC<FinancialPageProps> = ({ onOpenDemo }) => {
                 <div className="relative z-0 ml-8 md:ml-24 transform rotate-1 hover:rotate-0 transition-all duration-700">
                   <div className="rounded-2xl overflow-hidden shadow-2xl bg-white">
                     <img
-                      src="/assets/Modulos/FINANCIERO/HEADER.png"
+                      src="/assets/modules/FINANCIERO/HEADER.png"
                       alt="Vista del módulo financiero"
                       className="w-full h-auto object-cover opacity-90 hover:opacity-100 transition-opacity"
                     />
@@ -117,7 +117,7 @@ export const FinancialPage: React.FC<FinancialPageProps> = ({ onOpenDemo }) => {
 
       <HowItWorksSection
         title="Conoce cómo funciona"
-        imageSrc="/assets/Modulos/FINANCIERO/CÓMO FUNCIONA.png"
+        imageSrc="/assets/modules/FINANCIERO/CÓMO FUNCIONA.png"
         items={[
           {
             problem: "Módulo separado o inexistente",

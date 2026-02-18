@@ -10,7 +10,7 @@ export const Footer: React.FC = () => {
                     <div className="flex flex-col items-center md:items-start">
                         <Link to="/">
                             <img
-                                src="/assets/Logo/LogoPiramide.png"
+                                src="/assets/logo/LogoPiramide.png"
                                 alt="DomoNow"
                                 className="h-12 w-auto mb-4"
                             />

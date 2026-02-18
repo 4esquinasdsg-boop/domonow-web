@@ -23,10 +23,10 @@ export const AssembliesPage: React.FC<AssembliesPageProps> = ({ onOpenDemo }) =>
   ];
 
   const useCases = [
-    { category: "Urgentes", description: "Decisiones urgentes que no pueden esperar semanas", icon: <Clock size={20} />, image: "/assets/Modulos/ASAMBLEAS/CASO DE USO 1.png" },
-    { category: "Votaciones", description: "Votaciones que antes se hacían por WhatsApp o papel", icon: <Vote size={20} />, image: "/assets/Modulos/ASAMBLEAS/CASO DE USO 2.png" },
-    { category: "Reclamos", description: "Reclamaciones por quórum o falta de información", icon: <X size={20} />, image: "/assets/Modulos/ASAMBLEAS/CASO DE USO 3.png" },
-    { category: "Actas", description: "Actas que antes tomaban días en elaborarse", icon: <FileCheck size={20} />, image: "/assets/Modulos/ASAMBLEAS/CASO DE USO 4.png" }
+    { category: "Urgentes", description: "Decisiones urgentes que no pueden esperar semanas", icon: <Clock size={20} />, image: "/assets/modules/ASAMBLEAS/CASO DE USO 1.png" },
+    { category: "Votaciones", description: "Votaciones que antes se hacían por WhatsApp o papel", icon: <Vote size={20} />, image: "/assets/modules/ASAMBLEAS/CASO DE USO 2.png" },
+    { category: "Reclamos", description: "Reclamaciones por quórum o falta de información", icon: <X size={20} />, image: "/assets/modules/ASAMBLEAS/CASO DE USO 3.png" },
+    { category: "Actas", description: "Actas que antes tomaban días en elaborarse", icon: <FileCheck size={20} />, image: "/assets/modules/ASAMBLEAS/CASO DE USO 4.png" }
   ];
 
   return (
@@ -65,7 +65,7 @@ export const AssembliesPage: React.FC<AssembliesPageProps> = ({ onOpenDemo }) =>
                 <div className="relative z-0 ml-8 md:ml-24 transform rotate-1 hover:rotate-0 transition-all duration-700">
                   <div className="rounded-[2.5rem] overflow-hidden shadow-2xl bg-white">
                     <img
-                      src="/assets/Modulos/ASAMBLEAS/HERO.png"
+                      src="/assets/modules/ASAMBLEAS/HERO.png"
                       alt="Vista del módulo de asambleas"
                       className="w-full h-auto object-cover opacity-90 hover:opacity-100 transition-opacity"
                     />
@@ -113,7 +113,7 @@ export const AssembliesPage: React.FC<AssembliesPageProps> = ({ onOpenDemo }) =>
 
       <HowItWorksSection
         title="Conoce cómo funciona"
-        imageSrc="/assets/Modulos/ASAMBLEAS/CÓMO FUNCIONA.png"
+        imageSrc="/assets/modules/ASAMBLEAS/CÓMO FUNCIONA.png"
         items={[
           {
             problem: "Convocatoria por email masivo",

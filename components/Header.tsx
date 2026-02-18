@@ -106,7 +106,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenDemo }) => {
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2 relative z-[101] group h-14">
             <img
-              src="/assets/Logo/LogoPiramide.png"
+              src="/assets/logo/LogoPiramide.png"
               alt="DomoNow Logo"
               className="h-full w-auto object-contain"
             />

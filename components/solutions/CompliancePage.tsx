@@ -23,10 +23,10 @@ export const CompliancePage: React.FC<CompliancePageProps> = ({ onOpenDemo }) =>
   ];
 
   const useCases = [
-    { category: "Auditorías", description: "Preparación de auditorías sin correr a última hora", icon: <ClipboardCheck size={20} />, image: "/assets/Modulos/NORMATIVO/CASO DE USO 1.png" },
-    { category: "Revisiones", description: "Revisiones periódicas con criterios claros y repetibles", icon: <ListChecks size={20} />, image: "/assets/Modulos/NORMATIVO/CASO DE USO 2.png" },
-    { category: "Informes", description: "Informes listos para juntas, consejos o entes reguladores", icon: <FileText size={20} />, image: "/assets/Modulos/NORMATIVO/CASO DE USO 3.png" },
-    { category: "Control", description: "Control de tareas críticas", icon: <LayoutDashboard size={20} />, image: "/assets/Modulos/NORMATIVO/CASO DE USO 4.png" }
+    { category: "Auditorías", description: "Preparación de auditorías sin correr a última hora", icon: <ClipboardCheck size={20} />, image: "/assets/modules/NORMATIVO/CASO DE USO 1.png" },
+    { category: "Revisiones", description: "Revisiones periódicas con criterios claros y repetibles", icon: <ListChecks size={20} />, image: "/assets/modules/NORMATIVO/CASO DE USO 2.png" },
+    { category: "Informes", description: "Informes listos para juntas, consejos o entes reguladores", icon: <FileText size={20} />, image: "/assets/modules/NORMATIVO/CASO DE USO 3.png" },
+    { category: "Control", description: "Control de tareas críticas", icon: <LayoutDashboard size={20} />, image: "/assets/modules/NORMATIVO/CASO DE USO 4.png" }
   ];
 
   return (
@@ -65,7 +65,7 @@ export const CompliancePage: React.FC<CompliancePageProps> = ({ onOpenDemo }) =>
                 <div className="relative z-0 ml-8 md:ml-24 transform rotate-1 hover:rotate-0 transition-all duration-700">
                   <div className="rounded-[2.5rem] overflow-hidden shadow-2xl bg-white">
                     <img
-                      src="/assets/Modulos/NORMATIVO/HEADER.png"
+                      src="/assets/modules/NORMATIVO/HEADER.png"
                       alt="Vista del módulo de cumplimiento"
                       className="w-full h-auto object-cover opacity-90 hover:opacity-100 transition-opacity"
                     />
@@ -117,7 +117,7 @@ export const CompliancePage: React.FC<CompliancePageProps> = ({ onOpenDemo }) =>
 
       <HowItWorksSection
         title="Conoce cómo funciona"
-        imageSrc="/assets/Modulos/NORMATIVO/CÓMO FUNCIONA.png"
+        imageSrc="/assets/modules/NORMATIVO/CÓMO FUNCIONA.png"
         items={[
           {
             problem: "Auditorías legales sin documentación en orden",

@@ -15,21 +15,21 @@ export const EmergencyPage: React.FC<EmergencyPageProps> = ({ onOpenDemo }) => {
     useEffect(() => { window.scrollTo(0, 0); }, []);
 
     const appScreens = [
-        "/assets/Modulos/alertas/carruselinterfaz/alertas (1).jpg",
-        "/assets/Modulos/alertas/carruselinterfaz/alertas (2).jpg",
-        "/assets/Modulos/alertas/carruselinterfaz/alertas (3).jpg",
-        "/assets/Modulos/alertas/carruselinterfaz/alertas (4).jpg",
-        "/assets/Modulos/alertas/carruselinterfaz/alertas (5).jpg",
-        "/assets/Modulos/alertas/carruselinterfaz/alertas (6).jpg",
-        "/assets/Modulos/alertas/carruselinterfaz/alertas (7).jpg",
-        "/assets/Modulos/alertas/carruselinterfaz/alertas (8).jpg",
+        "/assets/modules/alertas/carruselinterfaz/alertas (1).jpg",
+        "/assets/modules/alertas/carruselinterfaz/alertas (2).jpg",
+        "/assets/modules/alertas/carruselinterfaz/alertas (3).jpg",
+        "/assets/modules/alertas/carruselinterfaz/alertas (4).jpg",
+        "/assets/modules/alertas/carruselinterfaz/alertas (5).jpg",
+        "/assets/modules/alertas/carruselinterfaz/alertas (6).jpg",
+        "/assets/modules/alertas/carruselinterfaz/alertas (7).jpg",
+        "/assets/modules/alertas/carruselinterfaz/alertas (8).jpg",
     ];
 
     const useCases = [
-        { category: "Médicas", description: "Emergencias médicas dentro del apartamento", icon: <Heart size={20} />, image: "/assets/Modulos/alertas/casos de uso/alertas_CASOSDEUSO (2)_compressed.png" },
-        { category: "Seguridad", description: "Incidentes de seguridad que requieren atención inmediata", icon: <ShieldAlert size={20} />, image: "/assets/Modulos/alertas/casos de uso/alertas_CASOSDEUSO (4)_compressed.png" },
-        { category: "Riesgo", description: "Situaciones de riesgo en zonas comunes", icon: <BellRing size={20} />, image: "/assets/Modulos/alertas/casos de uso/alertas_CASOSDEUSO (1)_compressed.png" },
-        { category: "Ayuda", description: "Adultos mayores o personas solas que necesitan ayuda rápida", icon: <Ambulance size={20} />, image: "/assets/Modulos/alertas/casos de uso/alertas_CASOSDEUSO (3)_compressed.png" }
+        { category: "Médicas", description: "Emergencias médicas dentro del apartamento", icon: <Heart size={20} />, image: "/assets/modules/alertas/casos de uso/alertas_CASOSDEUSO (2)_compressed.png" },
+        { category: "Seguridad", description: "Incidentes de seguridad que requieren atención inmediata", icon: <ShieldAlert size={20} />, image: "/assets/modules/alertas/casos de uso/alertas_CASOSDEUSO (4)_compressed.png" },
+        { category: "Riesgo", description: "Situaciones de riesgo en zonas comunes", icon: <BellRing size={20} />, image: "/assets/modules/alertas/casos de uso/alertas_CASOSDEUSO (1)_compressed.png" },
+        { category: "Ayuda", description: "Adultos mayores o personas solas que necesitan ayuda rápida", icon: <Ambulance size={20} />, image: "/assets/modules/alertas/casos de uso/alertas_CASOSDEUSO (3)_compressed.png" }
     ];
 
     return (
@@ -69,7 +69,7 @@ export const EmergencyPage: React.FC<EmergencyPageProps> = ({ onOpenDemo }) => {
                                     {/* Added aspect-video to force height even if image fails */}
                                     <div className="rounded-2xl overflow-hidden shadow-2xl bg-white aspect-video">
                                         <img
-                                            src="/assets/Modulos/alertas/alertashero.png"
+                                            src="/assets/modules/alertas/alertashero.png"
                                             alt="Monitor de seguridad y alertas"
                                             className="w-full h-full object-cover opacity-90 hover:opacity-100 transition-opacity"
                                         />
@@ -162,7 +162,7 @@ export const EmergencyPage: React.FC<EmergencyPageProps> = ({ onOpenDemo }) => {
                 subtitle="Cómo funciona"
                 leftLabel="Software tradicional:"
                 rightLabel="Con DomoNow:"
-                imageSrc="/assets/Modulos/alertas/alertashero.png"
+                imageSrc="/assets/modules/alertas/como_funciona_alertas.png"
                 items={[
                     {
                         problem: "Módulo separado o inexistente",
