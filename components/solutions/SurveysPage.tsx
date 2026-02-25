@@ -1,7 +1,9 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
+import { toYouTubeEmbed } from '../../utils/youtube';
 import { useTranslation } from 'react-i18next';
 import { Button } from '../Button';
 import { HowItWorksSection } from '../HowItWorksSection';
+import { ParticleBackground } from '../ParticleBackground';
 import {
     BarChart2, MessageCircle, Users, ListChecks,
     X, Check, Quote, ClipboardList, Send, PieChart
@@ -34,10 +36,10 @@ export const SurveysPage: React.FC<SurveysPageProps> = ({ onOpenDemo }) => {
             useCases: {
                 title: "Casos de uso",
                 items: [
-                    { category: "Horarios", description: "Sondeos sobre horarios de zonas comunes" },
-                    { category: "Servicios", description: "Opinión sobre servicios actuales" },
-                    { category: "Eventos", description: "Preferencias de eventos o actividades" },
-                    { category: "Consultas", description: "Consultas informales antes de tomar decisiones" }
+                    { category: "Sondeos sobre horarios de zonas comunes", videoUrl: "" },
+                    { category: "Opinión sobre servicios actuales", videoUrl: "" },
+                    { category: "Preferencias de eventos o actividades", videoUrl: "" },
+                    { category: "Consultas informales antes de tomar decisiones", videoUrl: "" }
                 ]
             },
             howItWorks: {
@@ -118,10 +120,10 @@ export const SurveysPage: React.FC<SurveysPageProps> = ({ onOpenDemo }) => {
             useCases: {
                 title: "Use cases",
                 items: [
-                    { category: "Schedules", description: "Polls on common area schedules" },
-                    { category: "Services", description: "Opinion on current services" },
-                    { category: "Events", description: "Preferences for events or activities" },
-                    { category: "Inquiries", description: "Informal inquiries before making decisions" }
+                    { category: "Polls on common area schedules", videoUrl: "" },
+                    { category: "Opinion on current services", videoUrl: "" },
+                    { category: "Preferences for events or activities", videoUrl: "" },
+                    { category: "Informal inquiries before making decisions", videoUrl: "" }
                 ]
             },
             howItWorks: {
@@ -189,6 +191,7 @@ export const SurveysPage: React.FC<SurveysPageProps> = ({ onOpenDemo }) => {
     };
 
     const content = t[language];
+    const [activePopup, setActivePopup] = useState<number | null>(null);
 
     const useCaseIcons = [
         <ClipboardList size={20} />,
@@ -266,27 +269,89 @@ export const SurveysPage: React.FC<SurveysPageProps> = ({ onOpenDemo }) => {
             </section>
 
 
+            {/* Pulse animation style */}
+            <style>{`
+                @keyframes pulseGlow {
+                    0%, 100% { box-shadow: 0 0 0 0 rgba(130, 10, 209, 0.5); transform: scale(1); }
+                    50% { box-shadow: 0 0 20px 6px rgba(130, 10, 209, 0.35); transform: scale(1.05); }
+                }
+                .btn-pulse-glow {
+                    animation: pulseGlow 2s ease-in-out infinite;
+                }
+            `}</style>
+
             {/* 4. USE CASES */}
-            <section className="py-24 bg-[#F9F5FF]">
-                <div className="container mx-auto px-6">
+            <section className="py-24 bg-white relative overflow-hidden">
+                <ParticleBackground />
+                <div className="container mx-auto px-6 relative z-10">
                     <h2 className="text-h2 font-bold text-center mb-16 text-torre">{content.useCases.title}</h2>
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                         {content.useCases.items.map((item, index) => (
                             <div key={index} className="relative h-[500px] rounded-[2rem] overflow-hidden group shadow-lg hover:shadow-2xl transition-all duration-500">
                                 <div className="absolute inset-0 w-full h-full">
                                     <img src={useCaseImages[index]} alt={item.category} loading="lazy" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
-                                    <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-black/30"></div>
+                                    <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-black/50"></div>
                                 </div>
-                                <div className="absolute top-6 left-6 z-10"><h3 className="text-h4 font-bold text-white drop-shadow-md tracking-tight">{item.category}</h3></div>
-                                <div className="absolute bottom-4 left-4 right-4 bg-white/80 backdrop-blur-md p-6 rounded-[2rem] shadow-xl flex flex-col gap-4 h-40 border border-white/50">
-                                    <div className="w-12 h-12 bg-purple-50 rounded-full flex items-center justify-center text-domo shrink-0">{useCaseIcons[index]}</div>
-                                    <div><p className="text-small font-medium text-torre leading-snug">{item.description}</p></div>
+                                <div className="absolute top-6 left-6 right-6 z-10 flex items-start gap-3">
+                                    <div className="w-10 h-10 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center text-white shrink-0">{useCaseIcons[index]}</div>
+                                    <h3 className="text-body font-bold text-white drop-shadow-md tracking-tight leading-snug">{item.category}</h3>
+                                </div>
+                                <div className="absolute bottom-6 left-0 right-0 flex justify-center z-10">
+                                    <button
+                                        onClick={() => setActivePopup(index)}
+                                        className="btn-pulse-glow bg-domo text-white font-bold px-6 py-2.5 rounded-full text-sm hover:bg-purple-800 transition-colors cursor-pointer shadow-lg"
+                                    >
+                                        {language === 'es' ? 'Ver más' : 'See more'}
+                                    </button>
                                 </div>
                             </div>
                         ))}
                     </div>
                 </div>
             </section>
+
+            {/* USE CASE VIDEO POPUP */}
+            {activePopup !== null && (
+                <div className="fixed inset-0 z-[200] flex items-center justify-center p-4">
+                    <div className="absolute inset-0 bg-torre/60 backdrop-blur-sm" onClick={() => setActivePopup(null)}></div>
+                    <div className="relative bg-white rounded-[2.5rem] w-full max-w-sm max-h-[90vh] overflow-hidden shadow-2xl" style={{ animation: 'fadeIn 0.3s ease-out' }}>
+                        <button
+                            onClick={() => setActivePopup(null)}
+                            className="absolute top-4 right-4 p-2 bg-gray-100 hover:bg-gray-200 rounded-full text-gray-500 transition-colors z-20"
+                        >
+                            <X size={20} />
+                        </button>
+                        <div className="p-6 flex flex-col items-center text-center">
+                            <div className="w-14 h-14 bg-domo rounded-full flex items-center justify-center text-white shrink-0 mb-4">
+                                {useCaseIcons[activePopup]}
+                            </div>
+                            <h3 className="text-h4 font-bold text-torre mb-6">{content.useCases.items[activePopup].category}</h3>
+                            {content.useCases.items[activePopup].videoUrl ? (
+                                <div className="w-full aspect-[9/16] rounded-2xl overflow-hidden bg-gray-100">
+                                    <iframe
+                                        src={toYouTubeEmbed(content.useCases.items[activePopup].videoUrl)}
+                                        className="w-full h-full"
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                        allowFullScreen
+                                        title={content.useCases.items[activePopup].category}
+                                    ></iframe>
+                                </div>
+                            ) : (
+                                <div className="w-full aspect-[9/16] rounded-2xl bg-gradient-to-br from-purple-50 to-purple-100 flex flex-col items-center justify-center gap-4">
+                                    <div className="w-20 h-20 bg-domo/10 rounded-full flex items-center justify-center">
+                                        <svg className="w-10 h-10 text-domo" fill="currentColor" viewBox="0 0 24 24">
+                                            <path d="M8 5v14l11-7z" />
+                                        </svg>
+                                    </div>
+                                    <p className="text-gray-500 font-medium text-center">
+                                        {language === 'es' ? 'Video próximamente' : 'Video coming soon'}
+                                    </p>
+                                </div>
+                            )}
+                        </div>
+                    </div>
+                </div>
+            )}
 
             <HowItWorksSection
                 title={content.howItWorks.title}
@@ -306,20 +371,22 @@ export const SurveysPage: React.FC<SurveysPageProps> = ({ onOpenDemo }) => {
                         </div>
                     </div>
 
-                    <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-stretch">
+                    <div className="grid lg:grid-cols-2 divide-x divide-gray-200 items-stretch">
                         {/* Problem */}
-                        <div className="bg-white p-8 md:p-10 rounded-[2.5rem] shadow-xl shadow-gray-200/50 border border-gray-100 group hover:border-red-100 transition-colors duration-300 flex flex-col h-full">
-                            <div className="flex items-center gap-3 mb-8"><div className="w-8 h-8 rounded-full bg-red-50 flex items-center justify-center text-red-400"><X size={16} strokeWidth={3} /></div><span className="font-bold text-gray-400 uppercase tracking-widest text-[10px] md:text-tiny">{content.situation.problems.title}</span></div>
+                        <div className="pr-8 lg:pr-12 flex flex-col h-full">
+                            <img src="/assets/problemashoy.png" alt="" className="w-full max-w-xs mx-auto mb-8 rounded-2xl" />
+                            <div className="flex items-center gap-3 mb-8"><div className="w-8 h-8 rounded-full bg-red-500 flex items-center justify-center text-white"><X size={16} strokeWidth={3} /></div><span className="font-bold text-gray-400 uppercase tracking-widest text-[10px] md:text-tiny">{content.situation.problems.title}</span></div>
                             <div className="space-y-8 flex-grow">
                                 {content.situation.problems.items.map((item, i) => (
-                                    <div key={i} className="flex gap-5 items-start"><div className="w-12 h-12 bg-gray-50 rounded-2xl flex items-center justify-center text-gray-400 shrink-0 group-hover:bg-red-50 group-hover:text-red-400 transition-colors"><X size={20} /></div><div><h4 className="font-bold text-torre text-body mb-1">{item.title}</h4><p className="text-small text-gray-500 leading-relaxed">{item.desc}</p></div></div>
+                                    <div key={i} className="flex gap-5 items-start"><div className="w-12 h-12 bg-red-500 rounded-full flex items-center justify-center text-white shrink-0"><X size={20} /></div><div><h4 className="font-bold text-torre text-body mb-1">{item.title}</h4><p className="text-small text-gray-500 leading-relaxed">{item.desc}</p></div></div>
                                 ))}
                             </div>
                         </div>
 
                         {/* Solution */}
-                        <div className="bg-[#F9F5FF] p-8 md:p-10 rounded-[2.5rem] shadow-xl shadow-domo/5 border border-purple-100 group hover:border-domo/30 transition-colors duration-300 flex flex-col h-full">
-                            <div className="flex items-center gap-3 mb-8"><div className="w-8 h-8 rounded-full bg-domo/10 flex items-center justify-center text-domo"><Check size={16} strokeWidth={3} /></div><span className="font-bold text-domo uppercase tracking-widest text-[10px] md:text-tiny">
+                        <div className="pl-8 lg:pl-12 flex flex-col h-full">
+                            <img src="/assets/obtienes.png" alt="" className="w-full max-w-xs mx-auto mb-8 rounded-2xl" />
+                            <div className="flex items-center gap-3 mb-8"><div className="w-8 h-8 rounded-full bg-domo flex items-center justify-center text-white"><Check size={16} strokeWidth={3} /></div><span className="font-bold text-domo uppercase tracking-widest text-[10px] md:text-tiny">
                                 {language === 'es' ? (
                                     <>Con <span className="domonow-gradient">DomoNow</span> {content.situation.solutions.title}</>
                                 ) : (
@@ -328,7 +395,7 @@ export const SurveysPage: React.FC<SurveysPageProps> = ({ onOpenDemo }) => {
                             </span></div>
                             <div className="space-y-8 flex-grow">
                                 {content.situation.solutions.items.map((item, i) => (
-                                    <div key={i} className="flex gap-5 items-start"><div className="w-12 h-12 bg-white rounded-2xl flex items-center justify-center text-domo shrink-0 shadow-sm group-hover:bg-domo group-hover:text-white transition-colors"><Check size={20} /></div><div><h4 className="font-bold text-torre text-body mb-1">{item.title}</h4><p className="text-small text-gray-500 leading-relaxed">{item.desc}</p></div></div>
+                                    <div key={i} className="flex gap-5 items-start"><div className="w-12 h-12 bg-domo rounded-full flex items-center justify-center text-white shrink-0"><Check size={20} /></div><div><h4 className="font-bold text-torre text-body mb-1">{item.title}</h4><p className="text-small text-gray-500 leading-relaxed">{item.desc}</p></div></div>
                                 ))}
                             </div>
                         </div>

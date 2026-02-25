@@ -1,6 +1,5 @@
 import React from 'react';
-import { X, Check, Sparkles, AlertTriangle, ThumbsUp, ThumbsDown } from 'lucide-react';
-import { useTranslation } from 'react-i18next';
+import { X, Check } from 'lucide-react';
 
 interface HowItWorksItem {
     problem: string;
@@ -18,88 +17,106 @@ interface HowItWorksSectionProps {
 }
 
 export const HowItWorksSection: React.FC<HowItWorksSectionProps> = ({
-    title,
+    title = "Así mejoramos tu día a día",
     subtitle,
     items,
     imageSrc,
     variant = 'default',
-    leftLabel,
-    rightLabel
+    leftLabel = "Software tradicional:",
+    rightLabel = "Con DomoNow:"
 }) => {
-    const { t } = useTranslation();
-
-    const displayTitle = title || t('howItWorks.defaultTitle');
-    const displayLeftLabel = leftLabel || t('howItWorks.leftLabel');
-    const displayRightLabel = rightLabel || t('howItWorks.rightLabel');
 
     return (
-        <section className="py-24 bg-arquitectura border-t border-gray-100 overflow-hidden">
-            <div className="container mx-auto px-6">
+        <section
+            className="py-24 overflow-hidden relative bg-white"
+        >
+            {/* Background decorative elements */}
+            <div className="absolute inset-0 pointer-events-none overflow-hidden">
+                {/* Left decorative - problema image */}
+                <div
+                    className="absolute -left-16 top-1/2 -translate-y-1/2 w-[450px] h-[550px]"
+                    style={{ opacity: 1 }}
+                >
+                    <img
+                        src="/assets/problema.png"
+                        alt=""
+                        className="w-full h-full object-contain"
+                        aria-hidden="true"
+                    />
+                </div>
+                {/* Right decorative - solucion image */}
+                <div
+                    className="absolute -right-16 top-1/2 -translate-y-1/2 w-[450px] h-[550px]"
+                    style={{ opacity: 1 }}
+                >
+                    <img
+                        src="/assets/solucion.png"
+                        alt=""
+                        className="w-full h-full object-contain"
+                        aria-hidden="true"
+                    />
+                </div>
+            </div>
 
-                {/* Header - Title centered */}
+            <div className="container mx-auto px-6 relative z-10">
+
                 <div className="text-center mb-16 max-w-4xl mx-auto">
                     <h2 className="text-h2 font-bold text-torre leading-tight">
-                        {displayTitle}
+                        Así mejoramos tu día a día
                     </h2>
                 </div>
 
-                {/* Layout: Cards + Center Image */}
+                {/* Layout: Problems | Image | Solutions */}
                 <div className="max-w-7xl mx-auto">
-                    <div className="flex flex-col lg:flex-row items-center justify-center gap-6 lg:gap-8">
+                    <div className="flex flex-col lg:flex-row items-stretch justify-center gap-8 lg:gap-6">
 
-                        {/* DO Card - DomoNow (Fixed Width) */}
-                        <div className="relative bg-white rounded-3xl shadow-2xl overflow-hidden group hover:shadow-3xl transition-all duration-500 hover:-translate-y-1 w-full lg:w-[380px] shrink-0">
-                            {/* Card Content */}
-                            <div className="flex h-full">
-                                {/* Items List */}
-                                <div className="flex-1 p-8 pr-4">
-                                    {/* Logo Header */}
-                                    <div className="flex items-center gap-3 mb-8">
-                                        <img
-                                            src="/assets/logo/LogoPiramide.png"
-                                            alt="DomoNow"
-                                            className="h-10 w-auto"
-                                        />
-                                    </div>
+                        {/* LEFT COLUMN — Problems */}
+                        <div className="flex-1 flex flex-col justify-center relative">
+                            {/* Decorative image behind problems */}
+                            <div className="absolute -left-12 top-1/2 -translate-y-1/2 w-56 h-64 pointer-events-none" style={{ opacity: 0.1 }}>
+                                <img
+                                    src="/assets/problema.png"
+                                    alt=""
+                                    className="w-full h-full object-contain"
+                                    aria-hidden="true"
+                                />
+                            </div>
 
-                                    {/* Items */}
-                                    <div className="space-y-5">
-                                        {items.map((item, index) => (
-                                            <div
-                                                key={`solution-${index}`}
-                                                className="flex items-start gap-4 group/item"
-                                            >
-                                                <div className="w-8 h-8 rounded-full bg-domo flex items-center justify-center shrink-0 shadow-lg shadow-domo/30 group-hover/item:scale-110 transition-transform duration-300">
-                                                    <Check size={16} className="text-white" strokeWidth={3} />
-                                                </div>
-                                                <div className="flex-1 pt-1">
-                                                    <p className="text-body font-medium text-torre leading-snug">{item.solution}</p>
-                                                </div>
+                            {/* Label */}
+                            <div className="flex items-center gap-2 mb-8">
+                                <div className="w-2 h-2 rounded-full bg-red-400" />
+                                <span className="text-small font-semibold text-red-400 uppercase tracking-widest">
+                                    {leftLabel}
+                                </span>
+                            </div>
+
+                            {/* Items */}
+                            <div className="space-y-6">
+                                {items.map((item, index) => (
+                                    <div
+                                        key={`problem-${index}`}
+                                        className="flex items-start gap-4"
+                                    >
+                                        <div className="relative mt-1">
+                                            <div className="w-7 h-7 rounded-full bg-red-500 flex items-center justify-center shrink-0">
+                                                <X size={13} className="text-white" strokeWidth={3} />
                                             </div>
-                                        ))}
+                                        </div>
+                                        <div className="flex-1">
+                                            <p className="text-body text-gray-600 leading-relaxed">
+                                                {item.problem}
+                                            </p>
+                                        </div>
                                     </div>
-                                </div>
-
-                                {/* Vertical Bar with Label */}
-                                <div className="relative w-20 bg-domo flex flex-col items-center justify-between py-10 rounded-r-3xl self-stretch">
-                                    {/* Vertical Text Container */}
-                                    <div className="flex-1 flex items-center justify-center">
-                                        <span className="text-white font-bold text-xl tracking-widest writing-mode-vertical transform rotate-180" style={{ writingMode: 'vertical-rl' }}>
-                                            CON DOMONOW
-                                        </span>
-                                    </div>
-                                    {/* Thumbs Up Icon */}
-                                    <div className="bg-white/20 rounded-full p-2 backdrop-blur-sm">
-                                        <ThumbsUp size={24} className="text-white" />
-                                    </div>
-                                </div>
+                                ))}
                             </div>
                         </div>
 
-                        {/* Center Image with Animation */}
-                        <div className="hidden lg:flex items-stretch justify-center shrink-0 self-stretch">
+                        {/* CENTER — Image */}
+                        <div className="hidden lg:flex items-stretch justify-center shrink-0 self-stretch relative">
+
                             <div
-                                className="relative w-[480px] h-full rounded-[2rem] overflow-hidden shadow-2xl"
+                                className="relative w-[420px] h-full rounded-[2rem] overflow-hidden shadow-2xl"
                                 style={{
                                     animation: 'float 4s ease-in-out infinite'
                                 }}
@@ -109,53 +126,64 @@ export const HowItWorksSection: React.FC<HowItWorksSectionProps> = ({
                                     alt="Comparación"
                                     className="w-full h-full object-cover"
                                 />
+                                {/* Subtle gradient overlay */}
+                                <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent" />
                             </div>
                         </div>
 
-                        {/* DON'T Card - Traditional Software (Fixed Width) */}
-                        <div className="relative bg-white rounded-3xl shadow-2xl overflow-hidden group hover:shadow-3xl transition-all duration-500 hover:-translate-y-1 w-full lg:w-[380px] shrink-0">
-                            {/* Card Content */}
-                            <div className="flex h-full">
-                                {/* Vertical Bar with Label */}
-                                <div className="relative w-20 bg-red-500 flex flex-col items-center justify-between py-10 rounded-l-3xl self-stretch">
-                                    {/* Vertical Text Container */}
-                                    <div className="flex-1 flex items-center justify-center">
-                                        <span className="text-white font-bold text-lg tracking-widest" style={{ writingMode: 'vertical-rl' }}>
-                                            TRADICIONAL
-                                        </span>
-                                    </div>
-                                    {/* Thumbs Down Icon */}
-                                    <div className="bg-white/20 rounded-full p-2 backdrop-blur-sm">
-                                        <ThumbsDown size={24} className="text-white" />
-                                    </div>
-                                </div>
-
-                                {/* Items List */}
-                                <div className="flex-1 p-8 pl-4">
-                                    {/* Header */}
-                                    <div className="flex items-center gap-3 mb-8">
-                                        <AlertTriangle className="text-red-400 w-6 h-6" />
-                                        <span className="text-body font-bold text-gray-500">{displayLeftLabel}</span>
-                                    </div>
-
-                                    {/* Items */}
-                                    <div className="space-y-5">
-                                        {items.map((item, index) => (
-                                            <div
-                                                key={`problem-${index}`}
-                                                className="flex items-start gap-4 group/item"
-                                            >
-                                                <div className="w-8 h-8 rounded-full bg-red-500 flex items-center justify-center shrink-0 shadow-lg shadow-red-500/30 group-hover/item:scale-110 transition-transform duration-300">
-                                                    <X size={16} className="text-white" strokeWidth={3} />
-                                                </div>
-                                                <div className="flex-1 pt-1">
-                                                    <p className="text-body font-medium text-gray-600 leading-snug">{item.problem}</p>
-                                                </div>
-                                            </div>
-                                        ))}
-                                    </div>
-                                </div>
+                        {/* Mobile image */}
+                        <div className="lg:hidden flex justify-center my-4">
+                            <div className="relative w-full max-w-sm rounded-[2rem] overflow-hidden shadow-xl">
+                                <img
+                                    src={imageSrc}
+                                    alt="Comparación"
+                                    className="w-full h-auto object-cover"
+                                />
                             </div>
+                        </div>
+
+                        {/* RIGHT COLUMN — Solutions */}
+                        <div className="flex-1 flex flex-col justify-center relative lg:pl-10">
+                            {/* Decorative image behind solutions */}
+                            <div className="absolute -right-12 top-1/2 -translate-y-1/2 w-56 h-64 pointer-events-none" style={{ opacity: 0.1 }}>
+                                <img
+                                    src="/assets/solucion.png"
+                                    alt=""
+                                    className="w-full h-full object-contain"
+                                    aria-hidden="true"
+                                />
+                            </div>
+
+                            {/* Label */}
+                            <div className="flex items-center gap-2 mb-8">
+                                <div className="w-2 h-2 rounded-full bg-domo" />
+                                <span className="text-small font-semibold text-domo uppercase tracking-widest">
+                                    {rightLabel}
+                                </span>
+                            </div>
+
+                            {/* Items */}
+                            <div className="space-y-6">
+                                {items.map((item, index) => (
+                                    <div
+                                        key={`solution-${index}`}
+                                        className="flex items-start gap-4"
+                                    >
+                                        <div className="relative mt-1">
+                                            <div className="w-7 h-7 rounded-full bg-domo flex items-center justify-center shrink-0">
+                                                <Check size={13} className="text-white" strokeWidth={3} />
+                                            </div>
+                                        </div>
+                                        <div className="flex-1">
+                                            <p className="text-body font-medium text-torre leading-relaxed">
+                                                {item.solution}
+                                            </p>
+                                        </div>
+                                    </div>
+                                ))}
+                            </div>
+
+
                         </div>
 
                     </div>
@@ -169,6 +197,6 @@ export const HowItWorksSection: React.FC<HowItWorksSectionProps> = ({
                     }
                 `}</style>
             </div>
-        </section >
+        </section>
     );
 };
