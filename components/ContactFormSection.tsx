@@ -1,7 +1,10 @@
 import React from 'react';
 import { ContactForm } from './ContactForm';
+import { useTranslation } from 'react-i18next';
 
 export const ContactFormSection: React.FC = () => {
+  const { t } = useTranslation();
+
   return (
     <section id="contact" className="relative py-24 bg-[#F9F5FF] overflow-hidden">
 
@@ -15,14 +18,14 @@ export const ContactFormSection: React.FC = () => {
           {/* Left Side: Visual Copy (Clean, Text Only) */}
           <div className="lg:w-5/12">
             <span className="inline-block py-1.5 px-4 rounded-full bg-white border border-purple-100 shadow-sm text-xs font-bold tracking-widest uppercase mb-6 text-domo">
-              Agenda tu Demo
+              {t('contactFormSection.badge')}
             </span>
             <h2 className="text-h2 font-bold mb-6 leading-tight text-torre">
-              Toma el control de <br />
-              <span className="text-domo">tu comunidad.</span>
+              {t('contactFormSection.title1')} <br />
+              <span className="text-domo">{t('contactFormSection.title2')}</span>
             </h2>
             <p className="text-lead text-gray-500 leading-relaxed">
-              Descubre cómo <span className="domonow-gradient">DomoNow</span> centraliza la seguridad, las finanzas y la convivencia en una sola plataforma intuitiva.
+              {t('contactFormSection.description').split('DomoNow')[0]}<span className="domonow-gradient">DomoNow</span>{t('contactFormSection.description').split('DomoNow')[1] || ''}
             </p>
           </div>
 

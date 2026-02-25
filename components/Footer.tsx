@@ -1,8 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Mail, Instagram, Facebook, MessageCircle, Linkedin, Youtube } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
 export const Footer: React.FC = () => {
+    const { t } = useTranslation();
+
     return (
         <footer className="bg-white pt-12 pb-8">
             <div className="container mx-auto px-6">
@@ -39,27 +42,27 @@ export const Footer: React.FC = () => {
 
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-10 md:mt-0 text-small text-center md:text-left">
                         <div className="flex flex-col gap-3">
-                            <span className="font-bold text-torre mb-2">Cuenta</span>
-                            <a href="https://app.DomoNow.com/" target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-torre">Iniciar Sesión</a>
+                            <span className="font-bold text-torre mb-2">{t('footer.account')}</span>
+                            <a href="https://app.DomoNow.com/" target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-torre">{t('footer.login')}</a>
                         </div>
                         <div className="flex flex-col gap-3">
-                            <span className="font-bold text-torre mb-2">Ayuda</span>
-                            <Link to="/centro-de-ayuda" className="text-gray-500 hover:text-torre cursor-pointer">Centro de Ayuda</Link>
-                            <Link to="/centro-de-ayuda" className="text-gray-500 hover:text-torre cursor-pointer">FAQ</Link>
+                            <span className="font-bold text-torre mb-2">{t('footer.help')}</span>
+                            <Link to="/centro-de-ayuda" className="text-gray-500 hover:text-torre cursor-pointer">{t('footer.helpCenter')}</Link>
+                            <Link to="/centro-de-ayuda" className="text-gray-500 hover:text-torre cursor-pointer">{t('footer.faq')}</Link>
                         </div>
                         <div className="flex flex-col gap-3">
-                            <span className="font-bold text-torre mb-2">Empresa</span>
-                            <Link to="/nosotros" className="text-gray-500 hover:text-torre cursor-pointer">Nosotros</Link>
-                            <Link to="/contacto" className="text-gray-500 hover:text-torre cursor-pointer">Contacto</Link>
+                            <span className="font-bold text-torre mb-2">{t('footer.company')}</span>
+                            <Link to="/nosotros" className="text-gray-500 hover:text-torre cursor-pointer">{t('footer.aboutUs')}</Link>
+                            <Link to="/contacto" className="text-gray-500 hover:text-torre cursor-pointer">{t('footer.contact')}</Link>
                         </div>
                     </div>
                 </div>
 
                 <div className="flex flex-col md:flex-row justify-between items-center pt-8 text-tiny text-gray-400">
-                    <p>&copy; {new Date().getFullYear()} <span className="domonow-gradient">DomoNow</span>. Todos los derechos reservados.</p>
+                    <p>&copy; {new Date().getFullYear()} <span className="domonow-gradient">DomoNow</span>. {t('footer.copyright')}</p>
                     <div className="flex gap-6 mt-4 md:mt-0">
-                        <Link to="/privacidad">Privacidad</Link>
-                        <a href="#">Términos</a>
+                        <Link to="/privacidad">{t('footer.privacy')}</Link>
+                        <a href="#">{t('footer.terms')}</a>
                     </div>
                 </div>
             </div>

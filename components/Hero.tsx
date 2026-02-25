@@ -1,11 +1,14 @@
 import React from 'react';
 import { Button } from './Button';
+import { useTranslation } from 'react-i18next';
 
 interface HeroProps {
   onOpenDemo: () => void;
 }
 
 export const Hero: React.FC<HeroProps> = ({ onOpenDemo }) => {
+  const { t } = useTranslation();
+
   return (
     <section className="relative pt-48 pb-20 bg-gradient-to-b from-white via-white to-arquitectura overflow-hidden min-h-[90vh] flex items-center">
       {/* Subtle background gradients - section level */}
@@ -70,7 +73,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenDemo }) => {
                   className="w-full h-auto"
                 >
                   <source src="/assets/home/Hero_Video.mp4" type="video/mp4" />
-                  Tu navegador no soporta videos HTML5.
+                  {t('hero.videoFallback')}
                 </video>
               </div>
             </div>
@@ -80,12 +83,12 @@ export const Hero: React.FC<HeroProps> = ({ onOpenDemo }) => {
           <div className="text-center max-w-3xl mx-auto">
             {/* Paragraph */}
             <p className="text-lead text-torre mb-10 max-w-5xl mx-auto leading-relaxed">
-              Administrar tus propiedades no debería ser tan complicado. <span className="domonow-gradient">DomoNow</span> centraliza todo en una app integral, simple, segura y para toda tu comunidad.
+              {t('hero.description').split('DomoNow')[0]}<span className="domonow-gradient">DomoNow</span>{t('hero.description').split('DomoNow')[1]}
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="lg" className="rounded-full px-10 py-4 shadow-xl" onClick={onOpenDemo}>
-                Solicite demostración
+                {t('hero.cta')}
               </Button>
             </div>
           </div>

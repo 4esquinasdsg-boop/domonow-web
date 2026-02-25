@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Button } from './Button';
 import { Check, Lock, Loader2, CheckCircle, AlertCircle, ChevronDown } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
 // URL de Google Apps Script configurada
 const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxend8ZuPHgFlINohK5THedjxakf1FgYhdGA-F03kALgOdHggZUJX_N0l7JBgJ8GaDJPA/exec';
@@ -19,6 +20,7 @@ interface FormData {
 type SubmitStatus = 'idle' | 'submitting' | 'success' | 'error';
 
 export const ContactForm: React.FC = () => {
+    const { t } = useTranslation();
     const navigate = useNavigate();
     const [formData, setFormData] = useState<FormData>({
         nombre: '',
@@ -47,15 +49,14 @@ export const ContactForm: React.FC = () => {
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
 
-        // Validación básica
         if (!formData.nombre || !formData.apellidos || !formData.email || !formData.telefono) {
-            setErrorMessage('Por favor completa todos los campos obligatorios.');
+            setErrorMessage(t('contactForm.errorRequired'));
             setSubmitStatus('error');
             return;
         }
 
         if (!formData.privacyAccepted || !formData.termsAccepted) {
-            setErrorMessage('Debes aceptar la política de privacidad y los términos del servicio.');
+            setErrorMessage(t('contactForm.errorCheckboxes'));
             setSubmitStatus('error');
             return;
         }
@@ -66,7 +67,7 @@ export const ContactForm: React.FC = () => {
         try {
             const response = await fetch(GOOGLE_SCRIPT_URL, {
                 method: 'POST',
-                mode: 'no-cors', // Necesario para Google Apps Script
+                mode: 'no-cors',
                 headers: {
                     'Content-Type': 'application/json',
                 },
@@ -80,10 +81,8 @@ export const ContactForm: React.FC = () => {
                 }),
             });
 
-            // Con mode: 'no-cors', no podemos leer la respuesta, pero si no hay error, asumimos éxito
             setSubmitStatus('success');
 
-            // Limpiar formulario después de éxito
             setFormData({
                 nombre: '',
                 apellidos: '',
@@ -96,42 +95,39 @@ export const ContactForm: React.FC = () => {
 
         } catch (error) {
             console.error('Error al enviar formulario:', error);
-            setErrorMessage('Hubo un error al enviar el formulario. Por favor intenta de nuevo.');
+            setErrorMessage(t('contactForm.errorSubmit'));
             setSubmitStatus('error');
         }
     };
 
-    // Reusable Component for Input Labels: Text + Asterisk + Tooltip (Triggered on Hover of either)
     const RequiredLabel = ({ text }: { text: string }) => (
         <label className="text-small font-bold text-gray-700 ml-1 inline-flex items-center gap-1 cursor-help group/label w-max">
             {text}
             <span className="relative flex items-center">
                 <span className="text-domo font-bold text-lg leading-none">*</span>
-                {/* Tooltip */}
                 <span className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-max px-2.5 py-1 bg-gray-800 text-white text-[10px] font-medium rounded-md shadow-lg opacity-0 group-hover/label:opacity-100 transition-all duration-200 pointer-events-none select-none z-20 translate-y-1 group-hover/label:translate-y-0">
-                    Campo obligatorio
+                    {t('contactForm.required')}
                     <span className="absolute top-full left-1/2 -translate-x-1/2 -mt-[1px] border-4 border-transparent border-t-gray-800"></span>
                 </span>
             </span>
         </label>
     );
 
-    // Mostrar mensaje de éxito
     if (submitStatus === 'success') {
         return (
             <div className="w-full text-center py-12">
                 <div className="inline-flex items-center justify-center w-20 h-20 bg-green-100 rounded-full mb-6">
                     <CheckCircle className="w-10 h-10 text-green-600" />
                 </div>
-                <h3 className="text-h3 font-bold text-torre mb-3">¡Gracias por contactarnos!</h3>
+                <h3 className="text-h3 font-bold text-torre mb-3">{t('contactForm.successTitle')}</h3>
                 <p className="text-gray-500 mb-6">
-                    Hemos recibido tu información. Un asesor se pondrá en contacto contigo pronto.
+                    {t('contactForm.successMessage')}
                 </p>
                 <button
                     onClick={() => setSubmitStatus('idle')}
                     className="text-domo font-bold hover:underline"
                 >
-                    Enviar otro mensaje
+                    {t('contactForm.sendAnother')}
                 </button>
             </div>
         );
@@ -140,8 +136,8 @@ export const ContactForm: React.FC = () => {
     return (
         <form className="w-full" onSubmit={handleSubmit}>
             <div className="mb-8">
-                <h3 className="text-h3 font-bold text-torre mb-2">Comencemos</h3>
-                <p className="text-gray-500">Complete sus datos para agendar su sesión.</p>
+                <h3 className="text-h3 font-bold text-torre mb-2">{t('contactForm.heading')}</h3>
+                <p className="text-gray-500">{t('contactForm.subheading')}</p>
             </div>
 
             {/* Error Message */}
@@ -156,26 +152,26 @@ export const ContactForm: React.FC = () => {
                 {/* Names Row */}
                 <div className="grid md:grid-cols-2 gap-5">
                     <div className="space-y-2">
-                        <RequiredLabel text="Nombre" />
+                        <RequiredLabel text={t('contactForm.firstName')} />
                         <input
                             required
                             type="text"
                             name="nombre"
                             value={formData.nombre}
                             onChange={handleInputChange}
-                            placeholder="Ej. Carlos"
+                            placeholder={t('contactForm.firstNamePlaceholder')}
                             className="w-full bg-gray-50 border-transparent focus:bg-white focus:border-domo focus:ring-4 focus:ring-domo/10 border-2 rounded-xl py-3 px-4 text-torre transition-all outline-none placeholder:text-gray-400"
                         />
                     </div>
                     <div className="space-y-2">
-                        <RequiredLabel text="Apellidos" />
+                        <RequiredLabel text={t('contactForm.lastName')} />
                         <input
                             required
                             type="text"
                             name="apellidos"
                             value={formData.apellidos}
                             onChange={handleInputChange}
-                            placeholder="Ej. Pérez"
+                            placeholder={t('contactForm.lastNamePlaceholder')}
                             className="w-full bg-gray-50 border-transparent focus:bg-white focus:border-domo focus:ring-4 focus:ring-domo/10 border-2 rounded-xl py-3 px-4 text-torre transition-all outline-none placeholder:text-gray-400"
                         />
                     </div>
@@ -183,21 +179,21 @@ export const ContactForm: React.FC = () => {
 
                 {/* Email */}
                 <div className="space-y-2">
-                    <RequiredLabel text="Correo Corporativo" />
+                    <RequiredLabel text={t('contactForm.email')} />
                     <input
                         required
                         type="email"
                         name="email"
                         value={formData.email}
                         onChange={handleInputChange}
-                        placeholder="nombre@administracion.com"
+                        placeholder={t('contactForm.emailPlaceholder')}
                         className="w-full bg-gray-50 border-transparent focus:bg-white focus:border-domo focus:ring-4 focus:ring-domo/10 border-2 rounded-xl py-3 px-4 text-torre transition-all outline-none placeholder:text-gray-400"
                     />
                 </div>
 
                 {/* Phone with country selector */}
                 <div className="space-y-2">
-                    <RequiredLabel text="Celular" />
+                    <RequiredLabel text={t('contactForm.phone')} />
                     <div className="relative flex">
                         <div className="relative">
                             <select
@@ -218,7 +214,7 @@ export const ContactForm: React.FC = () => {
                             name="telefono"
                             value={formData.telefono}
                             onChange={handleInputChange}
-                            placeholder="300 000 0000"
+                            placeholder={t('contactForm.phonePlaceholder')}
                             className="w-full bg-gray-50 border-transparent focus:bg-white focus:border-domo focus:ring-4 focus:ring-domo/10 border-2 rounded-r-xl py-3 px-4 text-torre transition-all outline-none placeholder:text-gray-400"
                         />
                     </div>
@@ -227,13 +223,13 @@ export const ContactForm: React.FC = () => {
                 {/* Interest Description (Optional) */}
                 <div className="space-y-2">
                     <label className="text-small font-bold text-gray-700 ml-1">
-                        ¿Qué busca mejorar? <span className="text-gray-400 font-normal text-tiny">(Opcional)</span>
+                        {t('contactForm.message')} <span className="text-gray-400 font-normal text-tiny">{t('contactForm.messageOptional')}</span>
                     </label>
                     <textarea
                         name="mensaje"
                         value={formData.mensaje}
                         onChange={handleInputChange}
-                        placeholder="Ej. Automatizar la citofonía, mejorar el recaudo, control de visitantes..."
+                        placeholder={t('contactForm.messagePlaceholder')}
                         rows={3}
                         className="w-full bg-gray-50 border-transparent focus:bg-white focus:border-domo focus:ring-4 focus:ring-domo/10 border-2 rounded-xl py-3 px-4 text-torre transition-all outline-none placeholder:text-gray-400 resize-none"
                     />
@@ -248,11 +244,11 @@ export const ContactForm: React.FC = () => {
                             <Check size={12} className="absolute inset-0 m-auto text-white opacity-0 peer-checked:opacity-100 transition-opacity" />
                         </div>
                         <span className="text-small text-gray-500 leading-snug group-hover/check:text-gray-700 transition-colors group/tooltip relative cursor-help">
-                            Acepto la <button type="button" onClick={(e) => { e.preventDefault(); e.stopPropagation(); navigate('/privacidad'); }} className="text-domo font-bold hover:underline">Política de Privacidad</button> y el tratamiento de mis datos personales.
+                            {t('contactForm.privacyPolicy')} <button type="button" onClick={(e) => { e.preventDefault(); e.stopPropagation(); navigate('/privacidad'); }} className="text-domo font-bold hover:underline">{t('contactForm.privacyPolicyLink')}</button> {t('contactForm.privacyPolicySuffix')}
                             <span className="relative ml-1 inline-block">
                                 <span className="text-domo font-bold text-lg leading-none">*</span>
                                 <span className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-max px-2.5 py-1 bg-gray-800 text-white text-[10px] font-medium rounded-md shadow-lg opacity-0 group-hover/tooltip:opacity-100 transition-all duration-200 pointer-events-none select-none z-20 translate-y-1 group-hover/tooltip:translate-y-0">
-                                    Campo obligatorio
+                                    {t('contactForm.required')}
                                     <span className="absolute top-full left-1/2 -translate-x-1/2 -mt-[1px] border-4 border-transparent border-t-gray-800"></span>
                                 </span>
                             </span>
@@ -266,11 +262,11 @@ export const ContactForm: React.FC = () => {
                             <Check size={12} className="absolute inset-0 m-auto text-white opacity-0 peer-checked:opacity-100 transition-opacity" />
                         </div>
                         <span className="text-small text-gray-500 leading-snug group-hover/check:text-gray-700 transition-colors group/tooltip relative cursor-help">
-                            Acepto los <a href="#" className="text-domo font-bold hover:underline">Términos del Servicio</a>.
+                            {t('contactForm.termsPrefix')} <a href="#" className="text-domo font-bold hover:underline">{t('contactForm.termsLink')}</a>{t('contactForm.termsSuffix')}
                             <span className="relative ml-1 inline-block">
                                 <span className="text-domo font-bold text-lg leading-none">*</span>
                                 <span className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-max px-2.5 py-1 bg-gray-800 text-white text-[10px] font-medium rounded-md shadow-lg opacity-0 group-hover/tooltip:opacity-100 transition-all duration-200 pointer-events-none select-none z-20 translate-y-1 group-hover/tooltip:translate-y-0">
-                                    Campo obligatorio
+                                    {t('contactForm.required')}
                                     <span className="absolute top-full left-1/2 -translate-x-1/2 -mt-[1px] border-4 border-transparent border-t-gray-800"></span>
                                 </span>
                             </span>
@@ -290,15 +286,15 @@ export const ContactForm: React.FC = () => {
                         {submitStatus === 'submitting' ? (
                             <span className="flex items-center justify-center gap-2">
                                 <Loader2 className="w-5 h-5 animate-spin" />
-                                Enviando...
+                                {t('contactForm.submitting')}
                             </span>
                         ) : (
-                            'Agendar Demostración'
+                            t('contactForm.submit')
                         )}
                     </Button>
                     <div className="flex items-center justify-center gap-2 mt-4 text-tiny text-gray-400">
                         <Lock size={12} />
-                        <span>Sus datos están seguros y encriptados.</span>
+                        <span>{t('contactForm.secureData')}</span>
                     </div>
                 </div>
             </div>

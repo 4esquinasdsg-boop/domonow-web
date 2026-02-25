@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
 import { Button } from '../Button';
 import { ImageCarousel } from '../ImageCarousel';
 import { HowItWorksSection } from '../HowItWorksSection';
@@ -14,10 +15,193 @@ interface CommunicationsPageProps {
 }
 
 export const CommunicationsPage: React.FC<CommunicationsPageProps> = ({ onOpenDemo }) => {
+    const { i18n } = useTranslation();
+    const language = (i18n.language?.startsWith('en') ? 'en' : 'es') as 'es' | 'en';
 
     useEffect(() => {
         window.scrollTo(0, 0);
     }, []);
+
+    const t = {
+        es: {
+            hero: {
+                tag: "MÓDULO COMUNICACIONES",
+                subtitle: "Informa. Conecta. Gestiona.",
+                title: "Comunica con claridad.",
+                problem: "Cuando la información no es clara, se rompe la confianza.",
+                solution: "centraliza la comunicación oficial. Sin ruidos, sin confusiones.",
+                cta: "Conoce cómo funciona",
+                phone: {
+                    admin: "Administración",
+                    highlight: "Recordamos la asamblea general este fin de semana.",
+                    status: "Estado",
+                    read: "Mensaje Leído"
+                }
+            },
+            useCases: {
+                title: "Casos de uso",
+                items: [
+                    { category: "Mantenimiento", description: "Avisos de mantenimiento o cortes de servicio" },
+                    { category: "Reglamentos", description: "Cambios en normas internas o reglamentos" },
+                    { category: "Asambleas", description: "Comunicaciones de asambleas y decisiones administrativas" },
+                    { category: "Novedades", description: "Novedades importantes del conjunto" }
+                ]
+            },
+            howItWorks: {
+                title: "Conoce cómo funciona",
+                subtitle: "Cómo funciona",
+                leftLabel: "Software tradicional:",
+                rightLabel: "Con DomoNow:",
+                items: [
+                    {
+                        problem: "Se continúa usando WhatsApp",
+                        solution: "Muro de comunicaciones"
+                    },
+                    {
+                        problem: "Avisos básicos sin segmentación",
+                        solution: "Segmentación por torres o grupos"
+                    },
+                    {
+                        problem: "Un archivo adjunto máximo",
+                        solution: "Múltiples archivos (fotos, videos, PDFs)"
+                    }
+                ]
+            },
+            situation: {
+                tag: "SITUACIÓN ACTUAL",
+                title: "El problema que viven hoy las comunidades.",
+                quote: "\"Cuando la comunicación no es clara ni trazable, se rompe la confianza y aumenta el ruido operativo.\"",
+                problems: {
+                    title: "Los problemas de hoy",
+                    items: [
+                        { title: "Avisos que se pierden", desc: "Información perdida en chats o carteleras físicas que nadie lee" },
+                        { title: "Ruido Operativo", desc: "Mensajes repetidos, llamadas constantes y malentendidos frecuentes" },
+                        { title: "Sin Trazabilidad", desc: "Imposible saber quién leyó el mensaje o encontrar comunicados antiguos" }
+                    ]
+                },
+                solutions: {
+                    title: "Con DomoNow obtienes",
+                    items: [
+                        { title: "Comunicados Oficiales", desc: "Envía información certificada que llega directo a la App del residente" },
+                        { title: "Alertas Inmediatas", desc: "Notificaciones push para emergencias o novedades críticas al instante" },
+                        { title: "Visibilidad Total", desc: "Historial claro y accesible en todo momento para residentes y juntas" }
+                    ]
+                }
+            },
+            workflow: {
+                tag: "Flujo de Trabajo",
+                title: "Tu comunidad, paso a paso",
+                steps: [
+                    {
+                        title: "Informas una sola vez",
+                        desc: "La administración pública el comunicado desde la app, con un mensaje claro y oficial para la comunidad."
+                    },
+                    {
+                        title: "Todos se enteran",
+                        desc: "Los residentes reciben una notificación y saben exactamente dónde consultar la información, sin buscar en chats ni correos."
+                    },
+                    {
+                        title: "Todo queda respaldado",
+                        desc: "El comunicado permanece visible, ordenado y disponible, reduciendo reclamos y confusiones futuras."
+                    }
+                ]
+            },
+            footerCTA: {
+                title: "transforma la comunicación en tu comunidad.",
+                button: "Quiero agendar una Demo"
+            }
+        },
+        en: {
+            hero: {
+                tag: "COMMUNICATIONS MODULE",
+                subtitle: "Inform. Connect. Manage.",
+                title: "Communicate with clarity.",
+                problem: "When information is not clear, trust is broken.",
+                solution: "centralizes official communication. No noise, no confusion.",
+                cta: "See how it works",
+                phone: {
+                    admin: "Administration",
+                    highlight: "Remember the general assembly this weekend.",
+                    status: "Status",
+                    read: "Message Read"
+                }
+            },
+            useCases: {
+                title: "Use cases",
+                items: [
+                    { category: "Maintenance", description: "Maintenance notices or service outages" },
+                    { category: "Bylaws", description: "Changes in internal rules or bylaws" },
+                    { category: "Assemblies", description: "Assembly communications and administrative decisions" },
+                    { category: "News", description: "Important community news" }
+                ]
+            },
+            howItWorks: {
+                title: "See how it works",
+                subtitle: "How it works",
+                leftLabel: "Traditional software:",
+                rightLabel: "With DomoNow:",
+                items: [
+                    {
+                        problem: "WhatsApp is still used",
+                        solution: "Communications wall"
+                    },
+                    {
+                        problem: "Basic notices without segmentation",
+                        solution: "Segmentation by towers or groups"
+                    },
+                    {
+                        problem: "One maximum attachment",
+                        solution: "Multiple files (photos, videos, PDFs)"
+                    }
+                ]
+            },
+            situation: {
+                tag: "CURRENT SITUATION",
+                title: "The problem communities face today.",
+                quote: "\"When communication is not clear or traceable, trust is broken and operational noise increases.\"",
+                problems: {
+                    title: "Today's problems",
+                    items: [
+                        { title: "Lost notices", desc: "Information lost in chats or physical boards that nobody reads" },
+                        { title: "Operational Noise", desc: "Repeated messages, constant calls, and frequent misunderstandings" },
+                        { title: "No Traceability", desc: "Impossible to know who read the message or find old announcements" }
+                    ]
+                },
+                solutions: {
+                    title: "With DomoNow you get",
+                    items: [
+                        { title: "Official Announcements", desc: "Send certified information that goes directly to the resident's App" },
+                        { title: "Immediate Alerts", desc: "Push notifications for emergencies or critical news instantly" },
+                        { title: "Total Visibility", desc: "Clear and accessible history at all times for residents and boards" }
+                    ]
+                }
+            },
+            workflow: {
+                tag: "Workflow",
+                title: "Your community, step by step",
+                steps: [
+                    {
+                        title: "Inform once",
+                        desc: "The administration publishes the announcement from the app, with a clear and official message for the community."
+                    },
+                    {
+                        title: "Everyone finds out",
+                        desc: "Residents receive a notification and know exactly where to consult the information, without searching through chats or emails."
+                    },
+                    {
+                        title: "Everything is backed up",
+                        desc: "The announcement remains visible, orderly, and available, reducing future claims and confusion."
+                    }
+                ]
+            },
+            footerCTA: {
+                title: "transforms communication in your community.",
+                button: "I want to schedule a Demo"
+            }
+        }
+    };
+
+    const content = t[language];
 
     // Mockup Images representing Mobile UI (9:16 Aspect Ratio)
     const appScreens = [
@@ -29,32 +213,18 @@ export const CommunicationsPage: React.FC<CommunicationsPageProps> = ({ onOpenDe
         "/assets/modules/comunicaciones/carruselinterfaz/comunicaciones (6).jpg",
     ];
 
-    // Use Cases Data for the new card design
-    const useCases = [
-        {
-            category: "Mantenimiento",
-            description: "Avisos de mantenimiento o cortes de servicio",
-            icon: <AlertTriangle size={20} />,
-            image: "/assets/modules/comunicaciones/casos de uso/comunicaciones_avisos_compressed.jpg" // Worker/Maintenance
-        },
-        {
-            category: "Reglamentos",
-            description: "Cambios en normas internas o reglamentos",
-            icon: <FileText size={20} />,
-            image: "/assets/modules/comunicaciones/casos de uso/comunicaciones_decisiones_compressed.jpg" // Signing/Documents
-        },
-        {
-            category: "Asambleas",
-            description: "Comunicaciones de asambleas y decisiones administrativas",
-            icon: <Users size={20} />,
-            image: "/assets/modules/comunicaciones/casos de uso/comunicaciones_eventos_compressed.jpg" // People meeting
-        },
-        {
-            category: "Novedades",
-            description: "Novedades importantes del conjunto",
-            icon: <Bell size={20} />,
-            image: "/assets/modules/comunicaciones/casos de uso/comunicaciones_creaciones_compressed.png" // Friends/Community
-        }
+    const useCaseIcons = [
+        <AlertTriangle size={20} />,
+        <FileText size={20} />,
+        <Users size={20} />,
+        <Bell size={20} />
+    ];
+
+    const useCaseImages = [
+        "/assets/modules/comunicaciones/casos de uso/comunicaciones_avisos_compressed.jpg",
+        "/assets/modules/comunicaciones/casos de uso/comunicaciones_decisiones_compressed.jpg",
+        "/assets/modules/comunicaciones/casos de uso/comunicaciones_eventos_compressed.jpg",
+        "/assets/modules/comunicaciones/casos de uso/comunicaciones_creaciones_compressed.png"
     ];
 
     return (
@@ -72,24 +242,24 @@ export const CommunicationsPage: React.FC<CommunicationsPageProps> = ({ onOpenDe
                         {/* Left: Text Content */}
                         <div className="lg:w-5/12 relative z-20">
                             <div className="flex items-center gap-3 mb-0">
-                                <span className="w-9 h-9 bg-domo rounded-full flex items-center justify-center text-white text-sm font-bold shrink-0">3</span>
-                                <span className="text-base font-bold tracking-widest uppercase text-domo">COMUNICACIONES</span>
+                                <span className="w-9 h-9 bg-domo rounded-full flex items-center justify-center text-white text-sm font-bold shrink-0">1</span>
+                                <span className="text-base font-bold tracking-widest uppercase text-domo">{content.hero.tag}</span>
                             </div>
-                            <p className="text-small text-gray-400 italic mb-4 ml-12">Información clara para toda la comunidad</p>
+                            <p className="text-small text-gray-400 italic mb-4 ml-12">{content.hero.subtitle}</p>
                             <h1 className="text-h2 md:text-h1 font-bold leading-tight mb-6 text-torre">
-                                "El mismo aviso, nadie se enteró."
+                                {content.hero.title}
                             </h1>
                             <div className="prose text-lead text-gray-500 mb-8 leading-relaxed">
                                 <p className="mb-4 text-torre font-bold">
-                                    Mensajes perdidos, residentes desinformados, malentendidos constantes.
+                                    {content.hero.problem}
                                 </p>
                                 <p>
-                                    <strong className="text-torre"><span className="domonow-gradient">DomoNow</span> centraliza todo</strong> en un canal oficial. Cada aviso llega y queda registrado.
+                                    <strong className="text-torre"><span className="domonow-gradient">DomoNow</span> {content.hero.solution}</strong>
                                 </p>
                             </div>
                             <div className="flex gap-4">
                                 <Button size="lg" onClick={onOpenDemo} className="shadow-xl shadow-domo/20">
-                                    Conoce cómo funciona
+                                    {content.hero.cta}
                                 </Button>
                             </div>
                         </div>
@@ -142,10 +312,10 @@ export const CommunicationsPage: React.FC<CommunicationsPageProps> = ({ onOpenDe
                                                     <div className="w-8 h-8 rounded-full bg-domo flex items-center justify-center text-white">
                                                         <Megaphone size={14} />
                                                     </div>
-                                                    <span className="text-xs font-bold text-domo">Administración</span>
+                                                    <span className="text-xs font-bold text-domo">{content.hero.phone.admin}</span>
                                                 </div>
                                                 <p className="text-xs text-gray-600 leading-snug font-medium">
-                                                    Recordamos la asamblea general este fin de semana.
+                                                    {content.hero.phone.highlight}
                                                 </p>
                                             </div>
                                         </div>
@@ -158,8 +328,8 @@ export const CommunicationsPage: React.FC<CommunicationsPageProps> = ({ onOpenDe
                                                 <CheckCircle2 size={18} />
                                             </div>
                                             <div>
-                                                <p className="text-tiny font-bold text-gray-400 uppercase">Estado</p>
-                                                <p className="text-small font-bold text-torre">Mensaje Leído</p>
+                                                <p className="text-tiny font-bold text-gray-400 uppercase">{content.hero.phone.status}</p>
+                                                <p className="text-small font-bold text-torre">{content.hero.phone.read}</p>
                                             </div>
                                         </div>
                                     </div>
@@ -175,13 +345,13 @@ export const CommunicationsPage: React.FC<CommunicationsPageProps> = ({ onOpenDe
             {/* 4. USE CASES */}
             <section className="py-24 bg-[#F9F5FF]">
                 <div className="container mx-auto px-6">
-                    <h2 className="text-h2 font-bold text-center mb-16 text-torre">Casos de uso</h2>
+                    <h2 className="text-h2 font-bold text-center mb-16 text-torre">{content.useCases.title}</h2>
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                        {useCases.map((item, index) => (
+                        {content.useCases.items.map((item, index) => (
                             <div key={index} className="relative h-[500px] rounded-[2rem] overflow-hidden group shadow-lg hover:shadow-2xl transition-all duration-500">
                                 <div className="absolute inset-0 w-full h-full">
                                     <img
-                                        src={item.image}
+                                        src={useCaseImages[index]}
                                         alt={item.category}
                                         loading="lazy"
                                         className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
@@ -195,7 +365,7 @@ export const CommunicationsPage: React.FC<CommunicationsPageProps> = ({ onOpenDe
                                 </div>
                                 <div className="absolute bottom-4 left-4 right-4 bg-white/80 backdrop-blur-md p-5 rounded-[2rem] shadow-xl flex flex-col gap-3 h-40 border border-white/50">
                                     <div className="w-12 h-12 bg-purple-50 rounded-full flex items-center justify-center text-domo shrink-0">
-                                        {item.icon}
+                                        {useCaseIcons[index]}
                                     </div>
                                     <div>
                                         <p className="text-small font-medium text-torre leading-snug">
@@ -211,25 +381,12 @@ export const CommunicationsPage: React.FC<CommunicationsPageProps> = ({ onOpenDe
 
 
             <HowItWorksSection
-                title="Conoce cómo funciona"
-                subtitle="Cómo funciona"
-                leftLabel="Software tradicional:"
-                rightLabel="Con DomoNow:"
-                imageSrc="/assets/modules/comunicaciones/comunicacioneshero.png"
-                items={[
-                    {
-                        problem: "Se continúa usando WhatsApp",
-                        solution: "Muro de comunicaciones"
-                    },
-                    {
-                        problem: "Avisos básicos sin segmentación",
-                        solution: "Segmentación por torres o grupos"
-                    },
-                    {
-                        problem: "Un archivo adjunto máximo",
-                        solution: "Múltiples archivos (fotos, videos, PDFs)"
-                    }
-                ]}
+                title={content.howItWorks.title}
+                subtitle={content.howItWorks.subtitle}
+                leftLabel={content.howItWorks.leftLabel}
+                rightLabel={content.howItWorks.rightLabel}
+                imageSrc="/assets/modules/comunicaciones/comofunciona_comunicaciones.png"
+                items={content.howItWorks.items}
             />
 
             {/* 2. PROBLEM VS SOLUTION */}
@@ -241,19 +398,19 @@ export const CommunicationsPage: React.FC<CommunicationsPageProps> = ({ onOpenDe
                         <div className="flex items-center justify-center gap-3 mb-6">
                             <span className="h-px w-8 bg-red-400"></span>
                             <span className="text-red-400 font-bold tracking-widest uppercase text-tiny">
-                                SITUACIÓN ACTUAL
+                                {content.situation.tag}
                             </span>
                             <span className="h-px w-8 bg-red-400"></span>
                         </div>
 
                         <h2 className="text-h2 font-bold text-torre mb-8 leading-tight">
-                            El problema que viven hoy las comunidades.
+                            {content.situation.title}
                         </h2>
 
                         <div className="relative inline-block">
                             <Quote className="absolute -top-4 -left-8 text-gray-200 w-10 h-10 transform -scale-x-100 z-0 opacity-50" />
                             <p className="relative z-10 text-h4 text-gray-500 leading-relaxed font-medium">
-                                "Cuando la comunicación no es clara ni trazable, se rompe la confianza y aumenta el ruido operativo."
+                                {content.situation.quote}
                             </p>
                         </div>
                     </div>
@@ -266,37 +423,21 @@ export const CommunicationsPage: React.FC<CommunicationsPageProps> = ({ onOpenDe
                                 <div className="w-8 h-8 rounded-full bg-red-50 flex items-center justify-center text-red-400">
                                     <X size={16} strokeWidth={3} />
                                 </div>
-                                <span className="font-bold text-gray-400 uppercase tracking-widest text-[10px] md:text-tiny">Lo que pasa hoy</span>
+                                <span className="font-bold text-gray-400 uppercase tracking-widest text-[10px] md:text-tiny">{content.situation.problems.title}</span>
                             </div>
 
                             <div className="space-y-8 flex-grow">
-                                <div className="flex gap-5 items-start">
-                                    <div className="w-12 h-12 bg-gray-50 rounded-2xl flex items-center justify-center text-gray-400 shrink-0 group-hover:bg-red-50 group-hover:text-red-400 transition-colors">
-                                        <MessageSquare size={20} />
+                                {content.situation.problems.items.map((item, i) => (
+                                    <div key={i} className="flex gap-5 items-start">
+                                        <div className="w-12 h-12 bg-gray-50 rounded-2xl flex items-center justify-center text-gray-400 shrink-0 group-hover:bg-red-50 group-hover:text-red-400 transition-colors">
+                                            {i === 0 ? <MessageSquare size={20} /> : i === 1 ? <Smartphone size={20} /> : <HelpCircle size={20} />}
+                                        </div>
+                                        <div>
+                                            <h4 className="font-bold text-torre text-body mb-1">{item.title}</h4>
+                                            <p className="text-small text-gray-500 leading-relaxed">{item.desc}</p>
+                                        </div>
                                     </div>
-                                    <div>
-                                        <h4 className="font-bold text-torre text-body mb-1">Avisos que se pierden</h4>
-                                        <p className="text-small text-gray-500 leading-relaxed">Información perdida en chats o carteleras físicas que nadie lee</p>
-                                    </div>
-                                </div>
-                                <div className="flex gap-5 items-start">
-                                    <div className="w-12 h-12 bg-gray-50 rounded-2xl flex items-center justify-center text-gray-400 shrink-0 group-hover:bg-red-50 group-hover:text-red-400 transition-colors">
-                                        <Smartphone size={20} />
-                                    </div>
-                                    <div>
-                                        <h4 className="font-bold text-torre text-body mb-1">Ruido Operativo</h4>
-                                        <p className="text-small text-gray-500 leading-relaxed">Mensajes repetidos, llamadas constantes y malentendidos frecuentes</p>
-                                    </div>
-                                </div>
-                                <div className="flex gap-5 items-start">
-                                    <div className="w-12 h-12 bg-gray-50 rounded-2xl flex items-center justify-center text-gray-400 shrink-0 group-hover:bg-red-50 group-hover:text-red-400 transition-colors">
-                                        <HelpCircle size={20} />
-                                    </div>
-                                    <div>
-                                        <h4 className="font-bold text-torre text-body mb-1">Sin Trazabilidad</h4>
-                                        <p className="text-small text-gray-500 leading-relaxed">Imposible saber quién leyó el mensaje o encontrar comunicados antiguos</p>
-                                    </div>
-                                </div>
+                                ))}
                             </div>
                         </div>
 
@@ -306,37 +447,27 @@ export const CommunicationsPage: React.FC<CommunicationsPageProps> = ({ onOpenDe
                                 <div className="w-8 h-8 rounded-full bg-domo/10 flex items-center justify-center text-domo">
                                     <Check size={16} strokeWidth={3} />
                                 </div>
-                                <span className="font-bold text-domo uppercase tracking-widest text-[10px] md:text-tiny">Con <span className="domonow-gradient">DomoNow</span> obtienes</span>
+                                <span className="font-bold text-domo uppercase tracking-widest text-[10px] md:text-tiny">
+                                    {language === 'es' ? (
+                                        <>Con <span className="domonow-gradient">DomoNow</span> obtienes</>
+                                    ) : (
+                                        <>With <span className="domonow-gradient">DomoNow</span> you get</>
+                                    )}
+                                </span>
                             </div>
 
                             <div className="space-y-8 flex-grow">
-                                <div className="flex gap-5 items-start">
-                                    <div className="w-12 h-12 bg-white rounded-2xl flex items-center justify-center text-domo shrink-0 shadow-sm group-hover:bg-domo group-hover:text-white transition-colors">
-                                        <Megaphone size={20} />
+                                {content.situation.solutions.items.map((item, i) => (
+                                    <div key={i} className="flex gap-5 items-start">
+                                        <div className="w-12 h-12 bg-white rounded-2xl flex items-center justify-center text-domo shrink-0 shadow-sm group-hover:bg-domo group-hover:text-white transition-colors">
+                                            {i === 0 ? <Megaphone size={20} /> : i === 1 ? <Bell size={20} /> : <Eye size={20} />}
+                                        </div>
+                                        <div>
+                                            <h4 className="font-bold text-torre text-body mb-1">{item.title}</h4>
+                                            <p className="text-small text-gray-500 leading-relaxed">{item.desc}</p>
+                                        </div>
                                     </div>
-                                    <div>
-                                        <h4 className="font-bold text-torre text-body mb-1">Comunicados Oficiales</h4>
-                                        <p className="text-small text-gray-500 leading-relaxed">Envía información certificada que llega directo a la App del residente</p>
-                                    </div>
-                                </div>
-                                <div className="flex gap-5 items-start">
-                                    <div className="w-12 h-12 bg-white rounded-2xl flex items-center justify-center text-domo shrink-0 shadow-sm group-hover:bg-domo group-hover:text-white transition-colors">
-                                        <Bell size={20} />
-                                    </div>
-                                    <div>
-                                        <h4 className="font-bold text-torre text-body mb-1">Alertas Inmediatas</h4>
-                                        <p className="text-small text-gray-500 leading-relaxed">Notificaciones push para emergencias o novedades críticas al instante</p>
-                                    </div>
-                                </div>
-                                <div className="flex gap-5 items-start">
-                                    <div className="w-12 h-12 bg-white rounded-2xl flex items-center justify-center text-domo shrink-0 shadow-sm group-hover:bg-domo group-hover:text-white transition-colors">
-                                        <Eye size={20} />
-                                    </div>
-                                    <div>
-                                        <h4 className="font-bold text-torre text-body mb-1">Visibilidad Total</h4>
-                                        <p className="text-small text-gray-500 leading-relaxed">Historial claro y accesible en todo momento para residentes y juntas</p>
-                                    </div>
-                                </div>
+                                ))}
                             </div>
                         </div>
                     </div>
@@ -349,39 +480,23 @@ export const CommunicationsPage: React.FC<CommunicationsPageProps> = ({ onOpenDe
                 <div className="container mx-auto px-6">
                     <div className="text-center mb-16">
                         <span className="text-domo font-bold tracking-widest uppercase text-tiny mb-2 block">
-                            Flujo de Trabajo
+                            {content.workflow.tag}
                         </span>
-                        <h2 className="text-h2 font-bold text-torre">Tu comunidad, paso a paso</h2>
+                        <h2 className="text-h2 font-bold text-torre">{content.workflow.title}</h2>
                     </div>
 
                     <div className="grid md:grid-cols-3 gap-6">
-                        <div className="bg-white p-8 rounded-[2rem] shadow-sm border border-transparent hover:border-domo hover:shadow-xl transition-all duration-300 group h-full flex flex-col items-center text-center">
-                            <div className="flex justify-center mb-8">
-                                <div className="w-10 h-10 bg-gray-100 group-hover:bg-domo rounded-full flex items-center justify-center text-torre group-hover:text-white text-small font-bold transition-colors duration-300">1</div>
+                        {content.workflow.steps.map((step, i) => (
+                            <div key={i} className="bg-white p-8 rounded-[2rem] shadow-sm border border-transparent hover:border-domo hover:shadow-xl transition-all duration-300 group h-full flex flex-col items-center text-center">
+                                <div className="flex justify-center mb-8">
+                                    <div className="w-10 h-10 bg-gray-100 group-hover:bg-domo rounded-full flex items-center justify-center text-torre group-hover:text-white text-small font-bold transition-colors duration-300">{i + 1}</div>
+                                </div>
+                                <h3 className="text-h4 font-bold text-torre mb-3">{step.title}</h3>
+                                <p className="text-body text-gray-500 leading-relaxed">
+                                    {step.desc}
+                                </p>
                             </div>
-                            <h3 className="text-h4 font-bold text-torre mb-3">Informas una sola vez</h3>
-                            <p className="text-body text-gray-500 leading-relaxed">
-                                La administración pública el comunicado desde la app, con un mensaje claro y oficial para la comunidad.
-                            </p>
-                        </div>
-                        <div className="bg-white p-8 rounded-[2rem] shadow-sm border border-transparent hover:border-domo hover:shadow-xl transition-all duration-300 group h-full flex flex-col items-center text-center">
-                            <div className="flex justify-center mb-8">
-                                <div className="w-10 h-10 bg-gray-100 group-hover:bg-domo rounded-full flex items-center justify-center text-torre group-hover:text-white text-small font-bold transition-colors duration-300">2</div>
-                            </div>
-                            <h3 className="text-h4 font-bold text-torre mb-3">Todos se enteran</h3>
-                            <p className="text-body text-gray-500 leading-relaxed">
-                                Los residentes reciben una notificación y saben exactamente dónde consultar la información, sin buscar en chats ni correos.
-                            </p>
-                        </div>
-                        <div className="bg-white p-8 rounded-[2rem] shadow-sm border border-transparent hover:border-domo hover:shadow-xl transition-all duration-300 group h-full flex flex-col items-center text-center">
-                            <div className="flex justify-center mb-8">
-                                <div className="w-10 h-10 bg-gray-100 group-hover:bg-domo rounded-full flex items-center justify-center text-torre group-hover:text-white text-small font-bold transition-colors duration-300">3</div>
-                            </div>
-                            <h3 className="text-h4 font-bold text-torre mb-3">Todo queda respaldado</h3>
-                            <p className="text-body text-gray-500 leading-relaxed">
-                                El comunicado permanece visible, ordenado y disponible, reduciendo reclamos y confusiones futuras.
-                            </p>
-                        </div>
+                        ))}
                     </div>
                 </div>
             </section>
@@ -391,11 +506,15 @@ export const CommunicationsPage: React.FC<CommunicationsPageProps> = ({ onOpenDe
                 <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-white/40 rounded-full blur-3xl translate-y-1/3 -translate-x-1/3 pointer-events-none"></div>
                 <div className="container mx-auto max-w-5xl relative z-10">
                     <h2 className="text-h3 font-bold mb-8 leading-tight text-torre">
-                        Conoce cómo <span className="domonow-gradient">DomoNow</span> transforma la comunicación en tu comunidad.
+                        {language === 'es' ? (
+                            <>Conoce cómo <span className="domonow-gradient">DomoNow</span> {content.footerCTA.title}</>
+                        ) : (
+                            <>Learn how <span className="domonow-gradient">DomoNow</span> {content.footerCTA.title}</>
+                        )}
                     </h2>
                     <div className="flex flex-col sm:flex-row gap-4 justify-center">
                         <Button size="lg" className="bg-domo text-white hover:bg-torre hover:text-white transition-colors px-12 text-lg shadow-xl shadow-domo/20" onClick={onOpenDemo}>
-                            Quiero agendar una Demo
+                            {content.footerCTA.button}
                         </Button>
                     </div>
                 </div>

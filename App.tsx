@@ -18,6 +18,7 @@ import { WhyChooseUsPage } from './components/WhyChooseUsPage';
 import { HelpCenterPage } from './components/HelpCenterPage';
 import { PrivacyPolicyPage } from './components/PrivacyPolicyPage';
 import { BackToTop } from './components/BackToTop';
+import { LanguageToggle } from './components/LanguageToggle';
 
 
 // Soluciones bro
@@ -101,6 +102,7 @@ function App() {
         />
 
         <BackToTop />
+        <LanguageToggle />
       </div>
     </BrowserRouter>
   );

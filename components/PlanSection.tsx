@@ -1,34 +1,24 @@
 import React from 'react';
 import { Button } from './Button';
+import { useTranslation } from 'react-i18next';
 
 interface PlanSectionProps {
   onOpenDemo: () => void;
 }
 
-const steps: { title: string; desc: React.ReactNode }[] = [
-  {
-    title: "Agenda tu demo",
-    desc: "Te mostramos cómo funciona la app en TU contexto: Tus dolores de cabeza y tus prioridades."
-  },
-  {
-    title: "Prueba piloto sin riesgos",
-    desc: <>Implementamos <span className="domonow-gradient">DomoNow</span> en una de tus propiedades durante 30 días. Sin letra pequeña.</>
-  },
-  {
-    title: "Activa y ve resultados reales",
-    desc: "Configuramos por ti: usuarios, permisos, módulos. Tú solo te enfocas en administrar mejor."
-  }
-];
-
 export const PlanSection: React.FC<PlanSectionProps> = ({ onOpenDemo }) => {
+  const { t } = useTranslation();
+  const steps = t('planSection.steps', { returnObjects: true }) as Array<{ title: string; desc: string }>;
+
   return (
     <section className="py-24 bg-arquitectura">
       <div className="container mx-auto px-6">
 
         <div className="flex flex-col md:flex-row justify-between items-end mb-16">
-          <div className="max-w-xl">
+          <div className="max-w-3xl">
             <h2 className="text-h3 md:text-h2 font-bold text-torre mb-4">
-              Empieza en 3 pasos <span className="text-domo">(y sin complicarte la vida)</span>
+              {t('planSection.title')} <br />
+              <span className="text-domo block whitespace-nowrap lg:whitespace-normal">{t('planSection.titleHighlight')}</span>
             </h2>
             <p className="text-gray-500 text-lead">
 
@@ -36,7 +26,7 @@ export const PlanSection: React.FC<PlanSectionProps> = ({ onOpenDemo }) => {
           </div>
           <div className="mt-6 md:mt-0">
             <Button className="shadow-lg" onClick={onOpenDemo}>
-              Solicite su demostración
+              {t('planSection.cta')}
             </Button>
           </div>
         </div>
@@ -53,7 +43,9 @@ export const PlanSection: React.FC<PlanSectionProps> = ({ onOpenDemo }) => {
 
               <h3 className="text-h4 font-bold text-torre mb-4">{item.title}</h3>
               <p className="text-gray-500 leading-relaxed text-body">
-                {item.desc}
+                {item.desc.includes('DomoNow') ? (
+                  <>{item.desc.split('DomoNow')[0]}<span className="domonow-gradient">DomoNow</span>{item.desc.split('DomoNow')[1]}</>
+                ) : item.desc}
               </p>
             </div>
           ))}

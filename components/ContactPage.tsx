@@ -2,11 +2,52 @@ import React, { useEffect } from 'react';
 import { ContactForm } from './ContactForm';
 import { Phone, Mail } from 'lucide-react';
 import { ImageCarousel } from './ImageCarousel';
+import { useTranslation } from 'react-i18next';
 
 export const ContactPage: React.FC = () => {
+  const { i18n } = useTranslation();
+  const language = (i18n.language?.startsWith('en') ? 'en' : 'es') as 'es' | 'en';
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
+  const t = {
+    es: {
+      tag: "Estamos para ayudarte",
+      title: "Contáctanos",
+      desc1: "En DomoNow estamos listos para ayudarte a simplificar la gestión de tu comunidad y ordenar los procesos clave de la administración.",
+      desc2: "Nuestro equipo te acompaña para entender tus necesidades, resolver dudas y mostrarte cómo la tecnología puede mejorar la convivencia, la transparencia y la toma de decisiones en tu propiedad horizontal.",
+      phone: {
+        title: "Teléfono",
+        subtitle: "Atención Clientes",
+        number: "+57 (301) 5310367"
+      },
+      email: {
+        title: "Correo",
+        subtitle: "Orientación y Comercial",
+        address: "soporte@domonow.com"
+      }
+    },
+    en: {
+      tag: "We are here to help",
+      title: "Contact Us",
+      desc1: "At DomoNow we are ready to help you simplify your community's management and organize key administrative processes.",
+      desc2: "Our team accompanies you to understand your needs, resolve doubts and show you how technology can improve coexistence, transparency and decision-making in your horizontal property.",
+      phone: {
+        title: "Phone",
+        subtitle: "Customer Service",
+        number: "+57 (301) 5310367"
+      },
+      email: {
+        title: "Email",
+        subtitle: "Orientation and Sales",
+        address: "soporte@domonow.com"
+      }
+    }
+  };
+
+  const content = t[language];
 
   // Images formatted to be 1:1 (Square)
   const contactImages = [
@@ -44,18 +85,18 @@ export const ContactPage: React.FC = () => {
             {/* Left Side: Information */}
             <div className="lg:w-5/12 pt-4">
               <span className="inline-block py-1.5 px-4 rounded-full bg-white border border-purple-100 shadow-sm text-tiny font-bold tracking-widest uppercase mb-6 text-domo">
-                Estamos para ayudarte
+                {content.tag}
               </span>
               <h1 className="text-h2 md:text-h1 font-bold mb-8 leading-tight text-torre">
-                Contáctanos
+                {content.title}
               </h1>
 
               <div className="text-lead text-gray-500 leading-relaxed space-y-6 mb-12">
                 <p>
-                  En <span className="domonow-gradient">DomoNow</span> estamos listos para ayudarte a simplificar la gestión de tu comunidad y ordenar los procesos clave de la administración.
+                  {content.desc1.split('DomoNow')[0]}<span className="domonow-gradient">DomoNow</span>{content.desc1.split('DomoNow')[1] || ''}
                 </p>
                 <p className="text-body">
-                  Nuestro equipo te acompaña para entender tus necesidades, resolver dudas y mostrarte cómo la tecnología puede mejorar la convivencia, la transparencia y la toma de decisiones en tu propiedad horizontal.
+                  {content.desc2}
                 </p>
               </div>
 
@@ -64,28 +105,28 @@ export const ContactPage: React.FC = () => {
 
                 {/* Phone */}
                 <div className="flex items-start gap-5">
-                  <div className="w-14 h-14 bg-white rounded-full flex items-center justify-center text-domo shrink-0 shadow-sm border border-purple-50">
-                    <Phone size={26} />
+                  <div className="w-12 h-12 bg-domo rounded-full flex items-center justify-center text-white shrink-0 shadow-md">
+                    <Phone size={22} />
                   </div>
                   <div>
-                    <p className="font-bold text-torre text-h3 mb-1">Teléfono</p>
-                    <p className="text-small text-gray-400 mb-2 uppercase tracking-wide font-bold text-[11px]">Atención Clientes</p>
-                    <a href="tel:3015310367" className="text-h4 font-bold text-domo hover:text-purple-800 transition-colors">
-                      (301) 5310367
+                    <p className="font-bold text-torre text-h3 mb-1">{content.phone.title}</p>
+                    <p className="text-small text-gray-400 mb-2 uppercase tracking-wide font-bold text-[11px]">{content.phone.subtitle}</p>
+                    <a href="tel:+573015310367" className="text-h4 font-bold text-domo hover:text-purple-800 transition-colors">
+                      {content.phone.number}
                     </a>
                   </div>
                 </div>
 
                 {/* Email */}
                 <div className="flex items-start gap-5">
-                  <div className="w-14 h-14 bg-white rounded-full flex items-center justify-center text-domo shrink-0 shadow-sm border border-purple-50">
-                    <Mail size={26} />
+                  <div className="w-12 h-12 bg-domo rounded-full flex items-center justify-center text-white shrink-0 shadow-md">
+                    <Mail size={22} />
                   </div>
                   <div>
-                    <p className="font-bold text-torre text-h3 mb-1">Correo</p>
-                    <p className="text-small text-gray-400 mb-2 uppercase tracking-wide font-bold text-[11px]">Orientación y Comercial</p>
-                    <a href="mailto:soporte@DomoNow.com" className="text-h4 font-bold text-domo hover:text-purple-800 transition-colors break-all">
-                      soporte@<span className="domonow-gradient">DomoNow</span>.com
+                    <p className="font-bold text-torre text-h3 mb-1">{content.email.title}</p>
+                    <p className="text-small text-gray-400 mb-2 uppercase tracking-wide font-bold text-[11px]">{content.email.subtitle}</p>
+                    <a href="mailto:soporte@domonow.com" className="text-h4 font-bold text-domo hover:text-purple-800 transition-colors break-all">
+                      {content.email.address.split('domonow')[0]}<span className="domonow-gradient">domonow</span>{content.email.address.split('domonow')[1] || ''}
                     </a>
                   </div>
                 </div>

@@ -1,0 +1,410 @@
+{
+    "header": {
+        "nav": {
+            "home": "Home",
+            "solutions": "Solutions",
+            "propertyTypes": "Property Types",
+            "whyUs": "Why Us?",
+            "helpCenter": "Help Center",
+            "about": "About",
+            "contact": "Contact"
+        },
+        "submenu": {
+            "superAdmin": "Super Admin",
+            "porteria": "1. Access Control",
+            "panico": "2. Panic Button",
+            "comunicaciones": "3. Communications",
+            "pqrs": "4. Requests (PQRS)",
+            "reservas": "5. Bookings",
+            "eventos": "6. Events",
+            "votaciones": "7. Voting",
+            "encuestas": "8. Surveys",
+            "asambleas": "9. Assemblies",
+            "normativo": "10. Compliance",
+            "documental": "11. Documents",
+            "financiera": "12. Financials",
+            "residencial": "Residential",
+            "comercial": "Commercial",
+            "mixta": "Mixed-Use"
+        },
+        "demoButton": "Request Demo",
+        "ticker": "All-in-one solution for community management"
+    },
+    "hero": {
+        "videoFallback": "Your browser does not support HTML5 videos.",
+        "description": "Managing your properties shouldn't be this complicated. DomoNow centralizes everything in one comprehensive, simple, and secure app for your entire community.",
+        "cta": "Request a demo"
+    },
+    "problemSection": {
+        "title": "\"You work day and night, yet residents remain",
+        "titleHighlight": "unhappy\"",
+        "subtitle": "Top 8 frustrations driving you away from your community:",
+        "cta": "Request your demo",
+        "problems": [
+            {
+                "title": "You answer all day, yet nobody notices",
+                "desc": "Daily calls and messages. No one remembers you actually responded."
+            },
+            {
+                "title": "Payments never arrive in full",
+                "desc": "Unregistered receipts, and you end up being the one to blame."
+            },
+            {
+                "title": "I reported that weeks ago and it's still the same",
+                "desc": "The issue persists and nobody knows you already handled it."
+            },
+            {
+                "title": "What are they spending our money on?",
+                "desc": "There's no simple way to show transparency."
+            },
+            {
+                "title": "Calls at any hour?",
+                "desc": "Your personal phone is the 24/7 complaint hotline."
+            },
+            {
+                "title": "You explained the decision, but it caused conflict",
+                "desc": "Even though you communicated, people still disagree."
+            },
+            {
+                "title": "Two families booked the same thing",
+                "desc": "Same date, same hall. The paper log doesn't work."
+            },
+            {
+                "title": "Nobody ever tells me anything here",
+                "desc": "You send 3 notices and someone always claims they 'didn't know'."
+            }
+        ]
+    },
+    "solutionSection": {
+        "title": "With DomoNow, the management you dreamed of",
+        "titleHighlight": "without chaos and without stress.",
+        "features": [
+            "Forget about WhatsApp, Excel, emails, and scattered calls.",
+            "Reduce your delinquency by up to 40% without chasing anyone.",
+            "From the report to the resolution, everything is recorded.",
+            "If you know how to use WhatsApp, you already know how to use DomoNow."
+        ],
+        "cta": "Request a demo",
+        "productivityBadge": "Productivity"
+    },
+    "authoritySection": {
+        "eyebrow": "[ We know what walking in your shoes feels like ]",
+        "title": "Results that speak for themselves",
+        "subtitle": "That's why we created DomoNow: to lighten your load, not to complicate things further.",
+        "card1Title": "Trust",
+        "card1Desc": "Our platform improves your numbers month after month.",
+        "card1Collection": "Collection",
+        "card1CollectionValue": "+18%",
+        "card1PQR": "Complaints",
+        "card1PQRValue": "-24% (yes, fewer complaints)",
+        "card1Average": "Average",
+        "card1ChartTitle": "Average of real results",
+        "card1ChartSubtitle": "in communities using DomoNow",
+        "card2Title": "Grow with confidence",
+        "card2Desc": "Manage 2 units or 200. A solid infrastructure that won't leave you stranded when you need it most.",
+        "card2TotalManaged": "Total Managed",
+        "card3Quote": "DomoNow completely changed how I manage. Now everything is clear, organized, and under control. I no longer live putting out fires.",
+        "card3Name": "Carlos López",
+        "card3Role": "Property Manager",
+        "card3Location": "Bogotá, Colombia"
+    },
+    "planSection": {
+        "title": "Get started in 3 steps",
+        "titleHighlight": "(without complicating your life)",
+        "cta": "Request your demo",
+        "steps": [
+            {
+                "title": "Schedule your demo",
+                "desc": "We show you how the app works in YOUR context: your pain points and your priorities."
+            },
+            {
+                "title": "Risk-free pilot",
+                "desc": "Start with DomoNow in one of your properties for 30 days. No fine print."
+            },
+            {
+                "title": "Activate and see real results",
+                "desc": "We set everything up for you: users, permissions, modules. You just focus on managing better."
+            }
+        ]
+    },
+    "summarySection": {
+        "title": "Managing shouldn't be a synonym for",
+        "titleHighlight": "stress",
+        "subtitle": "DomoNow centralizes what matters so you stop reacting and start planning",
+        "items": [
+            {
+                "title": "Less time searching",
+                "desc": "Spend less time looking for scattered information."
+            },
+            {
+                "title": "More clarity",
+                "desc": "More clarity in every decision you make."
+            },
+            {
+                "title": "Zero surprises",
+                "desc": "Zero last-minute surprises."
+            }
+        ],
+        "bottomText": "Your community notices the difference: faster responses, more transparent management, fewer complaints.",
+        "statValue": "-40%",
+        "statLabel": "fewer complaints",
+        "cta": "Request your demo"
+    },
+    "footer": {
+        "account": "Account",
+        "login": "Log In",
+        "help": "Help",
+        "helpCenter": "Help Center",
+        "faq": "FAQ",
+        "company": "Company",
+        "aboutUs": "About Us",
+        "contact": "Contact",
+        "copyright": "All rights reserved.",
+        "privacy": "Privacy",
+        "terms": "Terms"
+    },
+    "demoModal": {
+        "comercial": {
+            "title": "Ready to manage your commercial properties with more control and efficiency?",
+            "text": "Centralize operations, improve tenant experience, and maintain full traceability of access, requests, and updates with DomoNow."
+        },
+        "mixta": {
+            "title": "Ready to manage your mixed-use property with greater control and efficiency?",
+            "text": "Centralize residential and commercial operations in a single platform, improve the experience for residents and tenants, and maintain clear traceability of access, requests, billing, and updates."
+        },
+        "residencial": {
+            "title": "Ready to take your residential property management to the next level?",
+            "text": "Discover how DomoNow helps you reduce operational conflicts and improve the experience for residents and management."
+        },
+        "general": {
+            "title": "Take control of your community.",
+            "text": "Discover how DomoNow centralizes security, finances, and community living in one intuitive platform."
+        }
+    },
+    "howItWorks": {
+        "defaultTitle": "See how it works",
+        "leftLabel": "Traditional software:",
+        "rightLabel": "With DomoNow:"
+    },
+    "common": {
+        "useCases": "Use Cases",
+        "workflow": "Workflow",
+        "workflowTitle": "Your community, step by step",
+        "currentSituation": "CURRENT SITUATION",
+        "problemTitle": "The problem communities face today.",
+        "problemsToday": "Today's problems",
+        "withDomonow": "With DomoNow you get",
+        "ctaDemo": "See how it works",
+        "ctaSchedule": "I want to schedule a Demo",
+        "moduleName": "MODULE"
+    },
+    "communications": {
+        "moduleNumber": "3",
+        "moduleName": "COMMUNICATIONS MODULE",
+        "tagline": "Clear notices that reach everyone, instantly",
+        "heroTitle1": "\"I didn't know they were",
+        "heroTitle2": "fumigating today\"",
+        "heroProblem": "Notices nobody opens. Memos that never arrive. There's always someone who 'didn't know.'",
+        "heroSolution": "DomoNow centralizes your communications. Everyone gets the right message at the right time.",
+        "useCases": [
+            {
+                "category": "Maintenance",
+                "desc": "Notices about water cuts, fumigation, and more"
+            },
+            {
+                "category": "Regulations",
+                "desc": "Changes to internal rules and regulations"
+            },
+            {
+                "category": "Community Living",
+                "desc": "Notices about pets, noise, or space usage"
+            },
+            {
+                "category": "Security",
+                "desc": "Security alerts and emergency protocols"
+            }
+        ],
+        "howItWorks": [
+            {
+                "problem": "Only WhatsApp groups are used",
+                "solution": "Official communication channel"
+            },
+            {
+                "problem": "No read confirmation",
+                "solution": "Know who read it and who didn't"
+            },
+            {
+                "problem": "Important messages get lost",
+                "solution": "Communication history always available"
+            }
+        ],
+        "problemQuote": "\"Communication in a community shouldn't depend on WhatsApp or bulletin boards nobody reads. The lack of an official channel breeds misinformation, distrust, and conflict.\"",
+        "problems": [
+            {
+                "title": "Messages Nobody Sees",
+                "desc": "Ignored WhatsApp groups"
+            },
+            {
+                "title": "Invisible Memos",
+                "desc": "Notices that take weeks to arrive"
+            },
+            {
+                "title": "Misinformation Complaints",
+                "desc": "Residents claiming they were never informed"
+            }
+        ],
+        "solutions": [
+            {
+                "title": "Targeted Notices",
+                "desc": "Messages by tower, floor, or group"
+            },
+            {
+                "title": "Read Confirmation",
+                "desc": "Know exactly who read it"
+            },
+            {
+                "title": "Centralized Official Channel",
+                "desc": "One place for all communication"
+            }
+        ],
+        "steps": [
+            {
+                "title": "Create the notice",
+                "desc": "Management drafts the message and selects recipients."
+            },
+            {
+                "title": "Send and confirm",
+                "desc": "Each resident receives a notification and the system records who opened it."
+            },
+            {
+                "title": "Check the history",
+                "desc": "Everything is saved. Anyone can look up previous notices."
+            }
+        ],
+        "cta": "Centralize your community's notices with DomoNow. No WhatsApp groups. No excuses. No misinformation."
+    },
+    "accessControl": {
+        "moduleNumber": "1",
+        "moduleName": "ACCESS CONTROL MODULE",
+        "tagline": "Smart security that protects your community",
+        "heroTitle1": "\"Who authorized",
+        "heroTitle2": "that person's entry?\"",
+        "heroProblem": "Lost logbooks, unregistered visitors, and nobody knows who came in.",
+        "heroSolution": "DomoNow records every access. Everything is traced, secure, and available instantly."
+    },
+    "documents": {
+        "moduleNumber": "11",
+        "moduleName": "DOCUMENTS MODULE",
+        "tagline": "Organized, accessible, and secure documents",
+        "heroTitle": "\"Where can I find the community guidelines?\"",
+        "heroProblem": "Files in personal folders that take forever to find.",
+        "heroSolution": "DomoNow centralizes all documents. Find what you need in seconds.",
+        "useCases": [
+            {
+                "category": "Community Guidelines",
+                "desc": "Residents look up the community guidelines"
+            },
+            {
+                "category": "Minutes",
+                "desc": "The board reviews minutes and documents in seconds"
+            },
+            {
+                "category": "Welcome Pack",
+                "desc": "New residents access key information from day one"
+            },
+            {
+                "category": "Queries",
+                "desc": "Management answers queries without searching one by one"
+            }
+        ]
+    },
+    "requests": {
+        "moduleNumber": "4",
+        "moduleName": "REQUESTS MODULE (PQRS)",
+        "tagline": "Report and follow up without intermediaries",
+        "heroTitle": "Take a photo or video and report your request in seconds",
+        "heroProblem": "A resident reports a problem, but nobody responds and the issue remains.",
+        "heroSolution": "DomoNow centralizes requests. They are assigned, managed, and nobody is left without an answer."
+    },
+    "voting": {
+        "moduleNumber": "7",
+        "moduleName": "VOTING MODULE",
+        "tagline": "Important decisions with official backing",
+        "heroTitle1": "\"Votes take weeks",
+        "heroTitle2": "and then they're questioned\"",
+        "heroProblem": "Few attend, there aren't enough votes, decisions are not valid.",
+        "heroSolution": "DomoNow digitizes official voting. Valid remote participation and real-time results."
+    },
+    "surveys": {
+        "moduleName": "SURVEYS MODULE"
+    },
+    "commonAreas": {
+        "moduleNumber": "5",
+        "moduleName": "BOOKINGS MODULE",
+        "tagline": "Common areas available at the click of a button",
+        "heroTitle": "\"Is the social hall free on Saturday?\"",
+        "heroProblem": "These questions lead to conflicts among residents.",
+        "heroSolution": "DomoNow organizes bookings in real time. No conflicts, no misunderstandings."
+    },
+    "financial": {
+        "moduleNumber": "12",
+        "moduleName": "FINANCIALS MODULE",
+        "tagline": "Clear, reliable, and always-available finances",
+        "heroTitle1": "\"Who owes?",
+        "heroTitle2": "What was it spent on?\"",
+        "heroProblem": "Outdated spreadsheets and numbers that don't add up?",
+        "heroSolution": "DomoNow centralizes finances in real time. Total transparency, always available."
+    },
+    "assemblies": {
+        "moduleName": "ASSEMBLIES MODULE"
+    },
+    "events": {
+        "moduleName": "EVENTS MODULE"
+    },
+    "compliance": {
+        "moduleName": "COMPLIANCE MODULE"
+    },
+    "emergency": {
+        "moduleName": "PANIC BUTTON MODULE"
+    },
+    "superAdmin": {
+        "moduleName": "SUPER ADMIN MODULE"
+    },
+    "contactFormSection": {
+        "badge": "Schedule your Demo",
+        "title1": "Take control of",
+        "title2": "your community.",
+        "description": "Discover how DomoNow centralizes security, finances, and community living in a single intuitive platform."
+    },
+    "contactForm": {
+        "heading": "Let's get started",
+        "subheading": "Fill in your details to schedule your session.",
+        "firstName": "First Name",
+        "lastName": "Last Name",
+        "email": "Business Email",
+        "phone": "Phone",
+        "message": "What are you looking to improve?",
+        "messageOptional": "(Optional)",
+        "messagePlaceholder": "E.g. Automate access control, improve collections, visitor management...",
+        "firstNamePlaceholder": "E.g. John",
+        "lastNamePlaceholder": "E.g. Smith",
+        "emailPlaceholder": "name@management.com",
+        "phonePlaceholder": "300 000 0000",
+        "privacyPolicy": "I accept the",
+        "privacyPolicyLink": "Privacy Policy",
+        "privacyPolicySuffix": "and the processing of my personal data.",
+        "termsPrefix": "I accept the",
+        "termsLink": "Terms of Service",
+        "termsSuffix": ".",
+        "required": "Required field",
+        "submit": "Schedule Demo",
+        "submitting": "Sending...",
+        "secureData": "Your data is secure and encrypted.",
+        "successTitle": "Thank you for reaching out!",
+        "successMessage": "We've received your information. An advisor will contact you soon.",
+        "sendAnother": "Send another message",
+        "errorRequired": "Please fill in all required fields.",
+        "errorCheckboxes": "You must accept the privacy policy and the terms of service.",
+        "errorSubmit": "There was an error submitting the form. Please try again."
+    }
+}

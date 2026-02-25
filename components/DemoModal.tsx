@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { X } from 'lucide-react';
 import { ContactForm } from './ContactForm';
+import { useTranslation } from 'react-i18next';
 
 interface DemoModalProps {
   isOpen: boolean;
@@ -9,6 +10,8 @@ interface DemoModalProps {
 }
 
 export const DemoModal: React.FC<DemoModalProps> = ({ isOpen, onClose, demoType = 'general' }) => {
+  const { t } = useTranslation();
+
   // Prevent body scroll when modal is open
   useEffect(() => {
     if (isOpen) {
@@ -24,23 +27,23 @@ export const DemoModal: React.FC<DemoModalProps> = ({ isOpen, onClose, demoType 
   // Content Configuration based on demoType
   const contentMap: Record<string, { title: string; text: React.ReactNode; image: string }> = {
     'comercial': {
-      title: "¿Listo para gestionar tus propiedades comerciales con más control y eficiencia?",
-      text: <>Centraliza la operación, mejora la experiencia de arrendatarios y mantén trazabilidad total en accesos, solicitudes y novedades con <span className="domonow-gradient">DomoNow</span>.</>,
+      title: t('demoModal.comercial.title'),
+      text: <>{t('demoModal.comercial.text').split('DomoNow')[0]}<span className="domonow-gradient">DomoNow</span>{t('demoModal.comercial.text').split('DomoNow')[1] || ''}</>,
       image: "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=800"
     },
     'mixta': {
-      title: "¿Listo para gestionar tu propiedad mixta con mayor control y eficiencia?",
-      text: "Centraliza en una sola plataforma la operación residencial y comercial, mejora la experiencia de residentes y arrendatarios, y mantén trazabilidad clara en accesos, solicitudes, facturación y novedades.",
+      title: t('demoModal.mixta.title'),
+      text: t('demoModal.mixta.text'),
       image: "https://images.unsplash.com/photo-1486325212027-8081e485255e?auto=format&fit=crop&q=80&w=800"
     },
     'residencial': {
-      title: "¿Listo para llevar la administración de tu propiedad residencial al siguiente nivel?",
-      text: <>Descubre cómo <span className="domonow-gradient">DomoNow</span> te ayuda a reducir conflictos operativos y a mejorar la experiencia de residentes y administración.</>,
+      title: t('demoModal.residencial.title'),
+      text: <>{t('demoModal.residencial.text').split('DomoNow')[0]}<span className="domonow-gradient">DomoNow</span>{t('demoModal.residencial.text').split('DomoNow')[1] || ''}</>,
       image: "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?auto=format&fit=crop&q=80&w=800"
     },
     'general': {
-      title: "Toma el control de tu comunidad.",
-      text: <>Descubre cómo <span className="domonow-gradient">DomoNow</span> centraliza la seguridad, las finanzas y la convivencia en una sola plataforma intuitiva.</>,
+      title: t('demoModal.general.title'),
+      text: <>{t('demoModal.general.text').split('DomoNow')[0]}<span className="domonow-gradient">DomoNow</span>{t('demoModal.general.text').split('DomoNow')[1] || ''}</>,
       image: "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=800"
     }
   };

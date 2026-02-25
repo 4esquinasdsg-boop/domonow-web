@@ -1,6 +1,7 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { Button } from './Button';
 import { Users, Target, Heart, ShieldCheck, Zap, Layers, Award, CheckCircle, ChevronDown } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
 interface AboutPageProps {
     onOpenDemo: () => void;
@@ -52,6 +53,8 @@ const AnimatedCounter = ({ end, duration = 2000, suffix = "" }: { end: number, d
 };
 
 export const AboutPage: React.FC<AboutPageProps> = ({ onOpenDemo }) => {
+    const { i18n } = useTranslation();
+    const language = (i18n.language?.startsWith('en') ? 'en' : 'es') as 'es' | 'en';
     const [activeAccordion, setActiveAccordion] = useState<string | null>('propósito');
 
     useEffect(() => {
@@ -61,6 +64,109 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onOpenDemo }) => {
     const toggleAccordion = (id: string) => {
         setActiveAccordion(activeAccordion === id ? null : id);
     };
+
+    const t = {
+        es: {
+            hero: {
+                tag: "Nuestra Historia",
+                title: "Transformamos la",
+                titleAccent: "vida en comunidad.",
+                desc1: "DomoNow nace de una necesidad concreta: cambiar una gestión fragmentada y manual por una experiencia organizada, transparente y eficiente.",
+                desc2Icon: "Respaldados por Ofima SAS, con más de 35 años desarrollando soluciones tecnológicas para necesidades reales.",
+                cta: "Agenda una reunión",
+                expLabel: "Años de experiencia",
+                ofimaLabel: "Respaldado por Ofima SAS"
+            },
+            philosophy: {
+                tag: "Nuestra Esencia",
+                title: "Lo que nos mueve",
+                desc: "Nuestros valores definen cómo creamos tecnología y cómo nos relacionamos con cada comunidad que confía en nosotros.",
+                culture: "Cultura DomoNow",
+                purpose: {
+                    title: "Nuestro Propósito",
+                    text: '"Mejorar la calidad de vida a través de la tecnología, creando entornos más organizados, transparentes y conectados. Creemos que una buena administración no solo gestiona recursos, sino que construye comunidades sólidas."'
+                },
+                vision: {
+                    title: "Nuestra Visión",
+                    text: '"Ser la plataforma líder en Latinoamérica y Estados Unidos que conecta y transforma la vida en comunidad, impulsando modelos de gestión más colaborativos."'
+                },
+                pillars: {
+                    title: "Nuestros Pilares",
+                    collaboration: {
+                        title: "Colaboración",
+                        text: "Guía cada funcionalidad que desarrollamos, promoviendo comunidades más participativas."
+                    },
+                    simplicity: {
+                        title: "Simplicidad",
+                        text: "Tecnología clara, intuitiva y accesible. Hacemos lo complejo, simple para todos."
+                    },
+                    trust: {
+                        title: "Confianza",
+                        text: "Garantizamos información clara y segura para todos los actores de la comunidad."
+                    }
+                }
+            },
+            commitment: {
+                tag: "Nuestro Compromiso",
+                title: "Comprometidos con tu copropiedad.",
+                desc: "En DomoNow acompañamos a nuestros clientes desde la implementación hasta el uso cotidiano, entendiendo que cada comunidad tiene dinámicas, reglas y necesidades diferentes. Nuestro enfoque es ser un aliado tecnológico confiable, que aporta orden, visibilidad y control sin complejizar la operación.",
+                cta: "Hablemos de tu comunidad",
+                support: "Soporte",
+                accompaniment: "Acompañamiento Real"
+            }
+        },
+        en: {
+            hero: {
+                tag: "Our Story",
+                title: "We transform",
+                titleAccent: "community life.",
+                desc1: "DomoNow was born from a specific need: to trade fragmented and manual management for an organized, transparent, and efficient experience.",
+                desc2Icon: "Backed by Ofima SAS, with over 35 years developing technological solutions for real needs.",
+                cta: "Schedule a meeting",
+                expLabel: "Years of experience",
+                ofimaLabel: "Backed by Ofima SAS"
+            },
+            philosophy: {
+                tag: "Our Essence",
+                title: "What moves us",
+                desc: "Our values define how we create technology and how we relate to every community that trusts us.",
+                culture: "DomoNow Culture",
+                purpose: {
+                    title: "Our Purpose",
+                    text: '"To improve quality of life through technology, creating more organized, transparent, and connected environments. We believe that good administration doesn\'t just manage resources, it builds solid communities."'
+                },
+                vision: {
+                    title: "Our Vision",
+                    text: '"To be the leading platform in Latin America and the United States that connects and transforms community life, driving more collaborative management models."'
+                },
+                pillars: {
+                    title: "Our Pillars",
+                    collaboration: {
+                        title: "Collaboration",
+                        text: "Guides every feature we develop, promoting more participatory communities."
+                    },
+                    simplicity: {
+                        title: "Simplicity",
+                        text: "Clear, intuitive, and accessible technology. We make the complex simple for everyone."
+                    },
+                    trust: {
+                        title: "Trust",
+                        text: "We guarantee clear and secure information for all members of the community."
+                    }
+                }
+            },
+            commitment: {
+                tag: "Our Commitment",
+                title: "Committed to your co-property.",
+                desc: "At DomoNow, we accompany our clients from implementation to daily use, understanding that each community has different dynamics, rules, and needs. Our focus is to be a reliable technological ally that provides order, visibility, and control without complicating operation.",
+                cta: "Let's talk about your community",
+                support: "Support",
+                accompaniment: "Real Accompaniment"
+            }
+        }
+    };
+
+    const content = t[language];
 
     return (
         <div className="pt-20 bg-arquitectura font-sans text-torre">
@@ -78,26 +184,30 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onOpenDemo }) => {
                         <div className="lg:w-1/2">
                             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white border border-gray-200 shadow-sm mb-6">
                                 <span className="w-2 h-2 rounded-full bg-domo"></span>
-                                <span className="text-tiny font-bold text-gray-500 uppercase tracking-wider">Nuestra Historia</span>
+                                <span className="text-tiny font-bold text-gray-500 uppercase tracking-wider">{content.hero.tag}</span>
                             </div>
                             <h1 className="text-h2 md:text-display font-bold text-torre leading-none mb-6 tracking-tight">
-                                Transformamos la <br />
-                                <span className="text-transparent bg-clip-text bg-gradient-to-r from-domo to-purple-600">vida en comunidad.</span>
+                                {content.hero.title} <br />
+                                <span className="text-transparent bg-clip-text bg-gradient-to-r from-domo to-purple-600">{content.hero.titleAccent}</span>
                             </h1>
                             <div className="prose text-lead text-gray-500 mb-8 leading-relaxed space-y-6">
                                 <p>
-                                    <span className="domonow-gradient">DomoNow</span> nace de una necesidad concreta: cambiar una gestión fragmentada y manual por una experiencia <strong>organizada, transparente y eficiente</strong>.
+                                    <span className="domonow-gradient">DomoNow</span> {content.hero.desc1}
                                 </p>
                                 <p className="flex items-start gap-3 text-body bg-white/50 p-4 rounded-2xl border border-gray-100">
                                     <ShieldCheck className="text-domo shrink-0 mt-1" size={24} />
                                     <span>
-                                        Respaldados por <strong>Ofima SAS</strong>, con más de <strong className="text-domo">35 años</strong> desarrollando soluciones tecnológicas para necesidades reales.
+                                        {language === 'es' ? (
+                                            <>Respaldados por <strong>Ofima SAS</strong>, con más de <strong className="text-domo">35 años</strong> desarrollando soluciones tecnológicas para necesidades reales.</>
+                                        ) : (
+                                            <>Backed by <strong>Ofima SAS</strong>, with over <strong className="text-domo">35 years</strong> developing technological solutions for real needs.</>
+                                        )}
                                     </span>
                                 </p>
                             </div>
                             <div className="flex gap-4">
                                 <Button size="lg" onClick={onOpenDemo} className="shadow-xl shadow-domo/20">
-                                    Agenda una reunión
+                                    {content.hero.cta}
                                 </Button>
                             </div>
                         </div>
@@ -125,7 +235,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onOpenDemo }) => {
                                         <p className="text-h3 font-bold text-torre leading-none flex">
                                             +<AnimatedCounter end={35} duration={2000} />
                                         </p>
-                                        <p className="text-tiny font-bold text-gray-400 uppercase">Años de experiencia</p>
+                                        <p className="text-tiny font-bold text-gray-400 uppercase">{content.hero.expLabel}</p>
                                     </div>
                                 </div>
 
@@ -133,7 +243,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onOpenDemo }) => {
                                 <div className="absolute -top-4 -right-4 bg-domo text-white p-4 rounded-2xl shadow-lg shadow-domo/30 transform -rotate-3 hover:rotate-0 transition-transform">
                                     <div className="flex items-center gap-2">
                                         <CheckCircle size={18} />
-                                        <span className="font-bold text-small">Respaldado por Ofima SAS</span>
+                                        <span className="font-bold text-small">{content.hero.ofimaLabel}</span>
                                     </div>
                                 </div>
                             </div>
@@ -200,7 +310,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onOpenDemo }) => {
                                 <div className="absolute bottom-6 left-6 right-6 pointer-events-none">
                                     <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/90 backdrop-blur-md border border-white/50 shadow-lg">
                                         <span className="w-2 h-2 rounded-full bg-domo animate-pulse"></span>
-                                        <span className="text-xs font-bold uppercase tracking-wider text-torre">Cultura <span className="domonow-gradient">DomoNow</span></span>
+                                        <span className="text-xs font-bold uppercase tracking-wider text-torre">{content.philosophy.culture}</span>
                                     </div>
                                 </div>
                             </div>
@@ -210,10 +320,10 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onOpenDemo }) => {
                         <div className="order-1 lg:order-2 flex flex-col justify-center">
 
                             <div className="mb-10 text-left">
-                                <span className="text-domo font-bold tracking-widest uppercase text-tiny">Nuestra Esencia</span>
-                                <h2 className="text-h2 font-bold text-torre mt-4 leading-tight">Lo que nos mueve</h2>
+                                <span className="text-domo font-bold tracking-widest uppercase text-tiny">{content.philosophy.tag}</span>
+                                <h2 className="text-h2 font-bold text-torre mt-4 leading-tight">{content.philosophy.title}</h2>
                                 <p className="text-lead text-gray-500 mt-6 leading-relaxed">
-                                    Nuestros valores definen cómo creamos tecnología y cómo nos relacionamos con cada comunidad que confía en nosotros.
+                                    {content.philosophy.desc}
                                 </p>
                             </div>
 
@@ -229,7 +339,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onOpenDemo }) => {
                                             <div className="w-14 h-14 rounded-full bg-gray-100 flex items-center justify-center text-torre transition-all duration-300">
                                                 <Heart size={26} fill={activeAccordion === 'propósito' ? "currentColor" : "none"} />
                                             </div>
-                                            <h2 className="text-h3 font-bold text-torre group-hover:text-domo transition-colors">Nuestro Propósito</h2>
+                                            <h2 className="text-h3 font-bold text-torre group-hover:text-domo transition-colors">{content.philosophy.purpose.title}</h2>
                                         </div>
                                         <div className={`transition-transform duration-300 text-gray-400 ${activeAccordion === 'propósito' ? 'rotate-180 text-domo' : ''}`}>
                                             <ChevronDown size={28} />
@@ -239,7 +349,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onOpenDemo }) => {
                                     <div className={`overflow-hidden transition-all duration-500 ease-in-out ${activeAccordion === 'propósito' ? 'max-h-[500px] opacity-100 mb-8' : 'max-h-0 opacity-0'}`}>
                                         <div className="pl-20 pr-4">
                                             <p className="text-body text-gray-600 leading-relaxed border-l-2 border-domo pl-6">
-                                                "Mejorar la calidad de vida a través de la tecnología, creando entornos más organizados, transparentes y conectados. Creemos que una buena administración no solo gestiona recursos, sino que construye comunidades sólidas."
+                                                {content.philosophy.purpose.text}
                                             </p>
                                         </div>
                                     </div>
@@ -255,7 +365,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onOpenDemo }) => {
                                             <div className="w-14 h-14 rounded-full bg-gray-100 flex items-center justify-center text-torre transition-all duration-300">
                                                 <Target size={26} />
                                             </div>
-                                            <h2 className="text-h3 font-bold text-torre group-hover:text-domo transition-colors">Nuestra Visión</h2>
+                                            <h2 className="text-h3 font-bold text-torre group-hover:text-domo transition-colors">{content.philosophy.vision.title}</h2>
                                         </div>
                                         <div className={`transition-transform duration-300 text-gray-400 ${activeAccordion === 'visión' ? 'rotate-180 text-domo' : ''}`}>
                                             <ChevronDown size={28} />
@@ -265,7 +375,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onOpenDemo }) => {
                                     <div className={`overflow-hidden transition-all duration-500 ease-in-out ${activeAccordion === 'visión' ? 'max-h-[500px] opacity-100 mb-8' : 'max-h-0 opacity-0'}`}>
                                         <div className="pl-20 pr-4">
                                             <p className="text-body text-gray-600 leading-relaxed border-l-2 border-horizonte pl-6">
-                                                "Ser la plataforma líder en <strong className="text-torre">Latinoamérica y Estados Unidos</strong> que conecta y transforma la vida en comunidad, impulsando modelos de gestión más colaborativos."
+                                                {content.philosophy.vision.text}
                                             </p>
                                         </div>
                                     </div>
@@ -281,7 +391,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onOpenDemo }) => {
                                             <div className="w-14 h-14 rounded-full bg-gray-100 flex items-center justify-center text-torre transition-all duration-300">
                                                 <Award size={26} />
                                             </div>
-                                            <h2 className="text-h3 font-bold text-torre group-hover:text-domo transition-colors">Nuestros Pilares</h2>
+                                            <h2 className="text-h3 font-bold text-torre group-hover:text-domo transition-colors">{content.philosophy.pillars.title}</h2>
                                         </div>
                                         <div className={`transition-transform duration-300 text-gray-400 ${activeAccordion === 'pilares' ? 'rotate-180 text-domo' : ''}`}>
                                             <ChevronDown size={28} />
@@ -299,9 +409,9 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onOpenDemo }) => {
                                                         <Users size={26} />
                                                     </div>
                                                     <div className="pt-1">
-                                                        <h4 className="font-bold text-torre text-h4 mb-2">Colaboración</h4>
+                                                        <h4 className="font-bold text-torre text-h4 mb-2">{content.philosophy.pillars.collaboration.title}</h4>
                                                         <p className="text-body text-gray-500 leading-relaxed">
-                                                            Guía cada funcionalidad que desarrollamos, promoviendo comunidades más participativas.
+                                                            {content.philosophy.pillars.collaboration.text}
                                                         </p>
                                                     </div>
                                                 </div>
@@ -312,9 +422,9 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onOpenDemo }) => {
                                                         <Zap size={26} />
                                                     </div>
                                                     <div className="pt-1">
-                                                        <h4 className="font-bold text-torre text-h4 mb-2">Simplicidad</h4>
+                                                        <h4 className="font-bold text-torre text-h4 mb-2">{content.philosophy.pillars.simplicity.title}</h4>
                                                         <p className="text-body text-gray-500 leading-relaxed">
-                                                            Tecnología clara, intuitiva y accesible. Hacemos lo complejo, simple para todos.
+                                                            {content.philosophy.pillars.simplicity.text}
                                                         </p>
                                                     </div>
                                                 </div>
@@ -325,9 +435,9 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onOpenDemo }) => {
                                                         <Layers size={26} />
                                                     </div>
                                                     <div className="pt-1">
-                                                        <h4 className="font-bold text-torre text-h4 mb-2">Confianza</h4>
+                                                        <h4 className="font-bold text-torre text-h4 mb-2">{content.philosophy.pillars.trust.title}</h4>
                                                         <p className="text-body text-gray-500 leading-relaxed">
-                                                            Garantizamos información clara y segura para todos los actores de la comunidad.
+                                                            {content.philosophy.pillars.trust.text}
                                                         </p>
                                                     </div>
                                                 </div>
@@ -356,16 +466,16 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onOpenDemo }) => {
                         {/* Left: Text Content - Added padding right for compensation */}
                         <div className="order-2 lg:order-1 lg:pr-12">
                             <span className="inline-block py-1.5 px-4 rounded-full bg-white border border-purple-100 shadow-sm text-domo text-tiny font-bold tracking-widest uppercase mb-6">
-                                Nuestro Compromiso
+                                {content.commitment.tag}
                             </span>
                             <h2 className="text-h2 font-bold text-torre mb-6 leading-tight">
-                                Comprometidos con <br />tu copropiedad.
+                                {content.commitment.title}
                             </h2>
                             <p className="text-body text-gray-500 mb-8 leading-relaxed">
-                                En <span className="domonow-gradient">DomoNow</span> acompañamos a nuestros clientes desde la implementación hasta el uso cotidiano, entendiendo que cada comunidad tiene dinámicas, reglas y necesidades diferentes. Nuestro enfoque es ser un aliado tecnológico confiable, que aporta orden, visibilidad y control sin complejizar la operación.
+                                {content.commitment.desc.split('DomoNow')[0]}<span className="domonow-gradient">DomoNow</span>{content.commitment.desc.split('DomoNow')[1] || ''}
                             </p>
                             <Button size="lg" onClick={onOpenDemo} className="bg-domo text-white hover:bg-purple-900 shadow-xl shadow-domo/20 px-8 py-4 rounded-full font-bold text-body">
-                                Hablemos de tu comunidad
+                                {content.commitment.cta}
                             </Button>
                         </div>
 
@@ -386,8 +496,8 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onOpenDemo }) => {
                                     <CheckCircle size={24} />
                                 </div>
                                 <div>
-                                    <p className="text-tiny font-bold text-gray-400 uppercase">Soporte</p>
-                                    <p className="text-small font-bold text-torre">Acompañamiento Real</p>
+                                    <p className="text-tiny font-bold text-gray-400 uppercase">{content.commitment.support}</p>
+                                    <p className="text-small font-bold text-torre">{content.commitment.accompaniment}</p>
                                 </div>
                             </div>
                         </div>

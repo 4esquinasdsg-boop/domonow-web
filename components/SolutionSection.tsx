@@ -1,12 +1,16 @@
 import React from 'react';
 import { Button } from './Button';
 import { MessageCircle, CheckCircle, Smartphone, FileText, Monitor, TrendingUp } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
 interface SolutionSectionProps {
     onOpenDemo: () => void;
 }
 
 export const SolutionSection: React.FC<SolutionSectionProps> = ({ onOpenDemo }) => {
+    const { t } = useTranslation();
+    const features = t('solutionSection.features', { returnObjects: true }) as string[];
+
     return (
         <section id="solution" className="py-12 bg-arquitectura px-4 md:px-6">
             <div className="container mx-auto">
@@ -22,26 +26,26 @@ export const SolutionSection: React.FC<SolutionSectionProps> = ({ onOpenDemo }) 
                         {/* Text Content */}
                         <div className="lg:w-1/2 z-20">
                             <h2 className="text-h2 md:text-h1 font-bold mb-8 leading-[1.1]">
-                                Con <span className="text-white font-bold">DomoNow</span> la administración que soñaste<br />
-                                <span className="text-horizonte italic font-serif">sin caos y sin estrés.</span>
+                                {t('solutionSection.title').split('DomoNow')[0]}<span className="text-white font-bold">DomoNow</span>{t('solutionSection.title').split('DomoNow')[1]}<br />
+                                <span className="text-horizonte italic font-serif">{t('solutionSection.titleHighlight')}</span>
                             </h2>
 
                             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-10">
                                 <div className="bg-white/10 backdrop-blur px-4 py-3 rounded-2xl text-small font-medium flex items-start gap-3">
                                     <MessageCircle className="shrink-0 mt-1" size={18} />
-                                    <span>Olvídate de WhatsApp, Excel, correos y llamadas dispersas.</span>
+                                    <span>{features[0]}</span>
                                 </div>
                                 <div className="bg-white/10 backdrop-blur px-4 py-3 rounded-2xl text-small font-medium flex items-start gap-3">
                                     <CheckCircle className="shrink-0 mt-1" size={18} />
-                                    <span>Reduce tu morosidad hasta 40% sin perseguir a nadie.</span>
+                                    <span>{features[1]}</span>
                                 </div>
                                 <div className="bg-white/10 backdrop-blur px-4 py-3 rounded-2xl text-small font-medium flex items-start gap-3">
                                     <FileText className="shrink-0 mt-1" size={18} />
-                                    <span>Desde el reporte hasta el cierre, todo queda registrado.</span>
+                                    <span>{features[2]}</span>
                                 </div>
                                 <div className="bg-white/10 backdrop-blur px-4 py-3 rounded-2xl text-small font-medium flex items-start gap-3">
                                     <Monitor className="shrink-0 mt-1" size={18} />
-                                    <span>Si usas WhatsApp, ya sabes usar <span className="text-white font-bold">DomoNow</span>.</span>
+                                    <span>{features[3]?.split('DomoNow')[0]}<span className="text-white font-bold">DomoNow</span>{features[3]?.split('DomoNow')[1] || ''}</span>
                                 </div>
                             </div>
 
@@ -50,7 +54,7 @@ export const SolutionSection: React.FC<SolutionSectionProps> = ({ onOpenDemo }) 
                                 onClick={onOpenDemo}
                                 className="!bg-white !text-domo hover:!bg-gray-100 border-0 px-8 py-3 shadow-lg font-bold"
                             >
-                                Solicita demostración
+                                {t('solutionSection.cta')}
                             </Button>
                         </div>
 
@@ -70,7 +74,7 @@ export const SolutionSection: React.FC<SolutionSectionProps> = ({ onOpenDemo }) 
                                     {/* Decorative badge on image */}
                                     <div className="absolute top-6 right-6 bg-white/95 backdrop-blur px-4 py-2 rounded-full shadow-lg flex items-center gap-2">
                                         <TrendingUp size={14} className="text-domo" />
-                                        <span className="text-xs font-bold text-torre uppercase tracking-wide">Productividad</span>
+                                        <span className="text-xs font-bold text-torre uppercase tracking-wide">{t('solutionSection.productivityBadge')}</span>
                                     </div>
                                 </div>
 

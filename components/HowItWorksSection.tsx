@@ -1,5 +1,6 @@
 import React from 'react';
 import { X, Check, Sparkles, AlertTriangle, ThumbsUp, ThumbsDown } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
 interface HowItWorksItem {
     problem: string;
@@ -17,14 +18,19 @@ interface HowItWorksSectionProps {
 }
 
 export const HowItWorksSection: React.FC<HowItWorksSectionProps> = ({
-    title = "Conoce cómo funciona",
+    title,
     subtitle,
     items,
     imageSrc,
     variant = 'default',
-    leftLabel = "Software tradicional:",
-    rightLabel = "Con DomoNow:"
+    leftLabel,
+    rightLabel
 }) => {
+    const { t } = useTranslation();
+
+    const displayTitle = title || t('howItWorks.defaultTitle');
+    const displayLeftLabel = leftLabel || t('howItWorks.leftLabel');
+    const displayRightLabel = rightLabel || t('howItWorks.rightLabel');
 
     return (
         <section className="py-24 bg-arquitectura border-t border-gray-100 overflow-hidden">
@@ -33,7 +39,7 @@ export const HowItWorksSection: React.FC<HowItWorksSectionProps> = ({
                 {/* Header - Title centered */}
                 <div className="text-center mb-16 max-w-4xl mx-auto">
                     <h2 className="text-h2 font-bold text-torre leading-tight">
-                        {title}
+                        {displayTitle}
                     </h2>
                 </div>
 
@@ -75,13 +81,15 @@ export const HowItWorksSection: React.FC<HowItWorksSectionProps> = ({
                                 </div>
 
                                 {/* Vertical Bar with Label */}
-                                <div className="relative w-20 bg-domo flex flex-col items-center justify-center rounded-r-3xl self-stretch">
-                                    {/* Vertical Text */}
-                                    <span className="text-white font-bold text-xl tracking-widest writing-mode-vertical transform rotate-180" style={{ writingMode: 'vertical-rl' }}>
-                                        CON DOMONOW
-                                    </span>
+                                <div className="relative w-20 bg-domo flex flex-col items-center justify-between py-10 rounded-r-3xl self-stretch">
+                                    {/* Vertical Text Container */}
+                                    <div className="flex-1 flex items-center justify-center">
+                                        <span className="text-white font-bold text-xl tracking-widest writing-mode-vertical transform rotate-180" style={{ writingMode: 'vertical-rl' }}>
+                                            CON DOMONOW
+                                        </span>
+                                    </div>
                                     {/* Thumbs Up Icon */}
-                                    <div className="absolute bottom-6 bg-white/20 rounded-full p-2 backdrop-blur-sm">
+                                    <div className="bg-white/20 rounded-full p-2 backdrop-blur-sm">
                                         <ThumbsUp size={24} className="text-white" />
                                     </div>
                                 </div>
@@ -109,13 +117,15 @@ export const HowItWorksSection: React.FC<HowItWorksSectionProps> = ({
                             {/* Card Content */}
                             <div className="flex h-full">
                                 {/* Vertical Bar with Label */}
-                                <div className="relative w-20 bg-red-500 flex flex-col items-center justify-center rounded-l-3xl self-stretch">
-                                    {/* Vertical Text */}
-                                    <span className="text-white font-bold text-lg tracking-widest" style={{ writingMode: 'vertical-rl' }}>
-                                        TRADICIONAL
-                                    </span>
+                                <div className="relative w-20 bg-red-500 flex flex-col items-center justify-between py-10 rounded-l-3xl self-stretch">
+                                    {/* Vertical Text Container */}
+                                    <div className="flex-1 flex items-center justify-center">
+                                        <span className="text-white font-bold text-lg tracking-widest" style={{ writingMode: 'vertical-rl' }}>
+                                            TRADICIONAL
+                                        </span>
+                                    </div>
                                     {/* Thumbs Down Icon */}
-                                    <div className="absolute bottom-6 bg-white/20 rounded-full p-2 backdrop-blur-sm">
+                                    <div className="bg-white/20 rounded-full p-2 backdrop-blur-sm">
                                         <ThumbsDown size={24} className="text-white" />
                                     </div>
                                 </div>
@@ -125,7 +135,7 @@ export const HowItWorksSection: React.FC<HowItWorksSectionProps> = ({
                                     {/* Header */}
                                     <div className="flex items-center gap-3 mb-8">
                                         <AlertTriangle className="text-red-400 w-6 h-6" />
-                                        <span className="text-body font-bold text-gray-500">{leftLabel}</span>
+                                        <span className="text-body font-bold text-gray-500">{displayLeftLabel}</span>
                                     </div>
 
                                     {/* Items */}

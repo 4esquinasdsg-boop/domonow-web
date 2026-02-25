@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
 import { Button } from '../Button';
 import { HowItWorksSection } from '../HowItWorksSection';
 import {
@@ -11,16 +12,222 @@ interface SuperAdminPageProps {
 }
 
 export const SuperAdminPage: React.FC<SuperAdminPageProps> = ({ onOpenDemo }) => {
+    const { i18n } = useTranslation();
+    const language = (i18n.language?.startsWith('en') ? 'en' : 'es') as 'es' | 'en';
 
     useEffect(() => {
         window.scrollTo(0, 0);
     }, []);
 
-    const useCases = [
-        { category: "Visibilidad total", description: "Revisar el estado de todas las propiedades a primera hora", icon: <Building2 size={20} />, image: "/assets/modules/SUPER ADMIN/CÓMO FUNCIONA.png" },
-        { category: "Cumplimiento legal", description: "Recibir alerta de un vencimiento legal próximo", icon: <Users size={20} />, image: "/assets/modules/SUPER ADMIN/CASO DE USO 2.png" },
-        { category: "Comunicación masiva", description: "Aplicar el mismo comunicado en 5 edificios a la vez", icon: <BarChart3 size={20} />, image: "/assets/modules/SUPER ADMIN/CASO DE USO 3.png" },
-        { category: "Coordinación", description: "Coordinar proveedores de mantenimiento", icon: <Settings size={20} />, image: "/assets/modules/SUPER ADMIN/CASO DE USO 4.png" }
+    const t = {
+        es: {
+            hero: {
+                tag: "MÓDULO SÚPER ADMINISTRADOR",
+                subtitle: "Administra múltiples propiedades simultáneamente",
+                title: "\"47 mensajes con la misma pregunta\"",
+                problemTitle: "¿Cuándo fue la última vez que terminaste el día tranquilo?",
+                solution1: "Imagina terminar el día con todo bajo control.",
+                solution2: "te da control total.",
+                solution3: "Todo en un panel, sin estrés.",
+                cta: "Conoce cómo funciona",
+                properties: {
+                    title: "Tus Propiedades",
+                    count: "12 activas",
+                    item1: "Torres del Parque",
+                    item2: "Edificio Central",
+                    more: "+10 más..."
+                }
+            },
+            useCases: {
+                title: "Casos de uso",
+                items: [
+                    { category: "Visibilidad total", description: "Revisar el estado de todas las propiedades a primera hora" },
+                    { category: "Cumplimiento legal", description: "Recibir alerta de un vencimiento legal próximo" },
+                    { category: "Comunicación masiva", description: "Aplicar el mismo comunicado en 5 edificios a la vez" },
+                    { category: "Coordinación", description: "Coordinar proveedores de mantenimiento" }
+                ]
+            },
+            howItWorks: {
+                title: "Conoce cómo funciona",
+                subtitle: "Cómo funciona",
+                leftLabel: "Software tradicional:",
+                rightLabel: "Con DomoNow:",
+                items: [
+                    {
+                        problem: "Módulo separado o inexistente",
+                        solution: "Super Administrador incluido"
+                    },
+                    {
+                        problem: "Revisas cada propiedad por separado",
+                        solution: "Datos consolidados en tiempo real"
+                    },
+                    {
+                        problem: "Sin herramientas de gestión masiva",
+                        solution: "Usuarios y permisos personalizables"
+                    },
+                    {
+                        problem: "Múltiples grupos de Whatsapp",
+                        solution: "Comunicación simultánea a todas las propiedades"
+                    }
+                ]
+            },
+            situation: {
+                tag: "SITUACIÓN ACTUAL",
+                title: "Cuando todo depende de ti, necesitas una plataforma que piense contigo",
+                quote: "\"Cada conjunto funciona por separado, la información financiera está dispersa y aún consolidas información en Excel.\"",
+                problems: {
+                    title: "Los problemas de hoy",
+                    items: [
+                        { title: "Propiedades Aisladas", desc: "Cada conjunto funciona por separado" },
+                        { title: "Datos Fragmentados", desc: "Información financiera dispersa" },
+                        { title: "Reportes Manuales", desc: "Aún consolidas información en Excel" }
+                    ]
+                },
+                solutions: {
+                    title: "obtienes",
+                    items: [
+                        { title: "Visión 360°", desc: "Dashboard de tus propiedades simultáneamente" },
+                        { title: "Comparativas Instantáneas", desc: "Puedes ver que necesita realmente tu atención" },
+                        { title: "Automatización inteligente", desc: "Alertas automáticas y control de cumplimiento" }
+                    ]
+                }
+            },
+            workflow: {
+                tag: "Flujo de Trabajo",
+                title: "Tu comunidad, paso a paso",
+                steps: [
+                    {
+                        title: "Configuración inicial",
+                        desc: "Registra todas las copropiedades que administras en el sistema."
+                    },
+                    {
+                        title: "Controla desde un solo panel",
+                        desc: "Accede a el dashboard con indicadores clave de todas tus copropiedades."
+                    },
+                    {
+                        title: "Replica procesos",
+                        desc: "Escala tu operación sin aumentar la carga administrativa."
+                    }
+                ]
+            },
+            footerCTA: {
+                title1: "Conoce cómo",
+                title2: "transforma la gestión multi-propiedad.",
+                button: "Quiero agendar una Demo"
+            }
+        },
+        en: {
+            hero: {
+                tag: "SUPER ADMIN MODULE",
+                subtitle: "Manage multiple properties simultaneously",
+                title: "\"47 messages with the same question\"",
+                problemTitle: "When was the last time you ended the day peaceful?",
+                solution1: "Imagine ending the day with everything under control.",
+                solution2: "gives you total control.",
+                solution3: "Everything in one panel, without stress.",
+                cta: "See how it works",
+                properties: {
+                    title: "Your Properties",
+                    count: "12 active",
+                    item1: "Park Towers",
+                    item2: "Central Building",
+                    more: "+10 more..."
+                }
+            },
+            useCases: {
+                title: "Use cases",
+                items: [
+                    { category: "Total visibility", description: "Review the status of all properties first thing in the morning" },
+                    { category: "Legal compliance", description: "Receive alert of an upcoming legal expiration" },
+                    { category: "Mass communication", description: "Send the same announcement to 5 buildings at once" },
+                    { category: "Coordination", description: "Coordinate maintenance providers" }
+                ]
+            },
+            howItWorks: {
+                title: "See how it works",
+                subtitle: "How it works",
+                leftLabel: "Traditional software:",
+                rightLabel: "With DomoNow:",
+                items: [
+                    {
+                        problem: "Separate or non-existent module",
+                        solution: "Super Admin included"
+                    },
+                    {
+                        problem: "You check each property separately",
+                        solution: "Consolidated real-time data"
+                    },
+                    {
+                        problem: "No mass management tools",
+                        solution: "Customizable users and permissions"
+                    },
+                    {
+                        problem: "Multiple WhatsApp groups",
+                        solution: "Simultaneous communication to all properties"
+                    }
+                ]
+            },
+            situation: {
+                tag: "CURRENT SITUATION",
+                title: "When everything depends on you, you need a platform that thinks with you",
+                quote: "\"Each complex works separately, financial information is scattered, and you still consolidate info in Excel.\"",
+                problems: {
+                    title: "Today's problems",
+                    items: [
+                        { title: "Isolated Properties", desc: "Each complex works separately" },
+                        { title: "Fragmented Data", desc: "Financial information is scattered" },
+                        { title: "Manual Reports", desc: "You still consolidate info in Excel" }
+                    ]
+                },
+                solutions: {
+                    title: "you get",
+                    items: [
+                        { title: "360° Vision", desc: "Dashboard of your properties simultaneously" },
+                        { title: "Instant Comparisons", desc: "You can see what really needs your attention" },
+                        { title: "Intelligent Automation", desc: "Automatic alerts and compliance control" }
+                    ]
+                }
+            },
+            workflow: {
+                tag: "Workflow",
+                title: "Your community, step by step",
+                steps: [
+                    {
+                        title: "Initial configuration",
+                        desc: "Register all the co-properties you manage in the system."
+                    },
+                    {
+                        title: "Control from one panel",
+                        desc: "Access the dashboard with key indicators of all your co-properties."
+                    },
+                    {
+                        title: "Replicate processes",
+                        desc: "Scale your operation without increasing administrative burden."
+                    }
+                ]
+            },
+            footerCTA: {
+                title1: "Learn how",
+                title2: "transforms multi-property management.",
+                button: "I want to schedule a Demo"
+            }
+        }
+    };
+
+    const content = t[language];
+
+    const useCaseIcons = [
+        <Building2 size={20} />,
+        <Users size={20} />,
+        <BarChart3 size={20} />,
+        <Settings size={20} />
+    ];
+
+    const useCaseImages = [
+        "/assets/modules/SUPER ADMIN/CÓMO FUNCIONA.png",
+        "/assets/modules/SUPER ADMIN/CASO DE USO 2.png",
+        "/assets/modules/SUPER ADMIN/CASO DE USO 3.png",
+        "/assets/modules/SUPER ADMIN/CASO DE USO 4.png"
     ];
 
     return (
@@ -39,23 +246,23 @@ export const SuperAdminPage: React.FC<SuperAdminPageProps> = ({ onOpenDemo }) =>
                         <div className="lg:w-5/12 relative z-20">
                             <div className="flex items-center gap-3 mb-0">
                                 <span className="w-9 h-9 bg-domo rounded-full flex items-center justify-center text-white text-sm font-bold shrink-0">SA</span>
-                                <span className="text-base font-bold tracking-widest uppercase text-domo">SÚPER ADMINISTRADOR</span>
+                                <span className="text-base font-bold tracking-widest uppercase text-domo">{content.hero.tag}</span>
                             </div>
-                            <p className="text-small text-gray-400 italic mb-4 ml-12">Administra múltiples propiedades simultáneamente</p>
+                            <p className="text-small text-gray-400 italic mb-4 ml-12">{content.hero.subtitle}</p>
                             <h1 className="text-h2 md:text-h1 font-bold leading-tight mb-6 text-torre">
-                                "47 mensajes con la misma pregunta"
+                                {content.hero.title}
                             </h1>
                             <div className="prose text-lead text-gray-500 mb-8 leading-relaxed">
                                 <p className="mb-4 text-torre font-bold">
-                                    ¿Cuándo terminaste el día tranquilo?
+                                    {content.hero.problemTitle}
                                 </p>
                                 <p className="mb-4">
-                                    Imagina terminar el día con todo bajo control. <strong className="text-torre"><span className="domonow-gradient">DomoNow</span> te da control total.</strong> Todo en un panel, sin estrés.
+                                    {content.hero.solution1} <strong className="text-torre"><span className="domonow-gradient">DomoNow</span> {content.hero.solution2}</strong> {content.hero.solution3}
                                 </p>
                             </div>
                             <div className="flex gap-4">
                                 <Button size="lg" onClick={onOpenDemo} className="shadow-xl shadow-domo/20">
-                                    Conoce cómo funciona
+                                    {content.hero.cta}
                                 </Button>
                             </div>
                         </div>
@@ -85,29 +292,29 @@ export const SuperAdminPage: React.FC<SuperAdminPageProps> = ({ onOpenDemo }) =>
                                                 <Layers size={20} />
                                             </div>
                                             <div>
-                                                <p className="font-bold text-torre text-sm">Tus Propiedades</p>
-                                                <p className="text-xs text-gray-400">12 activas</p>
+                                                <p className="font-bold text-torre text-sm">{content.hero.properties.title}</p>
+                                                <p className="text-xs text-gray-400">{content.hero.properties.count}</p>
                                             </div>
                                         </div>
                                         <div className="space-y-3">
                                             <div className="flex items-center justify-between p-3 bg-green-50 rounded-xl">
                                                 <div className="flex items-center gap-2">
                                                     <Building2 size={16} className="text-green-600" />
-                                                    <span className="text-sm font-medium">Torres del Parque</span>
+                                                    <span className="text-sm font-medium">{content.hero.properties.item1}</span>
                                                 </div>
                                                 <span className="text-xs bg-green-100 text-green-600 px-2 py-1 rounded-full">OK</span>
                                             </div>
                                             <div className="flex items-center justify-between p-3 bg-purple-50 rounded-xl">
                                                 <div className="flex items-center gap-2">
                                                     <Building2 size={16} className="text-domo" />
-                                                    <span className="text-sm font-medium">Edificio Central</span>
+                                                    <span className="text-sm font-medium">{content.hero.properties.item2}</span>
                                                 </div>
                                                 <span className="text-xs bg-purple-100 text-domo px-2 py-1 rounded-full">OK</span>
                                             </div>
                                             <div className="flex items-center justify-between p-3 bg-gray-50 rounded-xl">
                                                 <div className="flex items-center gap-2">
                                                     <Building2 size={16} className="text-gray-400" />
-                                                    <span className="text-sm font-medium">+10 más...</span>
+                                                    <span className="text-sm font-medium">{content.hero.properties.more}</span>
                                                 </div>
                                             </div>
                                         </div>
@@ -124,13 +331,13 @@ export const SuperAdminPage: React.FC<SuperAdminPageProps> = ({ onOpenDemo }) =>
             {/* 4. USE CASES */}
             <section className="py-24 bg-[#F9F5FF]">
                 <div className="container mx-auto px-6">
-                    <h2 className="text-h2 font-bold text-center mb-16 text-torre">Casos de uso</h2>
+                    <h2 className="text-h2 font-bold text-center mb-16 text-torre">{content.useCases.title}</h2>
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                        {useCases.map((item, index) => (
+                        {content.useCases.items.map((item, index) => (
                             <div key={index} className="relative h-[500px] rounded-[2rem] overflow-hidden group shadow-lg hover:shadow-2xl transition-all duration-500">
                                 <div className="absolute inset-0 w-full h-full">
                                     <img
-                                        src={item.image}
+                                        src={useCaseImages[index]}
                                         alt={item.category}
                                         loading="lazy"
                                         className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
@@ -144,7 +351,7 @@ export const SuperAdminPage: React.FC<SuperAdminPageProps> = ({ onOpenDemo }) =>
                                 </div>
                                 <div className="absolute bottom-4 left-4 right-4 bg-white/80 backdrop-blur-md p-5 rounded-[2rem] shadow-xl flex flex-col gap-3 h-40 border border-white/50">
                                     <div className="w-12 h-12 bg-purple-50 rounded-full flex items-center justify-center text-domo shrink-0">
-                                        {item.icon}
+                                        {useCaseIcons[index]}
                                     </div>
                                     <div>
                                         <p className="text-small font-medium text-torre leading-snug">
@@ -162,28 +369,11 @@ export const SuperAdminPage: React.FC<SuperAdminPageProps> = ({ onOpenDemo }) =>
             <HowItWorksSection
                 variant="superadmin"
                 imageSrc="/assets/modules/SUPER ADMIN/CASO DE USO 1.png"
-                title="Conoce cómo funciona"
-                subtitle="Cómo funciona"
-                leftLabel="Software tradicional:"
-                rightLabel="Con DomoNow:"
-                items={[
-                    {
-                        problem: "Módulo separado o inexistente",
-                        solution: "Super Administrador incluido"
-                    },
-                    {
-                        problem: "Revisas cada propiedad por separado",
-                        solution: "Datos consolidados en tiempo real"
-                    },
-                    {
-                        problem: "Sin herramientas de gestión masiva",
-                        solution: "Usuarios y permisos personalizables"
-                    },
-                    {
-                        problem: "Múltiples grupos de Whatsapp",
-                        solution: "Comunicación simultánea a todas las propiedades"
-                    }
-                ]}
+                title={content.howItWorks.title}
+                subtitle={content.howItWorks.subtitle}
+                leftLabel={content.howItWorks.leftLabel}
+                rightLabel={content.howItWorks.rightLabel}
+                items={content.howItWorks.items}
             />
 
             {/* 2. PROBLEM VS SOLUTION */}
@@ -195,19 +385,19 @@ export const SuperAdminPage: React.FC<SuperAdminPageProps> = ({ onOpenDemo }) =>
                         <div className="flex items-center justify-center gap-3 mb-6">
                             <span className="h-px w-8 bg-red-400"></span>
                             <span className="text-red-400 font-bold tracking-widest uppercase text-tiny">
-                                SITUACIÓN ACTUAL
+                                {content.situation.tag}
                             </span>
                             <span className="h-px w-8 bg-red-400"></span>
                         </div>
 
                         <h2 className="text-h2 font-bold text-torre mb-8 leading-tight">
-                            Cuando todo depende de ti, necesitas una plataforma que piense contigo
+                            {content.situation.title}
                         </h2>
 
                         <div className="relative inline-block">
                             <Quote className="absolute -top-4 -left-8 text-gray-200 w-10 h-10 transform -scale-x-100 z-0 opacity-50" />
                             <p className="relative z-10 text-h4 text-gray-500 leading-relaxed font-medium">
-                                "Cada conjunto funciona por separado, la información financiera está dispersa y aún consolidas información en Excel."
+                                {content.situation.quote}
                             </p>
                         </div>
                     </div>
@@ -220,15 +410,11 @@ export const SuperAdminPage: React.FC<SuperAdminPageProps> = ({ onOpenDemo }) =>
                                 <div className="w-8 h-8 rounded-full bg-red-50 flex items-center justify-center text-red-400">
                                     <X size={16} strokeWidth={3} />
                                 </div>
-                                <span className="font-bold text-gray-400 uppercase tracking-widest text-[10px] md:text-tiny">Lo que pasa hoy</span>
+                                <span className="font-bold text-gray-400 uppercase tracking-widest text-[10px] md:text-tiny">{content.situation.problems.title}</span>
                             </div>
 
                             <div className="space-y-8 flex-grow">
-                                {[
-                                    { title: "Propiedades Aisladas", desc: "Cada conjunto funciona por separado" },
-                                    { title: "Datos Fragmentados", desc: "Información financiera dispersa" },
-                                    { title: "Reportes Manuales", desc: "Aún consolidas información en Excel" }
-                                ].map((item, i) => (
+                                {content.situation.problems.items.map((item, i) => (
                                     <div key={i} className="flex gap-5 items-start">
                                         <div className="w-12 h-12 bg-gray-50 rounded-2xl flex items-center justify-center text-gray-400 shrink-0 group-hover:bg-red-50 group-hover:text-red-400 transition-colors">
                                             <X size={20} />
@@ -248,15 +434,17 @@ export const SuperAdminPage: React.FC<SuperAdminPageProps> = ({ onOpenDemo }) =>
                                 <div className="w-8 h-8 rounded-full bg-domo/10 flex items-center justify-center text-domo">
                                     <Check size={16} strokeWidth={3} />
                                 </div>
-                                <span className="font-bold text-domo uppercase tracking-widest text-[10px] md:text-tiny">Con <span className="domonow-gradient">DomoNow</span> obtienes</span>
+                                <span className="font-bold text-domo uppercase tracking-widest text-[10px] md:text-tiny">
+                                    {language === 'es' ? (
+                                        <>Con <span className="domonow-gradient">DomoNow</span> {content.situation.solutions.title}</>
+                                    ) : (
+                                        <>With <span className="domonow-gradient">DomoNow</span> {content.situation.solutions.title}</>
+                                    )}
+                                </span>
                             </div>
 
                             <div className="space-y-8 flex-grow">
-                                {[
-                                    { title: "Visión 360°", desc: "Dashboard de tus propiedades simultáneamente" },
-                                    { title: "Comparativas Instantáneas", desc: "Puedes ver que necesita realmente tu atención" },
-                                    { title: "Automatización inteligente", desc: "Alertas automáticas y control de cumplimiento" }
-                                ].map((item, i) => (
+                                {content.situation.solutions.items.map((item, i) => (
                                     <div key={i} className="flex gap-5 items-start">
                                         <div className="w-12 h-12 bg-white rounded-2xl flex items-center justify-center text-domo shrink-0 shadow-sm group-hover:bg-domo group-hover:text-white transition-colors">
                                             <Check size={20} />
@@ -279,39 +467,23 @@ export const SuperAdminPage: React.FC<SuperAdminPageProps> = ({ onOpenDemo }) =>
                 <div className="container mx-auto px-6">
                     <div className="text-center mb-16">
                         <span className="text-domo font-bold tracking-widest uppercase text-tiny mb-2 block">
-                            Flujo de Trabajo
+                            {content.workflow.tag}
                         </span>
-                        <h2 className="text-h2 font-bold text-torre">Tu comunidad, paso a paso</h2>
+                        <h2 className="text-h2 font-bold text-torre">{content.workflow.title}</h2>
                     </div>
 
                     <div className="grid md:grid-cols-3 gap-6">
-                        <div className="bg-white p-8 rounded-[2rem] shadow-sm border border-transparent hover:border-domo hover:shadow-xl transition-all duration-300 group h-full flex flex-col items-center text-center">
-                            <div className="flex justify-center mb-8">
-                                <div className="w-10 h-10 bg-gray-100 group-hover:bg-domo rounded-full flex items-center justify-center text-torre group-hover:text-white text-small font-bold transition-colors duration-300">1</div>
+                        {content.workflow.steps.map((step, i) => (
+                            <div key={i} className="bg-white p-8 rounded-[2rem] shadow-sm border border-transparent hover:border-domo hover:shadow-xl transition-all duration-300 group h-full flex flex-col items-center text-center">
+                                <div className="flex justify-center mb-8">
+                                    <div className="w-10 h-10 bg-gray-100 group-hover:bg-domo rounded-full flex items-center justify-center text-torre group-hover:text-white text-small font-bold transition-colors duration-300">{i + 1}</div>
+                                </div>
+                                <h3 className="text-h4 font-bold text-torre mb-3">{step.title}</h3>
+                                <p className="text-body text-gray-500 leading-relaxed">
+                                    {step.desc}
+                                </p>
                             </div>
-                            <h3 className="text-h4 font-bold text-torre mb-3">Configuración inicial</h3>
-                            <p className="text-body text-gray-500 leading-relaxed">
-                                Registra todas las copropiedades que administras en el sistema.
-                            </p>
-                        </div>
-                        <div className="bg-white p-8 rounded-[2rem] shadow-sm border border-transparent hover:border-domo hover:shadow-xl transition-all duration-300 group h-full flex flex-col items-center text-center">
-                            <div className="flex justify-center mb-8">
-                                <div className="w-10 h-10 bg-gray-100 group-hover:bg-domo rounded-full flex items-center justify-center text-torre group-hover:text-white text-small font-bold transition-colors duration-300">2</div>
-                            </div>
-                            <h3 className="text-h4 font-bold text-torre mb-3">Controla desde un solo panel</h3>
-                            <p className="text-body text-gray-500 leading-relaxed">
-                                Accede a el dashboard con indicadores clave de todas tus copropiedades.
-                            </p>
-                        </div>
-                        <div className="bg-white p-8 rounded-[2rem] shadow-sm border border-transparent hover:border-domo hover:shadow-xl transition-all duration-300 group h-full flex flex-col items-center text-center">
-                            <div className="flex justify-center mb-8">
-                                <div className="w-10 h-10 bg-gray-100 group-hover:bg-domo rounded-full flex items-center justify-center text-torre group-hover:text-white text-small font-bold transition-colors duration-300">3</div>
-                            </div>
-                            <h3 className="text-h4 font-bold text-torre mb-3">Replica procesos en tus comunidades</h3>
-                            <p className="text-body text-gray-500 leading-relaxed">
-                                Escala tu operation sin aumentar la carga administrativa.
-                            </p>
-                        </div>
+                        ))}
                     </div>
                 </div>
             </section>
@@ -321,11 +493,11 @@ export const SuperAdminPage: React.FC<SuperAdminPageProps> = ({ onOpenDemo }) =>
                 <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-white/10 rounded-full blur-3xl translate-y-1/3 -translate-x-1/3 pointer-events-none"></div>
                 <div className="container mx-auto max-w-5xl relative z-10">
                     <h2 className="text-h3 font-bold mb-8 leading-tight text-torre">
-                        Conoce cómo <span className="domonow-gradient">DomoNow</span> transforma la gestión multi-propiedad.
+                        {content.footerCTA.title1} <span className="domonow-gradient">DomoNow</span> {content.footerCTA.title2}
                     </h2>
                     <div className="flex flex-col sm:flex-row gap-4 justify-center">
                         <Button size="lg" className="bg-domo text-white hover:bg-torre hover:text-white transition-colors px-12 text-lg shadow-xl shadow-domo/20" onClick={onOpenDemo}>
-                            Quiero agendar una Demo
+                            {content.footerCTA.button}
                         </Button>
                     </div>
                 </div>
