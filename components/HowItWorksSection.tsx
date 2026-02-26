@@ -34,8 +34,7 @@ export const HowItWorksSection: React.FC<HowItWorksSectionProps> = ({
             <div className="absolute inset-0 pointer-events-none overflow-hidden">
                 {/* Left decorative - problema image */}
                 <div
-                    className="absolute -left-16 top-1/2 -translate-y-1/2 w-[450px] h-[550px]"
-                    style={{ opacity: 1 }}
+                    className="absolute -left-20 -top-8 w-[300px] h-[400px] hidden md:block md:opacity-15 lg:opacity-30 xl:opacity-40 2xl:opacity-60"
                 >
                     <img
                         src="/assets/problema.png"
@@ -46,8 +45,7 @@ export const HowItWorksSection: React.FC<HowItWorksSectionProps> = ({
                 </div>
                 {/* Right decorative - solucion image */}
                 <div
-                    className="absolute -right-16 top-1/2 -translate-y-1/2 w-[450px] h-[550px]"
-                    style={{ opacity: 1 }}
+                    className="absolute -right-20 -bottom-8 w-[300px] h-[400px] hidden md:block md:opacity-15 lg:opacity-30 xl:opacity-40 2xl:opacity-60"
                 >
                     <img
                         src="/assets/solucion.png"
@@ -103,7 +101,7 @@ export const HowItWorksSection: React.FC<HowItWorksSectionProps> = ({
                                             </div>
                                         </div>
                                         <div className="flex-1">
-                                            <p className="text-body text-gray-600 leading-relaxed">
+                                            <p className="text-body font-medium text-torre leading-relaxed line-through decoration-red-400 decoration-1">
                                                 {item.problem}
                                             </p>
                                         </div>

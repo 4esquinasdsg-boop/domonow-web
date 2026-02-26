@@ -6,8 +6,9 @@ import { ImageCarousel } from '../ImageCarousel';
 import { HowItWorksSection } from '../HowItWorksSection';
 import { ParticleBackground } from '../ParticleBackground';
 import {
-    BellRing, Ambulance, ShieldAlert, Heart,
-    X, Check, Quote, Smartphone, Radio, FileCheck
+    BellRing, Ambulance, ShieldAlert, Heart, X,
+    Check, Quote, Smartphone, Radio, FileCheck,
+    Clock, Shuffle, EyeOff, ClipboardList, TrendingUp
 } from 'lucide-react';
 
 interface EmergencyPageProps {
@@ -229,6 +230,18 @@ export const EmergencyPage: React.FC<EmergencyPageProps> = ({ onOpenDemo }) => {
         "/assets/modules/alertas/casos de uso/alertas_CASOSDEUSO (3)_compressed.png"
     ];
 
+    const problemIcons = [
+        <Clock size={20} />,
+        <Shuffle size={20} />,
+        <EyeOff size={20} />
+    ];
+
+    const solutionIcons = [
+        <Radio size={20} />,
+        <ClipboardList size={20} />,
+        <TrendingUp size={20} />
+    ];
+
     return (
         <div className="pt-20 bg-white font-sans text-torre">
             {/* 1. HERO */}
@@ -253,7 +266,7 @@ export const EmergencyPage: React.FC<EmergencyPageProps> = ({ onOpenDemo }) => {
                                     {content.hero.problem}
                                 </p>
                                 <p>
-                                    <strong className="text-torre"><span className="domonow-gradient">DomoNow</span> {content.hero.solution}</strong>
+                                    <span className="domonow-gradient">DomoNow</span> {content.hero.solution}
                                 </p>
                             </div>
                             <div className="flex gap-4"><Button size="lg" onClick={onOpenDemo} className="shadow-xl shadow-domo/20">{content.hero.cta}</Button></div>
@@ -275,51 +288,51 @@ export const EmergencyPage: React.FC<EmergencyPageProps> = ({ onOpenDemo }) => {
                                 </div>
 
                                 {/* FRONT LAYER: Phone Animation - Repositioned to bottom-left relative to container */}
-                                <div className="absolute bottom-[5%] left-0 z-10 w-[240px] md:w-[280px]">
+                                <div className="absolute bottom-[5%] left-0 z-10 w-[180px] md:w-[220px]">
                                     {/* Phone Body */}
-                                    <div className="bg-white p-5 rounded-[2.5rem] shadow-[0_30px_80px_rgba(239,68,68,0.3)] border border-gray-100 transform -rotate-3 hover:rotate-0 transition-all duration-500 relative overflow-hidden">
+                                    <div className="bg-white p-4 rounded-[2rem] shadow-[0_20px_60px_rgba(239,68,68,0.3)] border border-gray-100 transform -rotate-3 hover:rotate-0 transition-all duration-500 relative overflow-hidden">
 
                                         {/* Status Bar Mockup */}
-                                        <div className="flex justify-between items-center mb-6 opacity-30">
-                                            <div className="text-[10px] font-bold">9:41</div>
+                                        <div className="flex justify-between items-center mb-3 opacity-30">
+                                            <div className="text-[8px] font-bold">9:41</div>
                                             <div className="flex gap-1">
-                                                <div className="w-3 h-1 bg-gray-800 rounded-full"></div>
-                                                <div className="w-1 h-1 bg-gray-800 rounded-full"></div>
+                                                <div className="w-2.5 h-0.5 bg-gray-800 rounded-full"></div>
+                                                <div className="w-0.5 h-0.5 bg-gray-800 rounded-full"></div>
                                             </div>
                                         </div>
 
                                         {/* App Header */}
-                                        <div className="flex items-center gap-3 mb-10">
-                                            <div className="w-8 h-8 bg-red-50 text-red-500 rounded-lg flex items-center justify-center">
-                                                <ShieldAlert size={18} />
+                                        <div className="flex items-center gap-2 mb-6">
+                                            <div className="w-6 h-6 bg-red-50 text-red-500 rounded-md flex items-center justify-center">
+                                                <ShieldAlert size={14} />
                                             </div>
                                             <div>
-                                                <p className="text-xs text-gray-400 font-bold uppercase tracking-wider"><span className="domonow-gradient">DomoNow</span></p>
-                                                <p className="text-small font-bold text-torre leading-none">{language === 'es' ? 'Emergencia' : 'Emergency'}</p>
+                                                <p className="text-[8px] text-gray-400 font-bold uppercase tracking-wider"><span className="domonow-gradient">DomoNow</span></p>
+                                                <p className="text-[10px] font-bold text-torre leading-none">{language === 'es' ? 'Emergencia' : 'Emergency'}</p>
                                             </div>
                                         </div>
 
                                         {/* Central Interaction Area */}
-                                        <div className="relative py-8 flex flex-col items-center justify-center">
+                                        <div className="relative py-5 flex flex-col items-center justify-center">
                                             {/* Animated Rings */}
-                                            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 h-48 bg-red-500/5 rounded-full animate-[ping_3s_infinite]"></div>
-                                            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-32 h-32 bg-red-500/10 rounded-full animate-[ping_3s_infinite_delay-700ms]"></div>
+                                            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-36 h-36 bg-red-500/5 rounded-full animate-[ping_3s_infinite]"></div>
+                                            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-24 h-24 bg-red-500/10 rounded-full animate-[ping_3s_infinite_delay-700ms]"></div>
 
                                             {/* The Button */}
-                                            <div className="relative z-10 w-24 h-24 bg-gradient-to-b from-red-500 to-red-600 rounded-full flex items-center justify-center shadow-xl shadow-red-500/40 border-[6px] border-white active:scale-95 transition-transform cursor-pointer">
-                                                <BellRing className="text-white w-10 h-10 animate-pulse" />
+                                            <div className="relative z-10 w-16 h-16 bg-gradient-to-b from-red-500 to-red-600 rounded-full flex items-center justify-center shadow-xl shadow-red-500/40 border-4 border-white active:scale-95 transition-transform cursor-pointer">
+                                                <BellRing className="text-white w-7 h-7 animate-pulse" />
                                             </div>
 
-                                            <h3 className="mt-6 text-h3 font-bold text-red-500">{content.hero.phone.sos}</h3>
-                                            <p className="text-gray-400 text-xs mt-1">{content.hero.phone.instruction}</p>
+                                            <h3 className="mt-3 text-base font-bold text-red-500">{content.hero.phone.sos}</h3>
+                                            <p className="text-gray-400 text-[9px] mt-0.5">{content.hero.phone.instruction}</p>
                                         </div>
 
                                         {/* Notification Card */}
-                                        <div className="mt-8 bg-white border border-red-100 rounded-xl p-3 shadow-sm flex items-center gap-3 animate-[slideUp_0.5s_ease-out]">
-                                            <div className="w-2 h-2 bg-red-500 rounded-full animate-pulse shrink-0"></div>
+                                        <div className="mt-4 bg-white border border-red-100 rounded-lg p-2 shadow-sm flex items-center gap-2 animate-[slideUp_0.5s_ease-out]">
+                                            <div className="w-1.5 h-1.5 bg-red-500 rounded-full animate-pulse shrink-0"></div>
                                             <div>
-                                                <p className="text-xs font-bold text-torre">{content.hero.phone.notifying}</p>
-                                                <p className="text-[10px] text-gray-400">{content.hero.phone.location}</p>
+                                                <p className="text-[9px] font-bold text-torre">{content.hero.phone.notifying}</p>
+                                                <p className="text-[8px] text-gray-400">{content.hero.phone.location}</p>
                                             </div>
                                         </div>
 
@@ -358,14 +371,17 @@ export const EmergencyPage: React.FC<EmergencyPageProps> = ({ onOpenDemo }) => {
                                     <div className="w-10 h-10 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center text-white shrink-0">{useCaseIcons[index]}</div>
                                     <h3 className="text-body font-bold text-white drop-shadow-md tracking-tight leading-snug">{item.category}</h3>
                                 </div>
-                                <div className="absolute bottom-6 left-0 right-0 flex justify-center z-10">
-                                    <button
-                                        onClick={() => setActivePopup(index)}
-                                        className="btn-pulse-glow bg-domo text-white font-bold px-6 py-2.5 rounded-full text-sm hover:bg-purple-800 transition-colors cursor-pointer shadow-lg"
-                                    >
-                                        {language === 'es' ? 'Ver más' : 'See more'}
-                                    </button>
-                                </div>
+                                {item.videoUrl && (
+                                    <div className="absolute bottom-6 left-0 right-0 flex justify-center z-10">
+                                        <button
+                                            onClick={() => setActivePopup(index)}
+                                            className="btn-pulse-glow bg-domo text-white font-bold px-6 py-2.5 rounded-full text-sm hover:bg-purple-800 transition-colors cursor-pointer shadow-lg"
+                                        >
+                                            {language === 'es' ? 'Ver más' : 'See more'}
+                                        </button>
+                                    </div>
+                                )}
+
                             </div>
                         ))}
                     </div>
@@ -444,13 +460,13 @@ export const EmergencyPage: React.FC<EmergencyPageProps> = ({ onOpenDemo }) => {
                         <div className="pr-8 lg:pr-12 flex flex-col h-full">
                             <img src="/assets/problemashoy.png" alt="" className="w-full max-w-xs mx-auto mb-8 rounded-2xl" />
                             <div className="flex items-center gap-3 mb-8">
-                                <div className="w-8 h-8 rounded-full bg-red-500 flex items-center justify-center text-white"><X size={16} strokeWidth={3} /></div>
-                                <span className="font-bold text-gray-400 uppercase tracking-widest text-[10px] md:text-tiny">{content.situation.problems.title}</span>
+
+                                <span className="font-bold text-red-500 uppercase tracking-widest text-[10px] md:text-tiny">{content.situation.problems.title}</span>
                             </div>
                             <div className="space-y-8 flex-grow">
                                 {content.situation.problems.items.map((item, i) => (
                                     <div key={i} className="flex gap-5 items-start">
-                                        <div className="w-12 h-12 bg-red-500 rounded-full flex items-center justify-center text-white shrink-0"><X size={20} /></div>
+                                        <div className="w-12 h-12 bg-red-500 rounded-full flex items-center justify-center text-white shrink-0">{problemIcons[i]}</div>
                                         <div><h4 className="font-bold text-torre text-body mb-1">{item.title}</h4><p className="text-small text-gray-500 leading-relaxed">{item.desc}</p></div>
                                     </div>
                                 ))}
@@ -461,7 +477,7 @@ export const EmergencyPage: React.FC<EmergencyPageProps> = ({ onOpenDemo }) => {
                         <div className="pl-8 lg:pl-12 flex flex-col h-full">
                             <img src="/assets/obtienes.png" alt="" className="w-full max-w-xs mx-auto mb-8 rounded-2xl" />
                             <div className="flex items-center gap-3 mb-8">
-                                <div className="w-8 h-8 rounded-full bg-domo flex items-center justify-center text-white"><Check size={16} strokeWidth={3} /></div>
+
                                 <span className="font-bold text-domo uppercase tracking-widest text-[10px] md:text-tiny">
                                     {language === 'es' ? (
                                         <>Con <span className="domonow-gradient">DomoNow</span> obtienes</>
@@ -473,7 +489,7 @@ export const EmergencyPage: React.FC<EmergencyPageProps> = ({ onOpenDemo }) => {
                             <div className="space-y-8 flex-grow">
                                 {content.situation.solutions.items.map((item, i) => (
                                     <div key={i} className="flex gap-5 items-start">
-                                        <div className="w-12 h-12 bg-domo rounded-full flex items-center justify-center text-white shrink-0"><Check size={20} /></div>
+                                        <div className="w-12 h-12 bg-domo rounded-full flex items-center justify-center text-white shrink-0">{solutionIcons[i]}</div>
                                         <div><h4 className="font-bold text-torre text-body mb-1">{item.title}</h4><p className="text-small text-gray-500 leading-relaxed">{item.desc}</p></div>
                                     </div>
                                 ))}

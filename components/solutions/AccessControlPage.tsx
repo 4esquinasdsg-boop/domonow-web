@@ -6,9 +6,10 @@ import { ImageCarousel } from '../ImageCarousel';
 import { HowItWorksSection } from '../HowItWorksSection';
 import { ParticleBackground } from '../ParticleBackground';
 import {
-    ShieldCheck, Smartphone, UserCheck,
-    X, Check, Quote, Clock, Users,
-    Calendar, Lock, Truck, Home
+    ShieldCheck, Smartphone, UserCheck, X, Check,
+    Quote, Clock, Users, Calendar, Lock,
+    Truck, Home, BookX, Search, ShieldOff,
+    Database, Filter
 } from 'lucide-react';
 
 interface AccessControlPageProps {
@@ -231,6 +232,18 @@ export const AccessControlPage: React.FC<AccessControlPageProps> = ({ onOpenDemo
         "/assets/modules/accesos/casosdeuso/accesos_cuso (2)_compressed.jpg"
     ];
 
+    const problemIcons = [
+        <BookX size={20} />,
+        <Search size={20} />,
+        <ShieldOff size={20} />
+    ];
+
+    const solutionIcons = [
+        <Database size={20} />,
+        <Filter size={20} />,
+        <ShieldCheck size={20} />
+    ];
+
     return (
         <div className="pt-20 bg-white font-sans text-torre">
 
@@ -255,7 +268,7 @@ export const AccessControlPage: React.FC<AccessControlPageProps> = ({ onOpenDemo
                                     {content.hero.problem}
                                 </p>
                                 <p>
-                                    <strong className="text-torre"><span className="domonow-gradient">DomoNow</span> {content.hero.solution}</strong>
+                                    <span className="domonow-gradient">DomoNow</span> {content.hero.solution}
                                 </p>
                             </div>
                             <div className="flex gap-4">
@@ -371,14 +384,17 @@ export const AccessControlPage: React.FC<AccessControlPageProps> = ({ onOpenDemo
                                     <div className="w-10 h-10 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center text-white shrink-0">{useCaseIcons[index]}</div>
                                     <h3 className="text-body font-bold text-white drop-shadow-md tracking-tight leading-snug">{item.category}</h3>
                                 </div>
-                                <div className="absolute bottom-6 left-0 right-0 flex justify-center z-10">
-                                    <button
-                                        onClick={() => setActivePopup(index)}
-                                        className="btn-pulse-glow bg-domo text-white font-bold px-6 py-2.5 rounded-full text-sm hover:bg-purple-800 transition-colors cursor-pointer shadow-lg"
-                                    >
-                                        {language === 'es' ? 'Ver más' : 'See more'}
-                                    </button>
-                                </div>
+                                {item.videoUrl && (
+                                    <div className="absolute bottom-6 left-0 right-0 flex justify-center z-10">
+                                        <button
+                                            onClick={() => setActivePopup(index)}
+                                            className="btn-pulse-glow bg-domo text-white font-bold px-6 py-2.5 rounded-full text-sm hover:bg-purple-800 transition-colors cursor-pointer shadow-lg"
+                                        >
+                                            {language === 'es' ? 'Ver más' : 'See more'}
+                                        </button>
+                                    </div>
+                                )}
+
                             </div>
                         ))}
                     </div>
@@ -461,14 +477,14 @@ export const AccessControlPage: React.FC<AccessControlPageProps> = ({ onOpenDemo
                         <div className="pr-8 lg:pr-12 flex flex-col h-full">
                             <img src="/assets/problemashoy.png" alt="" className="w-full max-w-xs mx-auto mb-8 rounded-2xl" />
                             <div className="flex items-center gap-3 mb-8">
-                                <div className="w-8 h-8 rounded-full bg-red-500 flex items-center justify-center text-white"><X size={16} strokeWidth={3} /></div>
-                                <span className="font-bold text-gray-400 uppercase tracking-widest text-[10px] md:text-tiny">{content.situation.problems.title}</span>
+
+                                <span className="font-bold text-red-500 uppercase tracking-widest text-[10px] md:text-tiny">{content.situation.problems.title}</span>
                             </div>
                             <div className="space-y-8 flex-grow">
                                 {content.situation.problems.items.map((item, i) => (
                                     <div key={i} className="flex gap-5 items-start">
                                         <div className="w-12 h-12 bg-red-500 rounded-full flex items-center justify-center text-white shrink-0">
-                                            <X size={20} />
+                                            {problemIcons[i]}
                                         </div>
                                         <div>
                                             <h4 className="font-bold text-torre text-body mb-1">{item.title}</h4>
@@ -483,14 +499,14 @@ export const AccessControlPage: React.FC<AccessControlPageProps> = ({ onOpenDemo
                         <div className="pl-8 lg:pl-12 flex flex-col h-full">
                             <img src="/assets/obtienes.png" alt="" className="w-full max-w-xs mx-auto mb-8 rounded-2xl" />
                             <div className="flex items-center gap-3 mb-8">
-                                <div className="w-8 h-8 rounded-full bg-domo flex items-center justify-center text-white"><Check size={16} strokeWidth={3} /></div>
+
                                 <span className="font-bold text-domo uppercase tracking-widest text-[10px] md:text-tiny">{content.situation.solutions.title.split(' ')[0]} <span className="domonow-gradient">DomoNow</span> {content.situation.solutions.title.split(' ').slice(2).join(' ')}</span>
                             </div>
                             <div className="space-y-8 flex-grow">
                                 {content.situation.solutions.items.map((item, i) => (
                                     <div key={i} className="flex gap-5 items-start">
                                         <div className="w-12 h-12 bg-domo rounded-full flex items-center justify-center text-white shrink-0">
-                                            <Check size={20} />
+                                            {solutionIcons[i]}
                                         </div>
                                         <div>
                                             <h4 className="font-bold text-torre text-body mb-1">{item.title}</h4>

@@ -94,7 +94,7 @@ export const HelpCenterPage: React.FC<HelpCenterPageProps> = ({ onOpenDemo }) =>
           ]
         },
         {
-          section: "Solicitudes",
+          section: "PQRS",
           icon: <HelpCircle size={24} />,
           items: [
             { id: "res-3", title: "¿Cómo crear una solicitud a la administración y hacer seguimiento a su estado?", videoId: "zhB6tiSQGFQ" }
@@ -111,7 +111,8 @@ export const HelpCenterPage: React.FC<HelpCenterPageProps> = ({ onOpenDemo }) =>
           section: "Alerta de emergencia",
           icon: <ShieldCheck size={24} />,
           items: [
-            { id: "res-5", title: "¿Cómo activar el botón de emergencia en caso de una situación crítica?", videoId: "TkH6H-7dUBI" }
+            { id: "res-5", title: "¿Cómo activar el botón de emergencia en caso de una situación crítica?", videoId: "TkH6H-7dUBI" },
+            { id: "res-5b", title: "¿Cómo crear un contacto de emergencia?", videoId: "7NuYgGlL4yo" }
           ]
         },
         {
@@ -138,10 +139,12 @@ export const HelpCenterPage: React.FC<HelpCenterPageProps> = ({ onOpenDemo }) =>
           ]
         },
         {
-          section: "Solicitudes",
+          section: "PQRS",
           icon: <HelpCircle size={24} />,
           items: [
-            { id: "adm-2", title: "¿Cómo visualizar, gestionar y dar respuesta a las solicitudes de residentes y arrendatarios?", videoId: "JJD6169p-60" }
+            { id: "adm-2", title: "¿Cómo visualizar, gestionar y dar respuesta a las solicitudes de residentes y arrendatarios?", videoId: "JJD6169p-60" },
+            { id: "adm-2b", title: "¿Cómo crear un tipo de solicitud?", videoId: "HnTUl3TMBLE" },
+            { id: "adm-2c", title: "¿Cómo registrar un proveedor?", videoId: "2DTtQnwiEEQ" }
           ]
         },
         {
@@ -155,14 +158,23 @@ export const HelpCenterPage: React.FC<HelpCenterPageProps> = ({ onOpenDemo }) =>
           section: "Áreas comunes",
           icon: <Layers size={24} />,
           items: [
-            { id: "adm-4", title: "¿Cómo configurar, aprobar y controlar las reservas de áreas comunes?", videoId: "8kQWkvHXHXc0" }
+            { id: "adm-4", title: "¿Cómo crear una zona común?", videoId: "j_ots8Rmolk" },
+            { id: "adm-4b", title: "¿Cómo configurar, aprobar y controlar las reservas de áreas comunes?", videoId: "8kQWkvHXFC0" }
+          ]
+        },
+        {
+          section: "Alertas",
+          icon: <ShieldCheck size={24} />,
+          items: [
+            { id: "adm-6", title: "¿Cómo crear un contacto de emergencia?", videoId: "1e4wVZOlzfU" }
           ]
         },
         {
           section: "Configuración",
           icon: <Briefcase size={24} />,
           items: [
-            { id: "adm-5", title: "¿Cómo configurar los parámetros generales de la comunidad, roles y permisos?", videoId: "tfrg9Wiudik" }
+            { id: "adm-5", title: "¿Cómo configurar los parámetros generales de la comunidad, roles y permisos?", videoId: "tfrg9Wiudik" },
+            { id: "adm-5b", title: "¿Cómo crear un rol en la app?", videoId: "-7fbgzmd8hI" }
           ]
         }
       ],
@@ -187,7 +199,7 @@ export const HelpCenterPage: React.FC<HelpCenterPageProps> = ({ onOpenDemo }) =>
           ]
         },
         {
-          section: "Requests",
+          section: "PQRS",
           icon: <HelpCircle size={24} />,
           items: [
             { id: "res-3", title: "How to create a request to the administration and track its status?", videoId: "zhB6tiSQGFQ" }
@@ -204,7 +216,8 @@ export const HelpCenterPage: React.FC<HelpCenterPageProps> = ({ onOpenDemo }) =>
           section: "Emergency Alert",
           icon: <ShieldCheck size={24} />,
           items: [
-            { id: "res-5", title: "How to activate the emergency button in case of a critical situation?", videoId: "TkH6H-7dUBI" }
+            { id: "res-5", title: "How to activate the emergency button in case of a critical situation?", videoId: "TkH6H-7dUBI" },
+            { id: "res-5b", title: "How to create an emergency contact?", videoId: "7NuYgGlL4yo" }
           ]
         },
         {
@@ -231,10 +244,12 @@ export const HelpCenterPage: React.FC<HelpCenterPageProps> = ({ onOpenDemo }) =>
           ]
         },
         {
-          section: "Requests",
+          section: "PQRS",
           icon: <HelpCircle size={24} />,
           items: [
-            { id: "adm-2", title: "How to view, manage, and respond to requests from residents and tenants?", videoId: "JJD6169p-60" }
+            { id: "adm-2", title: "How to view, manage, and respond to requests from residents and tenants?", videoId: "JJD6169p-60" },
+            { id: "adm-2b", title: "How to create a request type?", videoId: "HnTUl3TMBLE" },
+            { id: "adm-2c", title: "How to register a provider?", videoId: "2DTtQnwiEEQ" }
           ]
         },
         {
@@ -248,14 +263,23 @@ export const HelpCenterPage: React.FC<HelpCenterPageProps> = ({ onOpenDemo }) =>
           section: "Common Areas",
           icon: <Layers size={24} />,
           items: [
-            { id: "adm-4", title: "How to configure, approve, and control common area reservations?", videoId: "8kQWkvHXHXc0" }
+            { id: "adm-4", title: "How to create a common area?", videoId: "j_ots8Rmolk" },
+            { id: "adm-4b", title: "How to configure, approve, and control common area reservations?", videoId: "8kQWkvHXFC0" }
+          ]
+        },
+        {
+          section: "Alerts",
+          icon: <ShieldCheck size={24} />,
+          items: [
+            { id: "adm-6", title: "How to create an emergency contact?", videoId: "1e4wVZOlzfU" }
           ]
         },
         {
           section: "Settings",
           icon: <Briefcase size={24} />,
           items: [
-            { id: "adm-5", title: "How to configure general community parameters, roles and permissions?", videoId: "tfrg9Wiudik" }
+            { id: "adm-5", title: "How to configure general community parameters, roles and permissions?", videoId: "tfrg9Wiudik" },
+            { id: "adm-5b", title: "How to create a role in the app?", videoId: "-7fbgzmd8hI" }
           ]
         }
       ],
