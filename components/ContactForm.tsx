@@ -5,7 +5,7 @@ import { Check, Lock, Loader2, CheckCircle, AlertCircle, ChevronDown } from 'luc
 import { useTranslation } from 'react-i18next';
 
 // URL de Google Apps Script configurada
-const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxend8ZuPHgFlINohK5THedjxakf1FgYhdGA-F03kALgOdHggZUJX_N0l7JBgJ8GaDJPA/exec';
+const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxF7nbX94SnqQZdyVsb5LKzGvH1JhUSGOFQVKpfNtmAMNUgMgD1tdsnXD4Rr9Zh3dW6sA/exec';
 
 interface FormData {
     nombre: string;
@@ -75,7 +75,8 @@ export const ContactForm: React.FC = () => {
                     nombre: formData.nombre,
                     apellidos: formData.apellidos,
                     email: formData.email,
-                    telefono: `${countryCode} ${formData.telefono}`,
+                    indicativo: countryCode,
+                    telefono: formData.telefono,
                     mensaje: formData.mensaje,
                     fecha: new Date().toISOString(),
                 }),
