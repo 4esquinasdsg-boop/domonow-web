@@ -284,12 +284,9 @@ export const SurveysPage: React.FC<SurveysPageProps> = ({ onOpenDemo }) => {
 
             {/* Pulse animation style */}
             <style>{`
-                @keyframes pulseGlow {
-                    0%, 100% { box-shadow: 0 0 0 0 rgba(130, 10, 209, 0.5); transform: scale(1); }
-                    50% { box-shadow: 0 0 20px 6px rgba(130, 10, 209, 0.35); transform: scale(1.05); }
-                }
-                .btn-pulse-glow {
-                    animation: pulseGlow 2s ease-in-out infinite;
+                @keyframes playPulse {
+                    0%, 100% { transform: scale(1); }
+                    50% { transform: scale(1.15); }
                 }
             `}</style>
 
@@ -313,9 +310,9 @@ export const SurveysPage: React.FC<SurveysPageProps> = ({ onOpenDemo }) => {
                                     <div className="absolute bottom-6 left-0 right-0 flex justify-center z-10">
                                         <button
                                             onClick={() => setActivePopup(index)}
-                                            className="btn-pulse-glow bg-domo text-white font-bold px-6 py-2.5 rounded-full text-sm hover:bg-purple-800 transition-colors cursor-pointer shadow-lg"
+                                            className="bg-domo text-white font-bold px-6 py-2.5 rounded-full text-sm hover:bg-purple-800 transition-colors cursor-pointer shadow-lg"
                                         >
-                                            {language === 'es' ? 'Ver más' : 'See more'}
+                                            <svg className="w-6 h-6 animate-[playPulse_1.5s_ease-in-out_infinite]" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z" /></svg>
                                         </button>
                                     </div>
                                 )}

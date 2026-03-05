@@ -14,7 +14,7 @@ export const PlanSection: React.FC<PlanSectionProps> = ({ onOpenDemo }) => {
     <section className="py-24 bg-arquitectura">
       <div className="container mx-auto px-6">
 
-        <div className="flex flex-col md:flex-row justify-between items-end mb-16">
+        <div className="flex flex-col md:flex-row justify-between items-center md:items-end mb-16 text-center md:text-left">
           <div className="max-w-3xl">
             <h2 className="text-h3 md:text-h2 font-bold text-torre mb-4">
               {t('planSection.title')} <br />

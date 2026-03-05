@@ -72,7 +72,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onOpenDemo }) => {
                 title: "Transformamos la",
                 titleAccent: "vida en comunidad.",
                 desc1: "DomoNow nace de una necesidad concreta: cambiar una gestión fragmentada y manual por una experiencia organizada, transparente y eficiente.",
-                desc2Icon: "Respaldados por Ofima SAS, con más de 35 años desarrollando soluciones tecnológicas para necesidades reales.",
+                desc2Icon: "Respaldados por Ofima SAS y USA Skypex Corp, con más de 40 años desarrollando soluciones tecnológicas para necesidades reales.",
                 cta: "Agenda una reunión",
                 expLabel: "Años de experiencia",
                 ofimaLabel: "Respaldado por Ofima SAS"
@@ -121,7 +121,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onOpenDemo }) => {
                 title: "We transform",
                 titleAccent: "community life.",
                 desc1: "DomoNow was born from a specific need: to trade fragmented and manual management for an organized, transparent, and efficient experience.",
-                desc2Icon: "Backed by Ofima SAS, with over 35 years developing technological solutions for real needs.",
+                desc2Icon: "Backed by Ofima SAS and USA Skypex Corp, with over 40 years developing technological solutions for real needs.",
                 cta: "Schedule a meeting",
                 expLabel: "Years of experience",
                 ofimaLabel: "Backed by Ofima SAS"
@@ -198,9 +198,9 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onOpenDemo }) => {
                                     <ShieldCheck className="text-domo shrink-0 mt-1" size={24} />
                                     <span>
                                         {language === 'es' ? (
-                                            <>Respaldados por <strong>Ofima SAS</strong>, con más de <strong className="text-domo">35 años</strong> desarrollando soluciones tecnológicas para necesidades reales.</>
+                                            <>Respaldados por <strong>Ofima SAS</strong> y <strong>USA Skypex Corp</strong>, con más de <strong className="text-domo">40 años</strong> desarrollando soluciones tecnológicas para necesidades reales.</>
                                         ) : (
-                                            <>Backed by <strong>Ofima SAS</strong>, with over <strong className="text-domo">35 years</strong> developing technological solutions for real needs.</>
+                                            <>Backed by <strong>Ofima SAS</strong> and <strong>USA Skypex Corp</strong>, with over <strong className="text-domo">40 years</strong> developing technological solutions for real needs.</>
                                         )}
                                     </span>
                                 </p>
@@ -233,7 +233,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onOpenDemo }) => {
                                     </div>
                                     <div>
                                         <p className="text-h3 font-bold text-torre leading-none flex">
-                                            +<AnimatedCounter end={35} duration={2000} />
+                                            +<AnimatedCounter end={40} duration={2000} />
                                         </p>
                                         <p className="text-tiny font-bold text-gray-400 uppercase">{content.hero.expLabel}</p>
                                     </div>

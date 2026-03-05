@@ -21,12 +21,12 @@ export const ContactPage: React.FC = () => {
       phone: {
         title: "Teléfono",
         subtitle: "Atención Clientes",
-        number: "+57 (301) 5310367"
+        number: "+57 (304) 6348708"
       },
       email: {
         title: "Correo",
         subtitle: "Orientación y Comercial",
-        address: "soporte@domonow.com"
+        address: "hola@domonow.com"
       }
     },
     en: {
@@ -37,12 +37,12 @@ export const ContactPage: React.FC = () => {
       phone: {
         title: "Phone",
         subtitle: "Customer Service",
-        number: "+57 (301) 5310367"
+        number: "+57 (304) 6348708"
       },
       email: {
         title: "Email",
         subtitle: "Orientation and Sales",
-        address: "soporte@domonow.com"
+        address: "hola@domonow.com"
       }
     }
   };
@@ -111,7 +111,7 @@ export const ContactPage: React.FC = () => {
                   <div>
                     <p className="font-bold text-torre text-h3 mb-1">{content.phone.title}</p>
                     <p className="text-small text-gray-400 mb-2 uppercase tracking-wide font-bold text-[11px]">{content.phone.subtitle}</p>
-                    <a href="tel:+573015310367" className="text-h4 font-bold text-domo hover:text-purple-800 transition-colors">
+                    <a href="tel:+573046348708" className="text-h4 font-bold text-domo hover:text-purple-800 transition-colors">
                       {content.phone.number}
                     </a>
                   </div>
@@ -125,7 +125,7 @@ export const ContactPage: React.FC = () => {
                   <div>
                     <p className="font-bold text-torre text-h3 mb-1">{content.email.title}</p>
                     <p className="text-small text-gray-400 mb-2 uppercase tracking-wide font-bold text-[11px]">{content.email.subtitle}</p>
-                    <a href="mailto:soporte@domonow.com" className="text-h4 font-bold text-domo hover:text-purple-800 transition-colors break-all">
+                    <a href="mailto:hola@domonow.com" className="text-h4 font-bold text-domo hover:text-purple-800 transition-colors break-all">
                       {content.email.address.split('domonow')[0]}<span className="domonow-gradient">domonow</span>{content.email.address.split('domonow')[1] || ''}
                     </a>
                   </div>

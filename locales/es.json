@@ -2,7 +2,7 @@
     "header": {
         "nav": {
             "home": "Inicio",
-            "solutions": "Soluciones",
+            "solutions": "Módulos",
             "propertyTypes": "Tipos de propiedad",
             "whyUs": "¿Por qué elegirnos?",
             "helpCenter": "Centro de ayuda",
@@ -17,8 +17,8 @@
             "pqrs": "4. PQRS",
             "reservas": "5. Reservas",
             "eventos": "6. Eventos",
-            "votaciones": "7. Votaciones",
-            "encuestas": "8. Encuestas",
+            "votaciones": "8. Votaciones",
+            "encuestas": "7. Encuestas",
             "asambleas": "9. Asambleas",
             "normativo": "10. Normativo",
             "documental": "11. Documental",

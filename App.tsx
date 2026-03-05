@@ -19,6 +19,7 @@ import { HelpCenterPage } from './components/HelpCenterPage';
 import { PrivacyPolicyPage } from './components/PrivacyPolicyPage';
 import { BackToTop } from './components/BackToTop';
 import { LanguageToggle } from './components/LanguageToggle';
+import PricingCalculator from './components/PricingCalculator';
 
 
 // Soluciones bro
@@ -53,6 +54,7 @@ function App() {
       <SolutionSection onOpenDemo={() => handleOpenDemo('general')} />
       <AuthoritySection />
       <PlanSection onOpenDemo={() => handleOpenDemo('general')} />
+      <PricingCalculator onOpenDemo={() => handleOpenDemo('general')} />
       <SummarySection onOpenDemo={() => handleOpenDemo('general')} />
       <ContactFormSection />
     </>

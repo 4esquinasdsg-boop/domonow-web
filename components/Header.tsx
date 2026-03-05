@@ -29,25 +29,26 @@ export const Header: React.FC<HeaderProps> = ({ onOpenDemo }) => {
         { name: t('header.submenu.pqrs'), path: '/solicitudes' },
         { name: t('header.submenu.reservas'), path: '/reservas' },
         { name: t('header.submenu.eventos'), path: '/eventos' },
-        { name: t('header.submenu.votaciones'), path: '/votaciones' },
         { name: t('header.submenu.encuestas'), path: '/encuestas' },
+        { name: t('header.submenu.votaciones'), path: '/votaciones' },
         { name: t('header.submenu.asambleas'), path: '/asambleas' },
         { name: t('header.submenu.normativo'), path: '/normativo' },
         { name: t('header.submenu.documental'), path: '/documental' },
         { name: t('header.submenu.financiera'), path: '/gestion-financiera' }
       ]
     },
-    {
-      name: t('header.nav.propertyTypes'),
-      href: '/propiedades',
-      target: 'properties',
-      submenu: [
-        { name: t('header.submenu.residencial'), path: '/propiedades#residencial' },
-        { name: t('header.submenu.comercial'), path: '/propiedades#comercial' },
-        { name: t('header.submenu.mixta'), path: '/propiedades#mixta' }
-      ]
-    },
-    { name: t('header.nav.whyUs'), href: '/por-que-elegirnos', target: 'why-us' },
+    // OCULTO (código preservado):
+    // {
+    //   name: t('header.nav.propertyTypes'),
+    //   href: '/propiedades',
+    //   target: 'properties',
+    //   submenu: [
+    //     { name: t('header.submenu.residencial'), path: '/propiedades#residencial' },
+    //     { name: t('header.submenu.comercial'), path: '/propiedades#comercial' },
+    //     { name: t('header.submenu.mixta'), path: '/propiedades#mixta' }
+    //   ]
+    // },
+    // { name: t('header.nav.whyUs'), href: '/por-que-elegirnos', target: 'why-us' },
     { name: t('header.nav.helpCenter'), href: '/centro-de-ayuda', target: 'help-center' },
     { name: t('header.nav.about'), href: '/nosotros', target: 'about' },
     { name: t('header.nav.contact'), href: '/contacto', target: 'contact' },
@@ -209,18 +210,38 @@ export const Header: React.FC<HeaderProps> = ({ onOpenDemo }) => {
           </div>
         </div>
 
-        {/* Slogan Bar */}
+        {/* Slogan Bar — dynamic: shows module name on module pages */}
         <div className="bg-gray-100 text-torre py-2 relative z-10">
           <div className="flex justify-center items-center">
             <span className="inline-flex items-center gap-2 text-xs md:text-tiny font-semibold tracking-wide">
               <span className="text-domo">✦</span>
-              {t('header.ticker').split('comunidades').length > 1 ? (
-                <>
-                  {t('header.ticker').split('comunidades')[0]}<span className="domonow-gradient">comunidades</span>
-                </>
-              ) : (
-                t('header.ticker')
-              )}
+              {(() => {
+                const moduleRoutes: Record<string, string> = {
+                  '/comunicaciones': t('communications.moduleName'),
+                  '/porteria': t('accessControl.moduleName'),
+                  '/panico': t('emergency.moduleName'),
+                  '/documental': t('documents.moduleName'),
+                  '/solicitudes': t('requests.moduleName'),
+                  '/votaciones': t('voting.moduleName'),
+                  '/encuestas': t('surveys.moduleName'),
+                  '/reservas': t('commonAreas.moduleName'),
+                  '/gestion-financiera': t('financial.moduleName'),
+                  '/asambleas': t('assemblies.moduleName'),
+                  '/eventos': t('events.moduleName'),
+                  '/normativo': t('compliance.moduleName'),
+                  '/super-administrador': t('superAdmin.moduleName'),
+                };
+                const moduleName = moduleRoutes[location.pathname];
+                if (moduleName) {
+                  return <span className="domonow-gradient">{moduleName}</span>;
+                }
+                // Default ticker for non-module pages
+                return t('header.ticker').split('comunidades').length > 1 ? (
+                  <>{t('header.ticker').split('comunidades')[0]}<span className="domonow-gradient">comunidades</span></>
+                ) : (
+                  t('header.ticker')
+                );
+              })()}
               <span className="text-domo">✦</span>
             </span>
           </div>
